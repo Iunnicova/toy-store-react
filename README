@@ -1,0 +1,5 @@
+### Запуск проекта
+
+npm run build
+
+npm run start

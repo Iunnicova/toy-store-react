@@ -1,0 +1,25 @@
+// index.scss
+
+// index.ts
+// import './assets/images/dog.jpg';
+
+// import { ReactComponent as ReactLogo } from './assets/images/react.svg';
+
+html,
+body {
+  font-family: "OpenSans", sans-serif;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/OpenSans-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "OpenSans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/OpenSans-Regular.woff2") format("woff2");
+}
