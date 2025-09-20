@@ -10,7 +10,7 @@ const production = process.env.NODE_ENV === "production";
 
 module.exports = {
   // Точка входа — основной файл приложения (TS/TSX/JS/JSX)
-  entry: path.resolve(__dirname, "..", "./src/index.ts"),
+  entry: path.resolve(__dirname, "..", "./src/index.tsx"),
 
   // Настройки выхода (куда складывать собранные файлы)
   output: {
