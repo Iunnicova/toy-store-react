@@ -3,3 +3,5 @@
 npm run build
 
 npm run start
+
+запуск форматирования 'npm run format'

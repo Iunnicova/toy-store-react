@@ -32,19 +32,77 @@ declare module "*.svg" {
 // --- Декларации для картинок ---
 // Позволяет импортировать картинки как модули:
 // import img from './image.png'; // img: string
-declare module "*.png" {
-  const content: string;
-  export default content;
+declare module '*.png' {
+  const src: string;
+  export default src;
+}
+declare module '*.jpg' {
+  const src: string;
+  export default src;
+}
+declare module '*.jpeg' {
+  const src: string;
+  export default src;
+}
+declare module '*.gif' {
+  const src: string;
+  export default src;
+}
+declare module '*.webp' {
+  const src: string;
+  export default src;
+}
+declare module '*.avif' {
+  const src: string;
+  export default src;
 }
 
-declare module "*.jpg" {
-  const content: string;
-  export default content;
+// --- Fonts ---
+// Позволяет импортировать шрифты как пути к файлам:
+// import font from './font.woff2'; // font: string
+declare module '*.woff' {
+  const src: string;
+  export default src;
+}
+declare module '*.woff2' {
+  const src: string;
+  export default src;
+}
+declare module '*.ttf' {
+  const src: string;
+  export default src;
+}
+declare module '*.otf' {
+  const src: string;
+  export default src;
+}
+declare module '*.eot' {
+  const src: string;
+  export default src;
+}
+
+// --- Video ---
+// Позволяет импортировать видеофайлы как строки (пути):
+// import video from './clip.mp4'; // video: string
+declare module '*.mp4' {
+  const src: string;
+  export default src;
+}
+declare module '*.webm' {
+  const src: string;
+  export default src;
+}
+declare module '*.ogg' {
+  const src: string;
+  export default src;
 }
 
 // --- Декларация для JSON ---
-// Позволяет импортировать JSON-файлы как объекты:
+// --- JSON files ---
+// Позволяет импортировать JSON как объект:
 // import data from './data.json'; // data: any
+// (лучше включить `"resolveJsonModule": true` в tsconfig.json,
+// тогда этот блок можно удалить)
 declare module "*.json" {
   const content: any;
   export default content;
