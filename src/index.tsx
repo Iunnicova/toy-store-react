@@ -8,9 +8,7 @@ import App from './components/app/App'; // Главный компонент п�
 
 // import './styles/index.scss';           // Глобальные стили (Sass/SCSS)
 
-
 const domNode = document.getElementById('root') as HTMLDivElement;  // Находим div с id="root" в index.html,сюда React будет рендерить всё приложение
-
 
 const root = createRoot(domNode);  // Создаём "корень" для приложения (React 18+)
 
