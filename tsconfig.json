@@ -1,19 +1,18 @@
 {
   "compilerOptions": {
-    "target": "ESNext",                      /* Современный вывод кода */
-    "module": "ESNext",                      /* Пусть Webpack сам бандлит */
-    "moduleResolution": "node",              /* Поиск модулей как в Node.js */
-    "lib": ["DOM", "ESNext"],                /* DOM + новые возможности JS */
-    "jsx": "react-jsx",                      /* Новый JSX-трансформ React 17+ */
-    "isolatedModules": true,                 /* Каждому файлу отдельный scope */
-    "esModuleInterop": true,                 /* Поддержка CommonJS */
-    "allowSyntheticDefaultImports": true,    /* Импортировать default из CJS */
-    "strict": true,                          /* Строгая типизация */
-    "skipLibCheck": true,                    /* Пропуск проверки .d.ts */
-    "forceConsistentCasingInFileNames": true,/* Без ошибок в регистре путей */
-    "resolveJsonModule": true,                /* Импорт JSON как модулей */
-     "allowJs": true /* «Разрешить компиляцию JavaScript-файлов. Полезно при миграции с JS на TS». */,
-
+    "target": "ESNext" /* Современный вывод кода */,
+    "module": "ESNext" /* Пусть Webpack сам бандлит */,
+    "moduleResolution": "node" /* Поиск модулей как в Node.js */,
+    "lib": ["DOM", "ESNext"] /* DOM + новые возможности JS */,
+    "jsx": "react-jsx" /* Новый JSX-трансформ React 17+ */,
+    "isolatedModules": true /* Каждому файлу отдельный scope */,
+    "esModuleInterop": true /* Поддержка CommonJS */,
+    "allowSyntheticDefaultImports": true /* Импортировать default из CJS */,
+    "strict": true /* Строгая типизация */,
+    "skipLibCheck": true /* Пропуск проверки .d.ts */,
+    "forceConsistentCasingInFileNames": true /* Без ошибок в регистре путей */,
+    "resolveJsonModule": true /* Импорт JSON как модулей */,
+    "allowJs": true /* «Разрешить компиляцию JavaScript-файлов. Полезно при миграции с JS на TS». */
   },
   "include": ["src/**/*"]
 }

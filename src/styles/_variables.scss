@@ -1,0 +1,49 @@
+@use 'helpers' as *;
+
+//пишем силектор корневого элемента переменные цветов
+:root {
+  --color-light: #ffffff;
+  --color-black: #000000;
+  --color-dusty-purple: #70587aff;
+  --color-olive-green: #3f4d36;
+  --color-green-grey: #283224;
+  --color-pale-olive: #c9cea5ff;
+  --color-mint-cream: #c8f1e4;
+  --color-lavender: #d7c3d7;
+  --color-grey-blue: #a5a5bd;
+  --color-golden: #bfa443;
+  // --color-accent: #dfba27;
+  --color-likeCount: #d3500f;
+
+  //градиент кнопки
+  --gradient: linear-gradient(
+    45deg,
+    var(--color-dusty-purple) 64%,
+    var(--color-golden) 136%
+  );
+
+  //переменная для рамки(серая черта)
+  --border: #{rem(1)} solid var(--color-grey-blue);
+
+  //переменная для добавления тени рамки контактов при наведении First Name 9:55
+  --shadow: 0 0 0 #{rem(4)} --color-olive-green;
+
+  //семейство шрифтов
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-accent: 'Kumbh Sans', sans-serif;
+  // --font-family-bottom: 'Roboto', sans-serif;
+
+  //*************
+
+  // параменты контентной сетки контейнера padding 16 это расстояние между основным размером и контертом буз такой конструкции переменная работать не будет #{rem(1600)} 42:00
+  --container-width: #{rem(1600)};
+  --container-padding-x: #{rem(16)}; // горизонтальные границы внутриннего контейнера мобильная версия
+
+  //микро-анимация транзишен
+  --transition-duration: 0.2s;
+
+  // переопределяем на 1280
+  // @include laptop {
+  //   --container-width: #{rem(1280)};
+  // }
+}
