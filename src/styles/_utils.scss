@@ -5,12 +5,13 @@
 
 // – класс-обертка, чтобы все блоки сайта имели одинаковую ширину и отступы.
 
- //var(--container-width)-основная ширина контента, 
-  // var(--container-padding-x)-внутренние отступы слева и справа.
-  // 2 — потому что отступы с двух сторон.
+//var(--container-width)-основная ширина контента,
+// var(--container-padding-x)-внутренние отступы слева и справа.
+// 2 — потому что отступы с двух сторон.
 .container {
-  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);  
-  margin-inline: auto;  //Ставит контейнер по центру страницы (слева и справа авто-отступы
-  padding-inline: var(--container-padding-x);  //Внутренние отступы для контента, чтобы текст и блоки не прилипали к краям.
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto; //Ставит контейнер по центру страницы (слева и справа авто-отступы
+  padding-inline: var(
+    --container-padding-x
+  ); //Внутренние отступы для контента, чтобы текст и блоки не прилипали к краям.
 }
-
