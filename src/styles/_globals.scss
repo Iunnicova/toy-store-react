@@ -78,6 +78,15 @@ h6,
   font-weight: 400;
 }
 
+p,
+.p {
+  font-family: var(--font-family-accent);
+  font-weight: 500;
+  color: var( --color-dusty-purple);
+  
+  
+}
+
 //размер текста от дисткопа до мобилки
 //line-height в проекте 120% это 1.2
 h1,

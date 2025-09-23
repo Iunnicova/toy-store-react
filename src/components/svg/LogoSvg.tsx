@@ -9,12 +9,19 @@ export const LogoSvg: React.FC<LogoSvgProps> = ({ className, type }) => {
   const strokeColor = type === 'primary' ? '#f9c449' : '#b38300';
 
   return (
-    <svg 
-     className={className}
-    viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      className={className}
+      viewBox="0 0 200 200"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <defs>
         <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
-          <feDropShadow dx="-3" dy="-2" stdDeviation="2" floodColor="rgba(0,0,0,0.6)" />
+          <feDropShadow
+            dx="-3"
+            dy="-2"
+            stdDeviation="2"
+            floodColor="rgba(0,0,0,0.6)"
+          />
         </filter>
 
         <linearGradient id="vGradient" x1="0" y1="0" x2="0" y2="1">
