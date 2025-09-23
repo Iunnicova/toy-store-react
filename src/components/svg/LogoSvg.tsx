@@ -1,19 +1,22 @@
-export const LogoSvg = () => {
+import React, { FC } from 'react';
+
+type LogoSvgProps = {
+  className?: string;
+  type?: 'primary' | 'secondary';
+};
+
+export const LogoSvg: React.FC<LogoSvgProps> = ({ className, type }) => {
+  const strokeColor = type === 'primary' ? '#f9c449' : '#b38300';
+
   return (
-    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      {/* Определения фильтров и градиентов */}
+    <svg 
+     className={className}
+    viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        {/* Глубокая тень */}
         <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
-          <feDropShadow
-            dx="-3"
-            dy="-2"
-            stdDeviation="2"
-            floodColor="rgba(0,0,0,0.6)"
-          />
+          <feDropShadow dx="-3" dy="-2" stdDeviation="2" floodColor="rgba(0,0,0,0.6)" />
         </filter>
 
-        {/* Градиенты для объёма */}
         <linearGradient id="vGradient" x1="0" y1="0" x2="0" y2="1">
           <stop offset="60%" stopColor="#9c88e2" />
           <stop offset="100%" stopColor="#5c4e91" />
@@ -23,19 +26,16 @@ export const LogoSvg = () => {
           <stop offset="100%" stopColor="#483b78" />
         </linearGradient>
         <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="10%" stopColor="#f9c449" />
+          <stop offset="10%" stopColor={strokeColor} />
           <stop offset="100%" stopColor="#b38300" />
         </linearGradient>
       </defs>
 
-      {/* === Буква V: задний слой (толщина) === */}
       <path
         d="M20,30 L40,80 L60,20"
         style={{ stroke: '#2a2148', strokeWidth: 10, fill: 'none' }}
         transform="translate(1.5,1.5)"
       />
-
-      {/* Буква V: передний слой с градиентом и тенью */}
       <path
         d="M20,30 L40,80 L60,20"
         style={{
@@ -46,15 +46,11 @@ export const LogoSvg = () => {
         }}
         strokeLinecap="round"
       />
-
-      {/* === Буква U: задний слой (толщина) === */}
       <path
         d="M69,24 L56,60 Q76,80 90,93 Q35,106 19,54 L87,58"
         style={{ stroke: '#2a2148', strokeWidth: 9, fill: 'none' }}
         transform="translate(1.5,1.5)"
       />
-
-      {/* Буква U: передний слой с градиентом и тенью */}
       <path
         d="M69,24 L56,60 Q76,80 90,93 Q35,106 19,54 L87,58"
         style={{
@@ -64,8 +60,6 @@ export const LogoSvg = () => {
           filter: 'url(#shadow)',
         }}
       />
-
-      {/* === Жёлтая диагональ: задний слой (толщина) === */}
       <line
         x1="42"
         y1="91"
@@ -75,8 +69,6 @@ export const LogoSvg = () => {
         transform="translate(1.5,1.5)"
         strokeLinecap="round"
       />
-
-      {/* Жёлтая диагональ: передний слой с градиентом и тенью */}
       <line
         x1="42"
         y1="91"
