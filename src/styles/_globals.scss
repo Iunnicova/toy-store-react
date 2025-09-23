@@ -82,9 +82,14 @@ p,
 .p {
   font-family: var(--font-family-accent);
   font-weight: 500;
-  color: var( --color-dusty-purple);
-  
-  
+  color: var(--color-dusty-purple);
+
+  //  color: repeating-radial-gradient(
+  //   circle closest-corner at 100px 100px,
+  //   #bde609,
+  //   #b393d3 10%,
+  //   #17eb10 20%
+  // );
 }
 
 //размер текста от дисткопа до мобилки
@@ -131,6 +136,7 @@ textarea,
 select,
 svg * {
   transition-duration: var(--transition-duration);
+  text-decoration: none;
 }
 
 a {
@@ -143,6 +149,13 @@ a {
   &[class] {
     text-decoration: none;
   }
+}
+
+//убираем точку
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 //состояние фокусировки c клавиатуры 57:50

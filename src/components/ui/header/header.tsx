@@ -3,12 +3,16 @@ import { NavLink } from 'react-router-dom';
 
 import styles from './header.module.scss';
 import { LogoSvg } from '../../svg/LogoSvg';
-
+import basketIcon from '../../../../icon/basket.svg';
+import heartIcon from '../../../../icon/heart.svg';
+import profileIcon from '../../../../icon/profile.svg';
 import { THeaderUIProps } from './type';
 
 export const HeaderUl: FC<THeaderUIProps> = ({ userName }) => (
   <header className="container">
-    <main className={`${styles.header} p-4`}>         {/*коментарий-(*1) */}
+    <main className={`${styles.header} p-4`}>
+      {' '}
+      {/*коментарий-(*1) */}
       <div className={styles.menu_part_logoSvg}>
         <NavLink
           to="/" //! обязательный проп: куда ведёт ссылка
@@ -22,9 +26,7 @@ export const HeaderUl: FC<THeaderUIProps> = ({ userName }) => (
           <p className={styles.slogan}>Toys that make you smile!</p>
         </div>
       </div>
-      <div className={styles.header__actions}>
-        <nav className={styles.header__actions}></nav>
-      </div>
+      
     </main>
   </header>
 );
@@ -48,9 +50,3 @@ export const HeaderUl: FC<THeaderUIProps> = ({ userName }) => (
 // 5 → 1.25rem (20px)
 // 6 → 1.5rem (24px)
 
-//! *2
-// Если isActive === true → возвращается строка ${styles.link} ${styles.link_active}
-// (оба класса применяются: базовый и активный)
-
-// Если isActive === false → возвращается строка ${styles.link}
-// (только базовый класс)
