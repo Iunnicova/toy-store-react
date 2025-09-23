@@ -11,8 +11,6 @@ import { THeaderUIProps } from './type';
 export const HeaderUl: FC<THeaderUIProps> = ({ userName }) => (
   <header className="container">
     <main className={`${styles.header} p-4`}>
-      {' '}
-      {/*коментарий-(*1) */}
       <div className={styles.menu_part_logoSvg}>
         <NavLink
           to="/" //! обязательный проп: куда ведёт ссылка
@@ -26,7 +24,42 @@ export const HeaderUl: FC<THeaderUIProps> = ({ userName }) => (
           <p className={styles.slogan}>Toys that make you smile!</p>
         </div>
       </div>
-      
+      <div className={styles.header__actions}>
+        <nav className={styles.header__nav}>
+          <ul className={styles.header__navigation}>
+            <li className={styles.header__list}>
+              <NavLink to="/basket" className={styles.link}>
+                <img
+                  src={basketIcon}
+                  alt="Корзина"
+                  className={styles.basketIcon}
+                />
+                <span className={styles.basketCount}>1250</span>
+              </NavLink>
+            </li>
+            <li className={styles.header__list}>
+              <NavLink to="/favorites" className={styles.link}>
+                <img
+                  src={heartIcon}
+                  alt="Закладки"
+                  className={styles.heartIcon}
+                />
+                <p className={styles.header__bookmarks}>Закладки</p>
+              </NavLink>
+            </li>
+            <li className={styles.header__list}>
+              <NavLink to="/profile" className={styles.link}>
+                <img
+                  src={profileIcon}
+                  alt="Профиль"
+                  className={styles.profileIcon}
+                />
+                <p className={styles.header__profile}>Профиль</p>
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </main>
   </header>
 );
@@ -49,4 +82,3 @@ export const HeaderUl: FC<THeaderUIProps> = ({ userName }) => (
 // 4 → 1rem (16px)
 // 5 → 1.25rem (20px)
 // 6 → 1.5rem (24px)
-
