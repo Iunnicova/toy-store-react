@@ -1,6 +1,46 @@
 // @use '../helpers' as *;
 
 .header {
-  background-color: #fff;
-  padding: 16px;
+  display: grid;
+  grid-template-columns: 52% 1fr;
+  padding: 43px 60px;
+}
+
+.link {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.logo {
+  display: flex;
+  width: 100px;
+  height: auto;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column; /* элементы идут сверху вниз */
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+
+.title {
+  display: block;
+  font-family: var(--font-family-accen);
+  font-size: 20px;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.slogan {
+  display: block;
+  width: 100%;
+  font-family: var(--font-family-accent);
+  font-weight: 700;
+  font-size: 14px;
+  padding-left: 20px;
 }

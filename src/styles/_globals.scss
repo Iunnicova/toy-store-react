@@ -26,7 +26,7 @@ html {
 
 // 18,14 от дистопа до мобильная версии 47:21
 body {
-  @include fluid-text(32, 14);
+  @include fluid-text(18, 14);
 
   //!прижимаем footer к низу
   display: flex;
@@ -42,6 +42,10 @@ body {
 main {
   //!прижимаем footer к низу
   flex-grow: 1;
+  background-color: var(--color-mint-mint);
+  border: var(--border);
+  border-radius: rem(20);
+  margin: 0;
 }
 
 h1,

@@ -11,54 +11,40 @@ import { THeaderUIProps } from './type';
 export const HeaderUl: FC<THeaderUIProps> = ({ userName }) => (
   <header className="container">
     <main className={`${styles.header} p-4`}>
-      <div className={styles.menu_part_logoSvg}>
+      <div>
         <NavLink
           to="/" //! обязательный проп: куда ведёт ссылка
         >
           <div className={styles.link}>
-            <LogoSvg className={styles.LogoSvgStore} />
-            <h1 className={styles.storeName}>Baby's Smile</h1>
+            <LogoSvg className={styles.logo} />
+            <div className={styles.brand}>
+              <h1 className={styles.title}>Baby's Smile</h1>
+              <p className={styles.slogan}>Toys that make you smile!</p>
+            </div>
           </div>
         </NavLink>
-        <div className={styles.sloganWrapper}>
-          <p className={styles.slogan}>Toys that make you smile!</p>
-        </div>
       </div>
-      <div className={styles.header__actions}>
-        <nav className={styles.header__nav}>
-          <ul className={styles.header__navigation}>
-            <li className={styles.header__list}>
-              <NavLink to="/basket" className={styles.link}>
-                <img
-                  src={basketIcon}
-                  alt="Корзина"
-                  className={styles.basketIcon}
-                />
-                <span className={styles.basketCount}>1250</span>
-              </NavLink>
-            </li>
-            <li className={styles.header__list}>
-              <NavLink to="/favorites" className={styles.link}>
-                <img
-                  src={heartIcon}
-                  alt="Закладки"
-                  className={styles.heartIcon}
-                />
-                <p className={styles.header__bookmarks}>Закладки</p>
-              </NavLink>
-            </li>
-            <li className={styles.header__list}>
-              <NavLink to="/profile" className={styles.link}>
-                <img
-                  src={profileIcon}
-                  alt="Профиль"
-                  className={styles.profileIcon}
-                />
-                <p className={styles.header__profile}>Профиль</p>
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+      <div>
+        <ul className={styles.menu}>
+          <li className={styles.list}>
+            <NavLink to="/basket" className={styles.navigation}>
+              <img src={basketIcon} alt="Корзина" className={styles.icon} />
+              <span className={styles.count}>1250 руб</span>
+            </NavLink>
+          </li>
+          <li className={styles.list}>
+            <NavLink to="/favorites" className={styles.navigation}>
+              <img src={heartIcon} alt="Закладки" className={styles.icon} />
+              <p className={styles.headerBookmarks}>Закладки</p>
+            </NavLink>
+          </li>
+          <li className={styles.list}>
+            <NavLink to="/profile" className={styles.navigation}>
+              <img src={profileIcon} alt="Профиль" className={styles.icon} />
+              <p className={styles.headerProfile}>Профиль</p>
+            </NavLink>
+          </li>
+        </ul>
       </div>
     </main>
   </header>

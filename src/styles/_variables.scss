@@ -9,8 +9,10 @@
   --color-green-grey: #283224;
   --color-pale-olive: #c9cea5ff;
   --color-mint-cream: #c8f1e4;
+  --color-mint-mint: #9ee6cf;
+  --color-frame: #84a399;
   --color-lavender: #d7c3d7;
-  --color-grey-blue: #a5a5bd;
+  --color-grey-blue: #d9d9f0;
   --color-golden: #bfa443;
   // --color-accent: #dfba27;
   --color-likeCount: #d3500f;
@@ -23,7 +25,7 @@
   );
 
   //переменная для рамки(серая черта)
-  --border: #{rem(1)} solid var(--color-grey-blue);
+  --border: #{rem(2)} solid var(--color-frame);
 
   //переменная для добавления тени рамки контактов при наведении First Name 9:55
   --shadow: 0 0 0 #{rem(4)} --color-olive-green;
@@ -37,8 +39,8 @@
   //*************
 
   // параменты контентной сетки контейнера padding 16 это расстояние между основным размером и контертом буз такой конструкции переменная работать не будет #{rem(1600)} 42:00
-  --container-width: #{rem(1600)};
-  --container-padding-x: #{rem(16)}; // горизонтальные границы внутриннего контейнера мобильная версия
+  --container-width: #{rem(1734)};
+  --container-padding-x: #{rem(16)}; // горизонтальные границы внутриннего контейнера
 
   //микро-анимация транзишен
   --transition-duration: 0.2s;
