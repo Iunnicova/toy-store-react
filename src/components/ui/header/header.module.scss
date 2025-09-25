@@ -1,20 +1,28 @@
-// @use '../helpers' as *;
+@use '../../../styles/helpers/' as *;
 
 .header {
   display: grid;
   grid-template-columns: 52% 1fr;
-  padding: 43px 60px;
-}
+  padding: rem(43) rem(60);
 
+  @include mobile {
+    grid-auto-flow: row; /* меняем направление */
+    grid-template-columns: 1fr;
+    align-items: center;
+    row-gap: rem(10);
+    width: 100%;
+    padding: rem(20) rem(20);
+  }
+}
 .link {
   display: flex;
   justify-content: flex-start;
-  gap: 10px;
+  gap: rem(10);
 }
 
 .logo {
   display: flex;
-  width: 100px;
+  width: rem(100);
   height: auto;
 }
 
@@ -28,19 +36,119 @@
 
 .title {
   display: block;
-  font-family: var(--font-family-accen);
-  font-size: 20px;
+  font-family: var(--color-dusty-purple);
+  font-size: fluid(40, 20);
   letter-spacing: 0%;
   text-transform: uppercase;
   width: 100%;
-  padding-bottom: 10px;
+  padding-bottom: rem(10);
 }
 
 .slogan {
   display: block;
-  width: 100%;
-  font-family: var(--font-family-accent);
+  font-size: fluid(25, 14);
   font-weight: 700;
-  font-size: 14px;
-  padding-left: 20px;
+  padding-left: rem(40);
+  width: 100%;
 }
+
+.menu {
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column; // на десктопе в строку
+  gap: fluid(30, 14);
+  overflow: hidden; //видно только то, что помещается внутри
+
+  @include mobile {
+    gap: rem(10);
+  }
+}
+
+.list {
+  min-height: 100%;
+  height: auto;
+  padding-top: rem(12);
+}
+
+.navigation {
+  display: grid;
+  gap: rem(20);
+
+  @include mobile {
+    gap: rem(10);
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center; /* выравнивание по вертикали */
+  justify-content: center;
+  align-items: center;
+  gap: rem(20);
+  color: var(--color-green-grey);
+  border: var(--border);
+  border-radius: rem(12);
+  padding: rem(12) rem(24);
+  white-space: nowrap;
+  width: 100%;
+  min-width: 200px;
+
+  //градиент кнопки
+  background: var(--gradient) border-box;
+  border: rem(2) solid transparent;
+  border-radius: rem(12);
+  background: linear-gradient(45deg, #d1987b, #84a399);
+  border-color: var(--color-frame);
+
+  &:hover {
+    background: linear-gradient(45deg, #84a399, #d1987b); // меняем порядок
+    border-color: var(--color-likeCount);
+  }
+
+  @include laptop {
+    gap: rem(5);
+    min-width: rem(90);
+    padding: rem(10) rem(24);
+  }
+
+  @include mobile {
+    align-items: center;
+    gap: rem(4);
+    font-size: rem(14);
+    border-radius: rem(8);
+    padding: rem(14) rem(20);
+  }
+}
+
+.icon {
+  border-color: var(--color-likeCount);
+  width: rem(20);
+  height: rem(20);
+}
+
+.count {
+  font-size: rem(16);
+  color: var(--color-green-grey);
+
+  @include laptop {
+    font-size: rem(14);
+  }
+}
+//*************************
+
+//! Grid-свойства:
+// grid-template-columns: 52% 1fr;   //* делим контейнер: левая колонка 52%, правая — остаток
+// grid-auto-flow: row;              //* элементы идут друг за другом сверху вниз
+// grid-template-columns: 1fr;       //* на мобилке: одна колонка на всю ширину
+// grid-auto-flow: column;           //* элементы идут в строку (по колонкам)
+// align-items: center;              //* выравнивание по вертикали (работают и там, и там)
+// overflow: hidden;                 //* обрезаем содержимое, выходящее за пределы (работают и там, и там)
+
+//! Flex-свойства:
+// display: inline-flex;             //* кнопка — flex-элемент, ведёт себя как inline
+// flex-direction: column;           //* элементы внутри сверху вниз
+// justify-content: flex-start;      //* прижаты к началу (слева/сверху)
+// justify-content: center;          //* по центру по горизонтали
+// align-items: center;              //* по центру по вертикали
+// align-items: center;              //* выравнивание по вертикали (работают и там, и там)
+// overflow: hidden;                 //* обрезаем содержимое, выходящее за пределы (работают и там, и там)

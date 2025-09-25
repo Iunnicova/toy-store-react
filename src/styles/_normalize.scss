@@ -79,7 +79,7 @@ p:where(:not([class]):not(:last-child)) {
 img {
   display: block;
   //ограничили максимальную ширину, что бы не выходили за доступную область
-  max-width: 100%;
+  // max-width: 100%;
   // height: auto -что бы у изображения не искажались пропорции
   height: auto;
 }
@@ -163,13 +163,13 @@ svg * {
   Удаляем все анимации и переходы для людей,
   которые предпочитают их не использовать
  */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  ::before,
-  ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+// @media (prefers-reduced-motion: reduce) {
+//   *,
+//   ::before,
+//   ::after {
+//     animation-duration: 0.01ms !important;
+//     animation-iteration-count: 1 !important;
+//     transition-duration: 0.01ms !important;
+//     scroll-behavior: auto !important;
+//   }
+// }

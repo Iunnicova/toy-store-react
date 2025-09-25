@@ -28,20 +28,26 @@ export const HeaderUl: FC<THeaderUIProps> = ({ userName }) => (
         <ul className={styles.menu}>
           <li className={styles.list}>
             <NavLink to="/basket" className={styles.navigation}>
-              <img src={basketIcon} alt="Корзина" className={styles.icon} />
-              <span className={styles.count}>1250 руб</span>
+              <button className={styles.button}>
+                <img src={basketIcon} alt="Корзина" className={styles.icon} />
+                <span className={styles.count}>1250 руб</span>
+              </button>
             </NavLink>
           </li>
           <li className={styles.list}>
             <NavLink to="/favorites" className={styles.navigation}>
-              <img src={heartIcon} alt="Закладки" className={styles.icon} />
-              <p className={styles.headerBookmarks}>Закладки</p>
+              <button className={styles.button}>
+                <img src={heartIcon} alt="Закладки" className={styles.icon} />
+                <p className={styles.count}>Закладки</p>
+              </button>
             </NavLink>
           </li>
           <li className={styles.list}>
             <NavLink to="/profile" className={styles.navigation}>
-              <img src={profileIcon} alt="Профиль" className={styles.icon} />
-              <p className={styles.headerProfile}>Профиль</p>
+              <button className={styles.button}>
+                <img src={profileIcon} alt="Профиль" className={styles.icon} />
+                <p className={styles.count}>Профиль</p>
+              </button>
             </NavLink>
           </li>
         </ul>
