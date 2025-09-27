@@ -7,6 +7,7 @@ import basketIcon from '../../../../icon/basket.svg';
 import heartIcon from '../../../../icon/heart.svg';
 import profileIcon from '../../../../icon/profile.svg';
 import { THeaderUIProps } from './type';
+import { Button } from '../button';
 
 export const HeaderUl: FC<THeaderUIProps> = ({ userName }) => (
   <header className="container">
@@ -28,26 +29,35 @@ export const HeaderUl: FC<THeaderUIProps> = ({ userName }) => (
         <ul className={styles.menu}>
           <li className={styles.list}>
             <NavLink to="/basket" className={styles.navigation}>
-              <button className={styles.button}>
+              <Button
+                onClick={() => alert('Корзина')}
+                className={styles.button}
+              >
                 <img src={basketIcon} alt="Корзина" className={styles.icon} />
                 <span className={styles.count}>1250 руб</span>
-              </button>
+              </Button>
             </NavLink>
           </li>
           <li className={styles.list}>
             <NavLink to="/favorites" className={styles.navigation}>
-              <button className={styles.button}>
+              <Button
+                onClick={() => alert('Закладки')}
+                className={styles.button}
+              >
                 <img src={heartIcon} alt="Закладки" className={styles.icon} />
                 <p className={styles.count}>Закладки</p>
-              </button>
+              </Button>
             </NavLink>
           </li>
           <li className={styles.list}>
             <NavLink to="/profile" className={styles.navigation}>
-              <button className={styles.button}>
+              <Button
+                onClick={() => alert('Профиль')}
+                className={styles.button}
+              >
                 <img src={profileIcon} alt="Профиль" className={styles.icon} />
                 <p className={styles.count}>Профиль</p>
-              </button>
+              </Button>
             </NavLink>
           </li>
         </ul>

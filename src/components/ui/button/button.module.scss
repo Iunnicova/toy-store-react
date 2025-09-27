@@ -1,0 +1,43 @@
+@use '../../../styles/helpers/' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center; /* выравнивание по вертикали */
+  justify-content: center;
+  align-items: center;
+  gap: rem(20);
+  color: var(--color-green-grey);
+  border: var(--border);
+  border-radius: rem(12);
+  padding: rem(12) rem(24);
+  white-space: nowrap;
+  width: 100%;
+  min-width: rem(100);
+
+  //градиент кнопки
+  background: var(--gradient) border-box;
+  border: rem(2) solid transparent;
+  border-radius: rem(12);
+  background: linear-gradient(45deg, #d1987b, #84a399);
+  border-color: var(--color-frame);
+
+  &:hover {
+    background: linear-gradient(45deg, #84a399, #d1987b); // меняем порядок
+    border-color: var(--color-likeCount);
+  }
+
+  @include laptop {
+    gap: rem(5);
+    min-width: rem(90);
+    padding: rem(10) rem(24);
+  }
+
+  @include mobile {
+    align-items: center;
+    gap: rem(4);
+    font-size: rem(14);
+    border-radius: rem(8);
+    padding: rem(14) rem(20);
+    min-width: rem(50);
+  }
+}

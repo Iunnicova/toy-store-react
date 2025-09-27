@@ -1,9 +1,5 @@
 import React, { FC } from 'react';
-
-type LogoSvgProps = {
-  className?: string;
-  type?: 'primary' | 'secondary';
-};
+import { LogoSvgProps } from './type';
 
 export const LogoSvg: React.FC<LogoSvgProps> = ({ className, type }) => {
   const strokeColor = type === 'primary' ? '#f9c449' : '#b38300';
