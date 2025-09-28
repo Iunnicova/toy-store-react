@@ -3,66 +3,53 @@ import { NavLink } from 'react-router-dom';
 
 import styles from './header.module.scss';
 import { LogoSvg } from '../../svg/LogoSvg';
-import basketIcon from '../../../../icon/basket.svg';
-import heartIcon from '../../../../icon/heart.svg';
-import profileIcon from '../../../../icon/profile.svg';
+import basketIcon from '/icon/basket.svg';
+import heartIcon from '/icon/heart.svg';
+import profileIcon from '/icon/profile.svg';
 import { THeaderUIProps } from './type';
 import { Button } from '../button';
 
 export const HeaderUl: FC<THeaderUIProps> = ({ userName }) => (
   <header className="container">
-    <main className={`${styles.header} p-4`}>
-      <div>
-        <NavLink
-          to="/" //! обязательный проп: куда ведёт ссылка
-        >
-          <div className={styles.link}>
-            <LogoSvg className={styles.logo} />
-            <div className={styles.brand}>
-              <h1 className={styles.title}>Baby's Smile</h1>
-              <p className={styles.slogan}>Toys that make you smile!</p>
-            </div>
+    <nav className={`${styles.header} p-4`}>
+      <NavLink
+        to="/" //! обязательный проп: куда ведёт ссылка
+      >
+        <div className={styles.link}>
+          <LogoSvg className={styles.logo} />
+          <div className={styles.brand}>
+            <h1 className={styles.title}>Baby's Smile</h1>
+            <p className={styles.slogan}>Toys that make you smile!</p>
           </div>
-        </NavLink>
-      </div>
-      <div>
-        <ul className={styles.menu}>
-          <li className={styles.list}>
-            <NavLink to="/basket" className={styles.navigation}>
-              <Button
-                onClick={() => alert('Корзина')}
-                className={styles.button}
-              >
-                <img src={basketIcon} alt="Корзина" className={styles.icon} />
-                <span className={styles.count}>1250 руб</span>
-              </Button>
-            </NavLink>
-          </li>
-          <li className={styles.list}>
-            <NavLink to="/favorites" className={styles.navigation}>
-              <Button
-                onClick={() => alert('Закладки')}
-                className={styles.button}
-              >
-                <img src={heartIcon} alt="Закладки" className={styles.icon} />
-                <p className={styles.count}>Закладки</p>
-              </Button>
-            </NavLink>
-          </li>
-          <li className={styles.list}>
-            <NavLink to="/profile" className={styles.navigation}>
-              <Button
-                onClick={() => alert('Профиль')}
-                className={styles.button}
-              >
-                <img src={profileIcon} alt="Профиль" className={styles.icon} />
-                <p className={styles.count}>Профиль</p>
-              </Button>
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-    </main>
+        </div>
+      </NavLink>
+      <ul className={styles.menu}>
+        <li className={styles.list}>
+          <NavLink to="/basket" className={styles.navigation}>
+            <Button onClick={() => alert('Корзина')} className={styles.button}>
+              <img src={basketIcon} alt="Корзина" className={styles.icon} />
+              <span className={styles.count}>1250 руб</span>
+            </Button>
+          </NavLink>
+        </li>
+        <li className={styles.list}>
+          <NavLink to="/favorites" className={styles.navigation}>
+            <Button onClick={() => alert('Закладки')} className={styles.button}>
+              <img src={heartIcon} alt="Закладки" className={styles.icon} />
+              <p className={styles.count}>Закладки</p>
+            </Button>
+          </NavLink>
+        </li>
+        <li className={styles.list}>
+          <NavLink to="/profile" className={styles.navigation}>
+            <Button onClick={() => alert('Профиль')} className={styles.button}>
+              <img src={profileIcon} alt="Профиль" className={styles.icon} />
+              <p className={styles.count}>Профиль</p>
+            </Button>
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   </header>
 );
 

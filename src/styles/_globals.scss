@@ -28,7 +28,7 @@ html {
 body {
   @include fluid-text(18, 14);
 
-  //!прижимаем footer к низу
+ 
   display: flex;
   flex-direction: column;
   //
@@ -39,8 +39,8 @@ body {
   // color: var(--color-olive-green);
 }
 
-main {
-  //!прижимаем footer к низу
+nav {
+
   flex-grow: 1;
   background-color: var(--color-mint-mint);
   border: var(--border);
