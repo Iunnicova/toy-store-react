@@ -28,7 +28,6 @@ html {
 body {
   @include fluid-text(18, 14);
 
- 
   display: flex;
   flex-direction: column;
   //
@@ -40,13 +39,29 @@ body {
 }
 
 nav {
-
   flex-grow: 1;
   background-color: var(--color-mint-mint);
   border: var(--border);
   border-radius: rem(20);
   margin: 0;
+  box-sizing: border-box;
+  // padding-left: rem(60);
 }
+
+// .container {
+//   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+//   margin-inline: auto; //Ставит контейнер по центру страницы (слева и справа авто-отступы
+//   margin: rem(85) rem(85) 0;
+//   padding-inline: var(
+//     --container-padding-x
+//   ); //Внутренние отступы для контента, чтобы текст и блоки не прилипали к краям.
+//   transition-duration: 0.6s;
+
+//   @include tablet {
+//     margin: rem(50) rem(30) 0;
+//   }
+//   //*rem(50) — сверху,rem(30) — справа и слева, 0 — снизу
+// }
 
 h1,
 .h1,

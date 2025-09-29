@@ -91,6 +91,14 @@
   color: var(--color-green-grey);
 }
 
+// .username {
+//   margin-left: 0.5rem;
+//   font-weight: 500;
+//   color: #333; // или свой цвет
+//   display: inline-block;
+//   opacity: 0;
+// }
+
 //*************************
 
 //! Grid-свойства:
@@ -106,6 +114,5 @@
 // flex-direction: column;           //* элементы внутри сверху вниз
 // justify-content: flex-start;      //* прижаты к началу (слева/сверху)
 // justify-content: center;          //* по центру по горизонтали
-// align-items: center;              //* по центру по вертикали
 // align-items: center;              //* выравнивание по вертикали (работают и там, и там)
 // overflow: hidden;                 //* обрезаем содержимое, выходящее за пределы (работают и там, и там)

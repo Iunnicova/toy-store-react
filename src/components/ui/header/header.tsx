@@ -6,10 +6,10 @@ import { LogoSvg } from '../../svg/LogoSvg';
 import basketIcon from '/icon/basket.svg';
 import heartIcon from '/icon/heart.svg';
 import profileIcon from '/icon/profile.svg';
-import { THeaderUIProps } from './type';
+import { THeaderProps } from './type';
 import { Button } from '../button';
 
-export const HeaderUl: FC<THeaderUIProps> = ({ userName }) => (
+export const Header: FC<THeaderProps> = ({ userName }) => (
   <header className="container">
     <nav className={`${styles.header} p-4`}>
       <NavLink
@@ -44,7 +44,10 @@ export const HeaderUl: FC<THeaderUIProps> = ({ userName }) => (
           <NavLink to="/profile" className={styles.navigation}>
             <Button onClick={() => alert('Профиль')} className={styles.button}>
               <img src={profileIcon} alt="Профиль" className={styles.icon} />
-              <p className={styles.count}>Профиль</p>
+              <p className={styles.count}>
+                Профиль
+                {/* {userName && <span className={styles.username}>{userName}</span>} */}
+              </p>
             </Button>
           </NavLink>
         </li>

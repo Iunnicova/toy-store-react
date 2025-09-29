@@ -11,7 +11,7 @@
 .container {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   margin-inline: auto; //Ставит контейнер по центру страницы (слева и справа авто-отступы
-  margin: rem(85);
+  margin: rem(85) rem(85) 0;
   padding-inline: var(
     --container-padding-x
   ); //Внутренние отступы для контента, чтобы текст и блоки не прилипали к краям.
@@ -21,4 +21,13 @@
     margin: rem(50) rem(30) 0;
   }
   //*rem(50) — сверху,rem(30) — справа и слева, 0 — снизу
+}
+
+.nav {
+  flex-grow: 1;
+  background-color: var(--color-mint-mint);
+  border: var(--border);
+  border-radius: rem(20);
+  margin: 0;
+  box-sizing: border-box;
 }
