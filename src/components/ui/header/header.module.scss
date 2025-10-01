@@ -58,7 +58,6 @@
   align-items: center;
   grid-auto-flow: column; // на десктопе в строку
   gap: fluid(30, 14);
-  overflow: hidden; //видно только то, что помещается внутри
 
   @include mobile {
     gap: rem(10);
@@ -91,6 +90,7 @@
   color: var(--color-green-grey);
 }
 
+//Буква при регистрациии если понадобится
 // .username {
 //   margin-left: 0.5rem;
 //   font-weight: 500;

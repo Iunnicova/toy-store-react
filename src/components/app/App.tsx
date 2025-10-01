@@ -4,19 +4,21 @@
 
 //***** */
 
-import React from 'react';
+// import React from 'react';
+// import { BrowserRouter } from 'react-router-dom';
+// import { Header } from '../ui';
+// import { Cards } from '../ui';
+// import '../../index.scss';
+
 import { BrowserRouter } from 'react-router-dom';
-import { Header } from '../ui';
-import { Cards } from '../ui';
+import { Header, Cards } from '../ui';
 import '../../index.scss';
 
-const App = () => {
+export default function App() {
   return (
     <BrowserRouter>
       <Header userName="V" />
-      <Cards />
+      <Cards title="V" />
     </BrowserRouter>
   );
-};
-
-export default App;
+}

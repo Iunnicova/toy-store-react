@@ -1,4 +1,4 @@
-// export type TCardsProps= {
-//  title: string | null;
-//  price: number | null;
-// };
+export type TCardsProps = {
+  title: string | null;
+  //  price: number | null;
+};

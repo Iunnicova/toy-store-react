@@ -1,38 +1,51 @@
 @use '../../../styles/helpers/' as *;
 
 .cards {
-  @include square(rem(190));
+  @include rectangle(rem(210), rem(260));
 
-  // margin: rem(10) auto 0;
-
-  // display: flex;
-  // gap: rem(20);
-  //   flex-direction: column; //выставляем элементы в колонку
-  //   justify-content: space-between;
-  padding: rem(10) rem(10);
+  // margin: rem(10) rem(48) 0;
+  padding: rem(10);
   color: var(--color-black);
   background-color: transparent;
-  background-color: var(--color-mint-mint);
-  // border: none;
   border: var(--border);
-  border-radius: rem(12);
-  // justify-content: flex-end;
+  border-radius: rem(20);
 }
 
 .imgCards {
-  // display: flex;
-  // justify-content: space-around;
   display: grid;
-  grid-template-columns: 40% 1fr;
-  // background-color:rgb(226, 149, 149);
-  // background-color:var(--color-mint-mint);
-}
-
-.heartIconCards {
-  //  padding: rem(19);
-  // background-color:rgb(185, 197, 228);
+  grid-template-columns: 25% 1fr;
 }
 
 .toy {
-  // background-color:rgb(12, 156, 31);
+  padding-bottom: rem(5);
+}
+
+.description {
+  display: inline;
+  justify-content: center;
+}
+
+.title {
+  display: inline-block;
+  font-family: var(--color-likeCount);
+  font-size: fluid(16, 10);
+  letter-spacing: rem(1);
+  text-align: center;
+  padding: rem(10);
+  font-weight: 700;
+  width: 100%;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: rem(14);
+}
+
+.button {
+  font-size: rem(10);
+  width: rem(30);
+  height: rem(30);
+  padding: rem(5);
 }

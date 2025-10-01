@@ -44,10 +44,7 @@ export const Header: FC<THeaderProps> = ({ userName }) => (
           <NavLink to="/profile" className={styles.navigation}>
             <Button onClick={() => alert('Профиль')} className={styles.button}>
               <img src={profileIcon} alt="Профиль" className={styles.icon} />
-              <p className={styles.count}>
-                Профиль
-                {/* {userName && <span className={styles.username}>{userName}</span>} */}
-              </p>
+              <p className={styles.count}>Профиль</p>
             </Button>
           </NavLink>
         </li>

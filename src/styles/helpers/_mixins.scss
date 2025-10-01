@@ -60,6 +60,11 @@
   width: $size;
   height: $size;
 }
+// рисует прямоугольник определенного размера(если решу применить)
+@mixin rectangle($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
 
 //набор css свойства для визуального сокрытия элемента
 @mixin visually-hidden {
