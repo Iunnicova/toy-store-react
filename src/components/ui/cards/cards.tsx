@@ -1,52 +1,532 @@
 import React, { FC } from 'react';
-
-import checkMark from '/icon/plus.svg';
-import basketIcon from '/icon/basket.svg';
-import heartIconCards from '/icon/heart.svg';
-import styles from './cards.module.scss';
-import { Button } from '../button';
-import { NavLink } from 'react-router-dom';
-import toyBee from '/images/toy.png';
-import { TCardsProps } from './type';
+import {
+  styles,
+  basketIcon,
+  heartIconCards,
+  toyBee,
+  toyTiger,
+  toySquirrel,
+  toyHedgehog,
+  Button,
+  NavLink,
+  TCardsProps,
+  toyBunny,
+  toyGirl,
+  toyFrog,
+  toyFox,
+  // toyBoy,
+  toyDoggie,
+  toyHedgehog1,
+  toyKitty,
+  toyButterfly,
+} from './index';
 
 export const Cards: FC<TCardsProps> = ({ title }) => (
-  <main className={styles.cards}>
-    <div className={styles.imgCards}>
-      <NavLink
-        to="/" //! обязательный проп: куда ведёт ссылка
-      >
-        <img
-          src={heartIconCards}
-          className={styles.heartIconCards}
-          height="20"
-          width="20"
-          alt="Закладки"
-        />
-      </NavLink>
-      <NavLink
-        to="/" //! обязательный проп: куда ведёт ссылка
-      >
-        <img
-          className={styles.toy}
-          src={toyBee}
-          height="90"
-          width="90"
-          alt="Пчела"
-        />
-      </NavLink>
+  <main>
+    <div className={styles.cards}>
+      <div className={styles.imgCards}>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            src={heartIconCards}
+            className={styles.heartIconCards}
+            height="20"
+            width="20"
+            alt="Закладки"
+          />
+        </NavLink>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            className={styles.toy}
+            src={toyBee}
+            height="90"
+            width="90"
+            alt="Пчела"
+          />
+        </NavLink>
+      </div>
+      <div className={styles.description}>
+        <p className={styles.title}>Милашка Луна-дарит волшебный мёд</p>
+      </div>
+      <div className={styles.price}>
+        <span>Цена:</span>
+        <strong>5&nbsp;900&nbsp;₽</strong>
+        <NavLink to="/">
+          <Button onClick={() => alert('Корзина')} className={styles.button}>
+            <img src={basketIcon} alt="Корзина" className={styles.icon} />
+          </Button>
+        </NavLink>
+      </div>
     </div>
-    <div className={styles.description}>
-      <p className={styles.title}>Милашка Луна-дарит волшебный мёд</p>
-    </div>
-    <div className={styles.price}>
-      <span>Цена:</span>
-      <strong>5&nbsp;900&nbsp;₽</strong>
 
-      <NavLink to="/">
-        <Button onClick={() => alert('Корзина')} className={styles.button}>
-          <img src={basketIcon} alt="Корзина" className={styles.icon} />
-        </Button>
-      </NavLink>
+    <div className={styles.cards}>
+      <div className={styles.imgCards}>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            src={heartIconCards}
+            className={styles.heartIconCards}
+            height="20"
+            width="20"
+            alt="Закладки"
+          />
+        </NavLink>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            className={styles.toy}
+            src={toyTiger}
+            height="90"
+            width="90"
+            alt="Тигр"
+          />
+        </NavLink>
+      </div>
+      <div className={styles.description}>
+        <p className={styles.title}>Тигруша Красавчик хранитель мечты</p>
+      </div>
+      <div className={styles.price}>
+        <span>Цена:</span>
+        <strong>4&nbsp;900&nbsp;₽</strong>
+        <NavLink to="/">
+          <Button onClick={() => alert('Корзина')} className={styles.button}>
+            <img src={basketIcon} alt="Корзина" className={styles.icon} />
+          </Button>
+        </NavLink>
+      </div>
+    </div>
+
+    <div className={styles.cards}>
+      <div className={styles.imgCards}>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            src={heartIconCards}
+            className={styles.heartIconCards}
+            height="20"
+            width="20"
+            alt="Закладки"
+          />
+        </NavLink>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            className={styles.toy}
+            src={toySquirrel}
+            height="90"
+            width="90"
+            alt="Белка"
+          />
+        </NavLink>
+      </div>
+      <div className={styles.description}>
+        <p className={styles.title}>Бельчонок Белла любит орешки</p>
+      </div>
+      <div className={styles.price}>
+        <span>Цена:</span>
+        <strong>6&nbsp;100&nbsp;₽</strong>
+        <NavLink to="/">
+          <Button onClick={() => alert('Корзина')} className={styles.button}>
+            <img src={basketIcon} alt="Корзина" className={styles.icon} />
+          </Button>
+        </NavLink>
+      </div>
+    </div>
+
+    <div className={styles.cards}>
+      <div className={styles.imgCards}>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            src={heartIconCards}
+            className={styles.heartIconCards}
+            height="20"
+            width="20"
+            alt="Закладки"
+          />
+        </NavLink>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            className={styles.toy}
+            src={toyHedgehog}
+            height="90"
+            width="90"
+            alt="Ёжик"
+          />
+        </NavLink>
+      </div>
+      <div className={styles.description}>
+        <p className={styles.title}>Ёжик Петя-любитель грибочков</p>
+      </div>
+      <div className={styles.price}>
+        <span>Цена:</span>
+        <strong>5&nbsp;100&nbsp;₽</strong>
+        <NavLink to="/">
+          <Button onClick={() => alert('Корзина')} className={styles.button}>
+            <img src={basketIcon} alt="Корзина" className={styles.icon} />
+          </Button>
+        </NavLink>
+      </div>
+    </div>
+
+    <div className={styles.cards}>
+      <div className={styles.imgCards}>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            src={heartIconCards}
+            className={styles.heartIconCards}
+            height="20"
+            width="20"
+            alt="Закладки"
+          />
+        </NavLink>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            className={styles.toy}
+            src={toyBunny}
+            height="90"
+            width="90"
+            alt="Зайка"
+          />
+        </NavLink>
+      </div>
+      <div className={styles.description}>
+        <p className={styles.title}>Зайка Попрыгайка- сказочница</p>
+      </div>
+      <div className={styles.price}>
+        <span>Цена:</span>
+        <strong>5&nbsp;700&nbsp;₽</strong>
+        <NavLink to="/">
+          <Button onClick={() => alert('Корзина')} className={styles.button}>
+            <img src={basketIcon} alt="Корзина" className={styles.icon} />
+          </Button>
+        </NavLink>
+      </div>
+    </div>
+
+    <div className={styles.cards}>
+      <div className={styles.imgCards}>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            src={heartIconCards}
+            className={styles.heartIconCards}
+            height="20"
+            width="20"
+            alt="Закладки"
+          />
+        </NavLink>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            className={styles.toy}
+            src={toyGirl}
+            height="90"
+            width="90"
+            alt="Кукла"
+          />
+        </NavLink>
+      </div>
+      <div className={styles.description}>
+        <p className={styles.title}>Кукла Ляля-дарит улыбку</p>
+      </div>
+      <div className={styles.price}>
+        <span>Цена:</span>
+        <strong>4&nbsp;900&nbsp;₽</strong>
+        <NavLink to="/">
+          <Button onClick={() => alert('Корзина')} className={styles.button}>
+            <img src={basketIcon} alt="Корзина" className={styles.icon} />
+          </Button>
+        </NavLink>
+      </div>
+    </div>
+
+    <div className={styles.cards}>
+      <div className={styles.imgCards}>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            src={heartIconCards}
+            className={styles.heartIconCards}
+            height="20"
+            width="20"
+            alt="Закладки"
+          />
+        </NavLink>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            className={styles.toy}
+            src={toyFrog}
+            height="90"
+            width="90"
+            alt="Лягушка"
+          />
+        </NavLink>
+      </div>
+      <div className={styles.description}>
+        <p className={styles.title}>Лягушка Квакушка-любит наряды</p>
+      </div>
+      <div className={styles.price}>
+        <span>Цена:</span>
+        <strong>4&nbsp;300&nbsp;₽</strong>
+        <NavLink to="/">
+          <Button onClick={() => alert('Корзина')} className={styles.button}>
+            <img src={basketIcon} alt="Корзина" className={styles.icon} />
+          </Button>
+        </NavLink>
+      </div>
+    </div>
+    <div className={styles.cards}>
+      <div className={styles.imgCards}>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            src={heartIconCards}
+            className={styles.heartIconCards}
+            height="20"
+            width="20"
+            alt="Закладки"
+          />
+        </NavLink>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            className={styles.toy}
+            src={toyFox}
+            height="90"
+            width="90"
+            alt="Лисенок"
+          />
+        </NavLink>
+      </div>
+      <div className={styles.description}>
+        <p className={styles.title}>Лисичка Сестричка-любит приключения</p>
+      </div>
+      <div className={styles.price}>
+        <span>Цена:</span>
+        <strong>6&nbsp;300&nbsp;₽</strong>
+        <NavLink to="/">
+          <Button onClick={() => alert('Корзина')} className={styles.button}>
+            <img src={basketIcon} alt="Корзина" className={styles.icon} />
+          </Button>
+        </NavLink>
+      </div>
+    </div>
+    {/* 
+     <div className={styles.cards}>
+      <div className={styles.imgCards}>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            src={heartIconCards}
+            className={styles.heartIconCards}
+            height="20"
+            width="20"
+            alt="Закладки"
+          />
+        </NavLink>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            className={styles.toy}
+            src={toyBoy}
+            height="90"
+            width="90"
+            alt="Лисенок"
+          />
+        </NavLink>
+      </div>
+      <div className={styles.description}>
+        <p className={styles.title}>Игореша любит играть в футбол</p>
+      </div>
+      <div className={styles.price}>
+        <span>Цена:</span>
+        <strong>4&nbsp;700&nbsp;₽</strong>
+        <NavLink to="/">
+          <Button onClick={() => alert('Корзина')} className={styles.button}>
+            <img src={basketIcon} alt="Корзина" className={styles.icon} />
+          </Button>
+        </NavLink>
+      </div>
+    </div> */}
+
+    <div className={styles.cards}>
+      <div className={styles.imgCards}>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            src={heartIconCards}
+            className={styles.heartIconCards}
+            height="20"
+            width="20"
+            alt="Закладки"
+          />
+        </NavLink>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            className={styles.toy}
+            src={toyDoggie}
+            height="90"
+            width="90"
+            alt="Собачка"
+          />
+        </NavLink>
+      </div>
+      <div className={styles.description}>
+        <p className={styles.title}>Шарик-чемпион веселых игр в мячик</p>
+      </div>
+      <div className={styles.price}>
+        <span>Цена:</span>
+        <strong>5&nbsp;100&nbsp;₽</strong>
+        <NavLink to="/">
+          <Button onClick={() => alert('Корзина')} className={styles.button}>
+            <img src={basketIcon} alt="Корзина" className={styles.icon} />
+          </Button>
+        </NavLink>
+      </div>
+    </div>
+
+    <div className={styles.cards}>
+      <div className={styles.imgCards}>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            src={heartIconCards}
+            className={styles.heartIconCards}
+            height="20"
+            width="20"
+            alt="Закладки"
+          />
+        </NavLink>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            className={styles.toy}
+            src={toyHedgehog1}
+            height="90"
+            width="90"
+            alt="Ёж"
+          />
+        </NavLink>
+      </div>
+      <div className={styles.description}>
+        <p className={styles.title}>Жора- ёжик с веселым хвостиком</p>
+      </div>
+      <div className={styles.price}>
+        <span>Цена:</span>
+        <strong>4&nbsp;100&nbsp;₽</strong>
+        <NavLink to="/">
+          <Button onClick={() => alert('Корзина')} className={styles.button}>
+            <img src={basketIcon} alt="Корзина" className={styles.icon} />
+          </Button>
+        </NavLink>
+      </div>
+    </div>
+
+    <div className={styles.cards}>
+      <div className={styles.imgCards}>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            src={heartIconCards}
+            className={styles.heartIconCards}
+            height="20"
+            width="20"
+            alt="Закладки"
+          />
+        </NavLink>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            className={styles.toy}
+            src={toyKitty}
+            height="90"
+            width="90"
+            alt="Кошка"
+          />
+        </NavLink>
+      </div>
+      <div className={styles.description}>
+        <p className={styles.title}>Кисуля Китти красотка в зеленом платье</p>
+      </div>
+      <div className={styles.price}>
+        <span>Цена:</span>
+        <strong>5&nbsp;700&nbsp;₽</strong>
+        <NavLink to="/">
+          <Button onClick={() => alert('Корзина')} className={styles.button}>
+            <img src={basketIcon} alt="Корзина" className={styles.icon} />
+          </Button>
+        </NavLink>
+      </div>
+    </div>
+
+    <div className={styles.cards}>
+      <div className={styles.imgCards}>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            src={heartIconCards}
+            className={styles.heartIconCards}
+            height="20"
+            width="20"
+            alt="Закладки"
+          />
+        </NavLink>
+        <NavLink
+          to="/" //! обязательный проп: куда ведёт ссылка
+        >
+          <img
+            className={styles.toy}
+            src={toyButterfly}
+            height="90"
+            width="90"
+            alt="Бабочка"
+          />
+        </NavLink>
+      </div>
+      <div className={styles.description}>
+        <p className={styles.title}>Бабочка Фея подарит сладкие сны</p>
+      </div>
+      <div className={styles.price}>
+        <span>Цена:</span>
+        <strong>5&nbsp;700&nbsp;₽</strong>
+        <NavLink to="/">
+          <Button onClick={() => alert('Корзина')} className={styles.button}>
+            <img src={basketIcon} alt="Корзина" className={styles.icon} />
+          </Button>
+        </NavLink>
+      </div>
     </div>
   </main>
 );
