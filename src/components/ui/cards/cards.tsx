@@ -22,7 +22,7 @@ import {
 } from './index';
 
 export const Cards: FC<TCardsProps> = ({ title }) => (
-  <main>
+  <main className={styles.card}>
     <div className={styles.cards}>
       <div className={styles.imgCards}>
         <NavLink
@@ -31,8 +31,8 @@ export const Cards: FC<TCardsProps> = ({ title }) => (
           <img
             src={heartIconCards}
             className={styles.heartIconCards}
-            height="20"
-            width="20"
+            height="40"
+            width="40"
             alt="Закладки"
           />
         </NavLink>
@@ -42,8 +42,8 @@ export const Cards: FC<TCardsProps> = ({ title }) => (
           <img
             className={styles.toy}
             src={toyBee}
-            height="90"
-            width="90"
+            height="150"
+            width="150"
             alt="Пчела"
           />
         </NavLink>
@@ -70,21 +70,13 @@ export const Cards: FC<TCardsProps> = ({ title }) => (
           <img
             src={heartIconCards}
             className={styles.heartIconCards}
-            height="20"
-            width="20"
             alt="Закладки"
           />
         </NavLink>
         <NavLink
           to="/" //! обязательный проп: куда ведёт ссылка
         >
-          <img
-            className={styles.toy}
-            src={toyTiger}
-            height="90"
-            width="90"
-            alt="Тигр"
-          />
+          <img className={styles.toy} src={toyTiger} alt="Тигр" />
         </NavLink>
       </div>
       <div className={styles.description}>
@@ -109,21 +101,13 @@ export const Cards: FC<TCardsProps> = ({ title }) => (
           <img
             src={heartIconCards}
             className={styles.heartIconCards}
-            height="20"
-            width="20"
             alt="Закладки"
           />
         </NavLink>
         <NavLink
           to="/" //! обязательный проп: куда ведёт ссылка
         >
-          <img
-            className={styles.toy}
-            src={toySquirrel}
-            height="90"
-            width="90"
-            alt="Белка"
-          />
+          <img className={styles.toy} src={toySquirrel} alt="Белка" />
         </NavLink>
       </div>
       <div className={styles.description}>
@@ -148,21 +132,13 @@ export const Cards: FC<TCardsProps> = ({ title }) => (
           <img
             src={heartIconCards}
             className={styles.heartIconCards}
-            height="20"
-            width="20"
             alt="Закладки"
           />
         </NavLink>
         <NavLink
           to="/" //! обязательный проп: куда ведёт ссылка
         >
-          <img
-            className={styles.toy}
-            src={toyHedgehog}
-            height="90"
-            width="90"
-            alt="Ёжик"
-          />
+          <img className={styles.toy} src={toyHedgehog} alt="Ёжик" />
         </NavLink>
       </div>
       <div className={styles.description}>
@@ -187,21 +163,13 @@ export const Cards: FC<TCardsProps> = ({ title }) => (
           <img
             src={heartIconCards}
             className={styles.heartIconCards}
-            height="20"
-            width="20"
             alt="Закладки"
           />
         </NavLink>
         <NavLink
           to="/" //! обязательный проп: куда ведёт ссылка
         >
-          <img
-            className={styles.toy}
-            src={toyBunny}
-            height="90"
-            width="90"
-            alt="Зайка"
-          />
+          <img className={styles.toy} src={toyBunny} alt="Зайка" />
         </NavLink>
       </div>
       <div className={styles.description}>
@@ -226,25 +194,17 @@ export const Cards: FC<TCardsProps> = ({ title }) => (
           <img
             src={heartIconCards}
             className={styles.heartIconCards}
-            height="20"
-            width="20"
             alt="Закладки"
           />
         </NavLink>
         <NavLink
           to="/" //! обязательный проп: куда ведёт ссылка
         >
-          <img
-            className={styles.toy}
-            src={toyGirl}
-            height="90"
-            width="90"
-            alt="Кукла"
-          />
+          <img className={styles.toy} src={toyGirl} alt="Кукла" />
         </NavLink>
       </div>
       <div className={styles.description}>
-        <p className={styles.title}>Кукла Ляля-дарит улыбку</p>
+        <p className={styles.title}>Кукла Ляля - приглашает дружить</p>
       </div>
       <div className={styles.price}>
         <span>Цена:</span>
@@ -265,21 +225,13 @@ export const Cards: FC<TCardsProps> = ({ title }) => (
           <img
             src={heartIconCards}
             className={styles.heartIconCards}
-            height="20"
-            width="20"
             alt="Закладки"
           />
         </NavLink>
         <NavLink
           to="/" //! обязательный проп: куда ведёт ссылка
         >
-          <img
-            className={styles.toy}
-            src={toyFrog}
-            height="90"
-            width="90"
-            alt="Лягушка"
-          />
+          <img className={styles.toy} src={toyFrog} alt="Лягушка" />
         </NavLink>
       </div>
       <div className={styles.description}>
@@ -303,21 +255,13 @@ export const Cards: FC<TCardsProps> = ({ title }) => (
           <img
             src={heartIconCards}
             className={styles.heartIconCards}
-            height="20"
-            width="20"
             alt="Закладки"
           />
         </NavLink>
         <NavLink
           to="/" //! обязательный проп: куда ведёт ссылка
         >
-          <img
-            className={styles.toy}
-            src={toyFox}
-            height="90"
-            width="90"
-            alt="Лисенок"
-          />
+          <img className={styles.toy} src={toyFox} alt="Лисенок" />
         </NavLink>
       </div>
       <div className={styles.description}>
@@ -333,45 +277,6 @@ export const Cards: FC<TCardsProps> = ({ title }) => (
         </NavLink>
       </div>
     </div>
-    {/* 
-     <div className={styles.cards}>
-      <div className={styles.imgCards}>
-        <NavLink
-          to="/" //! обязательный проп: куда ведёт ссылка
-        >
-          <img
-            src={heartIconCards}
-            className={styles.heartIconCards}
-            height="20"
-            width="20"
-            alt="Закладки"
-          />
-        </NavLink>
-        <NavLink
-          to="/" //! обязательный проп: куда ведёт ссылка
-        >
-          <img
-            className={styles.toy}
-            src={toyBoy}
-            height="90"
-            width="90"
-            alt="Лисенок"
-          />
-        </NavLink>
-      </div>
-      <div className={styles.description}>
-        <p className={styles.title}>Игореша любит играть в футбол</p>
-      </div>
-      <div className={styles.price}>
-        <span>Цена:</span>
-        <strong>4&nbsp;700&nbsp;₽</strong>
-        <NavLink to="/">
-          <Button onClick={() => alert('Корзина')} className={styles.button}>
-            <img src={basketIcon} alt="Корзина" className={styles.icon} />
-          </Button>
-        </NavLink>
-      </div>
-    </div> */}
 
     <div className={styles.cards}>
       <div className={styles.imgCards}>
@@ -381,21 +286,13 @@ export const Cards: FC<TCardsProps> = ({ title }) => (
           <img
             src={heartIconCards}
             className={styles.heartIconCards}
-            height="20"
-            width="20"
             alt="Закладки"
           />
         </NavLink>
         <NavLink
           to="/" //! обязательный проп: куда ведёт ссылка
         >
-          <img
-            className={styles.toy}
-            src={toyDoggie}
-            height="90"
-            width="90"
-            alt="Собачка"
-          />
+          <img className={styles.toy} src={toyDoggie} alt="Собачка" />
         </NavLink>
       </div>
       <div className={styles.description}>
@@ -420,21 +317,13 @@ export const Cards: FC<TCardsProps> = ({ title }) => (
           <img
             src={heartIconCards}
             className={styles.heartIconCards}
-            height="20"
-            width="20"
             alt="Закладки"
           />
         </NavLink>
         <NavLink
           to="/" //! обязательный проп: куда ведёт ссылка
         >
-          <img
-            className={styles.toy}
-            src={toyHedgehog1}
-            height="90"
-            width="90"
-            alt="Ёж"
-          />
+          <img className={styles.toy} src={toyHedgehog1} alt="Ёж" />
         </NavLink>
       </div>
       <div className={styles.description}>
@@ -459,25 +348,17 @@ export const Cards: FC<TCardsProps> = ({ title }) => (
           <img
             src={heartIconCards}
             className={styles.heartIconCards}
-            height="20"
-            width="20"
             alt="Закладки"
           />
         </NavLink>
         <NavLink
           to="/" //! обязательный проп: куда ведёт ссылка
         >
-          <img
-            className={styles.toy}
-            src={toyKitty}
-            height="90"
-            width="90"
-            alt="Кошка"
-          />
+          <img className={styles.toy} src={toyKitty} alt="Кошка" />
         </NavLink>
       </div>
       <div className={styles.description}>
-        <p className={styles.title}>Кисуля Китти красотка в зеленом платье</p>
+        <p className={styles.title}>Кисуля Китти красотка в платье</p>
       </div>
       <div className={styles.price}>
         <span>Цена:</span>
@@ -498,21 +379,13 @@ export const Cards: FC<TCardsProps> = ({ title }) => (
           <img
             src={heartIconCards}
             className={styles.heartIconCards}
-            height="20"
-            width="20"
             alt="Закладки"
           />
         </NavLink>
         <NavLink
           to="/" //! обязательный проп: куда ведёт ссылка
         >
-          <img
-            className={styles.toy}
-            src={toyButterfly}
-            height="90"
-            width="90"
-            alt="Бабочка"
-          />
+          <img className={styles.toy} src={toyButterfly} alt="Бабочка" />
         </NavLink>
       </div>
       <div className={styles.description}>

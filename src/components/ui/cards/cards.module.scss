@@ -1,48 +1,113 @@
 @use '../../../styles/helpers/' as *;
 
-.cards {
-  @include rectangle(rem(210), rem(260));
+.card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: fluid(40, 20);
+  padding: fluid(60, 20);
 
-  margin: rem(20) rem(98) 0;
-  padding: rem(10);
+  @include laptop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    padding: rem(50) rem(50);
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   color: var(--color-black);
-  // background-color: transparent;
-  background-color: var(--color-mint-mint);
+  background-color: var(--color-mint-cream);
   border: var(--border);
   border-radius: rem(20);
+  box-sizing: border-box;
+  transition-duration: var(--transition-duration);
+  padding: rem(10);
+  width: 100%;
+  max-width: rem(320);
+
+  @include mobile {
+    max-width: rem(390);
+  }
+  @include mobile-s {
+    max-width: rem(272);
+  }
+}
+
+.heartIconCards {
+  height: fluid(40, 20);
+  width: fluid(40, 20);
 }
 
 .imgCards {
   display: grid;
   grid-template-columns: 25% 1fr;
-  // background-color: var(--color-mint-mint);
 }
 
 .toy {
+  width: rem(150);
   padding-bottom: rem(5);
+
+  @include mobile-s {
+    width: rem(100);
+  }
 }
 
 .description {
-  display: inline;
+  display: flex;
+  flex: 1;
+  align-items: center;
   justify-content: center;
 }
 
 .title {
   display: inline-block;
   font-family: var(--color-likeCount);
-  font-size: fluid(16, 10);
+  font-size: rem(20);
   letter-spacing: rem(1);
   text-align: center;
   padding: rem(10);
   font-weight: 700;
   width: 100%;
+
+  @include laptop {
+    font-size: rem(18);
+  }
+  @include mobile {
+    font-size: rem(25);
+  }
+
+  @include mobile-s {
+    font-size: rem(14);
+  }
 }
 
 .price {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: rem(14);
+  font-size: rem(20);
+  margin-top: auto;
+
+  @include laptop {
+    font-size: rem(18);
+  }
+  @include mobile {
+    font-size: rem(25);
+  }
+
+  @include mobile-s {
+    font-size: rem(14);
+  }
 }
 
 .button {
