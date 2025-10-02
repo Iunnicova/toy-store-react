@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import { Content } from '../content';
 import styles from './header.module.scss';
 import { LogoSvg } from '../../svg/LogoSvg';
 import basketIcon from '/icon/basket.svg';
@@ -10,8 +10,8 @@ import { THeaderProps } from './type';
 import { Button } from '../button';
 
 export const Header: FC<THeaderProps> = ({ userName }) => (
-  <header className="container">
-    <nav className={`${styles.header} p-4`}>
+  <header>
+    <nav className={styles.header}>
       <NavLink
         to="/" //! обязательный проп: куда ведёт ссылка
       >

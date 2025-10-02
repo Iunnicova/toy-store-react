@@ -6,7 +6,8 @@
   margin: rem(20) rem(98) 0;
   padding: rem(10);
   color: var(--color-black);
-  background-color: transparent;
+  // background-color: transparent;
+  background-color: var(--color-mint-mint);
   border: var(--border);
   border-radius: rem(20);
 }
@@ -14,6 +15,7 @@
 .imgCards {
   display: grid;
   grid-template-columns: 25% 1fr;
+  // background-color: var(--color-mint-mint);
 }
 
 .toy {

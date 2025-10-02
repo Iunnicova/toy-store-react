@@ -11,14 +11,16 @@
 // import '../../index.scss';
 
 import { BrowserRouter } from 'react-router-dom';
-import { Header, Cards } from '../ui';
+import { Header, Cards, Content } from '../ui';
 import '../../index.scss';
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Header userName="V" />
-      <Cards title="V" />
+      <Content>
+        <Header userName="V" />
+        <Cards title="V" />
+      </Content>
     </BrowserRouter>
   );
 }
