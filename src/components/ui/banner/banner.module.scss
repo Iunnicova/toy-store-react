@@ -5,26 +5,24 @@
   justify-content: center;
   transition-duration: var(--transition-duration);
   padding: rem(20) rem(60);
-
 }
 
 .imgBanner {
- width: fluid(1000, 290);
-height: fluid(600, 200);
+  width: fluid(1000, 290);
+  height: fluid(600, 200);
 
-// @include laptop {
-//   width: rem(600);
-// height: rem(400);
-// }
+  // @include laptop {
+  //   width: rem(600);
+  // height: rem(400);
+  // }
 
+  //  @include mobile {
+  //   width: rem(380);
+  //   height: rem(290);
+  //  }
 
-//  @include mobile {
-//   width: rem(380);
-//   height: rem(290);
-//  }
-
-//  @include mobile-s {
-//   width: rem(290);
-//   height: rem(200);
-//  }
+  //  @include mobile-s {
+  //   width: rem(290);
+  //   height: rem(200);
+  //  }
 }

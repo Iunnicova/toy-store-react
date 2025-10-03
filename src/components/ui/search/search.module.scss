@@ -23,7 +23,7 @@
 .searchTitle {
   font-family: var(--font-family-bottom);
   font-size: fluid(40, 20);
-  color: var(--color-green-grey);
+  color: var(--color-dusty-purple);
   text-transform: uppercase;
 
   @include laptop {
@@ -57,10 +57,25 @@
   text-align: center;
   text-transform: uppercase;
   border: var(--border);
+  opacity: 0.8;
   font-size: rem(18);
-  line-height: rem(48); 
+  line-height: rem(48);
   border-radius: rem(12);
+  background-color: var(--color-mint-cream);
   padding: rem(1) rem(24);
+
+  //для добавления тени рамки контактов при наведении
+  @include hover {
+    box-shadow: var(--shadow);
+    border-color: var(--color-likeCount);
+    transition: box-shadow var(--transition-duration) ease;
+  }
+
+  //текст внутри поля
+  &::placeholder {
+    color: var(--color-dusty-purple);
+    transition: opacity 0.3s ease;
+  }
 
   @include mobile-s {
     font-size: rem(14);
@@ -80,4 +95,4 @@
   }
 }
 
-//  line-height: rem(48); //* центрируем по вертикали (равно height) 
+//  line-height: rem(48); //* центрируем по вертикали (равно height)
