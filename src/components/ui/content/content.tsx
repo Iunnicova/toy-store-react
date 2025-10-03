@@ -1,9 +1,8 @@
-import { FC } from 'react';
+//Рамка в которой находится весь контент
+
 import styles from './content.module.scss';
-
 import { ContentProps } from './type';
-// import { NavLink } from 'react-router-dom';
 
-export const Content: FC<ContentProps> = ({ children }) => {
+export const Content = ({ children }: ContentProps) => {
   return <main className={`container ${styles.content}`}>{children}</main>;
 };

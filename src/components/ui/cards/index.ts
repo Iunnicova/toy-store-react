@@ -3,7 +3,9 @@ export { Cards } from './cards';
 // cards/index.ts
 import styles from './cards.module.scss';
 import basketIcon from '/icon/basket.svg';
+import searchIcon from '/icon/search.svg';
 import heartIconCards from '/icon/heart.svg';
+
 import toyBee from '/images/toy.png';
 import toyTiger from '/images/toy2.png';
 import toySquirrel from '/images/toy3.png';
@@ -24,7 +26,9 @@ export * from './type'; // экспорт типов
 export {
   styles,
   basketIcon,
+  searchIcon,
   heartIconCards,
+
   toyBee,
   toyTiger,
   toySquirrel,

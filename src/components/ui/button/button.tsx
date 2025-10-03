@@ -1,13 +1,8 @@
-import React, { FC, ReactNode } from 'react';
+// import React, { FC, ReactNode } from 'react'; устарело
 import styles from './button.module.scss';
 import { ButtonProps } from './type';
 
-export const Button: FC<ButtonProps> = ({
-  children,
-  onClick,
-  type = 'button',
-  className,
-}) => {
+export const Button = ({ children, onClick,type = 'button', className }: ButtonProps) => {
   return (
     <button
       type={type}

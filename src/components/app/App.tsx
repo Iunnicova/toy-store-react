@@ -1,13 +1,14 @@
 import { BrowserRouter } from 'react-router-dom';
-import { Header, Cards, Content } from '../ui';
+import { Header, Cards, Content, Banner } from '../ui';
 import '../../index.scss';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Content>
-        <Header userName="V" />
-        <Cards title="V" />
+        <Header userName="" />
+        <Banner/>
+        <Cards title="" />
       </Content>
     </BrowserRouter>
   );
