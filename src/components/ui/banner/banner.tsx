@@ -6,8 +6,6 @@ export const Banner = () => (
     <img
       src={toyBanner5}
       className={styles.imgBanner}
-      // height="600"
-      // width="600"
       alt="Друзья на пикнике"
     />
   </section>
