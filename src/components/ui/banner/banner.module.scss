@@ -1,0 +1,12 @@
+@use '../../../styles/helpers/' as *;
+
+.banner {
+  display: flex;
+  justify-content: center;
+  padding: rem(20) rem(60);
+}
+
+.imgBanner {
+  height: rem(400);
+  width: rem(600);
+}

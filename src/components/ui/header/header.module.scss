@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 52% 1fr;
   border-bottom: var(--border);
-  padding: rem(43) rem(60);
+  padding: rem(43) rem(80);
 
   @include mobile {
     grid-auto-flow: row; /* меняем направление */
@@ -118,3 +118,4 @@
 // align-items: center;              //* выравнивание по вертикали (работают и там, и там)
 // overflow: hidden;                 //* обрезаем содержимое, выходящее за пределы (работают и там, и там)
 // flex: 1;   /* займёт всё доступное пространство */
+//justify-content: space-between;   //* раскидывает

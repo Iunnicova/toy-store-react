@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
-import { Header, Cards, Content, Banner } from '../ui';
+import { Header, Cards, Content, Banner, Search } from '../ui';
 import '../../index.scss';
 
 export default function App() {
@@ -7,7 +7,8 @@ export default function App() {
     <BrowserRouter>
       <Content>
         <Header userName="" />
-        <Banner/>
+        <Banner />
+        <Search />
         <Cards title="" />
       </Content>
     </BrowserRouter>

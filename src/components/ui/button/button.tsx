@@ -2,7 +2,12 @@
 import styles from './button.module.scss';
 import { ButtonProps } from './type';
 
-export const Button = ({ children, onClick,type = 'button', className }: ButtonProps) => {
+export const Button = ({
+  children,
+  onClick,
+  type = 'button',
+  className,
+}: ButtonProps) => {
   return (
     <button
       type={type}
