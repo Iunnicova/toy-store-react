@@ -10,8 +10,8 @@ import { THeaderProps } from './type';
 import { Button } from '../button';
 
 export const Header: FC<THeaderProps> = ({ userName }) => (
-  <header>
-    <nav className={styles.header}>
+  <>
+    <header className={styles.header}>
       <NavLink
         to="/" //! обязательный проп: куда ведёт ссылка
       >
@@ -49,8 +49,8 @@ export const Header: FC<THeaderProps> = ({ userName }) => (
           </NavLink>
         </li>
       </ul>
-    </nav>
-  </header>
+    </header>
+  </>
 );
 
 //*! 1
