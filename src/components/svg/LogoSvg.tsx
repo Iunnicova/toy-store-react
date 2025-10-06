@@ -30,7 +30,7 @@ export const LogoSvg: React.FC<LogoSvgProps> = ({ className, type }) => {
         </linearGradient>
         <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="1">
           <stop offset="10%" stopColor={strokeColor} />
-          <stop offset="100%" stopColor="#b38300" />
+          <stop offset="100%" stopColor="#d3500f" />
         </linearGradient>
       </defs>
 
@@ -68,7 +68,7 @@ export const LogoSvg: React.FC<LogoSvgProps> = ({ className, type }) => {
         y1="91"
         x2="65"
         y2="21.5"
-        style={{ stroke: '#7a6400', strokeWidth: 5 }}
+        style={{ stroke: '#682909', strokeWidth: 5 }}
         transform="translate(1.5,1.5)"
         strokeLinecap="round"
       />

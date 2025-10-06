@@ -53,5 +53,3 @@ export const Cards = () => {
     </article>
   );
 };
-
-//  &nbsp - чтобы 5 900 не переносилось

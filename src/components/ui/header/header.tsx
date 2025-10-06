@@ -1,6 +1,4 @@
-import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Content } from '../content';
 import styles from './header.module.scss';
 import { LogoSvg } from '../../svg/LogoSvg';
 import basketIcon from '/icon/basket.svg';
@@ -9,7 +7,7 @@ import profileIcon from '/icon/profile.svg';
 import { THeaderProps } from './type';
 import { Button } from '../button';
 
-export const Header: FC<THeaderProps> = ({ userName }) => (
+export const Header = ({ userName }: THeaderProps) => (
   <>
     <header className={styles.header}>
       <NavLink
@@ -28,7 +26,7 @@ export const Header: FC<THeaderProps> = ({ userName }) => (
           <NavLink to="/basket" className={styles.navigation}>
             <Button onClick={() => alert('Корзина')} className={styles.button}>
               <img src={basketIcon} alt="Корзина" className={styles.icon} />
-              <span className={styles.count}>1250 руб</span>
+              <span className={styles.count}>1250 ₽</span>
             </Button>
           </NavLink>
         </li>
