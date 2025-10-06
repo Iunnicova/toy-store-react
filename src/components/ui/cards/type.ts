@@ -1,4 +1,6 @@
 export type TCardsProps = {
-  title: string | null;
-  //  price: number | null;
+  id: number;
+  title: string;
+  price: number;
+  toyImage: string;
 };

@@ -54,6 +54,7 @@ export const Header: FC<THeaderProps> = ({ userName }) => (
 );
 
 //*! 1
+// Tailwind CSS
 //*Margin (внешние отступы)
 // m-4 → отступ со всех сторон
 // mx-4 → по горизонтали

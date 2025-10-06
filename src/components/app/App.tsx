@@ -9,7 +9,7 @@ export default function App() {
         <Header userName="" />
         <Banner />
         <Search />
-        <Cards title="" />
+        <Cards />
       </Content>
     </BrowserRouter>
   );

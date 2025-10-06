@@ -63,6 +63,9 @@
   border-radius: rem(12);
   background-color: var(--color-mint-cream);
   padding: rem(1) rem(24);
+  box-shadow:
+    2px 2px 16px #9da8a5,
+    -2px -2px 16px #648a7e;
 
   //для добавления тени рамки контактов при наведении
   @include hover {

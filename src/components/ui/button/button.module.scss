@@ -19,6 +19,9 @@
   border-radius: rem(12);
   background: linear-gradient(45deg, #d1987b, #84a399);
   border-color: var(--color-frame);
+  box-shadow:
+    2px 2px 16px #9da8a5,
+    -2px -2px 16px #648a7e;
 
   &:hover {
     background: linear-gradient(45deg, #84a399, #d1987b); // меняем порядок
