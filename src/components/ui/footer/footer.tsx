@@ -18,10 +18,12 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
 
   return (
     <footer className={styles.footer}>
-      <ul>
-        <li>
-          <span data-testid="typography">Интернет-магазин</span>
-          <ul>
+      <ul className={styles.footerNavigation}>
+        <li className={styles.blockOnlineStore}>
+          <span className={styles.sectionContent} data-testid="typography">
+            Интернет-магазин
+          </span>
+          <ul className={styles.blockCategory}>
             <li>
               <a href="/">Доставка и оплата</a>
             </li>
@@ -39,9 +41,11 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
           </ul>
         </li>
 
-        <li>
-          <span data-testid="typography">Компания</span>
-          <ul>
+        <li className={styles.blockOnlineStore}>
+          <span className={styles.sectionContent} data-testid="typography">
+            Компания
+          </span>
+          <ul className={styles.blockCategory}>
             <li>
               <a href="/" rel="nofollow">
                 О компании
@@ -65,31 +69,33 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
           </ul>
         </li>
 
-        <li>
-          <span data-testid="typography">Покупателям</span>
+        <li className={styles.blockOnlineStore}>
+          <span className={styles.sectionContent} data-testid="typography">
+            Покупателям
+          </span>
+          <ul className={styles.blockCategory}>
+            <li>
+              <a href="/" rel="nofollow">
+                Бонусные карты
+              </a>
+            </li>
+            <li>
+              <a href="/" rel="nofollow">
+                Подарочные карты
+              </a>
+            </li>
+            <li>
+              <a href="/" rel="nofollow">
+                Проверка баланса подарочной карты
+              </a>
+            </li>
+            <li>
+              <a href="/" rel="nofollow">
+                Электронные подарочные карты
+              </a>
+            </li>
+          </ul>
         </li>
-        <ul>
-          <li>
-            <a href="/" rel="nofollow">
-              Бонусные карты
-            </a>
-          </li>
-          <li>
-            <a href="/" rel="nofollow">
-              Подарочные карты
-            </a>
-          </li>
-          <li>
-            <a href="/" rel="nofollow">
-              Проверка баланса подарочной карты
-            </a>
-          </li>
-          <li>
-            <a href="/" rel="nofollow">
-              Электронные подарочные карты
-            </a>
-          </li>
-        </ul>
       </ul>
 
       <p>{info}</p>

@@ -1,5 +1,10 @@
 @use '../../../styles/helpers/' as *;
 
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .icon {
   width: rem(40);
   height: rem(40);
