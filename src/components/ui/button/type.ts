@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 
 export interface ButtonProps {
-  children: ReactNode; 
-  onClick?: () => void; 
+  children: ReactNode;
+  onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
-  className?: string; 
+  className?: string;
 }
 
 //! props → это то, что передаётся в компонент (как настройки).
@@ -14,8 +14,8 @@ export interface ButtonProps {
 //   children: ReactNode;    //* Текст или иконка внутри кнопки
 //   onClick?: () => void;   //* Обработчик клика (опционально)
 //   type?: 'button' | 'submit' | 'reset';  //* "button": Кнопка по умолчанию, не имеет специального поведения.
- //* "submit": Кнопка формы.
- //*"reset": Форма кнопки сброса.
+//* "submit": Кнопка формы.
+//*"reset": Форма кнопки сброса.
 
 //  className?: string; //* Дополнительные стили
 // }
