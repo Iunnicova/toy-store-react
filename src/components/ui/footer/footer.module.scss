@@ -37,6 +37,60 @@
   line-height: 100%;
   letter-spacing: 0%;
   padding-top: rem(10);
+
+  @include hover {
+    color: var(--color-likeCount);
+  }
 }
 
 //*******
+
+.socialAndSubscribe {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: start;
+  padding-top: rem(30);
+}
+
+.copyrightNotice {
+  color: var(--color-dusty-purple);
+  font-family: var(--font-family-bottom);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding-top: rem(10);
+}
+
+.socialLinks {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  padding: rem(15) rem(2) 0;
+  gap: rem(20);
+}
+
+.icon {
+  width: rem(40);
+  height: rem(40);
+  color: var(--color-dusty-purple);
+
+  @include hover {
+    color: var(--color-likeCount);
+  }
+}
+
+.subscribe {
+  display: flex;
+  justify-self: end;
+  gap: rem(20);
+}
+
+.input {
+  width: rem(350);
+}
+
+.button {
+  width: rem(150);
+}
