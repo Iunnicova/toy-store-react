@@ -6,6 +6,7 @@ import { TFooterProps } from './type';
 import { ReactComponent as InstagramIcon } from '../../../../icon/instagram.svg';
 import { ReactComponent as Vk } from '../../../../icon/vk.svg';
 import { ReactComponent as FacebookIcon } from '../../../../icon/facebook.svg';
+import { Input } from '../input';
 
 const socialIconMap = {
   Instagram: InstagramIcon,
@@ -105,7 +106,6 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
       </ul>
       <section className={styles.socialAndSubscribe}>
         <p className={styles.copyrightNotice}>{info}</p>
-
         <ul className={styles.socialLinks}>
           {socialLinks.map((link) => {
             const Icon = socialIconMap[link.name as keyof typeof socialIconMap];
@@ -118,16 +118,8 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
             );
           })}
         </ul>
-
         <div className={styles.subscribe}>
-          <input
-            className={`input ${styles.input}`}
-            // className={styles.input}
-            type="email"
-            placeholder="Введите e-mail"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
+          <Input type="text" placeholder="Электронная почта" />
           <Button onClick={() => onSubscribe(email)} className={styles.button}>
             <p className={styles.count}>Подписаться</p>
           </Button>
