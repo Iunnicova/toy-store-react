@@ -25,18 +25,24 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
           </span>
           <ul className={styles.blockCategory}>
             <li>
-              <a href="/">Доставка и оплата</a>
+              <a className={styles.link} href="/">
+                Доставка и оплата
+              </a>
             </li>
             <li>
-              <a href="/">Обмен и возврат товара</a>
+              <a className={styles.link} href="/">
+                Обмен и возврат товара
+              </a>
             </li>
             <li>
-              <a href="/" rel="nofollow">
+              <a className={styles.link} href="/" rel="nofollow">
                 Правила продажи
               </a>
             </li>
             <li>
-              <a href="/">Политика конфиденциальности</a>
+              <a className={styles.link} href="/">
+                Политика конфиденциальности
+              </a>
             </li>
           </ul>
         </li>
@@ -47,22 +53,22 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
           </span>
           <ul className={styles.blockCategory}>
             <li>
-              <a href="/" rel="nofollow">
+              <a className={styles.link} href="/" rel="nofollow">
                 О компании
               </a>
             </li>
             <li>
-              <a href="/" rel="nofollow">
+              <a className={styles.link} href="/" rel="nofollow">
                 Инвесторам
               </a>
             </li>
             <li>
-              <a href="/" rel="nofollow">
+              <a className={styles.link} href="/" rel="nofollow">
                 Вакансии
               </a>
             </li>
             <li>
-              <a href="/" rel="nofollow">
+              <a className={styles.link} href="/" rel="nofollow">
                 Контакты
               </a>
             </li>
@@ -75,59 +81,67 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
           </span>
           <ul className={styles.blockCategory}>
             <li>
-              <a href="/" rel="nofollow">
+              <a className={styles.link} href="/" rel="nofollow">
                 Бонусные карты
               </a>
             </li>
             <li>
-              <a href="/" rel="nofollow">
+              <a className={styles.link} href="/" rel="nofollow">
                 Подарочные карты
               </a>
             </li>
             <li>
-              <a href="/" rel="nofollow">
+              <a className={styles.link} href="/" rel="nofollow">
                 Проверка баланса подарочной карты
               </a>
             </li>
             <li>
-              <a href="/" rel="nofollow">
+              <a className={styles.link} href="/" rel="nofollow">
                 Электронные подарочные карты
               </a>
             </li>
           </ul>
         </li>
       </ul>
+      <section className={styles.socialAndSubscribe}>
+        <p className={styles.copyrightNotice}>{info}</p>
 
-      <p>{info}</p>
+        <ul className={styles.socialLinks}>
+          {socialLinks.map((link) => {
+            const Icon = socialIconMap[link.name as keyof typeof socialIconMap];
+            return (
+              <li key={link.name}>
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  {Icon && <Icon className={styles.icon} />}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
 
-      <ul className={styles.socialLinks}>
-        {socialLinks.map((link) => {
-          const Icon = socialIconMap[link.name as keyof typeof socialIconMap];
-          return (
-            <li key={link.name}>
-              <a href={link.url} target="_blank" rel="noopener noreferrer">
-                {Icon && <Icon className={styles.icon} />}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-
-      <div className={styles.subscribe}>
-        <input
-          className={styles.input}
-          type="email"
-          placeholder="Введите e-mail"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <Button onClick={() => onSubscribe(email)} className={styles.button}>
-          <p className={styles.count}>Подписаться</p>
-        </Button>
-      </div>
+        <div className={styles.subscribe}>
+          <input
+            className={`input ${styles.input}`}
+            // className={styles.input}
+            type="email"
+            placeholder="Введите e-mail"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <Button onClick={() => onSubscribe(email)} className={styles.button}>
+            <p className={styles.count}>Подписаться</p>
+          </Button>
+        </div>
+      </section>
     </footer>
   );
 };
+
+// - map() — это способ перебрать массив и создать элементы на его основе.
+// - key — уникальный идентификатор для каждого элемента списка.
+// - target="_blank" — открывает ссылку в новой вкладке.
+// - rel="noopener noreferrer" — защита от уязвимостей при открытии внешних ссылок.
+// - socialIconMap — это объект, где каждому имени соцсети соответствует компонент иконки.
 
 //!   const [email, setEmail] = useState('');
 //? useState — это специальная функция из React, которая помогает компоненту запоминать и хранить данные (состояние).
