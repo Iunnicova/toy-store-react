@@ -3,7 +3,7 @@ import basketIcon from '/icon/basket.svg';
 import heartIconCards from '/icon/heart.svg';
 
 import { Button } from '../button';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { toys } from './toysData';
 
 export const Cards = () => {
@@ -12,41 +12,27 @@ export const Cards = () => {
       {toys.map((toy) => (
         <div className={styles.cards} key={toy.id}>
           <div className={styles.imgCards}>
-            <NavLink to="/">
+            <button className={styles.heartButton}>
               <img
-                src={heartIconCards}
                 className={styles.heartIconCards}
-                height={40}
-                width={40}
+                src={heartIconCards}
                 alt="Закладки"
               />
-            </NavLink>
-
-            <NavLink to="/">
-              <img
-                className={styles.toy}
-                src={toy.toyImage}
-                height={150}
-                width={150}
-                alt={toy.title}
-              />
-            </NavLink>
+            </button>
+            <Link to="/">
+              <img className={styles.toy} src={toy.toyImage} alt={toy.title} />
+            </Link>
           </div>
-
           <p className={styles.title}>{toy.title}</p>
-
           <div className={styles.price}>
             <span>Цена:</span>
             <strong>{toy.price?.toLocaleString('ru-RU')} ₽</strong>
-
-            <NavLink to="/">
-              <Button
-                className={styles.button}
-                onClick={() => alert('Добавлено в корзину')}
-              >
-                <img className={styles.icon} src={basketIcon} alt="Корзина" />
-              </Button>
-            </NavLink>
+            <Button
+              className={styles.button}
+              onClick={() => alert('Добавлено в корзину')}
+            >
+              <img className={styles.icon} src={basketIcon} alt="Корзина" />
+            </Button>
           </div>
         </div>
       ))}

@@ -2,20 +2,19 @@ import { Outlet } from 'react-router-dom';
 import { Header, Footer, Banner, Search, Cards, Content } from '../ui';
 
 export const Layout = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <Content>
       <Header userName="" />
-
       <main>
         <Banner />
         <Search />
         <Cards />
-        <Outlet />{' '}
-        {/* место, куда React Router будет вставлять вложенные страницы */}
+        <Outlet />
       </main>
-
       <Footer
-        info="© 2025 UnnToyStore. Все права защищены."
+        info={`© ${currentYear} UnnToyStore. Все права защищены.`}
         socialLinks={[
           { name: 'Instagram', url: 'https://instagram.com' },
           { name: 'Vk', url: 'https://vk.com' },

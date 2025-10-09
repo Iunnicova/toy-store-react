@@ -1,6 +1,6 @@
 import styles from './search.module.scss';
 import searchIcon from '/icon/search.svg';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button } from '../button';
 import { Input } from '../input';
 
@@ -9,12 +9,12 @@ export const Search = () => (
     <h2 className={styles.searchTitle}>Найди свою любимку!</h2>
     <div className={styles.searchBox}>
       <Input type="text" placeholder="Напиши моё имя" />
-      <NavLink to="/">
+      <Link to="/">
         <Button onClick={() => alert('Поиск')} className={styles.button}>
           <img src={searchIcon} alt="Поиск" className={styles.icon} />
           <span className={styles.count}>Поиск</span>
         </Button>
-      </NavLink>
+      </Link>
     </div>
   </section>
 );
