@@ -2,7 +2,7 @@ import styles from './cards.module.scss';
 import basketIcon from '/icon/basket.svg';
 import heartIconCards from '/icon/heart.svg';
 
-import { Button } from '../button';
+import { Button } from '../Button';
 import { Link } from 'react-router-dom';
 import { toys } from './toysData';
 

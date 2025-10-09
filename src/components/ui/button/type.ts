@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export interface ButtonProps {
+export interface TButtonProps {
   children: ReactNode;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';

@@ -5,7 +5,7 @@ import basketIcon from '/icon/basket.svg';
 import heartIcon from '/icon/heart.svg';
 import profileIcon from '/icon/profile.svg';
 import { THeaderProps } from './type';
-import { Button } from '../button';
+import { Button } from '../Button';
 
 export const Header = ({ userName }: THeaderProps) => (
   <>

@@ -1,8 +1,8 @@
 import styles from './search.module.scss';
 import searchIcon from '/icon/search.svg';
 import { Link } from 'react-router-dom';
-import { Button } from '../button';
-import { Input } from '../input';
+import { Button } from '../Button';
+import { Input } from '../Input';
 
 export const Search = () => (
   <section className={styles.search}>

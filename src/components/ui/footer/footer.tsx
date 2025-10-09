@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import styles from './footer.module.scss';
-import { Button } from '../button';
+import { Button } from '../Button';
 import { TFooterProps } from './type';
 
 import { ReactComponent as InstagramIcon } from '../../../../icon/instagram.svg';
 import { ReactComponent as Vk } from '../../../../icon/vk.svg';
 import { ReactComponent as FacebookIcon } from '../../../../icon/facebook.svg';
-import { Input } from '../input';
+import { Input } from '../Input';
 
 const socialIconMap = {
   Instagram: InstagramIcon,

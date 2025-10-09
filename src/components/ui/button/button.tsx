@@ -1,13 +1,13 @@
 // import React, { FC, ReactNode } from 'react'; устарело
 import styles from './button.module.scss';
-import { ButtonProps } from './type';
+import { TButtonProps } from './type';
 
 export const Button = ({
   children,
   onClick,
   type = 'button',
   className,
-}: ButtonProps) => {
+}: TButtonProps) => {
   return (
     <button
       type={type}
