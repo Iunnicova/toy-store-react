@@ -119,8 +119,12 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
           })}
         </ul>
         <div className={styles.subscribe}>
-          <Input type="text" placeholder="Электронная почта" />
-          <Button onClick={() => onSubscribe(email)} className={styles.button}>
+          <Input
+            className={styles.input}
+            type="text"
+            placeholder="Электронная почта"
+          />
+          <Button className={styles.button} onClick={() => onSubscribe(email)}>
             <p className={styles.count}>Подписаться</p>
           </Button>
         </div>
