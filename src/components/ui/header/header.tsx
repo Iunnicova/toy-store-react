@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import styles from './header.module.scss';
+import { Link } from 'react-router-dom';
+import styles from './Header.module.scss';
 import { LogoSvg } from '../../svg/LogoSvg';
 import basketIcon from '/icon/basket.svg';
 import heartIcon from '/icon/heart.svg';
@@ -10,7 +10,7 @@ import { Button } from '../Button';
 export const Header = ({ userName }: THeaderProps) => (
   <>
     <header className={styles.header}>
-      <NavLink
+      <Link
         to="/" //! обязательный проп: куда ведёт ссылка
       >
         <div className={styles.link}>
@@ -20,31 +20,31 @@ export const Header = ({ userName }: THeaderProps) => (
             <p className={styles.slogan}>Toys that make you smile!</p>
           </div>
         </div>
-      </NavLink>
+      </Link>
       <ul className={styles.menu}>
         <li className={styles.list}>
-          <NavLink to="/basket" className={styles.navigation}>
+          <Link to="/basket" className={styles.navigation}>
             <Button onClick={() => alert('Корзина')} className={styles.button}>
               <img src={basketIcon} alt="Корзина" className={styles.icon} />
               <span className={styles.count}>1250 ₽</span>
             </Button>
-          </NavLink>
+          </Link>
         </li>
         <li className={styles.list}>
-          <NavLink to="/favorites" className={styles.navigation}>
+          <Link to="/favorites" className={styles.navigation}>
             <Button onClick={() => alert('Закладки')} className={styles.button}>
               <img src={heartIcon} alt="Закладки" className={styles.icon} />
               <p className={styles.count}>Закладки</p>
             </Button>
-          </NavLink>
+          </Link>
         </li>
         <li className={styles.list}>
-          <NavLink to="/profile" className={styles.navigation}>
+          <Link to="/profile" className={styles.navigation}>
             <Button onClick={() => alert('Профиль')} className={styles.button}>
               <img src={profileIcon} alt="Профиль" className={styles.icon} />
               <p className={styles.count}>Профиль</p>
             </Button>
-          </NavLink>
+          </Link>
         </li>
       </ul>
     </header>

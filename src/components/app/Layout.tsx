@@ -1,17 +1,22 @@
 import { Outlet } from 'react-router-dom';
-import { Header, Footer, Banner, Search, Cards, Content } from '../ui';
+import { Header, Footer, Banner, Search, Cards, Content, ControlPanel } from '../ui';
 import {
   FOOTER_INFO,
   handleSubscribe,
   SOCIAL_LINKS,
 } from '../../Constants/footerData';
+import { useState } from 'react';
 
 export const Layout = () => {
   const currentYear = new Date().getFullYear();
 
+ // Добавляем состояние темы
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
   return (
     <Content>
       <Header userName="" />
+      <ControlPanel theme={theme} setTheme={setTheme} />
       <main>
         <Banner />
         <Search />

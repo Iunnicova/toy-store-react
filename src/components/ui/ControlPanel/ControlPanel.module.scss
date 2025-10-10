@@ -1,0 +1,30 @@
+@use '../../../styles/helpers/' as *;
+
+.controlPanel {
+ padding: rem(10) rem(60);
+
+ @include mobile {
+  padding: rem(10) rem(20);
+ }
+}
+
+.lightDark button {
+    background: none;
+  border: none;
+}
+
+.activeButton {
+  outline: 2px solid var(--color-likeCount);
+  border-radius: rem(12);
+}
+
+.imgPanel {
+  width: rem(60);
+  height: rem(80);
+}
+
+// .imgLand {
+//     width: rem(60);
+//   height: rem(60);
+// }
+

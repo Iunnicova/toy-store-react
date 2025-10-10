@@ -7,7 +7,7 @@ import { ReactComponent as InstagramIcon } from '../../../../icon/instagram.svg'
 import { ReactComponent as Vk } from '../../../../icon/vk.svg';
 import { ReactComponent as FacebookIcon } from '../../../../icon/facebook.svg';
 import { Input } from '../Input';
-import { FOOTER_LINKS } from '../../../Constants/FooterLinks';
+import { FOOTER_LINKS } from '../../../Constants/footerLinks';
 
 const socialIconMap = {
   Instagram: InstagramIcon,
