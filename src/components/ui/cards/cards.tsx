@@ -4,7 +4,7 @@ import heartIconCards from '/icon/heart.svg';
 
 import { Button } from '../Button';
 import { Link } from 'react-router-dom';
-import { toys } from '../../../constants/toysData';
+import { toys } from '../../../Constants/ToysData';
 
 export const Cards = () => {
   return (

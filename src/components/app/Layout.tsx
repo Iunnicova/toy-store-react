@@ -1,5 +1,10 @@
 import { Outlet } from 'react-router-dom';
 import { Header, Footer, Banner, Search, Cards, Content } from '../ui';
+import {
+  FOOTER_INFO,
+  handleSubscribe,
+  SOCIAL_LINKS,
+} from '../../Constants/footerData';
 
 export const Layout = () => {
   const currentYear = new Date().getFullYear();
@@ -14,14 +19,15 @@ export const Layout = () => {
         <Outlet />
       </main>
       <Footer
-        info={`© ${currentYear} UnnToyStore. Все права защищены.`}
-        socialLinks={[
-          { name: 'Instagram', url: 'https://instagram.com' },
-          { name: 'Vk', url: 'https://vk.com' },
-          { name: 'Facebook', url: 'https://facebook.com' },
-        ]}
-        onSubscribe={(email) => console.log('Подписка:', email)}
+        info={FOOTER_INFO}
+        socialLinks={SOCIAL_LINKS}
+        onSubscribe={handleSubscribe}
       />
     </Content>
   );
 };
+
+//! Footer
+// info — текст для копирайта (© ...),
+// socialLinks — список соцсетей,
+// onSubscribe — функция, которая вызывается при нажатии на кнопку «Подписаться».
