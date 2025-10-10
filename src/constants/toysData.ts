@@ -10,7 +10,7 @@ import toyDoggie from '/images/toy10.png';
 import toyHedgehog1 from '/images/toy11.png';
 import toyKitty from '/images/toy12.png';
 import toyButterfly from '/images/toy13.png';
-import { TCardsProps } from './type';
+import { TCardsProps } from '../components/ui/Cards/type';
 
 export const toys: TCardsProps[] = [
   {
