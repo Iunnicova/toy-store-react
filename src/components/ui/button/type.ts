@@ -5,6 +5,7 @@ export interface TButtonProps {
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
+  variant?: 'primary' | 'toggle';
 }
 
 //! props → это то, что передаётся в компонент (как настройки).
@@ -19,3 +20,4 @@ export interface TButtonProps {
 
 //  className?: string; //* Дополнительные стили
 // }
+//  variant?: 'primary' | 'toggle';  чтобы можно менять кнопки в других файлах

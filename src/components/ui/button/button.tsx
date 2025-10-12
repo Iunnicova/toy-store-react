@@ -1,5 +1,6 @@
 // import React, { FC, ReactNode } from 'react'; устарело
-import styles from './button.module.scss';
+import classNames from 'classnames';
+import styles from './Button.module.scss';
 import { TButtonProps } from './type';
 
 export const Button = ({
@@ -7,17 +8,19 @@ export const Button = ({
   onClick,
   type = 'button',
   className,
+  variant = 'primary',
 }: TButtonProps) => {
   return (
     <button
       type={type}
-      className={`${styles.button} ${className || ''}`}
+      className={classNames(styles.button, styles[variant], className)}
       onClick={onClick}
     >
       {children}
     </button>
   );
 };
+
 
 // || "": Это оператор логического ИЛИ (ИЛИ). Он работает следующим образом:
 // Если classNameпередано (т.е. не null, не undefined, не false, не 0, не ""), то используется само значение className.
