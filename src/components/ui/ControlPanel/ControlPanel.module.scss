@@ -1,0 +1,31 @@
+@use '../../../styles/helpers/' as *;
+
+.controlPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: rem(10) rem(60);
+}
+
+.lightDark {
+  display: flex;
+  gap: rem(20);
+}
+
+.activeButton {
+  border-radius: rem(12);
+  box-shadow: 0px 0px 20px 2.5px var(--color-frame);
+}
+
+.img {
+  width: rem(50);
+  height: rem(50);
+  object-fit: cover;
+}
+
+@include mobile {
+  .controlPanel {
+    padding: rem(10) rem(20);
+  }
+}
