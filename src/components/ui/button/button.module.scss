@@ -2,7 +2,7 @@
 
 .button {
   display: inline-flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   border-radius: rem(12);
   background: transparent;
@@ -18,19 +18,24 @@
     white-space: nowrap;
     text-transform: uppercase;
     min-width: rem(100);
+    color: var(--color-likeCount);
 
     //градиент кнопки
     background: var(--gradient) border-box;
     border: rem(2) solid transparent;
     border-radius: rem(12);
-    background: linear-gradient(45deg, #d1987b, #84a399);
+    background: linear-gradient(45deg, var(--color-bottom), var(--color-frame));
     border-color: var(--color-frame);
     box-shadow:
-      2px 2px 16px #9da8a5,
-      -2px -2px 16px #648a7e;
+      2px 2px 16px var(--color-mint-mint),
+      -2px -2px 16px var(--color-frame);
 
     &:hover {
-      background: linear-gradient(45deg, #84a399, #d1987b); // меняем порядок
+      background: linear-gradient(
+        45deg,
+        var(--color-frame),
+        var(--color-bottom)
+      ); // меняем порядок
       border-color: var(--color-likeCount);
     }
   }

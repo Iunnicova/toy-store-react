@@ -6,7 +6,6 @@ import { Button } from '../Button';
 import { Link } from 'react-router-dom';
 import { toys } from '../../../Constants/toysData';
 
-
 export const Cards = () => {
   return (
     <article className={styles.card}>

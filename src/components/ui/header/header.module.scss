@@ -84,6 +84,11 @@
   border-color: var(--color-likeCount);
   width: fluid(20, 10);
   height: fluid(20, 10);
+  color: var(--color-likeCount);
+
+  &:hover {
+    border-color: var(--color-likeCount);
+  }
 }
 
 .count {
