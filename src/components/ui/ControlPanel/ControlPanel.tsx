@@ -6,13 +6,18 @@ import sunshine from '/images/sunshine.png';
 import land from '/images/land.png';
 import moon from '/images/moon.png';
 import { Button } from '../Button';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 
 export const ControlPanel = ({ theme, setTheme }: TControlPanelProps) => {
   const [activeTheme, setActiveTheme] = useState('light');
+  
   const toggleTheme = () =>
     setActiveTheme(activeTheme === 'light' ? 'dark' : 'light');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', activeTheme);
+  }, [activeTheme]);
 
   return (
     <section className={styles.controlPanel}>
@@ -48,13 +53,27 @@ export const ControlPanel = ({ theme, setTheme }: TControlPanelProps) => {
 
 //! variant='toggle' //пропс из button позволяет менять стили в Bottom
 
-{
-  /* <div className={styles.languageСhange}>
-        <button
-          // className={theme === 'dark' ? styles.activeButton : ''}
-          // onClick={() => setTheme('dark')}
-        >
-          <img className={styles.imgLand} src={land} alt="Земля" />
-        </button>
-      </div> */
-}
+// темы прописаны в variables.scss
+
+//*  Хранение темы внутри компонента
+//! const [activeTheme, setActiveTheme] = useState('light');
+// useState —      //это ячейка памяти, которая хранит данные для этого компонента.
+// activeTheme —      //текущая тема, она может быть 'light' или 'dark'.
+// setActiveTheme —    //функция, чтобы менять activeTheme.
+// 'light' в скобках — это значение по умолчанию, с чего начинается тема при загрузке.
+
+//* Функция переключения темы
+//! const toggleTheme = () => setActiveTheme(activeTheme === 'light' ? 'dark' : 'light');
+// toggleTheme —     //кнопка переключает тему.
+//* Если сейчас 'light', то переключает на 'dark'.
+//* Если сейчас 'dark', то переключает на 'light'.
+//* Символ ? : — это короткая запись if-else.
+
+//* Синхронизация с HTML
+//! useEffect(() => {
+//!   document.documentElement.setAttribute('data-theme', activeTheme);
+//! }, [activeTheme]);
+// useEffect —    // это команда: "сделай это, когда что-то изменится".
+//  когда activeTheme меняется, мы ставим атрибут data-theme на <html>.
+// Это позволяет CSS применять светлую или тёмную тему.
+// [activeTheme] — говорит React: "делай это каждый раз, когда activeTheme меняется".

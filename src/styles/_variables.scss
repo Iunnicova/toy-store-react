@@ -1,23 +1,8 @@
 @use 'helpers' as *;
 
 //пишем силектор корневого элемента переменные цветов
+
 :root {
-  // --color-dusty-purple: #682909;
-  // --color-likeCount: #d3500f;
-  // --color-bottom: #d1987b;
-  // --color-mint-cream: #b3e0d2;
-  // --color-mint-mint: #9da8a5;
-  // --color-frame: #648a7e;
-  // --color-dark: #3f4643;
-
-  --color-dusty-purple: #fd7f40;
-  --color-likeCount: #f3bca0;
-  --color-bottom: #533728;
-  --color-mint-cream: #265243;
-  --color-mint-mint: #253531;
-  --color-frame: #609282;
-  --color-dark: #254236;
-
   //градиент кнопки
   --gradient: linear-gradient(
     45deg,
@@ -37,8 +22,6 @@
   --font-family-accent: 'IndieFlower-Regular', sans-serif;
   --font-family-bottom: 'Roboto', sans-serif;
 
-  //*************
-
   // параменты контентной сетки контейнера padding 16 это расстояние между основным размером и контертом буз такой конструкции переменная работать не будет #{rem(1600)} 42:00
   --container-width: #{rem(1734)};
   --container-padding-x: #{rem(16)}; // горизонтальные границы внутриннего контейнера
@@ -46,8 +29,22 @@
   //микро-анимация транзишен
   --transition-duration: 0.6s;
 
-  // переопределяем на 1280
-  // @include laptop {
-  //   --container-width: #{rem(1280)};
-  // }
+  // Переменные для темной светлой темы
+  --color-dusty-purple: #682909;
+  --color-likeCount: #d3500f;
+  --color-bottom: #d1987b;
+  --color-mint-cream: #b3e0d2;
+  --color-mint-mint: #9da8a5;
+  --color-frame: #648a7e;
+  --color-dark: #3f4643;
+}
+
+[data-theme='dark'] {
+  --color-dusty-purple: #fd7f40;
+  --color-likeCount: #f3bca0;
+  --color-bottom: #533728;
+  --color-mint-cream: #265243;
+  --color-mint-mint: #253531;
+  --color-frame: #609282;
+  --color-dark: #254236;
 }
