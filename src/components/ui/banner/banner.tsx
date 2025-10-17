@@ -1,4 +1,4 @@
-import styles from './banner.module.scss';
+import styles from './Banner.module.scss';
 import toyBanner5 from '/images/banner5.png';
 
 export const Banner = () => (

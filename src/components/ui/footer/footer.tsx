@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './footer.module.scss';
+import styles from './Footer.module.scss';
 import { Button } from '../Button';
 import { TFooterProps } from './type';
 

@@ -1,4 +1,4 @@
-import styles from './search.module.scss';
+import styles from './Search.module.scss';
 import searchIcon from '/icon/search.svg';
 import { Link } from 'react-router-dom';
 import { Button } from '../Button';
