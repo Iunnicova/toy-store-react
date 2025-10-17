@@ -10,11 +10,18 @@ import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 
 export const ControlPanel = ({ theme, setTheme }: TControlPanelProps) => {
-  const [activeTheme, setActiveTheme] = useState('light');
+  const [activeTheme, setActiveTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'light'; //1️⃣ смотрит, есть ли сохранённая тема в localStorage.Если есть — берёт её.Если нет — ставит 'light' по умолчанию.
+  });
 
-  const toggleTheme = () =>
-    setActiveTheme(activeTheme === 'light' ? 'dark' : 'light');
+  // 2️⃣ Переключаем тему
+  const toggleTheme = () => {
+    const newTheme = activeTheme === 'light' ? 'dark' : 'light';
+    setActiveTheme(newTheme);
+    localStorage.setItem('theme', newTheme); // сохраняем в localStorage
+  };
 
+  // 3️⃣ Применяем тему к <html> чтоб не дергалась пишем правило в html в public
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', activeTheme);
   }, [activeTheme]);
@@ -77,3 +84,6 @@ export const ControlPanel = ({ theme, setTheme }: TControlPanelProps) => {
 //  когда activeTheme меняется, мы ставим атрибут data-theme на <html>.
 // Это позволяет CSS применять светлую или тёмную тему.
 // [activeTheme] — говорит React: "делай это каждый раз, когда activeTheme меняется".
+
+//!сохранить выбранную тему при перезагрузке страницы.
+//  localStorage — это как «жёсткий диск» внутри браузера: туда можно записать данные, и они не исчезнут при обновлении страницы
