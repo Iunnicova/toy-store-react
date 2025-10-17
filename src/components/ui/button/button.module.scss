@@ -28,7 +28,7 @@
     box-shadow:
       // 2px 2px 16px var(--color-mint-mint),
       // -2px -2px 16px var(--color-frame);
-       2px 2px 0px var(--color-mint-mint),
+      2px 2px 0px var(--color-mint-mint),
       -2px -2px 5px var(--color-frame);
 
     &:hover {
@@ -39,7 +39,7 @@
       ); // меняем порядок
       border-color: var(--color-likeCount);
 
-      box-shadow: 0px 5px 20px  var(--color-dark);
+      box-shadow: 0px 5px 20px var(--color-dark);
     }
   }
 

@@ -11,7 +11,7 @@ import classNames from 'classnames';
 
 export const ControlPanel = ({ theme, setTheme }: TControlPanelProps) => {
   const [activeTheme, setActiveTheme] = useState('light');
-  
+
   const toggleTheme = () =>
     setActiveTheme(activeTheme === 'light' ? 'dark' : 'light');
 
