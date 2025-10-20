@@ -7,3 +7,4 @@ export * from './Banner';
 export * from './Search';
 export * from './Footer';
 export * from './ControlPanel';
+export * from './ModalOverlay';
