@@ -13,13 +13,21 @@ import {
   handleSubscribe,
   SOCIAL_LINKS,
 } from '../../Constants/footerData';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const Layout = () => {
   const currentYear = new Date().getFullYear();
 
-  // Добавляем состояние темы
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  // Добавляем управление состояним темы
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    const saved = sessionStorage.getItem('theme');
+    return saved === 'dark' ? 'dark' : 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    sessionStorage.setItem('theme', theme);
+  }, [theme]);
 
   return (
     <Content>

@@ -9,7 +9,6 @@ import moon from '/images/moon.png';
 import { Button } from '../Button';
 
 export const ControlPanel = ({ theme, setTheme }: TControlPanelProps) => {
-
   // Применяем тему к <html> чтоб не дергалась пишем правило в html в public
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
