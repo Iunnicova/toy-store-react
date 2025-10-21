@@ -5,19 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>toy-store</title>
-
-    <!-- ✅ Скрипт мгновенной установки темы до загрузки React что бы не дергалось при перезагрузке страницы-->
-    <!-- <script>
-      const savedTheme = sessionStorage.getItem('theme');
-      const prefersDark = window.matchMedia(
-        '(prefers-color-scheme: dark)'
-      ).matches;
-      const themeToApply = savedTheme || (prefersDark ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', themeToApply);
-    </script> -->
-
     <script>
-      const savedTheme = sessionStorage.getItem('theme');
+      const savedTheme = localStorage.getItem('theme');
       const themeToApply = savedTheme || 'light';
       document.documentElement.setAttribute('data-theme', themeToApply);
     </script>
