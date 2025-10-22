@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 export interface TButtonProps {
   children: ReactNode;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
   variant?: 'primary' | 'toggle';

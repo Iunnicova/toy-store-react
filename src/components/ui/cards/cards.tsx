@@ -1,18 +1,29 @@
 import styles from './Cards.module.scss';
-import basketIcon from '/icon/basket.svg';
-import heartIconCards from '/icon/heart.svg';
-
-import { Button } from '../Button';
 import { Link } from 'react-router-dom';
+
+import heartIconCards from '/icon/heart.svg';
+import basketIcon from '/icon/basket.svg';
+import { Button } from '../Button';
 import { toys } from '../../../Constants/toysData';
 
-export const Cards = () => {
+type CardsProps = {
+  onCardClick: (toy: any) => void;
+};
+
+export const Cards = ({ onCardClick }: CardsProps) => {
   return (
     <article className={styles.card}>
       {toys.map((toy) => (
-        <div className={styles.cards} key={toy.id}>
+        <div
+          className={styles.cards}
+          key={toy.id}
+          onClick={() => onCardClick(toy)} //при клике открываем модалку
+        >
           <div className={styles.imgCards}>
-            <button className={styles.heartButton}>
+            <button
+              className={styles.heartButton}
+              onClick={(e) => e.stopPropagation()} //что бы при нажатии на сердечко не открывалась модалка
+            >
               <img
                 className={styles.heartIconCards}
                 src={heartIconCards}
@@ -29,7 +40,10 @@ export const Cards = () => {
             <strong>{toy.price?.toLocaleString('ru-RU')} ₽</strong>
             <Button
               className={styles.button}
-              onClick={() => alert('Добавлено в корзину')}
+              onClick={(e) => {
+                e.stopPropagation(); // чтобы не открывалась модалка при добавлении в корзину
+                alert('Добавлено в корзину');
+              }}
             >
               <img className={styles.icon} src={basketIcon} alt="Корзина" />
             </Button>

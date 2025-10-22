@@ -9,3 +9,4 @@ export * from './Footer';
 export * from './ThemeContext';
 export * from './ControlPanel';
 export * from './ModalOverlay';
+export * from './ModalDescriptionToy';

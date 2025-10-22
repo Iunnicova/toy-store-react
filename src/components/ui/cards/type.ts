@@ -3,4 +3,5 @@ export type TCardsProps = {
   title: string;
   price: number;
   toyImage: string;
+  onCardClick?: (toy: any) => void;
 };

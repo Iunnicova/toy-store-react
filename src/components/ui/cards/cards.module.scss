@@ -24,18 +24,17 @@
 .cards {
   display: flex;
   flex-direction: column;
-  // justify-content: flex-start;
   color: var(--color-black);
+  cursor: zoom-in;
   background-color: var(--color-mint-cream);
   border: var(--border);
   border-radius: rem(20);
   box-sizing: border-box;
-  padding: rem(10);
-  // width: 100%;
-  max-width: rem(320);
   transition:
     box-shadow 0.2s ease-in-out,
     transform 0.2s ease-in-out;
+  max-width: rem(320);
+  padding: rem(10);
 
   &:hover {
     box-shadow:
@@ -70,6 +69,7 @@
 }
 
 .toy {
+  cursor: zoom-in;
   width: rem(150);
   padding-bottom: rem(5);
 

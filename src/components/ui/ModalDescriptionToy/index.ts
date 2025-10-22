@@ -1,0 +1,1 @@
+export { ModalDescriptionToy } from './ModalDescriptionToy';

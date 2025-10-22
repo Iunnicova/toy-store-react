@@ -17,7 +17,7 @@
     border: var(--border);
     padding: rem(12) rem(24);
     white-space: nowrap;
-    min-width: rem(100);
+    min-width: rem(70);
 
     //градиент кнопки
     background: var(--gradient) border-box;
@@ -26,8 +26,6 @@
     background: linear-gradient(45deg, var(--color-bottom), var(--color-frame));
     border-color: var(--color-frame);
     box-shadow:
-      // 2px 2px 16px var(--color-mint-mint),
-      // -2px -2px 16px var(--color-frame);
       2px 2px 0px var(--color-mint-mint),
       -2px -2px 5px var(--color-frame);
 

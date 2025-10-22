@@ -1,24 +1,28 @@
-// import { ModalOverlay } from '../ModalOverlay';
-// import styles from './DescriptionToy.module.scss';
+import styles from './ModalDescriptionToy.module.scss';
+import { memo } from 'react';
 
-// import classNames from 'classnames';
-// import { TModalDescriptionToyProps } from './type';
-// import { FC, memo } from 'react';
-// import { Button } from '../Button';
+import { ModalOverlay } from '../ModalOverlay';
+import { Button } from '../Button';
+import { TModalDescriptionToyProps } from './type';
 
-// export const ModalDescriptionToy: FC<TModalDescriptionToyProps> = memo(
-//   ({ title, onClose, children, ...props }) => (
-//     <>
-//       <div className={styles.modal} {...props}>
-//         <div className={styles.header}>
-//           <h3 className= {styles.title} ПРИВЕТ </h3>
+export const ModalDescriptionToy = memo(
+  ({ title, onClose, children }: TModalDescriptionToyProps) => (
+    <>
+      <ModalOverlay onClick={onClose} /> //* Оверлей — затемнение фона
+      <div className={styles.modal}>
+        <div className={styles.header}>
+          <h3 className={styles.title}> {title} </h3>
+          <Button className={styles.close} onClick={onClose}>
+            ✕
+          </Button>
+        </div>
+        <div className={styles.content}>{children}</div>
+      </div>
+    </>
+  )
+);
 
-//         </div>
-//         <div className={styles.content}>{children}</div>
+//! memo //оптимизирует компонент, чтобы не перерисовывался без нужды
 
-//       <ModalOverlay onClick={onClose} />
-//     </>
-//   )
-// );
-
-// //! memo //оптимизирует компонент, чтобы не перерисовывался без нужды
+// Внутри компонента ModalDescriptionToy нельзя рендерить <ModalDescriptionToy> — это создаёт бесконечную рекурсию.
+// Вся логика отображения модалки должна быть в родителе в Layout.
