@@ -6,11 +6,11 @@ import basketIcon from '/icon/basket.svg';
 import { Button } from '../Button';
 import { toys } from '../../../Constants/toysData';
 
-type CardsProps = {
+type CardProps = {
   onCardClick: (toy: any) => void;
 };
 
-export const Cards = ({ onCardClick }: CardsProps) => {
+export const Cards = ({ onCardClick }: CardProps) => {
   return (
     <article className={styles.card}>
       {toys.map((toy) => (
@@ -20,7 +20,8 @@ export const Cards = ({ onCardClick }: CardsProps) => {
           onClick={() => onCardClick(toy)} //при клике открываем модалку
         >
           <div className={styles.imgCards}>
-            <button
+            <Button
+              variant="like"
               className={styles.heartButton}
               onClick={(e) => e.stopPropagation()} //что бы при нажатии на сердечко не открывалась модалка
             >
@@ -29,7 +30,7 @@ export const Cards = ({ onCardClick }: CardsProps) => {
                 src={heartIconCards}
                 alt="Закладки"
               />
-            </button>
+            </Button>
             <Link to="/">
               <img className={styles.toy} src={toy.toyImage} alt={toy.title} />
             </Link>

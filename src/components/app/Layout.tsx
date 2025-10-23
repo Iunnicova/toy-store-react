@@ -52,11 +52,7 @@ export const Layout = () => {
             title={selectedToy.title}
             onClose={handleCloseModal}
           >
-            <img
-              src={selectedToy.toyImage}
-              alt={selectedToy.title}
-              width="150"
-            />
+            <img src={selectedToy.toyImage} alt={selectedToy.title} />
             <p>Цена: {selectedToy.price.toLocaleString('ru-RU')} ₽</p>
             <p>Описание: Это любимая игрушка каждого ребёнка 💕</p>
           </ModalDescriptionToy>

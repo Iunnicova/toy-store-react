@@ -5,7 +5,7 @@ export interface TButtonProps {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
-  variant?: 'primary' | 'toggle';
+  variant?: 'primary' | 'toggle' | 'like';
 }
 
 //! props → это то, что передаётся в компонент (как настройки).
@@ -21,3 +21,15 @@ export interface TButtonProps {
 //  className?: string; //* Дополнительные стили
 // }
 //  variant?: 'primary' | 'toggle';  чтобы можно менять кнопки в других файлах
+
+//! что бы работала в других местах сердечко тема и язык прописываем
+//  <Button
+//   variant="toggle"
+//   className={classNames(styles.close, styles.button)}
+//   </Button>
+//! в стилях
+// .button {
+//   .toggle {
+//   что нужно
+//   }
+// }

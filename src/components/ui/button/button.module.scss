@@ -47,6 +47,13 @@
     height: rem(60);
     padding: 0;
   }
+
+  //сердечко
+  &.like {
+    width: rem(40);
+    height: rem(40);
+    padding: 0;
+  }
 }
 
 @include laptop {
