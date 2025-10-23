@@ -9,25 +9,24 @@ import {
   ControlPanel,
   ModalDescriptionToy,
 } from '../ui';
+
 import {
   FOOTER_INFO,
   handleSubscribe,
   SOCIAL_LINKS,
-} from '../../Constants/footerData';
+} from '../../constants/footerData';
 import { useEffect, useState } from 'react';
+import { TToy } from '../../types/toysData';
 
 export const Layout = () => {
   const currentYear = new Date().getFullYear();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedToy, setSelectedToy] = useState<{
-    title: string;
-    price: number;
-    toyImage: string;
-  } | null>(null);
+
+  const [selectedToy, setSelectedToy] = useState<TToy | null>(null);
 
   //открытие модалки
-  const handleOpenModal = (toy: any) => {
+  const handleOpenModal = (toy: TToy) => {
     setSelectedToy(toy);
     setIsModalOpen(true);
   };
@@ -46,6 +45,7 @@ export const Layout = () => {
         <Banner />
         <Search />
         <Cards onCardClick={handleOpenModal} />
+
         {/* вызов модалки */}
         {isModalOpen && selectedToy && (
           <ModalDescriptionToy
@@ -54,7 +54,13 @@ export const Layout = () => {
           >
             <img src={selectedToy.toyImage} alt={selectedToy.title} />
             <p>Цена: {selectedToy.price.toLocaleString('ru-RU')} ₽</p>
-            <p>Описание: Это любимая игрушка каждого ребёнка 💕</p>
+            <p>Размер: {selectedToy.characteristic.size} см</p>
+            <p>Материал: {selectedToy.characteristic.material}</p>
+            <p>Наполнитель: {selectedToy.characteristic.filler}</p>
+            <p>Возраст: {selectedToy.characteristic.age}</p>
+            <p>Упаковка: {selectedToy.characteristic.packaging}</p>
+
+            <p>{`Описание: ${selectedToy.description ?? ''}  Подходит для игр, сна, украшения комнаты и как антистресс. Игрушка легко стирается и сохраняет форму — мамы оценят! Прекрасный подарок на день рождения, праздник или просто для радости.`}</p>
           </ModalDescriptionToy>
         )}
         <Outlet />
@@ -67,6 +73,12 @@ export const Layout = () => {
     </Content>
   );
 };
+
+//! {`Описание: ${selectedToy.description ?? ''}
+// ${selectedToy.description ?? ''}
+// Берём описание конкретной игрушки.
+// Если selectedToy.description undefined или null, вместо него подставится пустая строка ''.
+// Это защита от ошибок, если вдруг у игрушки нет описания.
 
 //! Footer
 // info — текст для копирайта (© ...),

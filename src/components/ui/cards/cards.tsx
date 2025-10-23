@@ -4,11 +4,8 @@ import { Link } from 'react-router-dom';
 import heartIconCards from '/icon/heart.svg';
 import basketIcon from '/icon/basket.svg';
 import { Button } from '../Button';
-import { toys } from '../../../Constants/toysData';
-
-type CardProps = {
-  onCardClick: (toy: any) => void;
-};
+import { toys } from '../../../constants/toysData';
+import { CardProps } from './type';
 
 export const Cards = ({ onCardClick }: CardProps) => {
   return (
