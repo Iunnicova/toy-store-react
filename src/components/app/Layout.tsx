@@ -50,9 +50,13 @@ export const Layout = () => {
         {isModalOpen && selectedToy && (
           <ModalDescriptionToy
             title={selectedToy.title}
+              toyImage={selectedToy.toyImage} // передаем картинку напрямую
             onClose={handleCloseModal}
           >
+            <div>
             <img src={selectedToy.toyImage} alt={selectedToy.title} />
+  <p>{`Описание: ${selectedToy.description ?? ''}  Подходит для игр, сна, украшения комнаты и как антистресс. Игрушка легко стирается и сохраняет форму — мамы оценят! Прекрасный подарок на день рождения, праздник или просто для радости.`}</p>
+</div>
             <p>Цена: {selectedToy.price.toLocaleString('ru-RU')} ₽</p>
             <p>Размер: {selectedToy.characteristic.size} см</p>
             <p>Материал: {selectedToy.characteristic.material}</p>
@@ -60,7 +64,7 @@ export const Layout = () => {
             <p>Возраст: {selectedToy.characteristic.age}</p>
             <p>Упаковка: {selectedToy.characteristic.packaging}</p>
 
-            <p>{`Описание: ${selectedToy.description ?? ''}  Подходит для игр, сна, украшения комнаты и как антистресс. Игрушка легко стирается и сохраняет форму — мамы оценят! Прекрасный подарок на день рождения, праздник или просто для радости.`}</p>
+          
           </ModalDescriptionToy>
         )}
         <Outlet />
