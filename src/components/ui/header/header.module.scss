@@ -37,7 +37,8 @@
 }
 
 .title {
-  display: block;
+  // display: block;
+  // display: grid;
   font-family: var(--color-dusty-purple);
   font-size: fluid(40, 20);
   letter-spacing: 0%;
@@ -47,7 +48,8 @@
 }
 
 .slogan {
-  display: block;
+  // display: block;
+  // display: grid;
   font-size: fluid(25, 14);
   font-weight: 700;
   padding-left: rem(20);

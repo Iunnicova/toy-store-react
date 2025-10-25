@@ -1,5 +1,3 @@
 export const ProfilePage = () => {
-  return <h2>
-    
-  </h2>;
+  return <h2></h2>;
 };

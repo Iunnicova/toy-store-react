@@ -3,6 +3,7 @@
 .button {
   display: inline-flex;
   align-items: center;
+  // align-items: stretch;
   justify-content: center;
   border-radius: rem(12);
   background: transparent;
@@ -11,6 +12,7 @@
 
   //основные кнопки
   &.primary {
+    display: flex;
     gap: rem(20);
     color: var(--color-dusty-purple);
     text-transform: uppercase;
@@ -59,6 +61,7 @@
 @include laptop {
   .button {
     &.primary {
+      display: flex;
       gap: rem(5);
       min-width: rem(90);
       padding: rem(10) rem(24);
@@ -69,6 +72,7 @@
 @include mobile {
   .button {
     &.primary {
+      display: flex;
       gap: rem(4);
       font-size: rem(14);
       border-radius: rem(8);
