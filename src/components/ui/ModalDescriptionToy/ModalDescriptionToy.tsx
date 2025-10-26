@@ -26,7 +26,7 @@ export const ModalDescriptionToy = memo(
             />
           </Button>
 
-          <h2 className={styles.title}> {title} </h2>
+          <h2 className={styles.titleModal}> {title} </h2>
           <Button
             variant="toggle"
             className={classNames(styles.close, styles.button)}
@@ -35,31 +35,56 @@ export const ModalDescriptionToy = memo(
             ✕
           </Button>
         </div>
+
         <div className={styles.modalContent}>
           <img src={toyImage} alt={title} className={styles.image} />
-          <div className={styles.characteristics}>
-            <p>Размер: {toy.characteristic.size} см</p>
-            <p>Материал: {toy.characteristic.material}</p>
-            <p>Наполнитель: {toy.characteristic.filler}</p>
-            <p>Возраст: {toy.characteristic.age}</p>
-            <p>Упаковка: {toy.characteristic.packaging}</p>
-          </div>
+
+          <dl className={styles.characteristics}>
+            <div className={styles.row}>
+              <dt>Размер:</dt>
+              <dd>{toy.characteristic.size} см</dd>
+            </div>
+            <div className={styles.row}>
+              <dt>Материал:</dt>
+              <dd>{toy.characteristic.material}</dd>
+            </div>
+            <div className={styles.row}>
+              <dt>Наполнитель:</dt>
+              <dd>{toy.characteristic.filler}</dd>
+            </div>
+            <div className={styles.row}>
+              <dt>Возраст:</dt>
+              <dd>{toy.characteristic.age}</dd>
+            </div>
+            <div className={styles.row}>
+              <dt>Упаковка:</dt>
+              <dd>{toy.characteristic.packaging}</dd>
+            </div>
+          </dl>
           <div className={styles.description}>
             <p className={styles.textDescription}>
-              {`Описание: ${toy.description ?? ''} Подходит для игр, сна, украшения комнаты и как антистресс. Игрушка легко стирается и сохраняет форму — мамы оценят! Прекрасный подарок на день рождения, праздник или просто для радости.`}
+              <span className={styles.label}>Описание:</span>{' '}
+              {toy.description ?? ''}
+            </p>
+            <p className={styles.additionalDescription}>
+              Подходит для игр, сна, украшения комнаты и как антистресс. Игрушка
+              легко стирается и сохраняет форму — мамы оценят! Прекрасный
+              подарок на день рождения, праздник или просто для радости.
             </p>
           </div>
-          <div className={styles.priceBasket}>
-            <p>Цена: {toy.price.toLocaleString('ru-RU')} ₽</p>
-            <Button
-              className={styles.button}
-              onClick={(e) => {
-                alert('Добавлено в корзину');
-              }}
-            >
-              <img className={styles.icon} src={basketIcon} alt="Корзина" />
-            </Button>
-          </div>
+        </div>
+        <div className={styles.priceBasket}>
+          <p className={styles.priceModal}>
+            Цена: {toy.price.toLocaleString('ru-RU')} ₽
+          </p>
+          <Button
+            className={styles.button}
+            onClick={(e) => {
+              alert('Добавлено в корзину');
+            }}
+          >
+            <img className={styles.icon} src={basketIcon} alt="Корзина" />
+          </Button>
         </div>
       </div>
     </>
