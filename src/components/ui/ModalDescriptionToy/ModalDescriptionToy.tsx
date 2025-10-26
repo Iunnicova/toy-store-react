@@ -38,7 +38,6 @@ export const ModalDescriptionToy = memo(
         <div className={styles.modalContent}>
           <img src={toyImage} alt={title} className={styles.image} />
           <div className={styles.characteristics}>
-           
             <p>Размер: {toy.characteristic.size} см</p>
             <p>Материал: {toy.characteristic.material}</p>
             <p>Наполнитель: {toy.characteristic.filler}</p>
@@ -51,8 +50,8 @@ export const ModalDescriptionToy = memo(
             </p>
           </div>
           <div className={styles.priceBasket}>
-             <p>Цена: {toy.price.toLocaleString('ru-RU')} ₽</p>
-               <Button
+            <p>Цена: {toy.price.toLocaleString('ru-RU')} ₽</p>
+            <Button
               className={styles.button}
               onClick={(e) => {
                 alert('Добавлено в корзину');
