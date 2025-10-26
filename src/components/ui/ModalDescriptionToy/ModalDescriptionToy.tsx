@@ -2,6 +2,7 @@ import styles from './ModalDescriptionToy.module.scss';
 import { memo } from 'react';
 
 import heartIconCards from '/icon/heart.svg';
+import basketIcon from '/icon/basket.svg';
 import { ModalOverlay } from '../ModalOverlay';
 import { Button } from '../Button';
 import { TModalDescriptionToyProps } from './type';
@@ -37,7 +38,7 @@ export const ModalDescriptionToy = memo(
         <div className={styles.modalContent}>
           <img src={toyImage} alt={title} className={styles.image} />
           <div className={styles.characteristics}>
-            <p>Цена: {toy.price.toLocaleString('ru-RU')} ₽</p>
+           
             <p>Размер: {toy.characteristic.size} см</p>
             <p>Материал: {toy.characteristic.material}</p>
             <p>Наполнитель: {toy.characteristic.filler}</p>
@@ -48,6 +49,17 @@ export const ModalDescriptionToy = memo(
             <p className={styles.textDescription}>
               {`Описание: ${toy.description ?? ''} Подходит для игр, сна, украшения комнаты и как антистресс. Игрушка легко стирается и сохраняет форму — мамы оценят! Прекрасный подарок на день рождения, праздник или просто для радости.`}
             </p>
+          </div>
+          <div className={styles.priceBasket}>
+             <p>Цена: {toy.price.toLocaleString('ru-RU')} ₽</p>
+               <Button
+              className={styles.button}
+              onClick={(e) => {
+                alert('Добавлено в корзину');
+              }}
+            >
+              <img className={styles.icon} src={basketIcon} alt="Корзина" />
+            </Button>
           </div>
         </div>
       </div>
