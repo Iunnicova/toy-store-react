@@ -64,11 +64,13 @@
   grid-template-areas:
     'image characteristics'
     'description description';
-  grid-template-columns: 190px 1fr;
+  grid-template-columns: 200px 1fr;
+  // justify-content: space-between;
+  // justify-items: end;
   gap: 10px;
   overflow-y: auto;
   max-height: 70vh; //палока скрола
-  padding-right: 10px;
+  padding-right: 20px;
   max-width: 100%;
 }
 
@@ -87,17 +89,20 @@
 
 .characteristics {
   display: grid;
-  grid-area: characteristics;
-  // grid-auto-rows: 1fr; /* все ряды одинаковой высоты */
-  align-content: center;
-  gap: 15px;
+  // grid-area: characteristics;
+  // align-content: center;
+  text-align: end;
+  align-items: flex-end;
+  gap: 5px;
   font-size: rem(18);
+  max-width: rem(1300);
 }
 
 .row {
   display: flex;
   justify-content: space-between;
   border-bottom: 3px dotted var(--color-frame);
+  align-content: center;
 }
 
 .description {

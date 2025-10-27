@@ -24,6 +24,7 @@
 .cards {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   color: var(--color-black);
   cursor: zoom-in;
   background-color: var(--color-mint-cream);
@@ -34,7 +35,7 @@
     box-shadow 0.2s ease-in-out,
     transform 0.2s ease-in-out;
   max-width: rem(320);
-  padding: rem(10);
+  padding: rem(20);
 
   &:hover {
     box-shadow:
@@ -71,15 +72,15 @@
 .toy {
   cursor: zoom-in;
   width: rem(150);
-  padding-bottom: rem(5);
 
+  padding-bottom: rem(5);
+  object-fit: cover;
   @include mobile-s {
     width: rem(100);
   }
 }
 
 .title {
-  display: inline-block;
   font-family: var(--color-likeCount);
   font-size: rem(20);
   letter-spacing: rem(1);
@@ -106,9 +107,7 @@
   align-items: center;
   color: var(--color-likeCount);
   text-transform: uppercase;
-  // opacity: 0.6;
   font-size: rem(20);
-  margin-top: auto;
 
   @include laptop {
     font-size: rem(18);
@@ -132,5 +131,4 @@
 .icon {
   display: flex;
   justify-content: center;
-  // width: rem(125);
 }
