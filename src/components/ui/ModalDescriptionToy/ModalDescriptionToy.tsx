@@ -35,30 +35,34 @@ export const ModalDescriptionToy = memo(
             ✕
           </Button>
         </div>
-
+        
         <div className={styles.modalContent}>
           <img src={toyImage} alt={title} className={styles.image} />
-
           <dl className={styles.characteristics}>
             <div className={styles.row}>
-              <dt>Размер:</dt>
-              <dd>{toy.characteristic.size} см</dd>
+              <dt>Размер :</dt>
+              <div className={styles.line}></div>
+              <dd className={styles.value}>{toy.characteristic.size} см</dd>
             </div>
             <div className={styles.row}>
-              <dt>Материал:</dt>
-              <dd>{toy.characteristic.material}</dd>
+              <dt>Материал :</dt>
+              <div className={styles.line}></div>
+              <dd className={styles.value}>{toy.characteristic.material}</dd>
             </div>
             <div className={styles.row}>
-              <dt>Наполнитель:</dt>
-              <dd>{toy.characteristic.filler}</dd>
+              <dt>Наполнитель :</dt>
+              <div className={styles.line}></div>
+              <dd className={styles.value}>{toy.characteristic.filler}</dd>
             </div>
             <div className={styles.row}>
-              <dt>Возраст:</dt>
-              <dd>{toy.characteristic.age}</dd>
+              <dt>Возраст :</dt>
+              <div className={styles.line}></div>
+              <dd className={styles.value}>{toy.characteristic.age}</dd>
             </div>
             <div className={styles.row}>
-              <dt>Упаковка:</dt>
-              <dd>{toy.characteristic.packaging}</dd>
+              <dt>Упаковка :</dt>
+              <div className={styles.line}></div>
+              <dd className={styles.value}>{toy.characteristic.packaging}</dd>
             </div>
           </dl>
           <div className={styles.description}>
