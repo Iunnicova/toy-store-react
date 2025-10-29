@@ -62,6 +62,7 @@
 .heartIconCards {
   height: fluid(40, 20);
   width: fluid(40, 20);
+  color: var(--color-likeCount);
 }
 
 .imgCards {
@@ -126,6 +127,11 @@
   width: rem(30);
   height: rem(30);
   padding: rem(5);
+
+  @include tablet {
+    width: rem(20);
+    height: rem(20);
+  }
 }
 
 .icon {

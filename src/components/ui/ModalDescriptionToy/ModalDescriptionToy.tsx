@@ -1,13 +1,14 @@
 import styles from './ModalDescriptionToy.module.scss';
 import { memo } from 'react';
 
-import heartIconCards from '/icon/heart.svg';
+// import heartIconCards from '/icon/heart.svg';
 import basketIcon from '/icon/basket.svg';
 import { ModalOverlay } from '../ModalOverlay';
 import { Button } from '../Button';
 import { TModalDescriptionToyProps } from './type';
 import classNames from 'classnames';
 import { getCharacteristics } from '../../../constants/сharacteristic';
+import { HeartIcon } from '../../svg/HeartIcon';
 
 export const ModalDescriptionToy = memo(
   ({ title, onClose, toyImage, toy }: TModalDescriptionToyProps) => {
@@ -20,14 +21,10 @@ export const ModalDescriptionToy = memo(
           <div className={styles.header}>
             <Button
               variant="like"
-              className={styles.heartButton}
+              // className={styles.heartButton}
               onClick={(e) => e.stopPropagation()} //что бы при нажатии на сердечко не открывалась модалка
             >
-              <img
-                className={styles.heartIconCards}
-                src={heartIconCards}
-                alt="Закладки"
-              />
+              <HeartIcon className={styles.heartIconCards} />
             </Button>
 
             <h2 className={styles.titleModal}> {title} </h2>

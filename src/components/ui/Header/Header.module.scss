@@ -83,29 +83,15 @@
 }
 
 .icon {
-  border-color: var(--color-likeCount);
   width: fluid(20, 10);
   height: fluid(20, 10);
-  color: var(--color-likeCount);
-
-  &:hover {
-    border-color: var(--color-likeCount);
-  }
+  color: var(--color-dusty-purple);
 }
 
 .count {
   font-size: fluid(16, 10);
   color: var(--color-green-grey);
 }
-
-//Буква при регистрациии если понадобится
-// .username {
-//   margin-left: 0.5rem;
-//   font-weight: 500;
-//   color: #333; // или свой цвет
-//   display: inline-block;
-//   opacity: 0;
-// }
 
 //*************************
 

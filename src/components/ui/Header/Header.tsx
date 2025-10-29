@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import { LogoSvg } from '../../svg/LogoSvg';
 import basketIcon from '/icon/basket.svg';
-import heartIcon from '/icon/heart.svg';
 import profileIcon from '/icon/profile.svg';
 import { THeaderProps } from './type';
 import { Button } from '../Button';
+import { HeartIcon } from '../../svg/HeartIcon/HeartIcon';
 
 export const Header = ({ userName }: THeaderProps) => (
   <>
@@ -33,7 +33,7 @@ export const Header = ({ userName }: THeaderProps) => (
         <li className={styles.list}>
           <Link to="/favorites" className={styles.navigation}>
             <Button onClick={() => alert('Закладки')} className={styles.button}>
-              <img src={heartIcon} alt="Закладки" className={styles.icon} />
+              <HeartIcon className={styles.icon} />
               <p className={styles.count}>Закладки</p>
             </Button>
           </Link>

@@ -26,7 +26,8 @@
 }
 
 .heartIconCards {
-  width: rem(30);
+  width: rem(35);
+  color: var(--color-dusty-purple);
 }
 
 .titleModal {
@@ -36,6 +37,9 @@
 }
 
 .button {
+  width: rem(150);
+  height: rem(40);
+
   &.toggle {
     margin-left: auto;
     padding: 0;
@@ -44,10 +48,9 @@
 
 //крестик
 .close {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 700;
   cursor: pointer;
-  color: #000000;
   color: var(--color-dusty-purple);
   &:hover {
     color: var(--color-likeCount);
@@ -103,7 +106,7 @@
 
 .line {
   flex: 1;
-  border-bottom: 3px dashed var(--color-frame, #000); // запасной цвет на случай undefined
+  border-bottom: 3px dashed var(--color-frame);
   height: 0; // это важно! чтобы линия не занимала вертикальное место
   margin: 0 10px;
   transform: translateY(6px); // опускаем линию вниз
@@ -149,9 +152,4 @@
 .priceModal {
   font-size: rem(30);
   color: var(--color-likeCount);
-}
-
-.button {
-  width: rem(150);
-  height: rem(40);
 }

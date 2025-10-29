@@ -6,6 +6,7 @@ import basketIcon from '/icon/basket.svg';
 import { Button } from '../Button';
 import { toys } from '../../../constants/toysData';
 import { CardProps } from './type';
+import { HeartIcon } from '../../svg/HeartIcon';
 
 export const Cards = ({ onCardClick }: CardProps) => {
   return (
@@ -22,11 +23,7 @@ export const Cards = ({ onCardClick }: CardProps) => {
               className={styles.heartButton}
               onClick={(e) => e.stopPropagation()} //что бы при нажатии на сердечко не открывалась модалка
             >
-              <img
-                className={styles.heartIconCards}
-                src={heartIconCards}
-                alt="Закладки"
-              />
+              <HeartIcon className={styles.heartIconCards} />
             </Button>
             <Link to="/">
               <img className={styles.toy} src={toy.toyImage} alt={toy.title} />

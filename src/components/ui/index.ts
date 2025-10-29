@@ -1,5 +1,6 @@
 export * from './Header';
 export * from './Button';
+// export * from './HeartIcon';
 export * from './Input';
 export * from './Cards';
 export * from './Content';
