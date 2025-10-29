@@ -1,3 +1,8 @@
+export type TCharacteristicRow = {
+  label: string;
+  value: string;
+};
+
 export type TCharacteristic = {
   size: number; // "45 см"
   material: string; // "гипоаллергенный плюш"

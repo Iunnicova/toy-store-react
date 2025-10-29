@@ -48,7 +48,7 @@
   font-weight: 700;
   cursor: pointer;
   color: #000000;
-
+  color: var(--color-dusty-purple);
   &:hover {
     color: var(--color-likeCount);
   }
@@ -90,6 +90,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   gap: 5px;
+  color: var(--color-likeCount);
   font-size: rem(18);
 }
 

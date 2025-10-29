@@ -7,92 +7,83 @@ import { ModalOverlay } from '../ModalOverlay';
 import { Button } from '../Button';
 import { TModalDescriptionToyProps } from './type';
 import classNames from 'classnames';
+import { getCharacteristics } from '../../../constants/сharacteristic';
 
 export const ModalDescriptionToy = memo(
-  ({ title, onClose, toyImage, toy }: TModalDescriptionToyProps) => (
-    <>
-      <ModalOverlay onClick={onClose} /> //* Оверлей — затемнение фона
-      <div className={styles.modal}>
-        <div className={styles.header}>
-          <Button
-            variant="like"
-            className={styles.heartButton}
-            onClick={(e) => e.stopPropagation()} //что бы при нажатии на сердечко не открывалась модалка
-          >
-            <img
-              className={styles.heartIconCards}
-              src={heartIconCards}
-              alt="Закладки"
-            />
-          </Button>
+  ({ title, onClose, toyImage, toy }: TModalDescriptionToyProps) => {
+    const characteristics = getCharacteristics(toy.characteristic);
 
-          <h2 className={styles.titleModal}> {title} </h2>
-          <Button
-            variant="toggle"
-            className={classNames(styles.close, styles.button)}
-            onClick={onClose}
-          >
-            ✕
-          </Button>
-        </div>
-        
-        <div className={styles.modalContent}>
-          <img src={toyImage} alt={title} className={styles.image} />
-          <dl className={styles.characteristics}>
-            <div className={styles.row}>
-              <dt>Размер :</dt>
-              <div className={styles.line}></div>
-              <dd className={styles.value}>{toy.characteristic.size} см</dd>
+    return (
+      <>
+        <ModalOverlay onClick={onClose} /> //* Оверлей — затемнение фона
+        <div className={styles.modal}>
+          <div className={styles.header}>
+            <Button
+              variant="like"
+              className={styles.heartButton}
+              onClick={(e) => e.stopPropagation()} //что бы при нажатии на сердечко не открывалась модалка
+            >
+              <img
+                className={styles.heartIconCards}
+                src={heartIconCards}
+                alt="Закладки"
+              />
+            </Button>
+
+            <h2 className={styles.titleModal}> {title} </h2>
+            <Button
+              variant="toggle"
+              className={classNames(styles.close, styles.button)}
+              onClick={onClose}
+            >
+              ✕
+            </Button>
+          </div>
+
+          {/* характеристики */}
+          <div className={styles.modalContent}>
+            <img src={toyImage} alt={title} className={styles.image} />
+
+            <dl className={styles.characteristics}>
+              {characteristics.map(({ label, value }) => (
+                <div key={label} className={styles.row}>
+                  <dt>{label} :</dt>
+                  <div className={styles.line}></div>
+                  <dd className={styles.value}>{value}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <div className={styles.description}>
+              <p className={styles.textDescription}>
+                <span className={styles.label}>Описание:</span>{' '}
+                {toy.description ?? ''}
+              </p>
+              <p className={styles.additionalDescription}>
+                Подходит для игр, сна, украшения комнаты и как антистресс.
+                Игрушка легко стирается и сохраняет форму — мамы оценят!
+                Прекрасный подарок на день рождения, праздник или просто для
+                радости.
+              </p>
             </div>
-            <div className={styles.row}>
-              <dt>Материал :</dt>
-              <div className={styles.line}></div>
-              <dd className={styles.value}>{toy.characteristic.material}</dd>
-            </div>
-            <div className={styles.row}>
-              <dt>Наполнитель :</dt>
-              <div className={styles.line}></div>
-              <dd className={styles.value}>{toy.characteristic.filler}</dd>
-            </div>
-            <div className={styles.row}>
-              <dt>Возраст :</dt>
-              <div className={styles.line}></div>
-              <dd className={styles.value}>{toy.characteristic.age}</dd>
-            </div>
-            <div className={styles.row}>
-              <dt>Упаковка :</dt>
-              <div className={styles.line}></div>
-              <dd className={styles.value}>{toy.characteristic.packaging}</dd>
-            </div>
-          </dl>
-          <div className={styles.description}>
-            <p className={styles.textDescription}>
-              <span className={styles.label}>Описание:</span>{' '}
-              {toy.description ?? ''}
+          </div>
+          <div className={styles.priceBasket}>
+            <p className={styles.priceModal}>
+              Цена: {toy.price.toLocaleString('ru-RU')} ₽
             </p>
-            <p className={styles.additionalDescription}>
-              Подходит для игр, сна, украшения комнаты и как антистресс. Игрушка
-              легко стирается и сохраняет форму — мамы оценят! Прекрасный
-              подарок на день рождения, праздник или просто для радости.
-            </p>
+            <Button
+              className={styles.button}
+              onClick={(e) => {
+                alert('Добавлено в корзину');
+              }}
+            >
+              <img className={styles.icon} src={basketIcon} alt="Корзина" />
+            </Button>
           </div>
         </div>
-        <div className={styles.priceBasket}>
-          <p className={styles.priceModal}>
-            Цена: {toy.price.toLocaleString('ru-RU')} ₽
-          </p>
-          <Button
-            className={styles.button}
-            onClick={(e) => {
-              alert('Добавлено в корзину');
-            }}
-          >
-            <img className={styles.icon} src={basketIcon} alt="Корзина" />
-          </Button>
-        </div>
-      </div>
-    </>
-  )
+      </>
+    );
+  }
 );
 
 //! memo //оптимизирует компонент, чтобы не перерисовывался без нужды
