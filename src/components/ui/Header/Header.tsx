@@ -6,26 +6,27 @@ import profileIcon from '/icon/profile.svg';
 import { THeaderProps } from './type';
 import { Button } from '../Button';
 import { HeartIcon } from '../../svg/HeartIcon/HeartIcon';
+import { BasketIcon } from '../../svg/BasketIcon';
 
 export const Header = ({ userName }: THeaderProps) => (
   <>
     <header className={styles.header}>
-      <Link
-        to="/" //! обязательный проп: куда ведёт ссылка
-      >
-        <div className={styles.link}>
+      <div className={styles.link}>
+        <Link to="/">
           <LogoSvg className={styles.logo} />
-          <div className={styles.brand}>
-            <h1 className={styles.title}>Baby's Smile</h1>
-            <p className={styles.slogan}>Toys that make you smile!</p>
-          </div>
+        </Link>
+        <div className={styles.brand}>
+          <h1 className={styles.title}>Baby's Smile</h1>
+          <p className={styles.slogan}>Toys that make you smile!</p>
         </div>
-      </Link>
+      </div>
+
       <ul className={styles.menu}>
         <li className={styles.list}>
           <Link to="/basket" className={styles.navigation}>
-            <Button onClick={() => alert('Корзина')} className={styles.button}>
-              <img src={basketIcon} alt="Корзина" className={styles.icon} />
+            <Button 
+            onClick={() => alert('Корзина')} className={styles.button}>
+              <BasketIcon className={styles.icon} />
               <span className={styles.count}>1250 ₽</span>
             </Button>
           </Link>

@@ -3,7 +3,7 @@
 .card {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
+  justify-content: flex-start;
   gap: fluid(40, 20);
   padding: fluid(60, 20);
 
@@ -25,12 +25,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: var(--color-black);
+  // color: var(--color-black);
   cursor: zoom-in;
   background-color: var(--color-mint-cream);
   border: var(--border);
   border-radius: rem(20);
-  box-sizing: border-box;
+  // box-sizing: border-box;
   transition:
     box-shadow 0.2s ease-in-out,
     transform 0.2s ease-in-out;
@@ -52,17 +52,10 @@
   }
 }
 
-.heartButton {
-  background: none;
-  border: none;
-  height: fluid(40, 20);
-  width: fluid(40, 20);
-}
-
 .heartIconCards {
   height: fluid(40, 20);
   width: fluid(40, 20);
-  color: var(--color-likeCount);
+  color: var(--color-dusty-purple);
 }
 
 .imgCards {
@@ -76,6 +69,7 @@
 
   padding-bottom: rem(5);
   object-fit: cover;
+
   @include mobile-s {
     width: rem(100);
   }
@@ -129,12 +123,22 @@
   padding: rem(5);
 
   @include tablet {
-    width: rem(20);
-    height: rem(20);
+   width: rem(20);
+  height: rem(20); 
   }
 }
 
-.icon {
-  display: flex;
-  justify-content: center;
+// .icon {
+//   display: flex;
+//   justify-content: center;
+// }
+.basketIconCards {
+  height: rem(20);
+  width: rem(20);
+  color: var(--color-dusty-purple);
+
+  @include mobile {
+     height: rem(20);
+  width: rem(20);
+  }
 }

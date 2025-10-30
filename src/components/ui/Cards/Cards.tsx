@@ -1,12 +1,13 @@
 import styles from './Cards.module.scss';
 import { Link } from 'react-router-dom';
 
-import heartIconCards from '/icon/heart.svg';
-import basketIcon from '/icon/basket.svg';
+// import heartIconCards from '/icon/heart.svg';
+// import basketIcon from '/icon/basket.svg';
 import { Button } from '../Button';
 import { toys } from '../../../constants/toysData';
 import { CardProps } from './type';
 import { HeartIcon } from '../../svg/HeartIcon';
+import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
 
 export const Cards = ({ onCardClick }: CardProps) => {
   return (
@@ -20,7 +21,7 @@ export const Cards = ({ onCardClick }: CardProps) => {
           <div className={styles.imgCards}>
             <Button
               variant="like"
-              className={styles.heartButton}
+              // className={styles.heartButton}
               onClick={(e) => e.stopPropagation()} //что бы при нажатии на сердечко не открывалась модалка
             >
               <HeartIcon className={styles.heartIconCards} />
@@ -34,13 +35,14 @@ export const Cards = ({ onCardClick }: CardProps) => {
             <span>Цена:</span>
             <strong>{toy.price?.toLocaleString('ru-RU')} ₽</strong>
             <Button
+
               className={styles.button}
               onClick={(e) => {
                 e.stopPropagation(); // чтобы не открывалась модалка при добавлении в корзину
                 alert('Добавлено в корзину');
               }}
             >
-              <img className={styles.icon} src={basketIcon} alt="Корзина" />
+              <BasketIcon className={styles.basketIconCards}/>
             </Button>
           </div>
         </div>
