@@ -3,15 +3,63 @@
 .button {
   display: inline-flex;
   align-items: center;
-  // align-items: stretch;
   justify-content: center;
   border-radius: rem(12);
   background: transparent;
   border: none;
   width: 100%;
-    
 
-  //основные кнопки
+  //кнопки шапка
+  &.headerButton {
+    display: flex;
+    width: 100%;
+    min-height: rem(44);
+    padding: rem(10) rem(12);
+    gap: rem(8);
+    font-size: fluid(15, 13);
+    font-weight: 600;
+    color: var(--color-dusty-purple);
+    text-transform: uppercase;
+
+    background: linear-gradient(45deg, var(--color-bottom), var(--color-frame));
+    background-clip: padding-box;
+    border: rem(2) solid var(--color-frame);
+    border-radius: rem(12);
+    box-shadow:
+      2px 2px 0 var(--color-mint-mint),
+      -2px -2px 5px var(--color-frame);
+
+    @include mobile {
+      min-height: rem(40);
+      padding: rem(8) rem(10);
+      font-size: rem(13);
+      gap: rem(6);
+    }
+
+    @include mobile-s {
+      display: flex;
+      border-radius: rem(10);
+      min-height: rem(36);
+      padding: rem(8);
+
+      .count {
+        display: none;
+      }
+    }
+
+    &:hover {
+      background: linear-gradient(
+        45deg,
+        var(--color-frame),
+        var(--color-bottom)
+      );
+      border-color: var(--color-likeCount);
+      box-shadow: 0 5px 15px var(--color-dark);
+    }
+  }
+
+  //****
+  //кнопка корзина картчка
   &.primary {
     display: flex;
     gap: rem(20);

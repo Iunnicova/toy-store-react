@@ -9,63 +9,63 @@ $mobile-s: 480.98; // Ширина для мобильных устройств
 
 @mixin laptop-above {
   @media (width > rem($laptop)) {
-    @content;
+    @content; // Стили применяются, если ширина экрана СТРОГО БОЛЬШЕ 1440px (очень большие мониторы)
   }
 }
 
 @mixin laptop {
   @media (width <= rem($laptop)) {
-    @content;
+    @content; // Стили для экранов до 1440px включительно (все десктопы и ниже)
   }
 }
 
 @mixin tablet-above {
   @media (width > rem($tablet)) {
-    @content;
+    @content; // Стили для экранов больше 1023px (ноутбуки и десктопы)
   }
 }
 
 @mixin tablet {
   @media (width <= rem($tablet)) {
-    @content;
+    @content; // Стили для планшетов и ноутбуков (до 1023px включительно)
   }
 }
 
 @mixin mobile-above {
   @media (width > rem($mobile)) {
-    @content;
+    @content; // Стили для экранов больше 767px (планшеты, ноутбуки, десктопы)
   }
 }
 
 @mixin mobile {
   @media (width <= rem($mobile)) {
-    @content;
+    @content; // Стили для мобильных устройств и планшетов (до 767px включительно)
   }
 }
 
 @mixin mobile-s-above {
   @media (width > rem($mobile-s)) {
-    @content;
+    @content; // Стили для экранов больше 480px (все, кроме маленьких телефонов)
   }
 }
 
 @mixin mobile-s {
   @media (width <= rem($mobile-s)) {
-    @content;
+    @content; // Стили только для маленьких мобильных экранов (до 480px)
   }
 }
 
 @mixin hover($hasActiveEffectOnMobile: true) {
   @media (any-hover: hover) {
     &:hover {
-      @content;
+      @content; // Применяет стили при наведении курсора (только на устройствах с hover — ПК, ноутбуки)
     }
   }
 
   @if ($hasActiveEffectOnMobile) {
     @media (any-hover: none) {
       &:active {
-        @content;
+        @content; // На сенсорных устройствах (телефоны, планшеты) эффект при нажатии (:active)
       }
     }
   }

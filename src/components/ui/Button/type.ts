@@ -5,7 +5,7 @@ export interface TButtonProps {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
-  variant?: 'primary' | 'toggle' | 'like';
+  variant?: 'primary' | 'toggle' | 'like' | 'headerButton';
 }
 
 //! props → это то, что передаётся в компонент (как настройки).

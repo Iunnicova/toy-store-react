@@ -7,7 +7,7 @@
   padding: rem(43) rem(52);
 
   @include mobile {
-    grid-auto-flow: row; /* меняем направление */
+    grid-auto-flow: row;
     grid-template-columns: 1fr;
     align-items: center;
     row-gap: rem(10);
@@ -25,12 +25,15 @@
 .logo {
   display: flex;
   width: rem(100);
-  height: auto;
+
+  @include mobile-s {
+    width: rem(70);
+  }
 }
 
 .brand {
   display: flex;
-  flex-direction: column; /* элементы идут сверху вниз */
+  flex-direction: column;
   justify-content: flex-start;
   width: 100%;
   min-width: 0;
@@ -54,21 +57,37 @@
 
 .menu {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
   align-items: center;
-  grid-auto-flow: column; // на десктопе в строку
-  gap: fluid(30, 14);
+  justify-content: flex-end;
+  gap: fluid(24, 8);
+
+  @include tablet {
+    gap: rem(12);
+  }
+
+  @include tablet-above {
+    gap: rem(10);
+  }
 
   @include mobile {
+    gap: rem(8);
+    justify-content: center;
+    padding: 0 rem(8);
+  }
+
+  @include mobile-s {
     gap: rem(10);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .list {
-  
-  min-height: 100%;
   height: auto;
+  max-width: rem(200);
+  min-height: 100%;
   padding-top: rem(12);
-   max-width: rem(200);
 }
 
 .navigation {
@@ -80,17 +99,42 @@
   }
 }
 
-
-
 .icon {
-  width: fluid(20, 10);
-  height: fluid(20, 10);
-  // color: var(--color-dusty-purple);
+  width: fluid(24, 18);
+  height: fluid(24, 18);
+  flex-shrink: 0;
+
+  @media (max-width: 390px) {
+    width: rem(20);
+    height: rem(20);
+  }
 }
 
 .count {
-  font-size: fluid(16, 10);
+  font-size: rem(16);
   color: var(--color-green-grey);
+  font-weight: 600;
+  white-space: nowrap;
+
+  @media (max-width: 1023.98px) and (min-width: 778px) {
+    font-size: rem(14);
+  }
+
+  @media (min-width: 768px) and (max-width: 1090px) {
+    display: none;
+  }
+
+  @media (max-width: 762px) {
+    font-size: rem(14);
+  }
+
+  @media (max-width: 555px) {
+    display: none;
+  }
+
+  @include mobile-s {
+    display: none;
+  }
 }
 
 //*************************

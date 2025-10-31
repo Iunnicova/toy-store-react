@@ -1,2 +1,1 @@
 export { BasketIcon } from './BasketIcon';
-

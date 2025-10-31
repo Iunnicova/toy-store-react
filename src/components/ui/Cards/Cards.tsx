@@ -35,14 +35,13 @@ export const Cards = ({ onCardClick }: CardProps) => {
             <span>Цена:</span>
             <strong>{toy.price?.toLocaleString('ru-RU')} ₽</strong>
             <Button
-
               className={styles.button}
               onClick={(e) => {
                 e.stopPropagation(); // чтобы не открывалась модалка при добавлении в корзину
                 alert('Добавлено в корзину');
               }}
             >
-              <BasketIcon className={styles.basketIconCards}/>
+              <BasketIcon className={styles.basketIconCards} />
             </Button>
           </div>
         </div>

@@ -24,8 +24,11 @@ export const Header = ({ userName }: THeaderProps) => (
       <ul className={styles.menu}>
         <li className={styles.list}>
           <Link to="/basket" className={styles.navigation}>
-            <Button 
-            onClick={() => alert('Корзина')} className={styles.button}>
+            <Button
+              variant="headerButton"
+              onClick={() => alert('Корзина')}
+              className={styles.button}
+            >
               <BasketIcon className={styles.icon} />
               <span className={styles.count}>1250 ₽</span>
             </Button>
@@ -33,7 +36,11 @@ export const Header = ({ userName }: THeaderProps) => (
         </li>
         <li className={styles.list}>
           <Link to="/favorites" className={styles.navigation}>
-            <Button onClick={() => alert('Закладки')} className={styles.button}>
+            <Button
+              variant="headerButton"
+              onClick={() => alert('Закладки')}
+              className={styles.button}
+            >
               <HeartIcon className={styles.icon} />
               <p className={styles.count}>Закладки</p>
             </Button>
@@ -41,7 +48,11 @@ export const Header = ({ userName }: THeaderProps) => (
         </li>
         <li className={styles.list}>
           <Link to="/profile" className={styles.navigation}>
-            <Button onClick={() => alert('Профиль')} className={styles.button}>
+            <Button
+              variant="headerButton"
+              onClick={() => alert('Профиль')}
+              className={styles.button}
+            >
               <img src={profileIcon} alt="Профиль" className={styles.icon} />
               <p className={styles.count}>Профиль</p>
             </Button>

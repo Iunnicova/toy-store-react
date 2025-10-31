@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: flex-start;
+  justify-items: center;
   gap: fluid(40, 20);
   padding: fluid(60, 20);
 
@@ -25,7 +26,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // color: var(--color-black);
   cursor: zoom-in;
   background-color: var(--color-mint-cream);
   border: var(--border);
@@ -123,22 +123,22 @@
   padding: rem(5);
 
   @include tablet {
-   width: rem(20);
-  height: rem(20); 
+    width: rem(20);
+    height: rem(20);
   }
 }
 
-// .icon {
-//   display: flex;
-//   justify-content: center;
-// }
 .basketIconCards {
-  height: rem(20);
-  width: rem(20);
+  // min-height: rem(20);
+  min-width: rem(20);
   color: var(--color-dusty-purple);
 
+  @include tablet {
+    height: rem(20);
+    width: rem(20);
+  }
   @include mobile {
-     height: rem(20);
-  width: rem(20);
+    height: rem(20);
+    width: rem(20);
   }
 }
