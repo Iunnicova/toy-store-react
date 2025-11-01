@@ -7,6 +7,7 @@ import { THeaderProps } from './type';
 import { Button } from '../Button';
 import { HeartIcon } from '../../svg/HeartIcon/HeartIcon';
 import { BasketIcon } from '../../svg/BasketIcon';
+import { ProfileIcon } from '../../svg/ProfileIcon';
 
 export const Header = ({ userName }: THeaderProps) => (
   <>
@@ -53,7 +54,7 @@ export const Header = ({ userName }: THeaderProps) => (
               onClick={() => alert('Профиль')}
               className={styles.button}
             >
-              <img src={profileIcon} alt="Профиль" className={styles.icon} />
+              <ProfileIcon className={styles.icon} />
               <p className={styles.count}>Профиль</p>
             </Button>
           </Link>

@@ -9,6 +9,7 @@ import { TModalDescriptionToyProps } from './type';
 import classNames from 'classnames';
 import { getCharacteristics } from '../../../constants/сharacteristic';
 import { HeartIcon } from '../../svg/HeartIcon';
+import { BasketIcon } from '../../svg/BasketIcon';
 
 export const ModalDescriptionToy = memo(
   ({ title, onClose, toyImage, toy }: TModalDescriptionToyProps) => {
@@ -21,7 +22,6 @@ export const ModalDescriptionToy = memo(
           <div className={styles.header}>
             <Button
               variant="like"
-              // className={styles.heartButton}
               onClick={(e) => e.stopPropagation()} //что бы при нажатии на сердечко не открывалась модалка
             >
               <HeartIcon className={styles.heartIconCards} />
@@ -74,7 +74,7 @@ export const ModalDescriptionToy = memo(
                 alert('Добавлено в корзину');
               }}
             >
-              <img className={styles.icon} src={basketIcon} alt="Корзина" />
+              <BasketIcon className={styles.icon} />
             </Button>
           </div>
         </div>
