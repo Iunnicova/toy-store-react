@@ -51,8 +51,8 @@
 .slogan {
   font-size: fluid(25, 14);
   font-weight: 700;
-  padding-left: rem(20);
   width: 100%;
+  padding-left: rem(20);
 }
 
 .menu {
@@ -100,9 +100,9 @@
 }
 
 .icon {
+  flex-shrink: 0;
   width: fluid(24, 18);
   height: fluid(24, 18);
-  flex-shrink: 0;
 
   @media (max-width: 390px) {
     width: rem(20);

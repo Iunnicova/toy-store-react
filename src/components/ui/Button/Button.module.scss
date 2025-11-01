@@ -12,14 +12,14 @@
   //кнопки шапка
   &.headerButton {
     display: flex;
-    width: 100%;
     min-height: rem(44);
-    padding: rem(10) rem(12);
     gap: rem(8);
+    text-transform: uppercase;
     font-size: fluid(15, 13);
     font-weight: 600;
     color: var(--color-dusty-purple);
-    text-transform: uppercase;
+    width: 100%;
+    padding: rem(10) rem(12);
 
     background: linear-gradient(45deg, var(--color-bottom), var(--color-frame));
     background-clip: padding-box;
@@ -30,10 +30,10 @@
       -2px -2px 5px var(--color-frame);
 
     @include mobile {
+      gap: rem(6);
+      font-size: rem(13);
       min-height: rem(40);
       padding: rem(8) rem(10);
-      font-size: rem(13);
-      gap: rem(6);
     }
 
     @include mobile-s {
@@ -66,9 +66,9 @@
     color: var(--color-dusty-purple);
     text-transform: uppercase;
     border: var(--border);
-    padding: rem(12) rem(24);
     white-space: nowrap;
     min-width: rem(70);
+    padding: rem(12) rem(24);
 
     //градиент кнопки
     background: var(--gradient) border-box;
@@ -87,7 +87,6 @@
         var(--color-bottom)
       ); // меняем порядок
       border-color: var(--color-likeCount);
-
       box-shadow: 0px 5px 20px var(--color-dark);
     }
   }
@@ -125,8 +124,8 @@
       gap: rem(4);
       font-size: rem(14);
       border-radius: rem(8);
-      padding: rem(14) rem(20);
       min-width: rem(70);
+      padding: rem(14) rem(20);
     }
   }
 }

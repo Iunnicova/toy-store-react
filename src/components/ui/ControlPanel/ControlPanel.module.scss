@@ -23,9 +23,9 @@
 }
 
 .img {
+  object-fit: cover;
   width: rem(50);
   height: rem(50);
-  object-fit: cover;
 }
 
 @include mobile {

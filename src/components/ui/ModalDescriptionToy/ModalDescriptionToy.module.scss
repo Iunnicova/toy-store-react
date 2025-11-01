@@ -41,8 +41,8 @@
   height: rem(40);
 
   &.toggle {
-    margin-left: auto;
     padding: 0;
+    margin-left: auto;
   }
 }
 
@@ -71,8 +71,8 @@
   gap: 10px;
   overflow-y: auto;
   max-height: 70vh; //палока скрола
-  padding-right: 20px;
   max-width: 100%;
+  padding-right: 20px;
 }
 
 .modalContent::-webkit-scrollbar {
@@ -107,9 +107,9 @@
 .line {
   flex: 1;
   border-bottom: 3px dashed var(--color-frame);
+  transform: translateY(6px); // опускаем линию вниз
   height: 0; // это важно! чтобы линия не занимала вертикальное место
   margin: 0 10px;
-  transform: translateY(6px); // опускаем линию вниз
 }
 
 .value {
@@ -118,10 +118,10 @@
 
 .description {
   grid-area: description;
-  margin-top: 10px;
   line-height: 1.5;
   border-bottom: 3px dashed var(--color-frame);
   padding-bottom: rem(10);
+  margin-top: 10px;
 }
 
 .label {

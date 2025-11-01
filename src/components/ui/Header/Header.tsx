@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import { LogoSvg } from '../../svg/LogoSvg';
-import basketIcon from '/icon/basket.svg';
-import profileIcon from '/icon/profile.svg';
 import { THeaderProps } from './type';
 import { Button } from '../Button';
 import { HeartIcon } from '../../svg/HeartIcon/HeartIcon';
@@ -31,7 +29,7 @@ export const Header = ({ userName }: THeaderProps) => (
               className={styles.button}
             >
               <BasketIcon className={styles.icon} />
-              <span className={styles.count}>1250 ₽</span>
+              <span className={styles.count}>0 ₽</span>
             </Button>
           </Link>
         </li>

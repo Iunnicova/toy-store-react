@@ -1,8 +1,8 @@
 @use '../../../styles/helpers/' as *;
 
 .footer {
-  padding: fluid(60, 20);
   border-top: var(--border);
+  padding: fluid(60, 20);
 
   @include mobile {
     display: grid;
@@ -47,9 +47,9 @@
   font-family: var(--font-family-accen);
   font-weight: 700;
   font-size: fluid(20, 16);
-  line-height: 100%;
   letter-spacing: 0%;
   text-transform: uppercase;
+  line-height: 100%;
 }
 
 .link {
@@ -124,9 +124,9 @@
 }
 
 .icon {
+  color: var(--color-dusty-purple);
   width: rem(40);
   height: rem(40);
-  color: var(--color-dusty-purple);
 
   @include hover {
     color: var(--color-likeCount);

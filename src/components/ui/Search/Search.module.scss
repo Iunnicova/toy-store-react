@@ -56,8 +56,8 @@
 .input {
   @include mobile-s {
     font-size: rem(14);
-    margin: auto 0;
     padding: rem(1);
+    margin: auto 0;
   }
 }
 
@@ -73,8 +73,13 @@
 }
 
 .icon {
-  width: rem(20);
-  padding-right: rem(5);
+  max-width: rem(30);
+  padding-right: rem(1);
+  margin-left: auto;
 }
 
+.count {
+  font-size: rem(16);
+  font-weight: 600;
+}
 //  line-height: rem(48); //* центрируем по вертикали (равно height)
