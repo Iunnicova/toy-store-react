@@ -157,6 +157,8 @@
   }
 }
 
-.button {
-  width: rem(150);
+.count {
+  @include mobile-s {
+    font-size: rem(10);
+  }
 }

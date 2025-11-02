@@ -15,6 +15,18 @@
   top: 50%;
   left: 50%;
   padding: 20px;
+
+  @include tablet {
+    width: rem(600);
+  }
+
+  @include mobile {
+    width: rem(420);
+  }
+
+  @include mobile-s {
+    width: rem(320);
+  }
 }
 
 .header {
@@ -28,12 +40,20 @@
 .heartIconCards {
   width: rem(35);
   color: var(--color-dusty-purple);
+  padding-right: rem(10);
+
+  @include hover {
+    color: var(--color-likeCount);
+  }
 }
 
 .titleModal {
   font-size: rem(25);
-  // font-weight: 600;
   text-align: center;
+
+  @include mobile-s {
+    font-size: rem(20);
+  }
 }
 
 .button {
@@ -48,33 +68,55 @@
 
 //крестик
 .close {
-  font-size: 35px;
+  font-size: rem(40);
   font-weight: 700;
   cursor: pointer;
   color: var(--color-dusty-purple);
+
+  @include mobile-s {
+    font-size: rem(30);
+  }
+
   &:hover {
     color: var(--color-likeCount);
   }
 }
 
 .image {
-  object-fit: cover;
+  // object-fit: cover;
+  object-fit: contain;
   width: 100%;
+  height: auto;
+  max-height: 300px;
+
+  @media (min-width: 1211px) {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .modalContent {
   display: grid;
   grid-template-areas:
-    'image characteristics'
-    'description description';
-  grid-template-columns: 200px 1fr;
+    'image'
+    'characteristics'
+    'description';
+  grid-template-columns: 1fr;
   gap: 10px;
   overflow-y: auto;
   max-height: 70vh; //палока скрола
   max-width: 100%;
   padding-right: 20px;
+
+  @media (min-width: 1211px) {
+    grid-template-areas:
+      'image characteristics'
+      'description description';
+    grid-template-columns: 200px 1fr;
+  }
 }
 
+//скрол
 .modalContent::-webkit-scrollbar {
   width: 10px;
 }
@@ -102,6 +144,15 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap; // чтобы ничего не переносилось
+
+  @include mobile {
+    justify-content: flex-start;
+    gap: rem(15);
+  }
+
+  @include mobile-s {
+    font-size: rem(14);
+  }
 }
 
 .line {
@@ -110,6 +161,10 @@
   transform: translateY(6px); // опускаем линию вниз
   height: 0; // это важно! чтобы линия не занимала вертикальное место
   margin: 0 10px;
+
+  @include mobile-s {
+    display: none;
+  }
 }
 
 .value {
@@ -124,6 +179,7 @@
   margin-top: 10px;
 }
 
+//описание
 .label {
   font-weight: 600;
   text-transform: uppercase;
@@ -134,6 +190,7 @@
 
 .textDescription {
   font-style: italic;
+
   font-size: rem(20);
 }
 
@@ -147,13 +204,24 @@
   display: flex;
   justify-content: space-between;
   padding-top: rem(20);
+
+  @include mobile {
+  }
 }
 
 .priceModal {
   font-size: rem(30);
   color: var(--color-likeCount);
+
+  @include mobile {
+    font-size: rem(25);
+  }
 }
 
 .icon {
   max-width: rem(30);
+
+  @include mobile {
+    max-width: rem(25);
+  }
 }

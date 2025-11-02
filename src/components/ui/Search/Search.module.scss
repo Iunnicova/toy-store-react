@@ -81,5 +81,9 @@
 .count {
   font-size: rem(16);
   font-weight: 600;
+
+  @include mobile-s {
+    font-size: rem(12);
+  }
 }
 //  line-height: rem(48); //* центрируем по вертикали (равно height)

@@ -8,6 +8,7 @@ import { ReactComponent as Vk } from '../../../../icon/vk.svg';
 import { ReactComponent as FacebookIcon } from '../../../../icon/facebook.svg';
 import { Input } from '../Input';
 import { FOOTER_LINKS } from '../../../constants/footerLinks';
+import classNames from 'classnames';
 
 const socialIconMap = {
   Instagram: InstagramIcon,
@@ -61,7 +62,7 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
             type="text"
             placeholder="Электронная почта"
           />
-          <Button className={styles.button} onClick={() => onSubscribe(email)}>
+          <Button variant="headerButton" onClick={() => onSubscribe(email)}>
             <p className={styles.count}>Подписаться</p>
           </Button>
         </div>
