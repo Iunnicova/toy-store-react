@@ -1,3 +1,15 @@
+import { IconComponent } from '../../../types/navItems';
+
+export interface HeaderNavItem {
+  to: string;
+  label: string;
+  icon: IconComponent;
+  count?: string | number;
+  ariaLabel: string;
+}
+
 export type THeaderProps = {
-  userName: string;
+  userName?: string; // Имя пользователя
+  basketTotal?: number; // Сколько денег в корзине
+  favoritesCount?: number; // Сколько товаров в внутри сердечка
 };
