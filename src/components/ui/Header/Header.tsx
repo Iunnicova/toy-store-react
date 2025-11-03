@@ -13,46 +13,42 @@ export const Header = ({
   const navItems = getHeaderNavItems(basketTotal, favoritesCount, userName);
   return (
     <header className={styles.header} role="banner">
-      <div className={styles.container}>
-        <Link
-          to="/"
-          className={styles.link}
-          aria-label="Перейти на главную страницу"
-        >
+      <div className={styles.link}>
+        <Link to="/" aria-label="Перейти на главную страницу">
           <LogoSvg className={styles.logo} aria-hidden="true" />
         </Link>
         <div className={styles.brand}>
           <h1 className={styles.title}>Baby's Smile</h1>
           <p className={styles.slogan}>Toys that make you smile!</p>
         </div>
-        <nav aria-label="Основная навигация">
-          <ul className={styles.menu} role="list">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              const displayLabel =
-                item.count !== undefined ? item.count : item.label;
-              return (
-                <li key={item.to} className={styles.list}>
-                  <Link
-                    to={item.to}
-                    className={styles.navigation}
+      </div>
+      <nav aria-label="Основная навигация">
+        <ul className={styles.menu} role="list">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const displayLabel =
+              item.count !== undefined ? item.count : item.label;
+            return (
+              <li key={item.to} className={styles.list}>
+                <Link
+                  to={item.to}
+                  className={styles.navigation}
+                  aria-label={item.ariaLabel}
+                >
+                  <Button
+                    variant="headerButton"
+                    className={styles.button}
                     aria-label={item.ariaLabel}
                   >
-                    <Button
-                      variant="headerButton"
-                      className={styles.button}
-                      aria-label={item.ariaLabel}
-                    >
-                      <Icon className={styles.icon} aria-hidden="true" />
-                      <span className={styles.count}>{displayLabel}</span>
-                    </Button>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </div>
+                    <Icon className={styles.icon} aria-hidden="true" />
+                    <span className={styles.count}>{displayLabel}</span>
+                  </Button>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     </header>
   );
 };
