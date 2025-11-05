@@ -2,6 +2,7 @@ import { memo, useEffect, useRef } from 'react';
 
 import { ImageZoomProps } from './type';
 import styles from './ImageZoom.module.scss';
+import { Button } from '../Button';
 
 export const ImageZoom = memo(
   ({ src, alt, isOpen, onClose }: ImageZoomProps) => {
@@ -67,13 +68,14 @@ export const ImageZoom = memo(
             className={styles.image}
             onClick={(e) => e.stopPropagation()}
           />
-          <button
+          <Button
+            variant="toggle"
             className={styles.close}
             onClick={onClose}
             aria-label="Закрыть увеличенное изображение"
           >
             ✕
-          </button>
+          </Button>
         </div>
       </div>
     );

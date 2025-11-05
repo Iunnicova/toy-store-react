@@ -1,2 +1,61 @@
 @use '../../../styles/helpers/' as *;
 
+.overlay {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10002;
+  background-color: rgba(125, 168, 159, 0.9);
+  animation: fadeIn 0.2s ease-out;
+  inset: 0;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+// Крестик
+.close {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: rem(50);
+  font-weight: 700;
+  color: var(--color-dusty-purple);
+  transition: color 0.2s ease;
+  z-index: 1;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+
+  &:hover {
+    color: var(--color-likeCount);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

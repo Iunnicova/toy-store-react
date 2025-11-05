@@ -1,5 +1,5 @@
 import styles from './ModalDescriptionToy.module.scss';
-import { memo } from 'react';
+import { memo, useState } from 'react';
 
 // import heartIconCards from '/icon/heart.svg';
 import basketIcon from '/icon/basket.svg';
@@ -10,74 +10,91 @@ import classNames from 'classnames';
 import { getCharacteristics } from '../../../constants/сharacteristic';
 import { HeartIcon } from '../../svg/HeartIcon';
 import { BasketIcon } from '../../svg/BasketIcon';
+import { ImageZoom } from '../ImageZoom';
 
 export const ModalDescriptionToy = memo(
   ({ title, onClose, toyImage, toy }: TModalDescriptionToyProps) => {
     const characteristics = getCharacteristics(toy.characteristic);
+    const [isZoomed, setIsZoomed] = useState(false);
 
     return (
       <>
-        <ModalOverlay onClick={onClose} /> //* Оверлей — затемнение фона
-        <div className={styles.modal}>
-          <div className={styles.header}>
-            <Button
-              variant="like"
-              onClick={(e) => e.stopPropagation()} //что бы при нажатии на сердечко не открывалась модалка
-            >
-              <HeartIcon className={styles.heartIconCards} />
-            </Button>
+        <ModalOverlay onClick={onClose}>
+          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+            {/* HEADER */}
+            <div className={styles.header}>
+              <Button variant="like" onClick={(e) => e.stopPropagation()}>
+                <HeartIcon className={styles.heartIconCards} />
+              </Button>
+              <h2 className={styles.titleModal}>{title}</h2>
+              <Button
+                variant="toggle"
+                className={classNames(styles.close, styles.button)}
+                onClick={onClose}
+              >
+                X
+              </Button>
+            </div>
 
-            <h2 className={styles.titleModal}> {title} </h2>
-            <Button
-              variant="toggle"
-              className={classNames(styles.close, styles.button)}
-              onClick={onClose}
-            >
-              ✕
-            </Button>
-          </div>
+            {/* CONTENT */}
+            <div className={styles.modalContent}>
+              {/* КЛИК → ЗУМ */}
+              <img
+                src={toyImage}
+                alt={title}
+                className={styles.image}
+                onClick={() => setIsZoomed(true)}
+                style={{ cursor: 'zoom-in' }}
+              />
 
-          {/* характеристики */}
-          <div className={styles.modalContent}>
-            <img src={toyImage} alt={title} className={styles.image} />
+              {/* ХАРАКТЕРИСТИКИ */}
+              <dl className={styles.characteristics}>
+                {characteristics.map(({ label, value }) => (
+                  <div key={label} className={styles.row}>
+                    <dt>{label} :</dt>
+                    <div className={styles.line}></div>
+                    <dd className={styles.value}>{value}</dd>
+                  </div>
+                ))}
+              </dl>
 
-            <dl className={styles.characteristics}>
-              {characteristics.map(({ label, value }) => (
-                <div key={label} className={styles.row}>
-                  <dt>{label} :</dt>
-                  <div className={styles.line}></div>
-                  <dd className={styles.value}>{value}</dd>
-                </div>
-              ))}
-            </dl>
+              {/* ОПИСАНИЕ */}
+              <div className={styles.description}>
+                <p className={styles.textDescription}>
+                  <span className={styles.label}>Описание:</span>{' '}
+                  {toy.description ?? ''}
+                </p>
+                <p className={styles.additionalDescription}>
+                  Подходит для игр, сна, украшения комнаты и как антистресс.
+                  Игрушка легко стирается и сохраняет форму — мамы оценят!
+                  Прекрасный подарок на день рождения, праздник или просто для
+                  радости.
+                </p>
+              </div>
+            </div>
 
-            <div className={styles.description}>
-              <p className={styles.textDescription}>
-                <span className={styles.label}>Описание:</span>{' '}
-                {toy.description ?? ''}
+            {/* ЦЕНА + КОРЗИНА */}
+            <div className={styles.priceBasket}>
+              <p className={styles.priceModal}>
+                Цена: {toy.price.toLocaleString('ru-RU')} ₽
               </p>
-              <p className={styles.additionalDescription}>
-                Подходит для игр, сна, украшения комнаты и как антистресс.
-                Игрушка легко стирается и сохраняет форму — мамы оценят!
-                Прекрасный подарок на день рождения, праздник или просто для
-                радости.
-              </p>
+              <Button
+                className={styles.button}
+                onClick={() => alert('Добавлено в корзину')}
+              >
+                <BasketIcon className={styles.icon} />
+              </Button>
             </div>
           </div>
-          <div className={styles.priceBasket}>
-            <p className={styles.priceModal}>
-              Цена: {toy.price.toLocaleString('ru-RU')} ₽
-            </p>
-            <Button
-              className={styles.button}
-              onClick={(e) => {
-                alert('Добавлено в корзину');
-              }}
-            >
-              <BasketIcon className={styles.icon} />
-            </Button>
-          </div>
-        </div>
+        </ModalOverlay>
+
+        {/* ЗУМ */}
+        <ImageZoom
+          src={toyImage}
+          alt={title}
+          isOpen={isZoomed}
+          onClose={() => setIsZoomed(false)}
+        />
       </>
     );
   }

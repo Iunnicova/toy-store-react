@@ -1,11 +1,13 @@
 import styles from './ModalOverlay.module.scss';
+import { ModalOverlayProps } from './type';
 
-export const ModalOverlay = ({ onClick }: { onClick: () => void }) => (
-  <div data-cy="modalOverlay" className={styles.overlay} onClick={onClick} />
-);
+export const ModalOverlay = ({ onClick, children }: ModalOverlayProps) => {
+  return (
+    <div className={styles.overlay} onClick={onClick} data-cy="modalOverlay">
+      {children}
+    </div>
+  );
+};
 
-// - export const ModalOverlay
-// - { onClick } — это кнопка-невидимка: когда ты нажимаешь на фон, она вызывает действие (например, закрыть окно).
-//! для тестов - data-cy='modalOverlay' — это как метка для робота-тестера Cypress: он знает, что это фон модалки.
-// - className={styles.overlay} — здесь применяются стили: фон становится тёмным, фиксируется на экране, и всё вокруг затемняется.
-// - onClick={onClick} — если ты нажмёшь на этот фон, произойдёт действие, которое ты передала (например, закрытие модалки).
+//! data-cy="modalOverlay"
+// атрибут данных (data attribute), используемый для тестирования элементов в интерфейсе.

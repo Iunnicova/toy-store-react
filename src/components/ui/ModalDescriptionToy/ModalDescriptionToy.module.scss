@@ -1,9 +1,9 @@
 @use '../../../styles/helpers/' as *;
 
 .modal {
+  position: fixed;
   display: flex;
   flex-direction: column;
-  position: fixed;
   z-index: 9999;
   border: var(--border);
   background-color: var(--color-mint-mint);
