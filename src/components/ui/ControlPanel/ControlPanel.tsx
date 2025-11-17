@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import styles from './ControlPanel.module.scss';
 
 import sunshine from '/images/sunshine.png';
-import land from '/images/land1.png';
+import land from '/images/landRu.png';
 import moon from '/images/moon.png';
 import { Button } from '../Button';
 import { useTheme } from '../ThemeContext/ThemeContext';
