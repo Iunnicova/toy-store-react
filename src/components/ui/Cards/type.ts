@@ -1,3 +1,3 @@
-export type CardProps = {
+export type TCardProps = {
   onCardClick: (toy: any) => void;
 };

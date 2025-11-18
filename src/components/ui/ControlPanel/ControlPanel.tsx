@@ -7,6 +7,7 @@ import land from '/images/landRu.png';
 import moon from '/images/moon.png';
 import { Button } from '../Button';
 import { useTheme } from '../ThemeContext/ThemeContext';
+import { LanguageDropdown } from '..';
 
 export const ControlPanel = () => {
   const { theme, setTheme } = useTheme(); // ✅подключаем ThemeContext переключение тем
@@ -35,9 +36,13 @@ export const ControlPanel = () => {
           <img className={styles.img} src={moon} alt="Луна" />
         </Button>
       </div>
-      <Button variant="toggle">
+
+      {/* 🌍 Выпадающий список языков */}
+      <LanguageDropdown />
+
+      {/* <Button variant="toggle">
         <img className={styles.img} src={land} alt="Земля" />
-      </Button>
+      </Button> */}
     </section>
   );
 };

@@ -8,6 +8,9 @@ import App from './components/app/App'; // Главный компонент п�
 
 import './styles/main.scss'; // Глобальные стили (Sass/SCSS)
 
+import './i18n'; //библиотека языков
+import { LanguageProvider } from './constants/LanguageContext';
+
 const domNode = document.getElementById('root') as HTMLDivElement; // Находим div с id="root" в index.html,сюда React будет рендерить всё приложение
 
 const root = createRoot(domNode); // Создаём "корень" для приложения (React 18+)
@@ -15,6 +18,8 @@ const root = createRoot(domNode); // Создаём "корень" для при
 // Рендерим приложение
 root.render(
   <StrictMode>
-    <App />
+    <LanguageProvider>
+      <App />
+    </LanguageProvider>
   </StrictMode>
 );

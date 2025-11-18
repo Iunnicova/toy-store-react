@@ -16,10 +16,10 @@ export const getHeaderNavItems = (
   },
   {
     to: '/favorites',
-    label: 'Закладки',
+    label: 'Избранное',
     count: favoritesCount > 0 ? favoritesCount : undefined,
     icon: HeartIcon,
-    ariaLabel: `Закладки: ${favoritesCount} товар(ов)`,
+    ariaLabel: `Избранное: ${favoritesCount} товар(ов)`,
   },
   {
     to: '/profile',

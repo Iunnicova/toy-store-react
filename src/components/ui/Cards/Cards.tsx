@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 // import basketIcon from '/icon/basket.svg';
 import { Button } from '../Button';
 import { toys } from '../../../constants/toysData';
-import { CardProps } from './type';
+import { TCardProps } from './type';
 import { HeartIcon } from '../../svg/HeartIcon';
 import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
 
-export const Cards = ({ onCardClick }: CardProps) => {
+export const Cards = ({ onCardClick }: TCardProps) => {
   return (
     <article className={styles.card}>
       {toys.map((toy) => (
