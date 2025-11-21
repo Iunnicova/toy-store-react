@@ -1,6 +1,19 @@
 {
+  "header": {
+    "slogan": "Toys that make you smile!",
+    "mainNav": "Main navigation",
+
+    "nav": {
+      "favorites": "Favorites",
+      "profile": "Profile",
+      "basket_aria": "Basket: {{value}} ₽",
+      "favorites_aria": "Favorites: {{value}} item(s)",
+      "profile_aria": "Sign in to profile",
+      "profile_with_name": "Profile: {{value}}"
+    }
+  },
   "buttons": {
-    "bookmarks": "Bookmarks",
+    "bookmarks": "Favorites",
     "profile": "Profile"
   }
 }

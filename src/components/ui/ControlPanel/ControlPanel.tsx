@@ -39,10 +39,6 @@ export const ControlPanel = () => {
 
       {/* 🌍 Выпадающий список языков */}
       <LanguageDropdown />
-
-      {/* <Button variant="toggle">
-        <img className={styles.img} src={land} alt="Земля" />
-      </Button> */}
     </section>
   );
 };

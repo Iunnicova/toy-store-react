@@ -1,3 +1,5 @@
+@use '../../../styles/helpers/' as *;
+
 .wrapper {
   position: relative;
 }
@@ -17,20 +19,14 @@
   top: 100%;
   left: 0;
   background: none;
-  border-radius: 8px;
-  // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
+  padding: rem(5);
   z-index: 10;
 }
 
 .option {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background: none;
-  border: none;
-  padding: 0.4rem;
-  cursor: pointer;
+  gap: rem(10);
 
   img {
     width: 60px;

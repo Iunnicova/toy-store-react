@@ -1,4 +1,3 @@
-// src/constants/LanguageContext.tsx
 import React, {
   createContext,
   useContext,
@@ -6,9 +5,9 @@ import React, {
   useEffect,
   ReactNode,
 } from 'react';
-import i18n from '../i18n'; // если i18n в другом месте — поправь путь
+import i18n from '../i18n'; 
 
-//хук 
+//хук
 export const useLanguage = (): LanguageContextType => {
   const context = useContext(LanguageContext);
   if (!context) {
@@ -17,8 +16,7 @@ export const useLanguage = (): LanguageContextType => {
   return context;
 };
 
-
-// типы 
+// типы
 export type Language = 'ru' | 'sr' | 'en';
 
 export type LanguageContextType = {
@@ -26,7 +24,7 @@ export type LanguageContextType = {
   setLanguage: (lang: Language) => void;
 };
 
-//сам контекст 
+//сам контекст
 const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined
 );
@@ -63,4 +61,3 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
     </LanguageContext.Provider>
   );
 };
-

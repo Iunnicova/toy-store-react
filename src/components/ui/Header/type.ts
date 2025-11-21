@@ -4,7 +4,7 @@ export interface HeaderNavItem {
   to: string;
   label: string;
   icon: IconComponent;
-  count?: string | number;
+  count?: number;
   ariaLabel: string;
 }
 

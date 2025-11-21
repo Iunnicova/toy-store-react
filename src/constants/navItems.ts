@@ -12,19 +12,21 @@ export const getHeaderNavItems = (
     to: '/basket',
     label: `${basketTotal} ₽`,
     icon: BasketIcon,
-    ariaLabel: `Корзина: ${basketTotal} ₽`,
+    ariaLabel: `header.nav.basket_aria|${basketTotal}`,
   },
   {
     to: '/favorites',
-    label: 'Избранное',
+    label: 'header.nav.favorites',
     count: favoritesCount > 0 ? favoritesCount : undefined,
     icon: HeartIcon,
-    ariaLabel: `Избранное: ${favoritesCount} товар(ов)`,
+    ariaLabel: `header.nav.favorites_aria|${favoritesCount}`,
   },
   {
     to: '/profile',
-    label: userName || 'Профиль',
+    label: userName ? userName : 'header.nav.profile',
     icon: ProfileIcon,
-    ariaLabel: userName ? `Профиль: ${userName}` : 'Войти в профиль',
+    ariaLabel: userName
+      ? `header.nav.profile_with_name|${userName}`
+      : 'header.nav.profile_aria',
   },
 ];

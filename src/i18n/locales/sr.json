@@ -1,6 +1,19 @@
 {
+  "header": {
+    "slogan": "Играчке које дају осмех!",
+    "mainNav": "Основна навигација",
+
+    "nav": {
+      "favorites": "Фаворити",
+      "profile": "Профил",
+      "basket_aria": "Корпа: {{value}} ₽",
+      "favorites_aria": "Фаворити: {{value}} роба(е)",
+      "profile_aria": "Пријавите се на профил",
+      "profile_with_name": "Профил: {{value}}"
+    }
+  },
   "buttons": {
-    "bookmarks": "Омиљено",
+    "bookmarks": "Фаворити",
     "profile": "Профил"
   }
 }
