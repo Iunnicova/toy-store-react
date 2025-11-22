@@ -61,21 +61,27 @@
   }
 }
 
-.button {
-  text-transform: uppercase;
-  width: rem(150);
+// .button {
+//   text-transform: uppercase;
+//   width: rem(150);
 
-  @include laptop {
-    display: flex;
-    gap: rem(15);
-    padding: rem(12);
-  }
-}
+//   @include laptop {
+//     display: flex;
+//     // gap: rem(15);
+//     padding: rem(12);
+//   }
+// }
 
 .icon {
-  max-width: rem(30);
+  display: flex;
+  min-width: rem(30);
   padding-right: rem(1);
   margin-left: auto;
+  padding: rem(2);
+
+  @include mobile {
+    // display: none;
+  }
 }
 
 .count {
@@ -83,7 +89,7 @@
   font-weight: 600;
 
   @include mobile-s {
-    font-size: rem(12);
+    font-size: rem(16);
   }
 }
 //  line-height: rem(48); //* центрируем по вертикали (равно height)

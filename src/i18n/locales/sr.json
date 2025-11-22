@@ -15,5 +15,11 @@
   "buttons": {
     "bookmarks": "Фаворити",
     "profile": "Профил"
+  },
+  "search": {
+    "title": "Пронађи свог љубимца!",
+    "placeholder": "Напиши моје име",
+    "button": "Претрага",
+    "alert": "Претрага"
   }
 }

@@ -15,5 +15,11 @@
   "buttons": {
     "bookmarks": "Favorites",
     "profile": "Profile"
+  },
+  "search": {
+    "title": "Find your favorite toy!",
+    "placeholder": "Type my name",
+    "button": "Search",
+    "alert": "Search"
   }
 }

@@ -21,7 +21,7 @@ export const Header = ({
     if (label.startsWith('header.')) {
       return t(label);
     }
-    return label; 
+    return label;
   };
 
   //для перевода

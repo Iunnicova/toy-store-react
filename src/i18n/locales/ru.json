@@ -14,5 +14,12 @@
   "buttons": {
     "bookmarks": "Избранное",
     "profile": "Профиль"
+  },
+
+  "search": {
+    "title": "Найди свою любимку!",
+    "placeholder": "Напиши моё имя",
+    "button": "Поиск",
+    "alert": "Поиск"
   }
 }
