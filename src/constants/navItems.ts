@@ -10,7 +10,7 @@ export const getHeaderNavItems = (
 ): HeaderNavItem[] => [
   {
     to: '/basket',
-    label: `${basketTotal} ₽`,
+    label: `${basketTotal}`,
     icon: BasketIcon,
     ariaLabel: `header.nav.basket_aria|${basketTotal}`,
   },

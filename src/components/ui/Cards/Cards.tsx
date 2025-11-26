@@ -8,8 +8,11 @@ import { toys } from '../../../constants/toysData';
 import { TCardProps } from './type';
 import { HeartIcon } from '../../svg/HeartIcon';
 import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
+import { useTranslation } from 'react-i18next';
 
 export const Cards = ({ onCardClick }: TCardProps) => {
+  const { t } = useTranslation(); //хук для перевода
+
   return (
     <article className={styles.card}>
       {toys.map((toy) => (
@@ -27,13 +30,21 @@ export const Cards = ({ onCardClick }: TCardProps) => {
               <HeartIcon className={styles.heartIconCards} />
             </Button>
             <Link to="/">
-              <img className={styles.toy} src={toy.toyImage} alt={toy.title} />
+              <img
+                className={styles.toy}
+                src={toy.toyImage}
+                alt={toy.titleKey}
+              />
             </Link>
           </div>
-          <p className={styles.title}>{toy.title}</p>
+          <p className={styles.title}>{t(toy.titleKey)}</p>
           <div className={styles.price}>
             <span>Цена:</span>
             <strong>{toy.price?.toLocaleString('ru-RU')} ₽</strong>
+
+            {/* <span>{t('toys.common.priceLabel')}:</span> */}
+            {/* <strong>{toy.price.toLocaleString('ru-RU')} ₽</strong> */}
+
             <Button
               className={styles.button}
               onClick={(e) => {

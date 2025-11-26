@@ -1,24 +1,27 @@
-export type TCharacteristicRow = {
-  label: string;
-  value: string;
-};
-
 export type TCharacteristic = {
-  size: number; // "45 см"
-  material: string; // "гипоаллергенный плюш"
-  filler: string; // "холлофайбер"
-  age: string; // "от 3 лет"
-  packaging: string; // "подарочная коробка"
+  size: number; // Чистое число, например 45
+  materialKey: string; // Ключ перевода, например 'toys.tiger_dream_keeper.material'
+  fillerKey: string; // 'toys.tiger_dream_keeper.filler'
+  ageKey: string; // 'toys.tiger_dream_keeper.age'
+  packagingKey: string; // 'toys.tiger_dream_keeper.packaging'
 };
-
-// Возраст "от 1 лет" — тоже строка, потому что текст, а не чистое число.
 
 export type TToy = {
   id: number;
-  title: string;
+
+  // осмысленный ключ сущности, например 'tiger_dream_keeper'
+  translationKey: string;
+
+  // ключи для заголовка и описания
+  titleKey: string; // 'toys.tiger_dream_keeper.title'
+  descriptionKey: string; // 'toys.tiger_dream_keeper.description'
   price: number;
   toyImage: string;
-  description: string;
   characteristic: TCharacteristic;
-  onCardClick?: (toy: any) => void;
+  onCardClick?: (toy: TToy) => void;
+};
+
+export type TCharacteristicRow = {
+  label: string;
+  value: string;
 };

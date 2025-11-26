@@ -49,7 +49,7 @@ export const Layout = () => {
         {/* вызов модалки */}
         {isModalOpen && selectedToy && (
           <ModalDescriptionToy
-            title={selectedToy.title}
+            title={selectedToy.titleKey}
             toyImage={selectedToy.toyImage}
             toy={selectedToy}
             onClose={handleCloseModal}

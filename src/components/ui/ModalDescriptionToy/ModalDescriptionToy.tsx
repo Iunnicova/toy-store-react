@@ -11,11 +11,14 @@ import { getCharacteristics } from '../../../constants/сharacteristic';
 import { HeartIcon } from '../../svg/HeartIcon';
 import { BasketIcon } from '../../svg/BasketIcon';
 import { ImageZoom } from '../ImageZoom';
+import { useTranslation } from 'react-i18next';
 
 export const ModalDescriptionToy = memo(
   ({ title, onClose, toyImage, toy }: TModalDescriptionToyProps) => {
     const characteristics = getCharacteristics(toy.characteristic);
     const [isZoomed, setIsZoomed] = useState(false);
+
+    const { t } = useTranslation(); //хук для перевода
 
     return (
       <>
@@ -62,7 +65,7 @@ export const ModalDescriptionToy = memo(
               <div className={styles.description}>
                 <p className={styles.textDescription}>
                   <span className={styles.label}>Описание:</span>{' '}
-                  {toy.description ?? ''}
+                  {toy.descriptionKey ?? ''}
                 </p>
                 <p className={styles.additionalDescription}>
                   Подходит для игр, сна, украшения комнаты и как антистресс.
@@ -76,7 +79,7 @@ export const ModalDescriptionToy = memo(
             {/* ЦЕНА + КОРЗИНА */}
             <div className={styles.priceBasket}>
               <p className={styles.priceModal}>
-                Цена: {toy.price.toLocaleString('ru-RU')} ₽
+                Цена: {toy.price.toLocaleString('ru-RU')}
               </p>
               <Button
                 className={styles.button}
