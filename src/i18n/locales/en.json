@@ -24,15 +24,19 @@
   },
 
   "toys": {
+    "common": {
+      "priceLabel": "Price"
+    },
+
     "tiger_dream_keeper": {
       "title": "Tigress the Handsome keeper of dreams",
-
       "description": "Handsome Tigress is a stylish and kind stuffed tiger cub in fancy overalls with a bow. He's not just a toy — he's the keeper of children's dreams and secrets. Its soft body, kind eyes and cozy texture make it an ideal companion for sleeping, playing and cuddling.",
       "material": "eco-fur",
       "filler": "synthetic insulation",
       "age": "from 3 years old",
       "packaging": "gift box"
     },
+
     "bunny_hopping": {
       "title": "Bunny Hopping is a storyteller",
       "description": "The bunny is a stuffed animal with pigtails and a book in its paws. She loves to tell fairy tales and share good stories before going to bed. Her kind eyes, cozy outfit and delicate texture make her an ideal companion for toddlers.",
@@ -41,6 +45,7 @@
       "age": "from 3 years old",
       "packaging": "gift box"
     },
+
     "cutie_luna_antistress": {
       "title": "Cutie Luna-antistress gives honey",
       "description": "Charming Moon bee with a jar of magic honey is a soft anti—stress toy that you want to hug. Bright design, wings, bows and kind eyes make her a favorite of children.",
@@ -49,9 +54,9 @@
       "age": "from 5 years old",
       "packaging": "gift box"
     },
+
     "bella_the_squirrel": {
       "title": "Bella the squirrel loves nuts",
-
       "description": "Bella is a charming squirrel with pigtails and a cute outfit. In her paws is a favorite nut, and on her face is a kind smile. Soft, cozy and stylish, Bella will become the best friend for playing, sleeping and decorating the children's room.",
       "material": "fleece",
       "filler": "synthetic insulation",

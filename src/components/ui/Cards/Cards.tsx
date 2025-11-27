@@ -24,7 +24,6 @@ export const Cards = ({ onCardClick }: TCardProps) => {
           <div className={styles.imgCards}>
             <Button
               variant="like"
-              // className={styles.heartButton}
               onClick={(e) => e.stopPropagation()} //что бы при нажатии на сердечко не открывалась модалка
             >
               <HeartIcon className={styles.heartIconCards} />
@@ -39,11 +38,8 @@ export const Cards = ({ onCardClick }: TCardProps) => {
           </div>
           <p className={styles.title}>{t(toy.titleKey)}</p>
           <div className={styles.price}>
-            <span>Цена:</span>
-            <strong>{toy.price?.toLocaleString('ru-RU')} ₽</strong>
-
-            {/* <span>{t('toys.common.priceLabel')}:</span> */}
-            {/* <strong>{toy.price.toLocaleString('ru-RU')} ₽</strong> */}
+            <span>{t('toys.common.priceLabel')}:</span>
+            <strong>{toy.price.toLocaleString('ru-RU')} ₽</strong>
 
             <Button
               className={styles.button}
