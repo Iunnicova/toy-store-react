@@ -29,8 +29,8 @@
     },
 
     "tiger_dream_keeper": {
-      "title": "Tigress the Handsome keeper of dreams",
-      "description": "Handsome Tigress is a stylish and kind stuffed tiger cub in fancy overalls with a bow. He's not just a toy — he's the keeper of children's dreams and secrets. Its soft body, kind eyes and cozy texture make it an ideal companion for sleeping, playing and cuddling.",
+      "title": "Tiger the Handsome is keeper of dreams",
+      "description": "Tiger the Handsome is a stylish and kind stuffed tiger cub in fancy overalls with a bow. He's not just a toy , he's the keeper of children's dreams and secrets. Its soft body, kind eyes and cozy texture make it an ideal companion for sleeping, playing and cuddling.",
       "material": "eco-fur",
       "filler": "synthetic insulation",
       "age": "from 3 years old",
@@ -39,7 +39,7 @@
 
     "bunny_hopping": {
       "title": "Bunny Hopping is a storyteller",
-      "description": "The bunny is a stuffed animal with pigtails and a book in its paws. She loves to tell fairy tales and share good stories before going to bed. Her kind eyes, cozy outfit and delicate texture make her an ideal companion for toddlers.",
+      "description": "The Bunny is a stuffed animal with pigtails and a book in its paws. She loves to tell fairy tales and share good stories before going to bed. Her kind eyes, cozy outfit and delicate texture make her an ideal companion for kids.",
       "material": "eco-fur",
       "filler": "synthetic insulation",
       "age": "from 3 years old",
@@ -47,7 +47,7 @@
     },
 
     "cutie_luna_antistress": {
-      "title": "Cutie Luna-antistress gives honey",
+      "title": "Cutie Luna gives honey",
       "description": "Charming Moon bee with a jar of magic honey is a soft anti—stress toy that you want to hug. Bright design, wings, bows and kind eyes make her a favorite of children.",
       "material": "biflex",
       "filler": "Small balls",
@@ -61,6 +61,78 @@
       "material": "fleece",
       "filler": "synthetic insulation",
       "age": "from 3 years old",
+      "packaging": "gift box"
+    },
+
+    "fairy_butterfly": {
+      "title": "Fairy Butterfly will give you sweet dreams",
+      "description": "Fairy Butterfly is a gentle and magical bedfellow. Her soft wings, radiant smile and fabulous image help kids to relax and immerse themselves in the world of good dreams. It was as if she had flown out of a fairy tale to hug and comfort.",
+      "material": "hypoallergenic plush",
+      "filler": "holofiber",
+      "age": "from 1 year old",
+      "packaging": "gift box"
+    },
+
+    "peter_the_hedgehog": {
+      "title": "Peter the hedgehog is a mushroom lover",
+      "description": "Petya is a cute teddy hedgehog with a kind smile. He loves forest walks and collects his favorite mushrooms. Soft, cozy and safe , Petya will become a loyal friend to the child at home and on the road.",
+      "material": "velsoft",
+      "filler": "microgranules",
+      "age": "from 5 years old",
+      "packaging": "gift box"
+    },
+
+    "little_fox_sister": {
+      "title": "Little Fox Sister loves adventures",
+      "description": "Little Fox Sister is a mischievous and kind traveler. In her smart dress and with a basket in her paws, she is ready for new discoveries and forest walks. Soft, bright and cozy  it inspires kids to play and imagine.",
+      "material": "velsoft",
+      "filler": "microgranules",
+      "age": "from 5 years old",
+      "packaging": "gift box"
+    },
+
+    "birthday_mouse": {
+      "title": "Mouse - I'm going to your birthday party",
+      "description": "The mouse is a charming teddy mouse with a gentle smile and a kind heart. Her round ears, naughty bow and soft dress make her an ideal companion for games, fairy tales and cozy hugs. The mouse loves flowers, friendship and always brings warmth and joy with him.",
+      "material": "eco-fur",
+      "filler": "synthetic insulation",
+      "age": "from 3 years old",
+      "packaging": "gift box"
+    },
+
+    "gena_is_a_football_player": {
+      "title": "Gena is a football player which gives you a good mood",
+      "description": "Gena is active, kind and always ready to play. Gena inspires movement, friendship and fun adventures. Soft, sporty and charming  it's perfect for playing, cuddling and decorating a child's room.",
+      "material": "hypoallergenic plush",
+      "filler": "holofiber",
+      "age": "from 1 year old",
+      "packaging": "gift box"
+    },
+
+    "the_croaking_frog": {
+      "title": "Frog Croaker loves outfits",
+      "description": "Croaker is a fashionista among plush friends. Her butterfly outfit and stylish bow make her a real star of the children's collection. Soft, bright and charming, she inspires kids to play and be creative.",
+      "material": "Chenille / softwire",
+      "filler": "holofiber",
+      "age": "from 3 years old",
+      "packaging": "gift box"
+    },
+
+    "sharik_champ": {
+      "title": "Sharik is the champion of fun ball games",
+      "description": "Sharik is an energetic and kind teddy dog who loves to play ball. His athletic spirit, bright outfit and friendly face inspire kids to move and have fun games.",
+      "material": "hypoallergenic plush",
+      "filler": "holofiber",
+      "age": "from 1 year old",
+      "packaging": "gift box"
+    },
+
+    "kitty_kitty": {
+      "title": "Kitty Cat is a beauty in a dress",
+      "description": "Kitty Cat is a real fashionista! Her elegant dress, expressive eyes and gentle smile make her a favorite of girls. Soft, stylish and cozy, it is perfect for playing, cuddling and decorating the children's room.",
+      "material": "hypoallergenic plush",
+      "filler": "holofiber",
+      "age": "from 1 year old",
       "packaging": "gift box"
     }
   }

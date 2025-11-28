@@ -95,6 +95,9 @@
       width: rem(65);
       height: rem(30);
     }
+    @include mobile-s {
+      width: rem(45);
+    }
   }
 
   //кнопки день, ночь, земля

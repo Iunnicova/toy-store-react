@@ -75,124 +75,131 @@ export const toys: TToy[] = [
     descriptionKey: 'toys.bella_the_squirrel.description',
   },
 
-  // {
-  //   id: 4,
-  //   titleKey: 'Бабочка Фея подарит сладкие сны',
-  //   price: 5700,
-  //   toyImage: toyButterfly,
-  //   characteristic: {
-  //     size: 55,
-  //     materialKey: 'гипоаллергенный плюш',
-  //     fillerKey: 'холлофайбер',
-  //     ageKey: 'от 1 лет',
-  //     packagingKey: 'подарочная коробка',
-  //   },
-  //   descriptionKey:
-  //     'Бабочка Фея — нежная и волшебная подружка для сна. Её мягкие крылышки, сияющая улыбка и сказочный образ помогают малышам расслабиться и погрузиться в мир добрых снов. Она словно прилетела из сказки, чтобы обнять и успокоить.',
-  // },
-  // {
-  //   id: 5,
-  //   titleKey: 'Ёжик Петя-любитель грибочков',
-  //   price: 5100,
-  //   toyImage: toyHedgehog,
-  //   characteristic: {
-  //     size: 45,
-  //     materialKey: 'Велсофт (velsoft)',
-  //     fillerKey: 'микрогранулы',
-  //     ageKey: 'от 5 лет',
-  //     packagingKey: 'подарочная коробка',
-  //   },
-  //   descriptionKey:
-  //     'Петя — милый плюшевый ёжик с доброй улыбкой и грибочком на голове. Он обожает лесные прогулки и собирает свои любимые грибочки. Мягкий, уютный и безопасный — Петя станет верным другом ребёнку дома и в дороге.',
-  // },
-  // {
-  //   id: 6,
-  //   titleKey: 'Лисичка Сестричка-любит приключения',
-  //   price: 6300,
-  //   toyImage: toyFox,
-  //   characteristic: {
-  //     size: 55,
-  //     materialKey: 'Велсофт (velsoft)',
-  //     fillerKey: 'микрогранулы',
-  //     ageKey: 'от 5 лет',
-  //     packagingKey: 'подарочная коробка',
-  //   },
-  //   descriptionKey:
-  //     'Лисичка Сестричка — озорная и добрая путешественница. В своём нарядном платье и с корзинкой в лапках она готова к новым открытиям и лесным прогулкам. Мягкая, яркая и уютная — она вдохновляет малышей на игру и воображение.',
-  // },
-  // {
-  //   id: 7,
-  //   titleKey: 'Мышуля- собралась к тебе на день рождения',
-  //   price: 4100,
-  //   toyImage: toyHedgehog1,
-  //   characteristic: {
-  //     size: 35,
-  //     materialKey: 'Эко-мех',
-  //     fillerKey: 'синтепух',
-  //     ageKey: 'от 3 лет',
-  //     packagingKey: 'подарочная коробка',
-  //   },
-  //   descriptionKey:
-  //     'Мышуля — очаровательная плюшевая мышка с нежной улыбкой и добрым сердцем. Её круглые ушки, озорной бантик и мягкое платьице делают её идеальной спутницей для игр, сказок и уютных обнимашек. Мышуля любит цветы, дружбу и всегда приносит с собой тепло и радость.',
-  // },
-  // {
-  //   id: 8,
-  //   titleKey: 'Гена - футболист дарит настроение',
-  //   price: 5700,
-  //   toyImage: toyBoy,
-  //   characteristic: {
-  //     size: 55,
-  //     materialKey: 'гипоаллергенный плюш',
-  //     fillerKey: 'холлофайбер',
-  //     ageKey: 'от 1 лет',
-  //     packagingKey: 'подарочная коробка',
-  //   },
-  //   descriptionKey:
-  //     'Гена активный, добрый и всегда готов к игре — Гена вдохновляет на движение, дружбу и весёлые приключения. Мягкий, спортивный и обаятельный — он идеально подходит для игр, объятий и украшения детской комнаты.',
-  // },
-  // {
-  //   id: 9,
-  //   titleKey: 'Лягушка Квакушка-любит наряды',
-  //   price: 4300,
-  //   toyImage: toyFrog,
-  //   characteristic: {
-  //     size: 35,
-  //     materialKey: 'Шенилл / софтвелюр',
-  //     fillerKey: 'холлофайбер',
-  //     ageKey: 'от 3 лет',
-  //     packagingKey: 'подарочная коробка',
-  //   },
-  //   descriptionKey:
-  //     'Квакушка — модница среди плюшевых друзей. Её наряд с бабочками и стильный бантик делают её настоящей звездой детской коллекции. Мягкая, яркая и обаятельная — она вдохновляет малышей на игру и творчество.',
-  // },
-  // {
-  //   id: 10,
-  //   titleKey: 'Шарик-чемпион веселых игр в мячик',
-  //   price: 5100,
-  //   toyImage: toyDoggie,
-  //   characteristic: {
-  //     size: 45,
-  //     materialKey: 'гипоаллергенный плюш',
-  //     fillerKey: 'холлофайбер',
-  //     ageKey: 'от 1 лет',
-  //     packagingKey: 'подарочная коробка',
-  //   },
-  //   descriptionKey:
-  //     'Шарик — энергичный и добрый плюшевый пёсик, который обожает играть в мяч. Его спортивный дух, яркий наряд и дружелюбная мордашка вдохновляют малышей на движение и весёлые игры.',
-  // },
-  // {
-  //   id: 11,
-  //   titleKey: 'Кисуля Китти красотка в платье',
-  //   price: 5700,
-  //   toyImage: toyKitty,
-  //   characteristic: {
-  //     size: 45,
-  //     materialKey: 'гипоаллергенный плюш',
-  //     fillerKey: 'холлофайбер',
-  //     ageKey: 'от 1 лет',
-  //     packagingKey: 'подарочная коробка',
-  //   },
-  //   descriptionKey:
-  //     'Кисуля Китти — настоящая модница! Её нарядное платье, выразительные глазки и нежная улыбка делают её любимицей девочек. Мягкая, стильная и уютная — она идеально подходит для игр, объятий и украшения детской комнаты.',
-  // },
+  {
+    id: 4,
+    translationKey: 'fairy_butterfly',
+    titleKey: 'toys.fairy_butterfly.title',
+    price: 5700,
+    toyImage: toyButterfly,
+    characteristic: {
+      size: 55,
+      materialKey: 'toys.fairy_butterfly.material',
+      fillerKey: 'toys.fairy_butterfly.filler',
+      ageKey: 'toys.fairy_butterfly.age',
+      packagingKey: 'toys.fairy_butterfly.packaging',
+    },
+    descriptionKey: 'toys.fairy_butterfly.description',
+  },
+
+  {
+    id: 5,
+    translationKey: 'peter_the_hedgehog',
+    titleKey: 'toys.peter_the_hedgehog.title',
+    price: 5100,
+    toyImage: toyHedgehog,
+    characteristic: {
+      size: 45,
+      materialKey: 'toys.peter_the_hedgehog.material',
+      fillerKey: 'toys.peter_the_hedgehog.filler',
+      ageKey: 'toys.peter_the_hedgehog.age',
+      packagingKey: 'toys.peter_the_hedgehog.packaging',
+    },
+    descriptionKey: 'toys.peter_the_hedgehog.description',
+  },
+
+  {
+    id: 6,
+    translationKey: 'little_fox_sister',
+    titleKey: 'toys.little_fox_sister.title',
+    price: 6300,
+    toyImage: toyFox,
+    characteristic: {
+      size: 55,
+      materialKey: 'toys.little_fox_sister.material',
+      fillerKey: 'toys.little_fox_sister.filler',
+      ageKey: 'toys.little_fox_sister.age',
+      packagingKey: 'toys.little_fox_sister.packaging',
+    },
+    descriptionKey: 'toys.little_fox_sister.description',
+  },
+
+  {
+    id: 7,
+    translationKey: 'birthday_mouse',
+    titleKey: 'toys.birthday_mouse.title',
+    price: 4100,
+    toyImage: toyHedgehog1,
+    characteristic: {
+      size: 35,
+      materialKey: 'toys.birthday_mouse.material',
+      fillerKey: 'toys.birthday_mouse.filler',
+      ageKey: 'toys.birthday_mouse.age',
+      packagingKey: 'toys.birthday_mouse.packaging',
+    },
+    descriptionKey: 'toys.birthday_mouse.description',
+  },
+
+  {
+    id: 8,
+    translationKey: 'gena_is_a_football_player',
+    titleKey: 'toys.gena_is_a_football_player.title',
+    price: 5700,
+    toyImage: toyBoy,
+    characteristic: {
+      size: 55,
+      materialKey: 'toys.gena_is_a_football_player.material',
+      fillerKey: 'toys.gena_is_a_football_player.filler',
+      ageKey: 'toys.gena_is_a_football_player.age',
+      packagingKey: 'toys.gena_is_a_football_player.packaging',
+    },
+    descriptionKey: 'toys.gena_is_a_football_player.description',
+  },
+
+  {
+    id: 9,
+    translationKey: 'the_croaking_frog',
+    titleKey: 'toys.the_croaking_frog.title',
+    price: 4300,
+    toyImage: toyFrog,
+    characteristic: {
+      size: 35,
+      materialKey: 'toys.the_croaking_frog.material',
+      fillerKey: 'toys.the_croaking_frog.filler',
+      ageKey: 'toys.the_croaking_frog.age',
+      packagingKey: 'toys.the_croaking_frog.packaging',
+    },
+    descriptionKey: 'toys.the_croaking_frog.description',
+  },
+
+  {
+    id: 10,
+    translationKey: 'sharik_champ',
+    titleKey: 'toys.sharik_champ.title',
+    price: 5100,
+    toyImage: toyDoggie,
+    characteristic: {
+      size: 45,
+      materialKey: 'toys.sharik_champ.material',
+      fillerKey: 'toys.sharik_champ.filler',
+      ageKey: 'toys.sharik_champ.age',
+      packagingKey: 'toys.sharik_champ.packaging',
+    },
+    descriptionKey: 'toys.sharik_champ.description',
+  },
+
+  {
+    id: 11,
+    translationKey: 'kitty_cat',
+    titleKey: 'toys.kitty_cat.title',
+    price: 5700,
+    toyImage: toyKitty,
+    characteristic: {
+      size: 45,
+      materialKey: 'toys.kitty_cat.material',
+      fillerKey: 'toys.kitty_cat.filler',
+      ageKey: 'toys.kitty_cat.age',
+      packagingKey: 'toys.kitty_cat.packaging',
+    },
+    descriptionKey: 'toys.kitty_cat.description',
+  },
 ];
