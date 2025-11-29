@@ -1,26 +1,26 @@
 {
   "header": {
-    "slogan": "Играчке које дају осмех!",
-    "mainNav": "Основна навигација",
+    "slogan": "Igračke koje daju osmeh!",
+    "mainNav": "Osnovna navigacija",
 
     "nav": {
-      "favorites": "Фаворити",
-      "profile": "Профил",
-      "basket_aria": "Корпа: {{value}}",
-      "favorites_aria": "Фаворити: {{value}} роба(е)",
-      "profile_aria": "Пријавите се на профил",
-      "profile_with_name": "Профил: {{value}}"
+      "favorites": "Favoriti",
+      "profile": "Profil",
+      "basket_aria": "Korpa: {{value}}",
+      "favorites_aria": "Favoriti: {{value}} roba(e)",
+      "profile_aria": "Prijavite se na profil",
+      "profile_with_name": "Profil: {{value}}"
     }
   },
   "buttons": {
-    "bookmarks": "Фаворити",
-    "profile": "Профил"
+    "bookmarks": "Favoriti",
+    "profile": "Profil"
   },
   "search": {
-    "title": "Пронађи свог љубимца!",
-    "placeholder": "Напиши моје име",
-    "button": "Претрага",
-    "alert": "Претрага"
+    "title": "Pronađite svoju omiljenu!",
+    "placeholder": "Napiši moje ime",
+    "button": "Pretraga",
+    "alert": "Pretraga"
   },
 
   "toys": {
@@ -29,111 +29,111 @@
     },
 
     "tiger_dream_keeper": {
-      "title": "Тигруша Згодни je чувар снова",
-      "description": "Тигруша Беаутифул је модеран и љубазан плишани тигар у елегантним комбинезонима са машном. Он није само играчка-он је чувар дечијих снова и тајни. Његово меко тело, љубазне очи и пријатна текстура чине га савршеним пратиоцем за спавање, играње и мажење.",
-      "material": "еко-крзно",
-      "filler": "синтепух",
-      "age": "од 3 године",
-      "packaging": "поклон кутија"
+      "title": "Tigrusha Zgodni je čuvar snova",
+      "description": "Tigrusha Zgodni je moderan i ljubazan plišani tigar u elegantnim kombinezonima sa mašnom. On nije samo igračka, on je čuvar dečijih snova i tajni. Njegovo meko telo, ljubazne oči i prijatna tekstura čine ga savršenim pratiocem za spavanje, igranje i maženje.",
+      "material": "eko-krzno",
+      "filler": "sintepuh",
+      "age": "od 3 godine",
+      "packaging": "poklon kutija"
     },
 
     "bunny_hopping": {
-      "title": "Зека Попригајка-бајка",
-      "description": "Зека Попригајка мека играчка са Косицама и књигом у ногама. Обожава причати бајке и делити љубазне приче пре спавања. Њене љубазне очи, удобна одећа и нежна текстура чине је савршеним пратиоцем за малу децу.",
-      "material": "еко-крзно",
-      "filler": "синтепух",
-      "age": "од 3 године",
-      "packaging": "поклон кутија"
+      "title": "Zeka Poprigajka je pripovjedačica",
+      "description": "Zeka Poprigajka je meka igračka sa kosicama i knjigom u nogama. Ona obožava da priča bajke i dele ljubazne priče pre spavanja. Njene ljubazne oči, udobna odeća i nežna tekstura čine je savršenim pratiocem za malu decu.",
+      "material": "eko-krzno",
+      "filler": "sintepuh",
+      "age": "od 3 godine",
+      "packaging": "poklon kutija"
     },
 
     "cutie_luna_antistress": {
-      "title": "Риба Месец-антистрес даје мед",
-      "description": "Преслатка пчела Луна са теглом чаробног меда је плишана антистрес играчка коју желите да загрлите. Упечатљив дизајн, крила, лукови и љубазне очи чине је омиљеном децом.",
-      "material": "бифлекс",
-      "filler": "Мале куглице",
-      "age": "од 5 година",
-      "packaging": "поклон кутија"
+      "title": "Slatki Luna daje med",
+      "description": "Preslatka pčela Luna sa teglom čarobnog meda je plišana antistres igračka koju želite da zagrlite. Upečatljiv dizajn, krila, lukovi i ljubazne oči čine je omiljenom decom.",
+      "material": "biflex",
+      "filler": "Male kuglice",
+      "age": "od 5 godina",
+      "packaging": "poklon kutija"
     },
 
     "bella_the_squirrel": {
-      "title": "Белчонок Белла воли орахе",
-      "description": "Белла је преслатка веверица са плетеницама и слатком одећом. У њеним ногама је омиљени орах, а на лицу је добар осмех. Мекана, удобна и елегантна, Белла ће бити најбоља девојка за игру, спавање и украшавање дечије собе.",
-      "material": "флис",
-      "filler": "синтепух",
-      "age": "од 3 године",
-      "packaging": "поклон кутија"
+      "title": "Belčonok Bella voli orasi",
+      "description": "Bella je preslatka veverica sa pletenicama i slatkom odećom. U njenim nogama je omiljeni orah, a na licu je dobar osmeh. Mekana, udobna i elegantna, Bella će biti najbolja prijateljica za igru, spavanje i dekoraciju dečije sobe.",
+      "material": "flis",
+      "filler": "sintepuh",
+      "age": "od 3 godine",
+      "packaging": "poklon kutija"
     },
 
     "fairy_butterfly": {
-      "title": "Лептир вила ће дати слатке снове",
-      "description": "Лептир вила је нежна и магична девојка за спавање. Њена мекана крила, блистав осмех и феноменална слика помажу малишанима да се опусте и зароне у свет добрих снова. Као да је долетела из бајке да се загрли и смири.",
-      "material": "хипоалергенски плиш",
-      "filler": "холофајбер",
-      "age": "од 1 године",
-      "packaging": "поклон кутија"
+      "title": "Leptir vila će dati slatke snove",
+      "description": "Leptir vila je nežna i magična prijateljica za spavanje. Njena mekana krila, blistav osmeh i fenomenalna slika pomažu mališanima da se opuste i zarone u svet dobrih snova. Kao da je doletela iz bajke da se zagrli i smiri.",
+      "material": "hipoalergenski pliš",
+      "filler": "holofajber",
+      "age": "od 1 godine",
+      "packaging": "poklon kutija"
     },
 
     "peter_the_hedgehog": {
-      "title": "Јеж Петја-љубитељ гљива",
-      "description": "Петиа је симпатични плишани јеж са добрим осмехом. Обожава шумске шетње и сакупља своје омиљене гљиве. Мекан, удобан и сигуран — Петиа ће постати одан пријатељ детету код куће и на путу.",
-      "material": "велсофт",
-      "filler": "микрогрануле",
-      "age": "от 5 лет",
-      "packaging": "поклон кутија"
+      "title": "Jež Petja je ljubitelj gljiva",
+      "description": "Petia je simpatični plišani jež sa dobrim osmehom. On obožava šumske šetnje i sakuplja svoje omiljene gljive. Mekan , udoban i siguran, Petia će postati odan prijatelj detetu kod kuće i na putu.",
+      "material": "velsoft",
+      "filler": "mikrogranule",
+      "age": "od 5 godina",
+      "packaging": "poklon kutija"
     },
 
     "little_fox_sister": {
-      "title": "Лисица сестра - воли авантуру",
-      "description": "Лисичка сестра је несташна и добра путница. У својој елегантној хаљини и са корпом у ногама, спремна је за нова открића и шумске шетње. Мекана, светла и пријатна — инспирише малишане да се играју и замишљају.",
-      "material": "велсофт",
-      "filler": "микрогрануле",
-      "age": "от 5 лет",
-      "packaging": "поклон кутија"
+      "title": "Lisica sestra  voli avanturu",
+      "description": "Lisica sestra je nestašna i dobra putnica. U svojoj elegantnoj haljini i sa korpom u nogama, spremna je za nova otkrića i šumske šetnje. Mekana, živahna i prijatna, inspiriše mališane da se igraju i zamišljaju.",
+      "material": "velsoft",
+      "filler": "mikrogranule",
+      "age": "od 5 godina",
+      "packaging": "poklon kutija"
     },
 
     "birthday_mouse": {
-      "title": "Мишула-окупила се за твој рођендан",
-      "description": "Мишула је преслатки плишани миш са нежним осмехом и љубазним срцем. Њене округле уши, несташни лук и мекана хаљина чине је савршеним пратиоцем за игре, бајке и угодне загрљаје. Моусула воли цвеће, пријатељство и са собом увек доноси топлину и радост.",
-      "material": "еко-крзно",
-      "filler": "синтепух",
-      "age": "од 3 године",
-      "packaging": "поклон кутија"
+      "title": "Mišula ide za tvoj rođendan",
+      "description": "Mišula je preslatki plišani miš sa nežnim osmehom i ljubaznim srcem. Njene okrugle uši, nestašni luk i mekana haljina čine je savršenim pratiocem za igre, bajke i ugodne zagrljaje. Mišula voli cveće, prijateljstvo i sa sobom uvek donosi toplinu i radost.",
+      "material": "eko-krzno",
+      "filler": "sintepuh",
+      "age": "od 3 godine",
+      "packaging": "poklon kutija"
     },
 
     "gena_is_a_football_player": {
-      "title": "Гена-фудбалер даје расположење",
-      "description": "Гена је активан, љубазан и увек спреман за игру — Гена инспирише кретање, пријатељство и забавне авантуре. Мекан, спортски и шармантан — савршен је за игру, мажење и украшавање дечије собе.",
-      "material": "хипоалергенски плиш",
-      "filler": "холофајбер",
-      "age": "од 1 године",
-      "packaging": "поклон кутија"
+      "title": "Gena je fudbaler koji daje raspoloženje",
+      "description": "Gena je aktivan, ljubazan i uvek spreman za igru. Gena inspiriše kretanje, prijateljstvo i zabavne avanture. Mekan, sportski i šarmantan, savršen je za igru, maženje i ukrašavanje dečije sobe.",
+      "material": "hipoalergenski pliš",
+      "filler": "holofajber",
+      "age": "od 1 godine",
+      "packaging": "poklon kutija"
     },
 
     "the_croaking_frog": {
-      "title": "Жаба Квакушка воли одећу",
-      "description": "Квакушка је Фасхиониста међу плишаним пријатељима. Њена одећа са лептирима и стилски лук чине је правом звездом дечије колекције. Мекана, светла и шармантна — инспирише малишане на игру и креативност.",
-      "material": "Шенил / софтвелур",
-      "filler": "холофајбер",
-      "age": "од 3 године",
-      "packaging": "поклон кутија"
+      "title": "Žaba Kvakuška voli odeću",
+      "description": "Kvakuška je fashionista među plišanim prijateljima. Njena odeća sa leptirima i stilski luk čine je pravom zvezdom dečije kolekcije. Meka, svetla i šarmantna, inspiriše mališane da se igraju i stvaraju.",
+      "material": "Šenil / softvelur",
+      "filler": "holofajber",
+      "age": "od 3 godine",
+      "packaging": "poklon kutija"
     },
 
     "sharik_champ": {
-      "title": "Лопта је шампион забавних игара са лоптом",
-      "description": "Лопта је енергичан и љубазан плишани пас који обожава да игра лопту. Његов спортски дух, живахна одећа и пријатељско лице надахњују малишане за кретање и забавне игре.",
-      "material": "хипоалергенски плиш",
-      "filler": "холофајбер",
-      "age": "од 1 године",
-      "packaging": "поклон кутија"
-    }
-  },
+      "title": "Šarik je šampion zabavnih igara sa loptom",
+      "description": "Šarik je energičan i ljubazan plišani pas koji obožava da igra loptu. Njegov sportski duh, živahna odeća i prijateljsko lice nadahnjuju mališane za kretanje i zabavne igre.",
+      "material": "hipoalergenski pliš",
+      "filler": "holofajber",
+      "age": "od 3 godine",
+      "packaging": "poklon kutija"
+    },
 
-  "kitty_kitty": {
-    "title": "Кисула Китти Хоттие у хаљини",
-    "description": "Кисула Китти је права Фасхиониста! Њена елегантна хаљина, изражајне очи и нежан осмех чине је омиљеном девојчицом. Мекана, елегантна и пријатна — савршена је за игру, мажење и украшавање дечије собе.",
-    "material": "хипоалергенски плиш",
-    "filler": "холофајбер",
-    "age": "од 1 године",
-    "packaging": "поклон кутија"
+    "kitty_cat": {
+      "title": "Kisula Kitti je lepotica u haljini",
+      "description": "Kisula Kitti je prava fashionista! Njena elegantna haljina, izražajne oči i nežan osmeh čine je omiljenom devojčicom. Mekana, elegantna i prijatna ona je savršena za igru, maženje i ukrašavanje dečije sobe.",
+      "material": "hipoalergenski pliš",
+      "filler": "holofajber",
+      "age": "od 1 godine",
+      "packaging": "poklon kutija"
+    }
   }
 }
