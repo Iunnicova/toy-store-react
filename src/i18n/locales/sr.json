@@ -145,5 +145,31 @@
       "age": "od 1 godine",
       "packaging": "poklon kutija"
     }
+  },
+
+  "footer": {
+    "rights": "Sva prava zadržana",
+
+    "sections": {
+      "shop": "Online prodavnica",
+      "company": "Kompanija",
+      "customers": "Kupcima"
+    },
+    "links": {
+      "delivery_payment": "Dostava i plaćanje",
+      "exchange_return": "Razmena i povraćaj robe",
+      "sale_rules": "Pravila prodaje",
+      "privacy_policy": "Politika privatnosti",
+      "about_company": "O kompaniji",
+      "investors": "Investitorima",
+      "vacancies": "Poslovi",
+      "contacts": "Kontakti",
+      "bonus_cards": "Bonus kartice",
+      "gift_cards": "Poklon kartice",
+      "gift_card_balance": "Provera stanja poklon kartice",
+      "electronic_gift_cards": "Elektronske poklon kartice"
+    },
+    "emailPlaceholder": "E-pošta",
+    "subscribeButton": "Pretplatite se"
   }
 }

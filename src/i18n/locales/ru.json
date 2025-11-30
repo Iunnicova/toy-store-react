@@ -144,5 +144,31 @@
       "age": "от 1 года",
       "packaging": "подарочная коробка"
     }
+  },
+
+  "footer": {
+    "rights": "Все права защищены",
+
+    "sections": {
+      "shop": "Интернет-магазин",
+      "company": "Компания",
+      "customers": "Покупателям"
+    },
+    "links": {
+      "delivery_payment": "Доставка и оплата",
+      "exchange_return": "Обмен и возврат товара",
+      "sale_rules": "Правила продажи",
+      "privacy_policy": "Политика конфиденциальности",
+      "about_company": "О компании",
+      "investors": "Инвесторам",
+      "vacancies": "Вакансии",
+      "contacts": "Контакты",
+      "bonus_cards": "Бонусные карты",
+      "gift_cards": "Подарочные карты",
+      "gift_card_balance": "Проверка баланса подарочной карты",
+      "electronic_gift_cards": "Электронные подарочные карты"
+    },
+    "emailPlaceholder": "Электронная почта",
+    "subscribeButton": "Подписаться"
   }
 }

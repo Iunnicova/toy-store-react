@@ -4,7 +4,7 @@
 export const CURRENT_YEAR = new Date().getFullYear();
 
 // текст копирайта
-export const FOOTER_INFO = `© ${CURRENT_YEAR} UnnToyStore. Все права защищены.`;
+export const FOOTER_INFO = `© ${CURRENT_YEAR} UnnToyStore. `;
 
 // ссылки на соцсети
 export const SOCIAL_LINKS = [

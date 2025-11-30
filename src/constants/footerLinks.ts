@@ -1,29 +1,33 @@
 export const FOOTER_LINKS = [
   {
-    title: 'Интернет-магазин',
+    titleKey: 'footer.sections.shop',
     links: [
-      { name: 'Доставка и оплата', url: '/', rel: null },
-      { name: 'Обмен и возврат товара', url: '/', rel: null },
-      { name: 'Правила продажи', url: '/', rel: 'nofollow' },
-      { name: 'Политика конфиденциальности', url: '/', rel: null },
+      { nameKey: 'footer.links.delivery_payment', url: '/', rel: null },
+      { nameKey: 'footer.links.exchange_return', url: '/', rel: null },
+      { nameKey: 'footer.links.sale_rules', url: '/', rel: 'nofollow' },
+      { nameKey: 'footer.links.privacy_policy', url: '/', rel: null },
     ],
   },
   {
-    title: 'Компания',
+    titleKey: 'footer.sections.company',
     links: [
-      { name: 'О компании', url: '/', rel: 'nofollow' },
-      { name: 'Инвесторам', url: '/', rel: 'nofollow' },
-      { name: 'Вакансии', url: '/', rel: 'nofollow' },
-      { name: 'Контакты', url: '/', rel: 'nofollow' },
+      { nameKey: 'footer.links.about_company', url: '/', rel: 'nofollow' },
+      { nameKey: 'footer.links.investors', url: '/', rel: 'nofollow' },
+      { nameKey: 'footer.links.vacancies', url: '/', rel: 'nofollow' },
+      { nameKey: 'footer.links.contacts', url: '/', rel: 'nofollow' },
     ],
   },
   {
-    title: 'Покупателям',
+    titleKey: 'footer.sections.customers',
     links: [
-      { name: 'Бонусные карты', url: '/', rel: 'nofollow' },
-      { name: 'Подарочные карты', url: '/', rel: 'nofollow' },
-      { name: 'Проверка баланса подарочной карты', url: '/', rel: 'nofollow' },
-      { name: 'Электронные подарочные карты', url: '/', rel: 'nofollow' },
+      { nameKey: 'footer.links.bonus_cards', url: '/', rel: 'nofollow' },
+      { nameKey: 'footer.links.gift_cards', url: '/', rel: 'nofollow' },
+      { nameKey: 'footer.links.gift_card_balance', url: '/', rel: 'nofollow' },
+      {
+        nameKey: 'footer.links.electronic_gift_cards',
+        url: '/',
+        rel: 'nofollow',
+      },
     ],
   },
 ];

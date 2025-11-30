@@ -9,6 +9,8 @@ import { ReactComponent as FacebookIcon } from '../../../../icon/facebook.svg';
 import { Input } from '../Input';
 import { FOOTER_LINKS } from '../../../constants/footerLinks';
 import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
+import { CURRENT_YEAR } from '../../../constants/footerData';
 
 const socialIconMap = {
   Instagram: InstagramIcon,
@@ -17,24 +19,25 @@ const socialIconMap = {
 };
 
 export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
+  const { t } = useTranslation(); //хук перевода
   const [email, setEmail] = useState('');
   return (
     <footer className={styles.footer}>
       <ul className={styles.footerNavigation}>
         {FOOTER_LINKS.map((block) => (
-          <li className={styles.blockOnlineStore} key={block.title}>
+          <li className={styles.blockOnlineStore} key={block.titleKey}>
             <span className={styles.sectionContent} data-testid="typography">
-              {block.title}
+              {t(block.titleKey)}
             </span>
             <ul className={styles.blockCategory}>
               {block.links.map((link) => (
-                <li key={link.name}>
+                <li key={link.nameKey}>
                   <a
                     className={styles.link}
                     href={link.url}
                     rel={link.rel || undefined}
                   >
-                    {link.name}
+                    {t(link.nameKey)}
                   </a>
                 </li>
               ))}
@@ -43,7 +46,9 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
         ))}
       </ul>
       <section className={styles.socialAndSubscribe}>
-        <p className={styles.copyrightNotice}>{info}</p>
+        <p className={styles.copyrightNotice}>
+          © {CURRENT_YEAR} UnnToyStore. {t('footer.rights')}
+        </p>
         <ul className={styles.socialLinks}>
           {socialLinks.map((link) => {
             const Icon = socialIconMap[link.name as keyof typeof socialIconMap];
@@ -60,10 +65,10 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
           <Input
             className={styles.input}
             type="text"
-            placeholder="Электронная почта"
+            placeholder={t('footer.emailPlaceholder')}
           />
           <Button variant="headerButton" onClick={() => onSubscribe(email)}>
-            <p className={styles.count}>Подписаться</p>
+            <p className={styles.count}>{t('footer.subscribeButton')}</p>
           </Button>
         </div>
       </section>

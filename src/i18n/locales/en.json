@@ -144,5 +144,31 @@
       "age": "from 1 year old",
       "packaging": "gift box"
     }
+  },
+
+  "footer": {
+    "rights": "All rights reserved",
+
+    "sections": {
+      "shop": "Online-store",
+      "company": "Company",
+      "customers": "To customers"
+    },
+    "links": {
+      "delivery_payment": "Delivery and payment",
+      "exchange_return": "Exchange and return of goods",
+      "sale_rules": "Sales rules",
+      "privacy_policy": "Privacy policy",
+      "about_company": "About the company",
+      "investors": "To investors",
+      "vacancies": "Job openings",
+      "contacts": "Contacts",
+      "bonus_cards": "Bonus cards",
+      "gift_cards": "Gift cards",
+      "gift_card_balance": "Checking the balance of a gift card",
+      "electronic_gift_cards": "Electronic gift cards"
+    },
+    "emailPlaceholder": "Email",
+    "subscribeButton": "Subscribe"
   }
 }
