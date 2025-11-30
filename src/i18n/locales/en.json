@@ -24,8 +24,17 @@
   },
 
   "toys": {
+    "characteristics": {
+      "size": "Size",
+      "material": "Material",
+      "filler": "Filler",
+      "age": "Age",
+      "packaging": "Packaging"
+    },
     "common": {
-      "priceLabel": "Price"
+      "priceLabel": "Price",
+      "description": "Description",
+      "additionalDescription": "It is suitable for playing, sleeping, room decoration and as an antistress. The toy is easy to wash and retains its shape . Moms will appreciate it! A perfect gift for a birthday, holiday or just for joy."
     },
 
     "tiger_dream_keeper": {

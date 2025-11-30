@@ -24,8 +24,18 @@
   },
 
   "toys": {
+    "characteristics": {
+      "size": "Veličina",
+      "material": "Materijal",
+      "filler": "Punilo",
+      "age": "Starost",
+      "packaging": "Pakovanje"
+    },
+
     "common": {
-      "priceLabel": "Cena"
+      "priceLabel": "Cena",
+      "description": "Opis",
+      "additionalDescription": "Pogodno je za igru, spavanje, ukrašavanje sobe i kao antistres. Igračka se lako briše i održava oblik . Mame će ceniti! Divan poklon za rođendan, praznik ili samo za radost."
     },
 
     "tiger_dream_keeper": {

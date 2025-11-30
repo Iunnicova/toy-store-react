@@ -1,5 +1,5 @@
 import styles from './ModalDescriptionToy.module.scss';
-import { memo, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 // import heartIconCards from '/icon/heart.svg';
 import basketIcon from '/icon/basket.svg';
@@ -20,6 +20,16 @@ export const ModalDescriptionToy = memo(
 
     const { t } = useTranslation(); //хук для перевода
 
+    // Блокируем скролл, когда модалка на экране
+    useEffect(() => {
+      const originalStyle = window.getComputedStyle(document.body).overflow;
+      document.body.style.overflow = 'hidden';
+
+      return () => {
+        document.body.style.overflow = originalStyle;
+      };
+    }, []);
+
     return (
       <>
         <ModalOverlay onClick={onClose}>
@@ -29,7 +39,7 @@ export const ModalDescriptionToy = memo(
               <Button variant="like" onClick={(e) => e.stopPropagation()}>
                 <HeartIcon className={styles.heartIconCards} />
               </Button>
-              <h2 className={styles.titleModal}>{title}</h2>
+              <h2 className={styles.titleModal}>{t(toy.titleKey)}</h2>
               <Button
                 variant="toggle"
                 className={classNames(styles.close, styles.button)}
@@ -39,7 +49,6 @@ export const ModalDescriptionToy = memo(
               </Button>
             </div>
 
-            {/* CONTENT */}
             <div className={styles.modalContent}>
               {/* КЛИК → ЗУМ */}
               <img
@@ -54,9 +63,13 @@ export const ModalDescriptionToy = memo(
               <dl className={styles.characteristics}>
                 {characteristics.map(({ label, value }) => (
                   <div key={label} className={styles.row}>
-                    <dt>{label} :</dt>
+                    <dt>{t(`toys.characteristics.${label}`)} :</dt>
                     <div className={styles.line}></div>
-                    <dd className={styles.value}>{value}</dd>
+                    <dd className={styles.value}>
+                      {typeof value === 'string' && value.startsWith('toys.')
+                        ? t(value)
+                        : value}
+                    </dd>
                   </div>
                 ))}
               </dl>
@@ -64,23 +77,25 @@ export const ModalDescriptionToy = memo(
               {/* ОПИСАНИЕ */}
               <div className={styles.description}>
                 <p className={styles.textDescription}>
-                  <span className={styles.label}>Описание:</span>{' '}
-                  {toy.descriptionKey ?? ''}
+                  <span className={styles.label}>
+                    {t('toys.common.description')}:
+                  </span>{' '}
+                  {toy.descriptionKey ? t(toy.descriptionKey) : ''}
                 </p>
                 <p className={styles.additionalDescription}>
-                  Подходит для игр, сна, украшения комнаты и как антистресс.
-                  Игрушка легко стирается и сохраняет форму — мамы оценят!
-                  Прекрасный подарок на день рождения, праздник или просто для
-                  радости.
+                  {t('toys.common.additionalDescription')}
                 </p>
               </div>
             </div>
 
             {/* ЦЕНА + КОРЗИНА */}
             <div className={styles.priceBasket}>
-              <p className={styles.priceModal}>
-                Цена: {toy.price.toLocaleString('ru-RU')}
-              </p>
+              <span className={styles.priceModal}>
+                {t('toys.common.priceLabel')}:
+                <strong className={styles.price}>
+                  {toy.price.toLocaleString('ru-RU')}
+                </strong>
+              </span>
               <Button
                 className={styles.button}
                 onClick={() => alert('Добавлено в корзину')}
@@ -107,28 +122,3 @@ export const ModalDescriptionToy = memo(
 
 // Внутри компонента ModalDescriptionToy нельзя рендерить <ModalDescriptionToy> — это создаёт бесконечную рекурсию.
 // Вся логика отображения модалки должна быть в родителе в Layout.
-
-// <div className={styles.modalContent}>
-//   <div className={styles.topContent}>
-
-//     <img
-//       src={toy.toyImage}
-//       alt={toy.title}
-//       className={styles.toyImage}
-//     />
-
-//     <div className={styles.characteristics}>
-//       <p>Цена: {toy.price.toLocaleString('ru-RU')} ₽</p>
-//       <p>Размер: {toy.characteristic.size} см</p>
-//       <p>Материал: {toy.characteristic.material}</p>
-//       <p>Наполнитель: {toy.characteristic.filler}</p>
-//       <p>Возраст: {toy.characteristic.age}</p>
-//       <p>Упаковка: {toy.characteristic.packaging}</p>
-//     </div>
-//   </div>
-
-//   {/* Нижний блок: описание */}
-//   <div className={styles.description}>
-//     <p>{`Описание: ${toy.description ?? ''} Подходит для игр, сна, украшения комнаты и как антистресс. Игрушка легко стирается и сохраняет форму — мамы оценят! Прекрасный подарок на день рождения, праздник или просто для радости.`}</p>
-//   </div>
-// </div>
