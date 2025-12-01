@@ -30,7 +30,21 @@ export const ModalDescriptionToy = memo(
       };
     }, []);
 
-    
+    //Закрытие по Esc
+    useEffect(() => {
+      const handleKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'Escape' || event.key === 'Esc') {
+          onClose();
+        }
+      };
+
+      window.addEventListener('keydown', handleKeyDown);
+
+      // Чистка при закрытии модалки, чтобы не было утечек памяти
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    }, [onClose]);
 
     return (
       <>
