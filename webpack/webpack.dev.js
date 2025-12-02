@@ -4,12 +4,14 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 module.exports = {
   mode: 'development', // режим разработки
   devtool: 'eval-source-map', // быстрые source maps для отладки
+
   devServer: {
     static: path.resolve(__dirname, './dist'), // папка, которую раздаёт devServer
     // compress: true, // включить gzip-сжатие (необязательно в dev)
     port: 8080, // порт для localhost
     open: true, // автоматически открывать браузер
     hot: true, // включаем HMR
+    historyApiFallback: true, //Без этой опции прямая навигация или обновление страницы на таких маршрутах, как/избранное, /корзина, /профиль, приводит к ошибке
   },
   plugins: [
     new ReactRefreshWebpackPlugin(), // плагин для "живого" обновления React-компонентов

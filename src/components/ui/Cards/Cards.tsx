@@ -39,7 +39,7 @@ export const Cards = ({ onCardClick }: TCardProps) => {
           <p className={styles.title}>{t(toy.titleKey)}</p>
           <div className={styles.price}>
             <span>{t('toys.common.priceLabel')}:</span>
-            <strong>{toy.price.toLocaleString('ru-RU')} ₽</strong>
+            <strong>{toy.price.toLocaleString('ru-RU')}</strong>
 
             <Button
               className={styles.button}

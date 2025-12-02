@@ -38,15 +38,20 @@ export const Header = ({
 
   return (
     <header className={styles.header} role="banner">
-      <div className={styles.link}>
-        <Link to="/" aria-label="Перейти на главную страницу">
+      <>
+        <Link
+          to="/"
+          className={styles.homeLink}
+          aria-label="Перейти на главную страницу"
+        >
           <LogoSvg className={styles.logo} aria-hidden="true" />
+
+          <div className={styles.brand}>
+            <h1 className={styles.title}>Baby's Smile</h1>
+            <p className={styles.slogan}>{t('header.slogan')}</p>
+          </div>
         </Link>
-        <div className={styles.brand}>
-          <h1 className={styles.title}>Baby's Smile</h1>
-          <p className={styles.slogan}>{t('header.slogan')}</p>
-        </div>
-      </div>
+      </>
 
       <nav aria-label={t('header.mainNav')}>
         <ul className={styles.menu} role="list">

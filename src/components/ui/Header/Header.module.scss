@@ -16,12 +16,23 @@
   }
 }
 
-.link {
-  display: flex;
-  justify-content: flex-start;
-  gap: rem(10);
-}
+// .link {
+//   display: flex;
+//   justify-content: flex-start;
+//   gap: rem(10);
+// }
 
+.homeLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
 .logo {
   display: flex;
   width: rem(100);

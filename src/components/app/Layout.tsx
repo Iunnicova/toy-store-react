@@ -17,46 +17,17 @@ import {
 } from '../../constants/footerData';
 import { useEffect, useState } from 'react';
 import { TToy } from '../../types/toysData';
+import { FavoritesPage } from '../pages/FavoritesPage/FavoritesPage';
 
 export const Layout = () => {
-  const currentYear = new Date().getFullYear();
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const [selectedToy, setSelectedToy] = useState<TToy | null>(null);
-
-  //открытие модалки
-  const handleOpenModal = (toy: TToy) => {
-    setSelectedToy(toy);
-    setIsModalOpen(true);
-  };
-
-  //закрытие модалки
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedToy(null);
-  };
-
   return (
     <Content>
       <Header userName="" />
-      <ControlPanel />
-      <main>
-        <Banner />
-        <Search />
-        <Cards onCardClick={handleOpenModal} />
 
-        {/* вызов модалки */}
-        {isModalOpen && selectedToy && (
-          <ModalDescriptionToy
-            title={selectedToy.titleKey}
-            toyImage={selectedToy.toyImage}
-            toy={selectedToy}
-            onClose={handleCloseModal}
-          />
-        )}
-        <Outlet />
+      <main>
+        <Outlet /> {/*HomePage, FavoritesPage, Basket и т.д. */}
       </main>
+
       <Footer
         info={FOOTER_INFO}
         socialLinks={SOCIAL_LINKS}
@@ -65,6 +36,56 @@ export const Layout = () => {
     </Content>
   );
 };
+
+// export const Layout = () => {
+//   const currentYear = new Date().getFullYear();
+
+//   const [isModalOpen, setIsModalOpen] = useState(false);
+
+//   const [selectedToy, setSelectedToy] = useState<TToy | null>(null);
+
+//   //открытие модалки
+//   const handleOpenModal = (toy: TToy) => {
+//     setSelectedToy(toy);
+//     setIsModalOpen(true);
+//   };
+
+//   //закрытие модалки
+//   const handleCloseModal = () => {
+//     setIsModalOpen(false);
+//     setSelectedToy(null);
+//   };
+
+//   return (
+//     <Content>
+//       <Header userName="" />
+
+//       <ControlPanel />
+//       <main>
+//         <Outlet />
+//         <Banner />
+//         <Search />
+//         <Cards onCardClick={handleOpenModal} />
+
+//         {/* вызов модалки */}
+//         {isModalOpen && selectedToy && (
+//           <ModalDescriptionToy
+//             title={selectedToy.titleKey}
+//             toyImage={selectedToy.toyImage}
+//             toy={selectedToy}
+//             onClose={handleCloseModal}
+//           />
+//         )}
+
+//       </main>
+//       <Footer
+//         info={FOOTER_INFO}
+//         socialLinks={SOCIAL_LINKS}
+//         onSubscribe={handleSubscribe}
+//       />
+//     </Content>
+//   );
+// };
 
 //! {`Описание: ${selectedToy.description ?? ''}
 // ${selectedToy.description ?? ''}
