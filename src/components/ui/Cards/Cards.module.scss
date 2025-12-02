@@ -30,7 +30,6 @@
   background-color: var(--color-mint-cream);
   border: var(--border);
   border-radius: rem(20);
-  // box-sizing: border-box;
   transition:
     box-shadow 0.2s ease-in-out,
     transform 0.2s ease-in-out;
@@ -117,7 +116,7 @@
   }
 
   @include mobile {
-    font-size: rem(23);
+    font-size: rem(25);
   }
 
   @include mobile-s {
