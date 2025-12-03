@@ -19,7 +19,7 @@ export const Cards = ({ onCardClick }: TCardProps) => {
         <div
           className={styles.cards}
           key={toy.id}
-          onClick={() => onCardClick(toy)} //при клике открываем модалку
+          onClick={() => onCardClick?.(toy)} //при клике открываем модалку
         >
           <div className={styles.imgCards}>
             <Button

@@ -10,6 +10,10 @@ export type TToy = {
   id: number;
   translationKey: string; // осмысленный ключ сущности, например 'tiger_dream_keeper'
 
+  // name: string;
+  // price: number;
+  // img: string;
+
   // ключи для заголовка и описания
   titleKey: string; // 'toys.tiger_dream_keeper.title'
   descriptionKey: string; // 'toys.tiger_dream_keeper.description'

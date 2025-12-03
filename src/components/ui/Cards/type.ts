@@ -1,3 +1,6 @@
+import { TToy } from '../../../types/toysData';
+
 export type TCardProps = {
-  onCardClick: (toy: any) => void;
+  toy: TToy;
+  onCardClick?: (toy: TToy) => void;
 };

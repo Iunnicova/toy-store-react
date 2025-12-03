@@ -7,6 +7,7 @@ import {
   ModalDescriptionToy,
   ControlPanel,
 } from '../ui';
+import { toys } from '../../constants/toysData';
 
 export const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,7 +28,15 @@ export const HomePage = () => {
       <ControlPanel />
       <Banner />
       <Search />
-      <Cards onCardClick={handleOpenModal} />
+      <div className="cards-grid">
+        {toys.map((toy) => (
+          <Cards
+            key={toy.id}
+            toy={toy} // ← передаём игрушку
+            onCardClick={handleOpenModal} // ← открываем модалку
+          />
+        ))}
+      </div>
 
       {/* Модальное окно */}
       {isModalOpen && selectedToy && (

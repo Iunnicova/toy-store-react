@@ -1,5 +1,16 @@
 @use '../../../styles/helpers/' as *;
 
 .favorites {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // картинка и текст будут по центру
   padding: rem(60);
+}
+
+.table {
+  text-align: center;
+}
+
+.imgFavorites {
+  width: rem(150);
 }
