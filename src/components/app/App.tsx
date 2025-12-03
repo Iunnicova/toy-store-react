@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './Layout';
 
-import { BasketPage } from '../pages/basketPage';
-import { ProfilePage } from '../pages/profilePage';
+import { BasketPage } from '../pages/asketPage';
+import { ProfilePage } from '../pages/rofilePage';
 
 import { ThemeProvider } from '../ui/ThemeContext/ThemeContext';
 import { LanguageProvider } from '../../constants/LanguageContext';
