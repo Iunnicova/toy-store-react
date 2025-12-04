@@ -8,7 +8,8 @@ import { ThemeProvider } from '../ui/ThemeContext/ThemeContext';
 import { LanguageProvider } from '../../constants/LanguageContext';
 import { ControlPanel, LanguageDropdown } from '../ui';
 import { FavoritesPage } from '../pages/FavoritesPage/FavoritesPage';
-import { HomePage } from './HomePage';
+import { HomePage } from './HomePage/HomePage';
+// import { HomePage } from './HomePage';
 
 const App = () => {
   return (

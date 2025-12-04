@@ -1,20 +1,5 @@
 @use '../../../styles/helpers/' as *;
 
-.favorites {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  padding: rem(60);
-}
-
-.table {
-  text-align: center;
-}
-
-.imgFavorites {
-  width: rem(150);
-}
-
 .cardsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

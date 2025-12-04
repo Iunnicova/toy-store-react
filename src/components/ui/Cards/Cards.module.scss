@@ -1,27 +1,5 @@
 @use '../../../styles/helpers/' as *;
 
-.card {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: flex-start;
-  justify-items: center;
-  gap: fluid(40, 20);
-  padding: fluid(60, 20);
-
-  @include laptop {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @include tablet {
-    grid-template-columns: repeat(2, 1fr);
-    padding: rem(50) rem(50);
-  }
-
-  @include mobile {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
 .cards {
   display: flex;
   flex-direction: column;
@@ -35,7 +13,10 @@
     transform 0.2s ease-in-out;
   width: 100%;
   max-width: rem(320);
+  height: 100%;
   padding: rem(20);
+
+  contain: content;
 
   &:hover {
     box-shadow:
@@ -44,9 +25,14 @@
     transform: translateY(-5px);
   }
 
+  @include tablet {
+    max-width: rem(350);
+  }
+
   @include mobile {
     max-width: rem(390);
   }
+
   @include mobile-s {
     max-width: rem(272);
   }

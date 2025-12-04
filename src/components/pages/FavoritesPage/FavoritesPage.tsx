@@ -1,7 +1,7 @@
 import styles from './FavoritesPage.module.scss';
 import favorites1 from '/images/favorites1.png';
 
-import { Cards } from '../../ui/Cards/Cards'; 
+import { Cards } from '../../ui/Cards/Cards';
 import { TToy } from '../../../types/toysData';
 import { useState } from 'react';
 
@@ -34,7 +34,7 @@ export const FavoritesPage = () => {
         </>
       ) : (
         // ЕСТЬ ТОВАРЫ — показываем карточки
-        <div className={styles.items}>
+        <div className={styles.cardsGrid}>
           {favorites.map((toy) => (
             <Cards
               key={toy.id}
