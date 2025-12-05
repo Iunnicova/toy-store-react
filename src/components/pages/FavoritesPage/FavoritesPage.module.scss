@@ -11,17 +11,18 @@
   text-align: center;
 }
 
-// .title {
-
-// }
+.title {
+font-family: var(--font-family-bottom);
+}
 
 .imgFavorites {
   width: rem(150);
 }
 
-// .text {
-
-// }
+.text {
+  font-size: rem(20);
+font-family: var(--font-family-bottom);
+}
 
 .cardsGrid {
   display: grid;
