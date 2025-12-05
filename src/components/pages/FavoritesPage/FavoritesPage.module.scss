@@ -3,7 +3,7 @@
 .favorites {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   padding: rem(60);
 }
 
@@ -11,9 +11,17 @@
   text-align: center;
 }
 
+// .title {
+
+// }
+
 .imgFavorites {
   width: rem(150);
 }
+
+// .text {
+
+// }
 
 .cardsGrid {
   display: grid;

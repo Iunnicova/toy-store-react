@@ -4,6 +4,7 @@ import favorites1 from '/images/favorites1.png';
 import { Cards } from '../../ui/Cards/Cards';
 import { TToy } from '../../../types/toysData';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const useFavorites = () => {
   const [favorites] = useState<TToy[]>([]); // пока пусто для теста
@@ -12,24 +13,21 @@ export const useFavorites = () => {
 
 export const FavoritesPage = () => {
   const favorites = useFavorites();
-
+  const { t } = useTranslation(); //хук перевода
   return (
     <section className={styles.favorites}>
       {favorites.length === 0 ? (
         // ПУСТОЕ СОСТОЯНИЕ — когда ничего нет
         <>
-          <h1 className={styles.title}>
-            Вы ещё не добавили товары в избранное
-          </h1>
+          <h1 className={styles.title}>{t('favorites.notAdded')}</h1>
 
           <img
-            src={favorites1}
             className={styles.imgFavorites}
+            src={favorites1}
             alt="Лисёнок грустит в пустой коробке"
           />
-
           <p className={styles.text}>
-            Просто нажмите ❤️ на карточке товара — и он появится здесь!
+            {t('favorites.justClick')}
           </p>
         </>
       ) : (

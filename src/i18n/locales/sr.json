@@ -171,5 +171,10 @@
     },
     "emailPlaceholder": "E-pošta",
     "subscribeButton": "Pretplatite se"
+  },
+
+  "favorites": {
+    "notAdded": "Još niste dodali stavke u favorite",
+    "justClick": "Samo kliknite ❤️ na kartici proizvoda i ona će se pojaviti ovde!"
   }
 }

@@ -170,5 +170,10 @@
     },
     "emailPlaceholder": "Email",
     "subscribeButton": "Subscribe"
+  },
+
+  "favorites": {
+    "notAdded": "You haven't added products to your favorites yet",
+    "justClick": "Just click ❤️ on the product card and it will appear here!"
   }
 }
