@@ -5,6 +5,8 @@ import { Cards } from '../../ui/Cards/Cards';
 import { TToy } from '../../../types/toysData';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Button } from '../../ui';
+import { Link } from 'react-router-dom';
 
 export const useFavorites = () => {
   const [favorites] = useState<TToy[]>([]); // пока пусто для теста
@@ -26,9 +28,16 @@ export const FavoritesPage = () => {
             src={favorites1}
             alt="Лисёнок грустит в пустой коробке"
           />
-          <p className={styles.text}>
-            {t('favorites.justClick')}
-          </p>
+          <p className={styles.text}>{t('favorites.justClick')}</p>
+          <Link
+            to="/"
+            className={styles.homeLink}
+            aria-label="Перейти на главную страницу"
+          >
+            <Button variant="headerButton" className={styles.homeButton}>
+              <p className={styles.count}>{t('favorites.homeButton')}</p>
+            </Button>
+          </Link>
         </>
       ) : (
         // ЕСТЬ ТОВАРЫ — показываем карточки

@@ -175,6 +175,13 @@
 
   "favorites": {
     "notAdded": "Još niste dodali stavke u favorite",
-    "justClick": "Samo kliknite ❤️ na kartici proizvoda i ona će se pojaviti ovde!"
+    "justClick": "Samo kliknite ❤️ na kartici proizvoda i ona će se pojaviti ovde!",
+    "homeButton": "Naslovna strana"
+  },
+
+  "basket": {
+    "notAdded": "Još niste dodali stavke u korpu",
+    "justClick": "Samo kliknite <icon /> na kartici artikla — i on će se pojaviti ovde!",
+    "homeButton": "Naslovna strana"
   }
 }

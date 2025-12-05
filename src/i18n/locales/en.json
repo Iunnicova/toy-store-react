@@ -174,6 +174,13 @@
 
   "favorites": {
     "notAdded": "You haven't added products to your favorites yet",
-    "justClick": "Just click ❤️ on the product card and it will appear here!"
+    "justClick": "Just click ❤️ on the product card and it will appear here!",
+    "homeButton": "Main page"
+  },
+
+  "basket": {
+    "notAdded": "You haven't added the items to your cart yet",
+    "justClick": "Just click <icon /> on the product card — and it will appear here!",
+    "homeButton": "Main page"
   }
 }

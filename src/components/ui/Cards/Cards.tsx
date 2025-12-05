@@ -19,7 +19,10 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
       <div className={styles.imgCards}>
         <Button
           variant="like"
-          onClick={(e) => e.stopPropagation()} //что бы при нажатии на сердечко не открывалась модалка
+          onClick={(e) => {
+            e.stopPropagation(); //что бы при нажатии на сердечко не открывалась модалка
+            alert('Добавлено в избранное');
+          }}
         >
           <HeartIcon className={styles.heartIconCards} />
         </Button>

@@ -60,11 +60,11 @@ export const Header = ({
             const displayLabel =
               item.count !== undefined ? item.count : t(item.label);
             return (
-              <li key={item.to} className={styles.list}>
+              <li key={item.to} className={styles.list} role="listitem">
                 <Link
                   to={item.to}
                   className={styles.navigation}
-                  aria-label={resolveAria(item.ariaLabel)}
+                  // aria-label={resolveAria(item.ariaLabel)}
                 >
                   <Button
                     variant="headerButton"
