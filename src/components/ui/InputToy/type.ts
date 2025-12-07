@@ -1,4 +1,4 @@
-export type TInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+export type TInputToyProps = React.InputHTMLAttributes<HTMLInputElement> & {
   className?: string;
 };
 

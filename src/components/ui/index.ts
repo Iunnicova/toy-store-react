@@ -1,9 +1,9 @@
 export * from './Header';
 export * from './Button';
 // export * from './HeartIcon';
-export * from './Input';
+export * from './InputToy';
 export * from './Cards';
-export * from './Content';
+export * from './ContentToy';
 export * from './Banner';
 export * from './Search';
 export * from './Footer';

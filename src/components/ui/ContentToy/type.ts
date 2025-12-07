@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
 
-export type TContentProps = {
+export type TContentToyProps = {
   children: ReactNode;
 };

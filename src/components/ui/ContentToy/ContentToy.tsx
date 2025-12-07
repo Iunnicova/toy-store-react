@@ -1,8 +1,8 @@
 //Рамка в которой находится весь контент
 
-import styles from './Content.module.scss';
-import { TContentProps } from './type';
+import styles from './ContentToy.module.scss';
+import { TContentToyProps } from './type';
 
-export const Content = ({ children }: TContentProps) => {
+export const ContentToy = ({ children }: TContentToyProps) => {
   return <main className={`container ${styles.content}`}>{children}</main>;
 };

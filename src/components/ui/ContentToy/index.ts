@@ -1,0 +1,1 @@
+export { ContentToy } from './ContentToy';

@@ -1,7 +1,7 @@
-import styles from './Input.module.scss';
-import { TInputProps } from './type';
+import styles from './InputToy.module.scss';
+import { TInputToyProps } from './type';
 
-export const Input = ({ className, ...rest }: TInputProps) => {
+export const InputToy = ({ className, ...rest }: TInputToyProps) => {
   return <input className={`${styles.input} ${className || ''}`} {...rest} />;
 };
 

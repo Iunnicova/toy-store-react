@@ -29,7 +29,6 @@ export const BasketPage = () => {
             alt="Зайка грустит в пустой корзинке"
           />
           <p className={styles.text}>
-
             {/* Trans компонент из i18next для добавления img в текст перевода*/}
             <Trans
               i18nKey="basket.justClick"
@@ -44,7 +43,7 @@ export const BasketPage = () => {
             aria-label="Перейти на главную страницу"
           >
             <Button variant="headerButton" className={styles.homeButton}>
-            <p className={styles.count}>{t('basket.homeButton')}</p>
+              <p className={styles.count}>{t('basket.homeButton')}</p>
             </Button>
           </Link>
         </>

@@ -1,0 +1,1 @@
+export { InputToy } from './InputToy';

@@ -6,9 +6,8 @@ import { TFooterProps } from './type';
 import { ReactComponent as InstagramIcon } from '../../../../icon/instagram.svg';
 import { ReactComponent as Vk } from '../../../../icon/vk.svg';
 import { ReactComponent as FacebookIcon } from '../../../../icon/facebook.svg';
-import { Input } from '../Input';
+import { InputToy } from '../InputToy';
 import { FOOTER_LINKS } from '../../../constants/footerLinks';
-import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { CURRENT_YEAR } from '../../../constants/footerData';
 
@@ -62,7 +61,7 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
           })}
         </ul>
         <div className={styles.subscribe}>
-          <Input
+          <InputToy
             className={styles.input}
             type="text"
             placeholder={t('footer.emailPlaceholder')}
