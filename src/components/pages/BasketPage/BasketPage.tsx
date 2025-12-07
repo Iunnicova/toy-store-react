@@ -7,6 +7,7 @@ import basket1 from '/images/basket1.png';
 import { TToy } from '../../../types/toysData';
 import { Button, Cards } from '../../ui';
 import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
+import { Counter } from '../../ui/Counter/Counter';
 
 export const useFavorites = () => {
   const [basket] = useState<TToy[]>([]); // пока пусто для теста

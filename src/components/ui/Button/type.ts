@@ -5,6 +5,7 @@ export interface TButtonProps {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
+  disabled?: boolean;
   variant?: 'primary' | 'toggle' | 'like' | 'headerButton';
 }
 
