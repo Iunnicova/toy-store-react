@@ -1,14 +1,44 @@
 import styles from './Cards.module.scss';
+import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
 
+import jackdaw from '../../../../icon/jackdaw.svg';
 import { Button } from '../Button';
 import { toys } from '../../../constants/toysData';
 import { TCardProps } from './type';
 import { HeartIcon } from '../../svg/HeartIcon';
 import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
-import { useTranslation } from 'react-i18next';
+import { Counter } from '../Counter/Counter';
+import { Link } from 'react-router-dom';
+import { BasketPage } from '../../pages/BasketPage/BasketPage';
 
 export const Cards = ({ toy, onCardClick }: TCardProps) => {
   const { t } = useTranslation(); //хук для перевода
+
+  //!для изменения значка корзины
+  const [isAdded, setIsAdded] = useState(false);
+
+  // при загрузке проверяем localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem('cart') || '[]';
+    const cart = JSON.parse(saved);
+    if (cart.includes(toy.id)) {
+      setIsAdded(true);
+    }
+  }, [toy.id]);
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    // alert('Добавлено в корзину');
+    setIsAdded(true);
+
+    const saved = localStorage.getItem('cart') || '[]';
+    const cart = JSON.parse(saved);
+    if (!cart.includes(toy.id)) {
+      cart.push(toy.id);
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  };
 
   return (
     <div
@@ -33,14 +63,22 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
         <span>{t('toys.common.priceLabel')}:</span>
         <strong>{toy.price.toLocaleString('ru-RU')}</strong>
 
-        <Button
-          className={styles.button}
-          onClick={(e) => {
-            e.stopPropagation(); // чтобы не открывалась модалка при добавлении в корзину
-            alert('Добавлено в корзину');
-          }}
-        >
-          <BasketIcon className={styles.basketIconCards} />
+        <Button className={styles.button} onClick={handleAddToCart}>
+          {isAdded ? (
+            <Link
+              to="/basket"
+              className={styles.navigation}
+              // aria-label={resolveAria(item.ariaLabel)}
+            >
+              <img
+                src={jackdaw}
+                alt="Добавлено"
+                className={styles.basketIconCards}
+              />
+            </Link>
+          ) : (
+            <BasketIcon className={styles.basketIconCards} />
+          )}
         </Button>
       </div>
     </div>
