@@ -6,6 +6,24 @@
   border-bottom: var(--border);
   padding: rem(43) rem(60);
 
+  //прокрутка идет шапка на месте стоит не уходит вверх
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  background-color: var(--color-mint-mint);
+
+  // тень с вверху куда уходит при прокрутке основной контент что бы не слипалась
+  animation-name: scrolling-header;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: rem(100) rem(200); //анимация начинается с 100px вниз
+
+  @keyframes scrolling-header {
+    to {
+      box-shadow: 0 0 0.5rem 0 var(--color-dusty-purple);
+    }
+  }
+
   @include mobile {
     grid-auto-flow: row;
     grid-template-columns: 1fr;

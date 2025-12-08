@@ -18,7 +18,7 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
   //!для изменения значка корзины
   const [isAdded, setIsAdded] = useState(false);
 
-  // при загрузке проверяем localStorage
+  // при загрузке взаимодействует с хранилищем браузера ( localStorage) для сохранения данных между сеансами
   useEffect(() => {
     const saved = localStorage.getItem('cart') || '[]';
     const cart = JSON.parse(saved);

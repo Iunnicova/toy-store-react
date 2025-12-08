@@ -17,6 +17,7 @@
   // ); //Внутренние отступы для контента, чтобы текст и блоки не прилипали к краям.
   transition-duration: 0.6s;
   padding: var(0.5);
+
   @include tablet {
     margin: rem(50) rem(30);
   }

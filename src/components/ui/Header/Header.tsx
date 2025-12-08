@@ -38,7 +38,7 @@ export const Header = ({
 
   return (
     <header className={styles.header} role="banner">
-      <>
+      <div className={styles.promo}>
         <Link
           to="/"
           className={styles.homeLink}
@@ -51,7 +51,7 @@ export const Header = ({
             <p className={styles.slogan}>{t('header.slogan')}</p>
           </div>
         </Link>
-      </>
+      </div>
 
       <nav aria-label={t('header.mainNav')}>
         <ul className={styles.menu} role="list">
