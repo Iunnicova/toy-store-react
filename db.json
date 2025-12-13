@@ -1,0 +1,185 @@
+{
+  "toys": [
+    {
+      "id": "0",
+      "translationKey": "tiger_dream_keeper",
+      "titleKey": "toys.tiger_dream_keeper.title",
+      "price": 4900,
+      "toyImage": "toyTiger",
+      "characteristic": {
+        "size": 45,
+        "materialKey": "toys.tiger_dream_keeper.material",
+        "fillerKey": "toys.tiger_dream_keeper.filler",
+        "ageKey": "toys.tiger_dream_keeper.age",
+        "packagingKey": "toys.tiger_dream_keeper.packaging"
+      },
+      "descriptionKey": "toys.tiger_dream_keeper.description"
+    },
+    {
+      "id": "1",
+      "translationKey": "bunny_hopping",
+      "titleKey": "toys.bunny_hopping.title",
+      "price": 5700,
+      "toyImage": "toyBunny",
+      "characteristic": {
+        "size": 55,
+        "materialKey": "toys.bunny_hopping.material",
+        "fillerKey": "toys.bunny_hopping.filler",
+        "ageKey": "toys.bunny_hopping.age",
+        "packagingKey": "toys.bunny_hopping.packaging"
+      },
+      "descriptionKey": "toys.bunny_hopping.description"
+    },
+    {
+      "id": "2",
+      "translationKey": "cutie_luna_antistress",
+      "titleKey": "toys.cutie_luna_antistress.title",
+      "price": 5900,
+      "toyImage": "toyBee",
+      "characteristic": {
+        "size": 55,
+        "materialKey": "toys.cutie_luna_antistress.material",
+        "fillerKey": "toys.cutie_luna_antistress.filler",
+        "ageKey": "toys.cutie_luna_antistress.age",
+        "packagingKey": "toys.cutie_luna_antistress.packaging"
+      },
+      "descriptionKey": "toys.cutie_luna_antistress.description"
+    },
+    {
+      "id": "3",
+      "translationKey": "bella_the_squirrel",
+      "titleKey": "toys.bella_the_squirrel.title",
+      "price": 6100,
+      "toyImage": "toySquirrel",
+      "characteristic": {
+        "size": 65,
+        "materialKey": "toys.bella_the_squirrel.material",
+        "fillerKey": "toys.bella_the_squirrel.filler",
+        "ageKey": "toys.bella_the_squirrel.age",
+        "packagingKey": "toys.bella_the_squirrel.packaging"
+      },
+      "descriptionKey": "toys.bella_the_squirrel.description"
+    },
+    {
+      "id": " 4",
+      "translationKey": "fairy_butterfly",
+      "titleKey": "toys.fairy_butterfly.title",
+      "price": 5700,
+      "toyImage": "toyButterfly",
+      "characteristic": {
+        "size": 55,
+        "materialKey": "toys.fairy_butterfly.material",
+        "fillerKey": "toys.fairy_butterfly.filler",
+        "ageKey": "toys.fairy_butterfly.age",
+        "packagingKey": "toys.fairy_butterfly.packaging"
+      },
+      "descriptionKey": "toys.fairy_butterfly.description"
+    },
+    {
+      "id": "5",
+      "translationKey": "peter_the_hedgehog",
+      "titleKey": "toys.peter_the_hedgehog.title",
+      "price": 5100,
+      "toyImage": "toyHedgehog",
+      "characteristic": {
+        "size": 45,
+        "materialKey": "toys.peter_the_hedgehog.material",
+        "fillerKey": "toys.peter_the_hedgehog.filler",
+        "ageKey": "toys.peter_the_hedgehog.age",
+        "packagingKey": "toys.peter_the_hedgehog.packaging"
+      },
+      "descriptionKey": "toys.peter_the_hedgehog.description"
+    },
+    {
+      "id": "6",
+      "translationKey": "little_fox_sister",
+      "titleKey": "toys.little_fox_sister.title",
+      "price": 6300,
+      "toyImage": "toyFox",
+      "characteristic": {
+        "size": 55,
+        "materialKey": "toys.little_fox_sister.material",
+        "fillerKey": "toys.little_fox_sister.filler",
+        "ageKey": "toys.little_fox_sister.age",
+        "packagingKey": "toys.little_fox_sister.packaging"
+      },
+      "descriptionKey": "toys.little_fox_sister.description"
+    },
+    {
+      "id": "7",
+      "translationKey": "birthday_mouse",
+      "titleKey": "toys.birthday_mouse.title",
+      "price": 4100,
+      "toyImage": "toyHedgehog1",
+      "characteristic": {
+        "size": 35,
+        "materialKey": "toys.birthday_mouse.material",
+        "fillerKey": "toys.birthday_mouse.filler",
+        "ageKey": "toys.birthday_mouse.age",
+        "packagingKey": "toys.birthday_mouse.packaging"
+      },
+      "descriptionKey": "toys.birthday_mouse.description"
+    },
+    {
+      "id": "8",
+      "translationKey": "gena_is_a_football_player",
+      "titleKey": "toys.gena_is_a_football_player.title",
+      "price": 5700,
+      "toyImage": "toyBoy",
+      "characteristic": {
+        "size": 55,
+        "materialKey": "toys.gena_is_a_football_player.material",
+        "fillerKey": "toys.gena_is_a_football_player.filler",
+        "ageKey": "toys.gena_is_a_football_player.age",
+        "packagingKey": "toys.gena_is_a_football_player.packaging"
+      },
+      "descriptionKey": "toys.gena_is_a_football_player.description"
+    },
+    {
+      "id": "9",
+      "translationKey": "the_croaking_frog",
+      "titleKey": "toys.the_croaking_frog.title",
+      "price": 4300,
+      "toyImage": "toyFrog",
+      "characteristic": {
+        "size": 35,
+        "materialKey": "toys.the_croaking_frog.material",
+        "fillerKey": "toys.the_croaking_frog.filler",
+        "ageKey": "toys.the_croaking_frog.age",
+        "packagingKey": "toys.the_croaking_frog.packaging"
+      },
+      "descriptionKey": "toys.the_croaking_frog.description"
+    },
+    {
+      "id": "10",
+      "translationKey": "sharik_champ",
+      "titleKey": "toys.sharik_champ.title",
+      "price": 5100,
+      "toyImage": "toyDoggie",
+      "characteristic": {
+        "size": 45,
+        "materialKey": "toys.sharik_champ.material",
+        "fillerKey": "toys.sharik_champ.filler",
+        "ageKey": "toys.sharik_champ.age",
+        "packagingKey": "toys.sharik_champ.packaging"
+      },
+      "descriptionKey": "toys.sharik_champ.description"
+    },
+    {
+      "id": "11",
+      "translationKey": "kitty_cat",
+      "titleKey": "toys.kitty_cat.title",
+      "price": 5700,
+      "toyImage": "toyKitty",
+      "characteristic": {
+        "size": 45,
+        "materialKey": "toys.kitty_cat.material",
+        "fillerKey": "toys.kitty_cat.filler",
+        "ageKey": "toys.kitty_cat.age",
+        "packagingKey": "toys.kitty_cat.packaging"
+      },
+      "descriptionKey": "toys.kitty_cat.description"
+    }
+  ],
+  "favorites": []
+}
