@@ -8,7 +8,7 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.js --env env=prod",
     "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "format": "prettier --write .",
-    "json:server": "json-server --watch db.json --port 3001"
+    "server": "json-server server/db.json --port 3001"
   },
   "keywords": [],
   "author": "",

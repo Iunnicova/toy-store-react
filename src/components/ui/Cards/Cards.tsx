@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import jackdaw from '../../../../icon/jackdaw.svg';
 import { Button } from '../Button';
-import { toys } from '../../../constants/toysData';
+// import { toys } from '../../../constants/toysData';
 import { TCardProps } from './type';
 import { HeartIcon } from '../../svg/HeartIcon';
 import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
@@ -56,7 +56,7 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
         >
           <HeartIcon className={styles.heartIconCards} />
         </Button>
-        <img className={styles.toy} src={toy.toyImage} alt={toy.titleKey} />
+        <img className={styles.toy} src={toy.toyImage} alt={t(toy.titleKey)} />
       </div>
       <p className={styles.title}>{t(toy.titleKey)}</p>
       <div className={styles.price}>

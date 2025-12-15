@@ -5,7 +5,7 @@
       "translationKey": "tiger_dream_keeper",
       "titleKey": "toys.tiger_dream_keeper.title",
       "price": 4900,
-      "toyImage": "toyTiger",
+      "toyImage": "/image/toyTiger.png",
       "characteristic": {
         "size": 45,
         "materialKey": "toys.tiger_dream_keeper.material",
@@ -20,7 +20,7 @@
       "translationKey": "bunny_hopping",
       "titleKey": "toys.bunny_hopping.title",
       "price": 5700,
-      "toyImage": "toyBunny",
+      "toyImage": "/image/toyBunny.png",
       "characteristic": {
         "size": 55,
         "materialKey": "toys.bunny_hopping.material",
@@ -35,7 +35,7 @@
       "translationKey": "cutie_luna_antistress",
       "titleKey": "toys.cutie_luna_antistress.title",
       "price": 5900,
-      "toyImage": "toyBee",
+      "toyImage": "/image/toyBee.png",
       "characteristic": {
         "size": 55,
         "materialKey": "toys.cutie_luna_antistress.material",
@@ -50,7 +50,7 @@
       "translationKey": "bella_the_squirrel",
       "titleKey": "toys.bella_the_squirrel.title",
       "price": 6100,
-      "toyImage": "toySquirrel",
+      "toyImage": "/image/toySquirrel.png",
       "characteristic": {
         "size": 65,
         "materialKey": "toys.bella_the_squirrel.material",
@@ -65,7 +65,7 @@
       "translationKey": "fairy_butterfly",
       "titleKey": "toys.fairy_butterfly.title",
       "price": 5700,
-      "toyImage": "toyButterfly",
+      "toyImage": "/image/toyButterfly.png",
       "characteristic": {
         "size": 55,
         "materialKey": "toys.fairy_butterfly.material",
@@ -80,7 +80,7 @@
       "translationKey": "peter_the_hedgehog",
       "titleKey": "toys.peter_the_hedgehog.title",
       "price": 5100,
-      "toyImage": "toyHedgehog",
+      "toyImage": "/image/toyHedgehog.png",
       "characteristic": {
         "size": 45,
         "materialKey": "toys.peter_the_hedgehog.material",
@@ -95,7 +95,7 @@
       "translationKey": "little_fox_sister",
       "titleKey": "toys.little_fox_sister.title",
       "price": 6300,
-      "toyImage": "toyFox",
+      "toyImage": "/image/toyFox.png",
       "characteristic": {
         "size": 55,
         "materialKey": "toys.little_fox_sister.material",
@@ -110,7 +110,7 @@
       "translationKey": "birthday_mouse",
       "titleKey": "toys.birthday_mouse.title",
       "price": 4100,
-      "toyImage": "toyHedgehog1",
+      "toyImage": "/image/toyHedgehog1.png",
       "characteristic": {
         "size": 35,
         "materialKey": "toys.birthday_mouse.material",
@@ -125,7 +125,7 @@
       "translationKey": "gena_is_a_football_player",
       "titleKey": "toys.gena_is_a_football_player.title",
       "price": 5700,
-      "toyImage": "toyBoy",
+      "toyImage": "/image/toyBoy.png",
       "characteristic": {
         "size": 55,
         "materialKey": "toys.gena_is_a_football_player.material",
@@ -140,7 +140,7 @@
       "translationKey": "the_croaking_frog",
       "titleKey": "toys.the_croaking_frog.title",
       "price": 4300,
-      "toyImage": "toyFrog",
+      "toyImage": "/image/toyFrog.png",
       "characteristic": {
         "size": 35,
         "materialKey": "toys.the_croaking_frog.material",
@@ -155,7 +155,7 @@
       "translationKey": "sharik_champ",
       "titleKey": "toys.sharik_champ.title",
       "price": 5100,
-      "toyImage": "toyDoggie",
+      "toyImage": "/image/toyDoggie.png",
       "characteristic": {
         "size": 45,
         "materialKey": "toys.sharik_champ.material",
@@ -170,7 +170,7 @@
       "translationKey": "kitty_cat",
       "titleKey": "toys.kitty_cat.title",
       "price": 5700,
-      "toyImage": "toyKitty",
+      "toyImage": "/image/toyKitty.png",
       "characteristic": {
         "size": 45,
         "materialKey": "toys.kitty_cat.material",

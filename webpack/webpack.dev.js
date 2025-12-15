@@ -1,19 +1,27 @@
-const path = require('path'); // для преобразования относительного пути в абсолютный
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'); // плагин для HMR React-компонентов
+const path = require('path');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
-  mode: 'development', // режим разработки
-  devtool: 'eval-source-map', // быстрые source maps для отладки
+  mode: 'development',
+  devtool: 'eval-source-map',
 
   devServer: {
-    static: path.resolve(__dirname, './dist'), // папка, которую раздаёт devServer
-    // compress: true, // включить gzip-сжатие (необязательно в dev)
-    port: 8080, // порт для localhost
-    open: true, // автоматически открывать браузер
-    hot: true, // включаем HMR
-    historyApiFallback: true, //Без этой опции прямая навигация или обновление страницы на таких маршрутах, как/избранное, /корзина, /профиль, приводит к ошибке
+    // Правильно: обслуживаем папку public (в корне проекта)
+    static: {
+      directory: path.resolve(__dirname, '..', 'public'), // ../public — потому что конфиг лежит в webpack/
+      publicPath: '/', // файлы будут доступны с корня ( /image/... )
+      watch: true, // следим за изменениями в public
+    },
+
+    port: 8080,
+    host: 'localhost',
+    open: true,
+    hot: true,
+    historyApiFallback: true, // обязательно для react-router
+    client: {
+      overlay: true, // показывать ошибки компиляции на экране
+    },
   },
-  plugins: [
-    new ReactRefreshWebpackPlugin(), // плагин для "живого" обновления React-компонентов
-  ],
+
+  plugins: [new ReactRefreshWebpackPlugin()],
 };

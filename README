@@ -6,7 +6,7 @@ npm run start
 
 ## запуск json-server
 
-npm run json:server
+npm run server
 
 ##
 
