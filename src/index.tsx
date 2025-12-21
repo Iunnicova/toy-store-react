@@ -15,7 +15,6 @@ const domNode = document.getElementById('root') as HTMLDivElement; // Наход
 
 const root = createRoot(domNode); // Создаём "корень" для приложения (React 18+)
 
-// Рендерим приложение
 root.render(
   <StrictMode>
     <LanguageProvider>
