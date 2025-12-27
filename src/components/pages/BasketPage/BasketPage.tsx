@@ -1,21 +1,21 @@
 import { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import styles from './BasketPage.module.scss';
 
 import basket1 from '/images/basket1.png';
 import { TToy } from '../../../types/toysData';
 import { Button, Cards } from '../../ui';
 import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
-import { Counter } from '../../ui/Counter/Counter';
+import styles from './BasketPage.module.scss';
 
-export const useFavorites = () => {
+
+export const useBasket = () => {
   const [basket] = useState<TToy[]>([]); // пока пусто для теста
   return basket;
 };
 
 export const BasketPage = () => {
-  const basket = useFavorites();
+  const basket = useBasket();
   const { t } = useTranslation(); //хук перевода
   return (
     <section className={styles.basket}>

@@ -1,8 +1,8 @@
 import { memo, useEffect, useRef } from 'react';
 
 import { ImageZoomProps } from './type';
-import styles from './ImageZoom.module.scss';
 import { Button } from '../Button';
+import styles from './ImageZoom.module.scss';
 
 export const ImageZoom = memo(
   ({ src, alt, isOpen, onClose }: ImageZoomProps) => {

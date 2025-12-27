@@ -1,5 +1,5 @@
-import styles from './ModalOverlay.module.scss';
 import { ModalOverlayProps } from './type';
+import styles from './ModalOverlay.module.scss';
 
 export const ModalOverlay = ({ onClick, children }: ModalOverlayProps) => {
   return (

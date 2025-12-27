@@ -1,13 +1,10 @@
-import { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import styles from './ControlPanel.module.scss';
-
+import { useTheme } from '../ThemeContext/ThemeContext';
 import sunshine from '/images/sunshine.png';
-import land from '/images/landRu.png';
 import moon from '/images/moon.png';
 import { Button } from '../Button';
-import { useTheme } from '../ThemeContext/ThemeContext';
 import { LanguageDropdown } from '..';
+import styles from './ControlPanel.module.scss';
 
 export const ControlPanel = () => {
   const { theme, setTheme } = useTheme(); // ✅подключаем ThemeContext переключение тем

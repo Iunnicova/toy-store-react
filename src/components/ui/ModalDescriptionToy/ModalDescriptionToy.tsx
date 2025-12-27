@@ -1,18 +1,16 @@
-import styles from './ModalDescriptionToy.module.scss';
+import { useTranslation } from 'react-i18next';
 import { memo, useEffect, useState } from 'react';
+import classNames from 'classnames';
 
-// import heartIconCards from '/icon/heart.svg';
-import basketIcon from '/icon/basket.svg';
 import { ModalOverlay } from '../ModalOverlay';
 import { Button } from '../Button';
 import { TModalDescriptionToyProps } from './type';
-import classNames from 'classnames';
 import { getCharacteristics } from '../../../constants/сharacteristic';
 import { HeartIcon } from '../../svg/HeartIcon';
 import { BasketIcon } from '../../svg/BasketIcon';
 import { ImageZoom } from '../ImageZoom';
-import { useTranslation } from 'react-i18next';
 import { ModalPortal } from '../ModalPortal';
+import styles from './ModalDescriptionToy.module.scss';
 
 export const ModalDescriptionToy = memo(
   ({ title, onClose, toyImage, toy }: TModalDescriptionToyProps) => {

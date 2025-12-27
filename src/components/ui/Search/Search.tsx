@@ -1,10 +1,10 @@
-import styles from './Search.module.scss';
+import { useTranslation } from 'react-i18next';
+
 import { Link } from 'react-router-dom';
 import { Button } from '../Button';
-
 import { SearchIcon } from '../../svg/SearchIcon';
-import { useTranslation } from 'react-i18next';
 import { InputToy } from '../InputToy/InputToy';
+import styles from './Search.module.scss';
 
 export const Search = () => {
   const { t } = useTranslation();

@@ -7,7 +7,6 @@ import {
   ModalDescriptionToy,
   ControlPanel,
 } from '../../ui';
-// import { toys } from '../../../constants/toysData';
 
 import styles from './HomePage.module.scss';
 

@@ -1,10 +1,11 @@
+import { useTranslation } from 'react-i18next';
+
 import { Link } from 'react-router-dom';
-import styles from './Header.module.scss';
 import { LogoSvg } from '../../svg/LogoSvg';
 import { THeaderProps } from './type';
 import { Button } from '../Button';
 import { getHeaderNavItems } from '../../../constants/navItems';
-import { useTranslation } from 'react-i18next';
+import styles from './Header.module.scss';
 
 export const Header = ({
   userName,

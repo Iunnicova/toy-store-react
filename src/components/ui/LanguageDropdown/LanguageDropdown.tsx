@@ -1,13 +1,13 @@
 // components/LanguageDropdown/LanguageDropdown.tsx
-import { useState } from 'react';
 import i18n from '../../../i18n';
-import styles from './LanguageDropdown.module.scss';
+import { useState } from 'react';
 import { Language, useLanguage } from '../../../constants/LanguageContext';
 
 import landRu from '../../../../images/landRu.png';
 import landSr from '../../../../images/landSr.png';
 import landEn from '../../../../images/landEn.png';
 import { Button } from '../Button';
+import styles from './LanguageDropdown.module.scss';
 
 const languages = [
   { code: 'ru', label: '', image: landRu },

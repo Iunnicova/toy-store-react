@@ -1,7 +1,6 @@
-// import React, { FC, ReactNode } from 'react'; устарело
 import classNames from 'classnames';
-import styles from './Button.module.scss';
 import { TButtonProps } from './type';
+import styles from './Button.module.scss';
 
 export const Button = ({
   children,

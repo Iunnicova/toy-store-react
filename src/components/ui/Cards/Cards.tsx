@@ -1,16 +1,12 @@
-import styles from './Cards.module.scss';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 
 import jackdaw from '../../../../icon/jackdaw.svg';
 import { Button } from '../Button';
-// import { toys } from '../../../constants/toysData';
 import { TCardProps } from './type';
 import { HeartIcon } from '../../svg/HeartIcon';
 import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
-import { Counter } from '../Counter/Counter';
-import { Link } from 'react-router-dom';
-import { BasketPage } from '../../pages/BasketPage/BasketPage';
+import styles from './Cards.module.scss';
 
 export const Cards = ({ toy, onCardClick }: TCardProps) => {
   const { t } = useTranslation(); //хук для перевода
@@ -18,27 +14,28 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
   //!для изменения значка корзины
   const [isAdded, setIsAdded] = useState(false);
 
-  // при загрузке взаимодействует с хранилищем браузера ( localStorage) для сохранения данных между сеансами
-  useEffect(() => {
-    const saved = localStorage.getItem('cart') || '[]';
-    const cart = JSON.parse(saved);
-    if (cart.includes(toy.id)) {
-      setIsAdded(true);
-    }
-  }, [toy.id]);
-
-  const handleAddToCart = (e: React.MouseEvent) => {
+  // Добавляем в корзину на сервере
+  const handleAddToCart = async (e: React.MouseEvent) => {
     e.stopPropagation();
-    // alert('Добавлено в корзину');
-    setIsAdded(true);
 
-    const saved = localStorage.getItem('cart') || '[]';
-    const cart = JSON.parse(saved);
-    if (!cart.includes(toy.id)) {
-      cart.push(toy.id);
-      localStorage.setItem('cart', JSON.stringify(cart));
-    }
+    await fetch('http://localhost:3001/cart', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ toyId: toy.id }),
+    });
+    setIsAdded(true);
   };
+
+  useEffect(() => {
+  fetch('http://localhost:3001/cart')
+    .then(res => res.json())
+    .then(data => {
+      const cartToyIds = data.map((item: any) => item.toyId);
+      if (cartToyIds.includes(toy.id)) {
+        setIsAdded(true);
+      }
+    });
+}, [toy.id]);
 
   return (
     <div
@@ -65,8 +62,8 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
 
         <Button className={styles.button} onClick={handleAddToCart}>
           {isAdded ? (
-            <Link
-              to="/basket"
+            <div
+          
               className={styles.navigation}
               // aria-label={resolveAria(item.ariaLabel)}
             >
@@ -75,7 +72,7 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
                 alt="Добавлено"
                 className={styles.basketIconCards}
               />
-            </Link>
+            </div>
           ) : (
             <BasketIcon className={styles.basketIconCards} />
           )}

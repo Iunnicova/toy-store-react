@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import styles from './Counter.module.scss';
 import { Button } from '../Button';
+import styles from './Counter.module.scss';
 
 //значение этой переменной не должно меняться "UPPERCASE_WITH_UNDERSCORES "
 const MIN_VALUE = 1;
