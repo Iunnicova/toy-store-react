@@ -7,35 +7,20 @@ import { TCardProps } from './type';
 import { HeartIcon } from '../../svg/HeartIcon';
 import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
 import styles from './Cards.module.scss';
+import { useCart } from '../../../hooks/useCart';
 
 export const Cards = ({ toy, onCardClick }: TCardProps) => {
   const { t } = useTranslation(); //хук для перевода
 
   //!для изменения значка корзины
-  const [isAdded, setIsAdded] = useState(false);
+  const { cartItems, addToCart } = useCart();
+  const isAdded = cartItems.some((item) => item.toyId === toy.id);
 
   // Добавляем в корзину на сервере
   const handleAddToCart = async (e: React.MouseEvent) => {
     e.stopPropagation();
-
-    await fetch('http://localhost:3001/cart', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ toyId: toy.id }),
-    });
-    setIsAdded(true);
+    await addToCart(toy.id);
   };
-
-  useEffect(() => {
-  fetch('http://localhost:3001/cart')
-    .then(res => res.json())
-    .then(data => {
-      const cartToyIds = data.map((item: any) => item.toyId);
-      if (cartToyIds.includes(toy.id)) {
-        setIsAdded(true);
-      }
-    });
-}, [toy.id]);
 
   return (
     <div
@@ -63,7 +48,6 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
         <Button className={styles.button} onClick={handleAddToCart}>
           {isAdded ? (
             <div
-          
               className={styles.navigation}
               // aria-label={resolveAria(item.ariaLabel)}
             >

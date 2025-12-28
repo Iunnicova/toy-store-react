@@ -1,26 +1,57 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
+import { useCart } from '../../../hooks/useCart';
 import basket1 from '/images/basket1.png';
 import { TToy } from '../../../types/toysData';
 import { Button, Cards } from '../../ui';
 import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
 import styles from './BasketPage.module.scss';
 
-
-export const useBasket = () => {
-  const [basket] = useState<TToy[]>([]); // пока пусто для теста
-  return basket;
-};
-
 export const BasketPage = () => {
-  const basket = useBasket();
+  const { cartItems, loading } = useCart();
   const { t } = useTranslation(); //хук перевода
+  const [toysInCart, setToysInCart] = useState<any[]>([]);
+  useEffect(() => {
+    const fetchToys = async () => {
+      if (cartItems.length === 0) {
+        setToysInCart([]);
+        return;
+      }
+
+      try {
+        const res = await fetch('http://localhost:3001/toys');
+        const allToys = await res.json();
+
+        // Соединяем: для каждого элемента корзины находим игрушку
+        const merged = cartItems
+          .map((cartItem: any) => {
+            const toy = allToys.find((t: any) => t.id === cartItem.toyId);
+            if (toy) {
+              return { ...toy, quantity: cartItem.quantity };
+            }
+            return null;
+          })
+          .filter(Boolean);
+
+        setToysInCart(merged);
+      } catch (error) {
+        console.error('Ошибка загрузки игрушек для корзины:', error);
+      }
+    };
+
+    fetchToys();
+  }, [cartItems]);
+
+  if (loading) {
+    return <div>Загрузка корзины...</div>;
+  }
+  const isEmpty = toysInCart.length === 0;
+
   return (
     <section className={styles.basket}>
-      {basket.length === 0 ? (
-        // ПУСТОЕ СОСТОЯНИЕ — когда ничего нет
+      {isEmpty ? (
         <>
           <h1 className={styles.title}>{t('basket.notAdded')}</h1>
 
@@ -51,7 +82,7 @@ export const BasketPage = () => {
       ) : (
         // ЕСТЬ ТОВАРЫ — показываем карточки
         <div className={styles.cardsGrid}>
-          {basket.map((toy) => (
+          {toysInCart.map((toy) => (
             <Cards
               key={toy.id}
               toy={toy}
