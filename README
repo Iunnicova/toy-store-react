@@ -1,15 +1,13 @@
+## запуск json-server
+
+npm run server
+
 ### Запуск проекта
 
 npm run build
 
 npm run start
 
-## запуск json-server
-
-npm run server
-
 ##
 
 запуск форматирования 'npm run format'
-
-прототип проекта https://www.figma.com/design/fw0toTyXMwM1y4WIe0YFrJ/React-Sneakers?node-id=60-2&t=WWON4h4pIromS1DS-0

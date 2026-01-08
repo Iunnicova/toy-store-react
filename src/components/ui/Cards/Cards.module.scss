@@ -64,6 +64,16 @@
   }
 }
 
+// @mixin line-clamp($lines: 2, $line-height: 1.35) {
+//   display: -webkit-box;
+//   -webkit-box-orient: vertical;
+//   -webkit-line-clamp: $lines;
+//   line-clamp: $lines;
+//   overflow: hidden;
+//   line-height: $line-height;
+//   max-height: calc(#{$line-height} * #{$lines} * 1.2em);
+// }
+
 .title {
   font-family: var(--color-likeCount);
   font-size: rem(20);
@@ -79,11 +89,21 @@
   @include mobile {
     font-size: rem(25);
   }
-
   @include mobile-s {
     font-size: rem(14);
+    padding-bottom: 42px;
   }
+
+  @include line-clamp(2, 1.5); //2 сколько строк, 1.5 интервал межстрочный
 }
+
+//! при наведении показываем весь текст
+// .title:hover {
+//   -webkit-line-clamp: unset;
+//   overflow: visible;
+//   display: block;
+//   white-space: normal;
+// }
 
 .price {
   display: flex;

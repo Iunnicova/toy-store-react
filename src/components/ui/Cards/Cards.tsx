@@ -40,7 +40,9 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
         </Button>
         <img className={styles.toy} src={toy.toyImage} alt={t(toy.titleKey)} />
       </div>
-      <p className={styles.title}>{t(toy.titleKey)}</p>
+      <p className={styles.title} data-tooltip="очень длинный текст">
+        {t(toy.titleKey)}
+      </p>
       <div className={styles.price}>
         <span>{t('toys.common.priceLabel')}:</span>
         <strong>{toy.price.toLocaleString('ru-RU')}</strong>

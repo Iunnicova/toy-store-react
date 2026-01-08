@@ -15,6 +15,10 @@
   top: 50%;
   left: 50%;
   padding: 20px;
+  padding-top: 40px;
+  max-height: 100vh;
+  max-width: 600vh; /* ограничиваем высоту */
+  overflow-y: auto; /* вертикальная прокрутка */
 
   @include tablet {
     width: rem(600);
@@ -50,6 +54,10 @@
 .titleModal {
   font-size: rem(25);
   text-align: center;
+
+  //  max-width: 400px;       /* ограничиваем ширину */
+  // word-wrap: break-word;  /* переносим длинные слова */
+  white-space: normal; /* разрешаем перенос строк */
 
   @include mobile-s {
     font-size: rem(20);
