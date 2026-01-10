@@ -61,7 +61,7 @@
       "descriptionKey": "toys.bella_the_squirrel.description"
     },
     {
-      "id": " 4",
+      "id": "4",
       "translationKey": "fairy_butterfly",
       "titleKey": "toys.fairy_butterfly.title",
       "price": 5700,
@@ -186,21 +186,36 @@
     {
       "id": "614f",
       "toyId": "0",
-      "quantity": 16
+      "quantity": 22
     },
     {
       "id": "cca5",
       "toyId": "1",
-      "quantity": 17
+      "quantity": 20
     },
     {
       "id": "5cca",
       "toyId": "2",
-      "quantity": 7
+      "quantity": 8
     },
     {
       "id": "1747",
       "toyId": "11",
+      "quantity": 1
+    },
+    {
+      "id": "f90f",
+      "toyId": " 4",
+      "quantity": 1
+    },
+    {
+      "id": "af0d",
+      "toyId": "8",
+      "quantity": 1
+    },
+    {
+      "id": "fd13",
+      "toyId": "3",
       "quantity": 1
     }
   ]

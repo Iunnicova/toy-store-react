@@ -19,16 +19,26 @@ export const HomePage = () => {
   const [loading, setLoading] = useState(true); // loading — текущее значение (true/false) setLoading — функция, которая меняет это значение
 
   useEffect(() => {
-    fetch('http://localhost:3001/toys')
+    const controller = new AbortController(); // Контроллер для отмены запроса(убираем утечку памяти)
+
+    fetch('http://localhost:3001/toys', {
+    signal: controller.signal,
+  })
       .then((res) => res.json())
       .then((data) => {
-        setToys(data);
-        setLoading(false);
+        setToys(data); // сохранили данные
       })
       .catch((err) => {
-        console.error('Ошибка загрузки игрушек:', err);
-        setLoading(false); // даже при ошибке скрываем лоадер
+        if(err.name !== 'AbortError') {
+          console.error('Ошибка загрузки игрушек:', err);  // Обработали ошибку
+        }
+      })
+      .finally(() => {
+        setLoading(false); // Выполнится ВСЕГДА: и при успехе, и при ошибке
       });
+      return () => {
+        controller.abort();  // Отменяем fetch при размонтировании компонента
+      }
   }, []);
 
   //******* */
