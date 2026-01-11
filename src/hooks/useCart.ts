@@ -49,10 +49,23 @@ export const useCart = () => {
     await loadCart(); // 🔥 refetch
   };
 
+  const removeFromCart = async (toyId: number) => {
+    setCartItems(prev =>
+      prev
+        .map(item =>
+          item.toyId === toyId
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter(item => item.quantity > 0)
+    );
+  };
+
   return {
     cartItems,
     loading,
     addToCart,
+    removeFromCart,
   };
 };
 
