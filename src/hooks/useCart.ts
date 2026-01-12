@@ -35,7 +35,9 @@ export const useCart = () => {
       await fetch(`http://localhost:3001/cart/${existingItem.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ quantity: existingItem.quantity + 1 }),
+        body: JSON.stringify({
+          quantity: existingItem.quantity + 1,
+        }),
       });
     } else {
       //Если нет — добавляем новый (POST)
@@ -49,16 +51,26 @@ export const useCart = () => {
     await loadCart(); // 🔥 refetch
   };
 
+  //добавляем удаляем карточки корзина
   const removeFromCart = async (toyId: number) => {
-    setCartItems(prev =>
-      prev
-        .map(item =>
-          item.toyId === toyId
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
-        )
-        .filter(item => item.quantity > 0)
-    );
+    const existingItem = cartItems.find((item) => item.toyId === toyId);
+    if (!existingItem) return;
+
+    if (existingItem.quantity > 1) {
+      await fetch(`http://localhost:3001/cart/${existingItem.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          quantity: existingItem.quantity - 1,
+        }),
+      });
+    } else {
+      await fetch(`http://localhost:3001/cart/${existingItem.id}`, {
+        method: 'DELETE',
+      });
+    }
+
+    await loadCart(); // 🔥 всегда синхронизируемся с сервером
   };
 
   return {

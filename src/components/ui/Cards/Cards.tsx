@@ -14,7 +14,7 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
   const { t } = useTranslation();
   const { cartItems, addToCart, removeFromCart } = useCart();
 
-  const cartItem = cartItems.find(item => item.toyId === toy.id);
+  const cartItem = cartItems.find((item) => item.toyId === toy.id);
   const quantity = cartItem?.quantity ?? 0;
 
   const add = (e?: React.MouseEvent) => {
@@ -28,10 +28,7 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
   };
 
   return (
-    <div
-      className={styles.cards}
-      onClick={() => onCardClick?.(toy)}
-    >
+    <div className={styles.cards} onClick={() => onCardClick?.(toy)}>
       <div className={styles.imgCards}>
         <Button
           variant="like"
@@ -43,11 +40,7 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
           <HeartIcon className={styles.heartIconCards} />
         </Button>
 
-        <img
-          className={styles.toy}
-          src={toy.toyImage}
-          alt={t(toy.titleKey)}
-        />
+        <img className={styles.toy} src={toy.toyImage} alt={t(toy.titleKey)} />
       </div>
 
       <p className={styles.title}>{t(toy.titleKey)}</p>
@@ -57,26 +50,16 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
         <strong>{toy.price.toLocaleString('ru-RU')}</strong>
 
         {quantity === 0 ? (
-          <Button 
-          onClick={add}
-          variant="primary"
-          className={styles.button}
-          >
-            
-           <BasketIcon className={styles.basketIconCards}/>
-            </Button>
+          <Button onClick={add} variant="primary" className={styles.button}>
+            <BasketIcon className={styles.basketIconCards} />
+          </Button>
         ) : (
-          <Counter
-            value={quantity}
-            onIncrement={add}
-            onDecrement={remove}
-          />
+          <Counter value={quantity} onIncrement={add} onDecrement={remove} />
         )}
       </div>
     </div>
   );
 };
-
 
 // export const Cards = ({ toy, onCardClick }: TCardProps) => {
 //   const { t } = useTranslation(); //хук для перевода

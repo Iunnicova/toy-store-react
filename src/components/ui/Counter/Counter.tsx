@@ -3,38 +3,34 @@ import { Button } from '../Button';
 import styles from './Counter.module.scss';
 import { CounterProps } from './type';
 
-
 // export type CounterProps = {
 //   value: number;
 //   onIncrement: () => void;
 //   onDecrement: () => void;
 // }
 
-
 //значение этой переменной не должно меняться "UPPERCASE_WITH_UNDERSCORES "
 const MIN_VALUE = 1;
 const MAX_VALUE = 100;
 
-export function Counter({value, onIncrement, onDecrement}: CounterProps) {
-
+export function Counter({ value, onIncrement, onDecrement }: CounterProps) {
   return (
     <div className={styles.counterContainer}>
-      <span>{value}</span> 
       <div className={styles.buttons}>
-      
         <Button
           variant="primary"
           className={styles.button}
           onClick={onDecrement}
-          disabled={value <= MIN_VALUE} 
+          disabled={value <= MIN_VALUE}
         >
           -
         </Button>
+        <span>{value}</span>
         <Button
           variant="primary"
           className={styles.button}
           onClick={onIncrement}
-          disabled={value >= MAX_VALUE} 
+          disabled={value >= MAX_VALUE}
         >
           +
         </Button>
@@ -42,7 +38,6 @@ export function Counter({value, onIncrement, onDecrement}: CounterProps) {
     </div>
   );
 }
-
 
 // //значение этой переменной не должно меняться "UPPERCASE_WITH_UNDERSCORES "
 // const MIN_VALUE = 1;

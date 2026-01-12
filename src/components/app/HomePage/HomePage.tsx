@@ -22,23 +22,23 @@ export const HomePage = () => {
     const controller = new AbortController(); // Контроллер для отмены запроса(убираем утечку памяти)
 
     fetch('http://localhost:3001/toys', {
-    signal: controller.signal,
-  })
+      signal: controller.signal,
+    })
       .then((res) => res.json())
       .then((data) => {
         setToys(data); // сохранили данные
       })
       .catch((err) => {
-        if(err.name !== 'AbortError') {
-          console.error('Ошибка загрузки игрушек:', err);  // Обработали ошибку
+        if (err.name !== 'AbortError') {
+          console.error('Ошибка загрузки игрушек:', err); // Обработали ошибку
         }
       })
       .finally(() => {
         setLoading(false); // Выполнится ВСЕГДА: и при успехе, и при ошибке
       });
-      return () => {
-        controller.abort();  // Отменяем fetch при размонтировании компонента
-      }
+    return () => {
+      controller.abort(); // Отменяем fetch при размонтировании компонента
+    };
   }, []);
 
   //******* */

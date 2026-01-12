@@ -8,11 +8,15 @@ import { TToy } from '../../../types/toysData';
 import { Button, Cards } from '../../ui';
 import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
 import styles from './BasketPage.module.scss';
+import { TBasketPage } from './type';
+import { Counter } from '../../ui/Counter';
 
-export const BasketPage = () => {
-  const { cartItems, loading } = useCart();
+export const BasketPage = ({ children }: TBasketPage) => {
+  const { cartItems, loading, addToCart, removeFromCart } = useCart();
   const { t } = useTranslation(); //хук перевода
   const [toysInCart, setToysInCart] = useState<any[]>([]);
+  //  const quantity = toy.quantity;
+
   useEffect(() => {
     const fetchToys = async () => {
       if (cartItems.length === 0) {
@@ -83,11 +87,25 @@ export const BasketPage = () => {
         // ЕСТЬ ТОВАРЫ — показываем карточки
         <div className={styles.cardsGrid}>
           {toysInCart.map((toy) => (
-            <Cards
-              key={toy.id}
-              toy={toy}
-              onCardClick={() => {}} // заглушка — на странице избранного модалка не нужна
-            />
+            <div key={toy.id} className={styles.card}>
+              <img
+                className={styles.toy}
+                src={toy.toyImage}
+                alt={t(toy.titleKey)}
+              />
+              <p className={styles.title}>{t(toy.titleKey)}</p>
+
+              <div className={styles.price}>
+                <span>{t('toys.common.priceLabel')}:</span>
+                <strong>{toy.price.toLocaleString('ru-RU')}</strong>
+
+                <Counter
+                  value={toy.quantity}
+                  onIncrement={() => addToCart(toy.id)}
+                  onDecrement={() => removeFromCart(toy.id)}
+                />
+              </div>
+            </div>
           ))}
         </div>
       )}
