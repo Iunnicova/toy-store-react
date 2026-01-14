@@ -1,0 +1,11 @@
+@use '../../../styles/helpers/' as *;
+
+.cardsGrid {
+  display: flex;
+
+  gap: 20px;
+}
+
+.toy {
+  max-width: rem(120);
+}

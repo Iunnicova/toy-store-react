@@ -25,7 +25,7 @@ export function Counter({ value, onIncrement, onDecrement }: CounterProps) {
         >
           -
         </Button>
-        <span>{value}</span>
+        <span className={styles.quantity}>{value}</span>
         <Button
           variant="primary"
           className={styles.button}

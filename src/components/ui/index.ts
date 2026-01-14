@@ -13,3 +13,4 @@ export * from './ModalOverlay';
 export * from './ModalDescriptionToy';
 export * from './ImageZoom';
 export * from './LanguageDropdown';
+export * from './CardsBasket';

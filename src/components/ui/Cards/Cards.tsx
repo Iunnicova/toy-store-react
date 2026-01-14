@@ -45,16 +45,28 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
 
       <p className={styles.title}>{t(toy.titleKey)}</p>
 
-      <div className={styles.price}>
-        <span>{t('toys.common.priceLabel')}:</span>
-        <strong>{toy.price.toLocaleString('ru-RU')}</strong>
+      <div className={styles.actions}>
+        <div className={styles.price}>
+          <span>{t('toys.common.priceLabel')}:</span>
+          <strong>{toy.price.toLocaleString('ru-RU')}</strong>
+        </div>
 
         {quantity === 0 ? (
-          <Button onClick={add} variant="primary" className={styles.button}>
+          <Button
+            onClick={add}
+            variant="headerButton"
+            className={styles.button}
+          >
             <BasketIcon className={styles.basketIconCards} />
+            корзина
           </Button>
         ) : (
-          <Counter value={quantity} onIncrement={add} onDecrement={remove} />
+          <Counter
+            className={styles.counter}
+            value={quantity}
+            onIncrement={add}
+            onDecrement={remove}
+          />
         )}
       </div>
     </div>

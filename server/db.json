@@ -184,13 +184,8 @@
   "favorites": [],
   "cart": [
     {
-      "id": "7307",
-      "toyId": "0",
-      "quantity": 1
-    },
-    {
-      "id": "b148",
-      "toyId": "1",
+      "id": "3536",
+      "toyId": "3",
       "quantity": 1
     }
   ]
