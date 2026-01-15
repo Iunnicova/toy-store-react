@@ -1,21 +1,22 @@
 @use '../../../styles/helpers/' as *;
 
 .cards {
+  // position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: zoom-in;
-  background-color: var(--color-mint-cream);
-  border: var(--border);
+  // background-color: var(--color-mint-cream);
+  // border: var(--border);
   border-radius: rem(20);
   transition:
     box-shadow 0.2s ease-in-out,
     transform 0.2s ease-in-out;
+  overflow: hidden;
   width: 100%;
-  // max-width: rem(320);
-  height: 100%;
+  max-width: rem(320);
+  height: auto;
   padding: rem(20);
-
   contain: content;
 
   &:hover {
@@ -39,6 +40,10 @@
 }
 
 .heartIconCards {
+  // position: absolute;
+  top: rem(12);
+  right: rem(220);
+  z-index: 2;
   color: var(--color-dusty-purple);
   height: fluid(40, 20);
   width: fluid(40, 20);
@@ -49,19 +54,26 @@
 }
 
 .imgCards {
-  display: grid;
-  grid-template-columns: 25% 1fr;
+  // position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  // align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--color-mint-cream);
+  border: var(--border);
+  border-radius: rem(20);
+  aspect-ratio: 6/7; //ширина / высота.
+  width: 100%;
 }
 
 .toy {
   cursor: zoom-in;
   object-fit: cover;
-  width: rem(150);
-  padding-bottom: rem(5);
-
-  @include mobile-s {
-    width: rem(100);
-  }
+  // padding: rem(5);
+  max-width: 100%;
+  height: 100%;
 }
 
 .title {
@@ -145,8 +157,10 @@
 }
 
 // .actions {
-//   display: flex;
-//   justify-content: center;
-//   align-items: end;
-//   min-height: 40px;
+// //  background-color: var(--color-mint-mint);
+
+//   // display: flex;
+//   // justify-content: center;
+//   // align-items: end;
+//   // min-height: 40px;
 // }
