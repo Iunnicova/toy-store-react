@@ -14,6 +14,7 @@ import { ImageZoom } from '../ImageZoom';
 import { ModalPortal } from '../ModalPortal';
 import jackdaw from '../../../../icon/jackdaw.svg';
 import styles from './ModalDescriptionToy.module.scss';
+import { Counter } from '../Counter';
 
 export const ModalDescriptionToy = memo(
   ({ title, onClose, toyImage, toy }: TModalDescriptionToyProps) => {
@@ -22,12 +23,18 @@ export const ModalDescriptionToy = memo(
     const { t } = useTranslation(); //хук для перевода
 
     //!для изменения значка корзины
-    const { cartItems, addToCart } = useCart();
-    const isAdded = cartItems.some((item) => item.toyId === toy.id); //Проверка: есть ли текущая игрушка (toy.id) уже в корзине.
+    const { cartItems, addToCart, removeFromCart } = useCart();
+    const cartItem = cartItems.find((item) => item.toyId === toy.id); //Проверка: есть ли текущая игрушка (toy.id) уже в корзине.
+    const quantity = cartItem?.quantity ?? 0;
 
-    const handleAddToCart = async (e: React.MouseEvent) => {
-      e.stopPropagation(); //предотвращает всплытие события (например, чтобы клик по кнопке не сработал на родительском элементе)
-      await addToCart(toy.id); //асинхронно добавляет товар в корзину
+    const add = (e?: React.MouseEvent) => {
+      e?.stopPropagation();
+      addToCart(toy.id);
+    };
+
+    const remove = (e?: React.MouseEvent) => {
+      e?.stopPropagation();
+      removeFromCart(toy.id);
     };
 
     // Блокируем скролл, когда модалка на экране
@@ -123,17 +130,18 @@ export const ModalDescriptionToy = memo(
                     {toy.price.toLocaleString('ru-RU')}
                   </strong>
                 </span>
-                <Button className={styles.button} onClick={handleAddToCart}>
-                  {isAdded ? (
-                    <img
-                      src={jackdaw}
-                      alt="Добавлено"
-                      className={styles.basketIconCards}
-                    />
-                  ) : (
+                {quantity === 0 ? (
+                  <Button className={styles.button} onClick={add}>
                     <BasketIcon className={styles.icon} />
-                  )}
-                </Button>
+                  </Button>
+                ) : (
+                  <Counter
+                    className={styles.counter}
+                    value={quantity}
+                    onIncrement={add}
+                    onDecrement={remove}
+                  />
+                )}
               </div>
             </div>
           </ModalOverlay>

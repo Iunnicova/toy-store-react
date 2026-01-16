@@ -1,3 +1,4 @@
 export type TBasketIcon = {
-  className: string;
+  className?: string;
+  onClick?: () => void;
 };
