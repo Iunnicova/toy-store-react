@@ -35,7 +35,8 @@
     "common": {
       "priceLabel": "Cena",
       "description": "Opis",
-      "additionalDescription": "Pogodno je za igru, spavanje, ukrašavanje sobe i kao antistres. Igračka se lako briše i održava oblik . Mame će ceniti! Divan poklon za rođendan, praznik ili samo za radost."
+      "additionalDescription": "Pogodno je za igru, spavanje, ukrašavanje sobe i kao antistres. Igračka se lako briše i održava oblik . Mame će ceniti! Divan poklon za rođendan, praznik ili samo za radost.",
+      "basket": "Korpa"
     },
 
     "tiger_dream_keeper": {

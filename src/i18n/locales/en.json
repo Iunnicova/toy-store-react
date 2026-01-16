@@ -31,10 +31,12 @@
       "age": "Age",
       "packaging": "Packaging"
     },
+
     "common": {
       "priceLabel": "Price",
       "description": "Description",
-      "additionalDescription": "It is suitable for playing, sleeping, room decoration and as an antistress. The toy is easy to wash and retains its shape . Moms will appreciate it! A perfect gift for a birthday, holiday or just for joy."
+      "additionalDescription": "It is suitable for playing, sleeping, room decoration and as an antistress. The toy is easy to wash and retains its shape . Moms will appreciate it! A perfect gift for a birthday, holiday or just for joy.",
+      "basket": "Basket"
     },
 
     "tiger_dream_keeper": {

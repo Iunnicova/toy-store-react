@@ -56,7 +56,7 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
             className={styles.button}
           >
             <BasketIcon className={styles.basketIconCards} />
-            корзина
+            <span>{t('toys.common.basket')}</span>
           </Button>
         ) : (
           <Counter

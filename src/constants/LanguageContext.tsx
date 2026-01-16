@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import i18n from '../i18n';
 
-//хук
+//хук. защищает от использования хука вне провайдера
 export const useLanguage = (): LanguageContextType => {
   const context = useContext(LanguageContext);
   if (!context) {
@@ -34,16 +34,21 @@ type LanguageProviderProps = {
   children: ReactNode;
 };
 
-//провайдер
+//провайдер Ленивая инициализация useState
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   children,
 }) => {
   const [language, setLanguage] = useState<Language>(() => {
     if (typeof window === 'undefined') return 'ru';
     const saved = localStorage.getItem('language');
-    return (saved as Language) || 'ru';
+    // return (saved as Language) || 'ru';
+    if (saved === 'ru' || saved === 'en' || saved === 'sr') {
+      return saved;
+    }
+    return 'ru';
   });
 
+  //Синхронизация с i18n
   useEffect(() => {
     i18n.changeLanguage(language);
   }, [language]);
