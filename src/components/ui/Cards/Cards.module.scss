@@ -9,9 +9,11 @@
   // background-color: var(--color-mint-cream);
   // border: var(--border);
   border-radius: rem(20);
+
   transition:
     box-shadow 0.2s ease-in-out,
     transform 0.2s ease-in-out;
+
   overflow: hidden;
   width: 100%;
   max-width: rem(320);
@@ -42,7 +44,7 @@
 .heartIconCards {
   position: absolute;
   top: rem(12);
-   left: rem(12);
+  left: rem(12);
   z-index: 2;
   color: var(--color-dusty-purple);
   height: fluid(40, 20);

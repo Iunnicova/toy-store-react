@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export type TCartItem = {
-  id?: number;
+  id: number;
   toyId: number;
   price: number;
   quantity: number;
@@ -12,15 +12,19 @@ export type TCartItem = {
 //[] — изначально корзина пустая
 //loading = true → корзина ещё загружается
 //loading = false → корзина готова
+//finally — «сделай в любом случае»
 export const useCart = () => {
   const [cartItems, setCartItems] = useState<TCartItem[]>([]);
   const [loading, setLoading] = useState(true);
 
   const loadCart = async () => {
-    const res = await fetch('http://localhost:3001/cart');
-    const data = await res.json();
-    setCartItems(data);
-    setLoading(false);
+    try {
+      const res = await fetch('http://localhost:3001/cart');
+      const data = await res.json();
+      setCartItems(data);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {

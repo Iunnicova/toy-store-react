@@ -1,19 +1,17 @@
 import { useTranslation } from 'react-i18next';
-import { useEffect, useState } from 'react';
-
-import jackdaw from '../../../../icon/jackdaw.svg';
+import { useCart } from '../../../hooks/useCart';
 import { Button } from '../Button';
 import { TCardProps } from './type';
 import { HeartIcon } from '../../svg/HeartIcon';
 import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
-import styles from './Cards.module.scss';
-import { useCart } from '../../../hooks/useCart';
 import { Counter } from '../Counter';
+import styles from './Cards.module.scss';
 
 export const Cards = ({ toy, onCardClick }: TCardProps) => {
   const { t } = useTranslation();
   const { cartItems, addToCart, removeFromCart } = useCart();
 
+  //!добавление удаление из корзины
   const cartItem = cartItems.find((item) => item.toyId === toy.id);
   const quantity = cartItem?.quantity ?? 0;
 
@@ -77,7 +75,9 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
 //   const { t } = useTranslation(); //хук для перевода
 
 //   //!для изменения значка корзины
-//   const { cartItems, addToCart } = useCart();
+//   const { cartItems, addToCart } = useCart(); //
+//- Проверка: есть ли текущая игрушка (toy.id) уже в корзине -
+// isAdded будет true, если хотя бы один элемент в cartItems совпадает по toyId.
 //   const isAdded = cartItems.some((item) => item.toyId === toy.id);
 
 //   // Добавляем в корзину на сервере
@@ -111,22 +111,22 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
 //         <span>{t('toys.common.priceLabel')}:</span>
 //         <strong>{toy.price.toLocaleString('ru-RU')}</strong>
 
-//         <Button className={styles.button} onClick={handleAddToCart}>
-//           {isAdded ? (
-//             <div
-//               className={styles.navigation}
-//               // aria-label={resolveAria(item.ariaLabel)}
-//             >
-//               <img
-//                 src={jackdaw}
-//                 alt="Добавлено"
-//                 className={styles.basketIconCards}
-//               />
-//             </div>
-//           ) : (
-//             <BasketIcon className={styles.basketIconCards} />
-//           )}
-//         </Button>
+// <Button className={styles.button} onClick={handleAddToCart}>
+//   {isAdded ? (
+//     <div
+//       className={styles.navigation}
+//       // aria-label={resolveAria(item.ariaLabel)}
+//     >
+//       <img
+//         src={jackdaw}
+//         alt="Добавлено"
+//         className={styles.basketIconCards}
+//       />
+//     </div>
+//   ) : (
+//     <BasketIcon className={styles.basketIconCards} />
+//   )}
+// </Button>
 //       </div>
 //     </div>
 //   );

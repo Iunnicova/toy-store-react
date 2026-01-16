@@ -1,4 +1,6 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useCart } from '../../../hooks/useCart';
 import { memo, useEffect, useState } from 'react';
 import classNames from 'classnames';
 
@@ -10,14 +12,23 @@ import { HeartIcon } from '../../svg/HeartIcon';
 import { BasketIcon } from '../../svg/BasketIcon';
 import { ImageZoom } from '../ImageZoom';
 import { ModalPortal } from '../ModalPortal';
+import jackdaw from '../../../../icon/jackdaw.svg';
 import styles from './ModalDescriptionToy.module.scss';
 
 export const ModalDescriptionToy = memo(
   ({ title, onClose, toyImage, toy }: TModalDescriptionToyProps) => {
     const characteristics = getCharacteristics(toy.characteristic);
     const [isZoomed, setIsZoomed] = useState(false);
-
     const { t } = useTranslation(); //хук для перевода
+
+    //!для изменения значка корзины
+    const { cartItems, addToCart } = useCart();
+    const isAdded = cartItems.some((item) => item.toyId === toy.id); //Проверка: есть ли текущая игрушка (toy.id) уже в корзине.
+
+    const handleAddToCart = async (e: React.MouseEvent) => {
+      e.stopPropagation(); //предотвращает всплытие события (например, чтобы клик по кнопке не сработал на родительском элементе)
+      await addToCart(toy.id); //асинхронно добавляет товар в корзину
+    };
 
     // Блокируем скролл, когда модалка на экране
     useEffect(() => {
@@ -112,11 +123,16 @@ export const ModalDescriptionToy = memo(
                     {toy.price.toLocaleString('ru-RU')}
                   </strong>
                 </span>
-                <Button
-                  className={styles.button}
-                  onClick={() => alert('Добавлено в корзину')}
-                >
-                  <BasketIcon className={styles.icon} />
+                <Button className={styles.button} onClick={handleAddToCart}>
+                  {isAdded ? (
+                    <img
+                      src={jackdaw}
+                      alt="Добавлено"
+                      className={styles.basketIconCards}
+                    />
+                  ) : (
+                    <BasketIcon className={styles.icon} />
+                  )}
                 </Button>
               </div>
             </div>
