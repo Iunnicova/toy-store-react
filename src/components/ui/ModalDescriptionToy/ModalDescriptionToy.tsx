@@ -15,6 +15,7 @@ import { ModalPortal } from '../ModalPortal';
 import jackdaw from '../../../../icon/jackdaw.svg';
 import styles from './ModalDescriptionToy.module.scss';
 import { Counter } from '../Counter';
+import { useCartContext } from '../../../context/CartContex';
 
 export const ModalDescriptionToy = memo(
   ({ title, onClose, toyImage, toy }: TModalDescriptionToyProps) => {
@@ -23,7 +24,7 @@ export const ModalDescriptionToy = memo(
     const { t } = useTranslation(); //хук для перевода
 
     //!для изменения значка корзины
-    const { cartItems, addToCart, removeFromCart } = useCart();
+    const { cartItems, addToCart, removeFromCart } = useCartContext();
     const cartItem = cartItems.find((item) => item.toyId === toy.id); //Проверка: есть ли текущая игрушка (toy.id) уже в корзине.
     const quantity = cartItem?.quantity ?? 0;
 

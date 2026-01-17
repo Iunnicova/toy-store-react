@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useTheme } from '../ThemeContext/ThemeContext';
+import { useTheme } from '../../../context/ThemeContext/ThemeContext';
 import sunshine from '/images/sunshine.png';
 import moon from '/images/moon.png';
 import { Button } from '../Button';

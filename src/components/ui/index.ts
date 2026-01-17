@@ -7,7 +7,7 @@ export * from './ContentToy';
 export * from './Banner';
 export * from './Search';
 export * from './Footer';
-export * from './ThemeContext';
+export * from '../../context/ThemeContext';
 export * from './ControlPanel';
 export * from './ModalOverlay';
 export * from './ModalDescriptionToy';

@@ -6,10 +6,12 @@ import { HeartIcon } from '../../svg/HeartIcon';
 import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
 import { Counter } from '../Counter';
 import styles from './Cards.module.scss';
+import { useCartContext } from '../../../context/CartContex';
 
 export const Cards = ({ toy, onCardClick }: TCardProps) => {
   const { t } = useTranslation();
-  const { cartItems, addToCart, removeFromCart } = useCart();
+  // const { cartItems, addToCart, removeFromCart } = useCart();
+  const { cartItems, addToCart, removeFromCart } = useCartContext();
 
   //!добавление удаление из корзины
   const cartItem = cartItems.find((item) => item.toyId === toy.id);
