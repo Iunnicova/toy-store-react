@@ -1,3 +1,5 @@
+import { TToy } from '../../../types/toysData';
+
 export type CardsBasketProps = {
-  toysInCart: any[];
+  toysInCart: TToy[];
 };

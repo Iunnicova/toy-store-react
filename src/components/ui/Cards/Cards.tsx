@@ -11,9 +11,9 @@ import { useCartContext } from '../../../context/CartContex';
 export const Cards = ({ toy, onCardClick }: TCardProps) => {
   const { t } = useTranslation();
   // const { cartItems, addToCart, removeFromCart } = useCart();
-  const { cartItems, addToCart, removeFromCart } = useCartContext();
 
   //!добавление удаление из корзины
+  const { cartItems, addToCart, removeFromCart } = useCartContext();
   const cartItem = cartItems.find((item) => item.toyId === toy.id);
   const quantity = cartItem?.quantity ?? 0;
 

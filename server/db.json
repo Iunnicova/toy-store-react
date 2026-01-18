@@ -182,11 +182,5 @@
     }
   ],
   "favorites": [],
-  "cart": [
-    {
-      "id": "62dd",
-      "toyId": "1",
-      "quantity": 6
-    }
-  ]
+  "cart": []
 }
