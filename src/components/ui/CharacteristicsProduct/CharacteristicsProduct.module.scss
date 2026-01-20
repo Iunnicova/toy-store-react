@@ -1,0 +1,41 @@
+@use '../../../styles/helpers/' as *;
+.characteristics {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 5px;
+  color: var(--color-likeCount);
+  font-size: rem(18);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap; // чтобы ничего не переносилось
+
+  @include mobile {
+    justify-content: flex-start;
+    gap: rem(15);
+  }
+
+  @include mobile-s {
+    font-size: rem(14);
+  }
+}
+
+.line {
+  flex: 1;
+  border-bottom: 3px dashed var(--color-frame);
+  transform: translateY(6px); // опускаем линию вниз
+  height: 0; // это важно! чтобы линия не занимала вертикальное место
+  margin: 0 10px;
+
+  @include mobile-s {
+    display: none;
+  }
+}
+
+.value {
+  white-space: nowrap;
+}

@@ -16,6 +16,7 @@ import jackdaw from '../../../../icon/jackdaw.svg';
 import styles from './ModalDescriptionToy.module.scss';
 import { Counter } from '../Counter';
 import { useCartContext } from '../../../context/CartContex';
+import { CharacteristicsList } from '../CharacteristicsProduct/CharacteristicsProduct';
 
 export const ModalDescriptionToy = memo(
   ({ title, onClose, toyImage, toy }: TModalDescriptionToyProps) => {
@@ -93,9 +94,9 @@ export const ModalDescriptionToy = memo(
                   onClick={() => setIsZoomed(true)}
                   style={{ cursor: 'zoom-in' }}
                 />
-
+                <CharacteristicsList characteristics={characteristics} />
                 {/* ХАРАКТЕРИСТИКИ */}
-                <dl className={styles.characteristics}>
+                {/* <dl className={styles.characteristics}>
                   {characteristics.map(({ label, value }) => (
                     <div key={label} className={styles.row}>
                       <dt>{t(`toys.characteristics.${label}`)} :</dt>
@@ -107,7 +108,7 @@ export const ModalDescriptionToy = memo(
                       </dd>
                     </div>
                   ))}
-                </dl>
+                </dl> */}
 
                 {/* ОПИСАНИЕ */}
                 <div className={styles.description}>
