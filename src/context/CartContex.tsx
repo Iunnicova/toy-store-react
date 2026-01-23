@@ -1,5 +1,6 @@
+import { useCart } from '@/hooks/useCart';
 import { createContext, useContext } from 'react';
-import { useCart } from '../hooks/useCart';
+// import { useCart } from '../hooks/useCart';
 
 interface CartProviderProps {
   children: React.ReactNode;

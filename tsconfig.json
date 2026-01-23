@@ -12,7 +12,23 @@
     "skipLibCheck": true /* Пропуск проверки .d.ts */,
     "forceConsistentCasingInFileNames": true /* Без ошибок в регистре путей */,
     "resolveJsonModule": true /* Импорт JSON как модулей */,
-    "allowJs": true /* «Разрешить компиляцию JavaScript-файлов. Полезно при миграции с JS на TS». */
+    "allowJs": true /* «Разрешить компиляцию JavaScript-файлов. Полезно при миграции с JS на TS». */,
+    "baseUrl": "src" /*Теперь TypeScript считает src корнем проекта*/,
+
+    "paths": {
+      "@/*": ["*"],
+      "@pages/*": ["pages/*"],
+      "@components/*": ["components/*"],
+      "@ui/*": ["components/ui/*"],
+      "@styles/*": ["styles/*"],
+      "@context/*": ["context/*"],
+      "@hooks/*": ["hooks/*"],
+      "@utils/*": ["utils/*"],
+      "@constants/*": ["constants/*"],
+      "@svg/*": ["svg/*"],
+      "@images/*": ["images/*"],
+      "@icon/*": ["icon/*"]
+    }
   },
   "include": ["src/**/*"]
 }

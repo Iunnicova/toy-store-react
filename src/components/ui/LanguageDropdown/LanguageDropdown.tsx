@@ -1,13 +1,17 @@
 // components/LanguageDropdown/LanguageDropdown.tsx
-import i18n from '../../../i18n';
-import { useState } from 'react';
-import { Language, useLanguage } from '../../../context/LanguageContext';
+// import i18n from '../../../i18n';
+// import { useState } from 'react';
+// import { Language, useLanguage } from '../../../context/LanguageContext';
 
-import landRu from '../../../../images/landRu.png';
-import landSr from '../../../../images/landSr.png';
-import landEn from '../../../../images/landEn.png';
-import { Button } from '../Button';
+import landRu from '@images/landRu.png';
+import landSr from '@images/landSr.png';
+import landEn from '@images/landEn.png';
+// import { Button } from '../Button';
 import styles from './LanguageDropdown.module.scss';
+import { useLanguage, Language } from '@/context/LanguageContext';
+import i18n from '@/i18n';
+import { useState } from 'react';
+import { Button } from '../Button';
 
 const languages = [
   { code: 'ru', label: '', image: landRu },

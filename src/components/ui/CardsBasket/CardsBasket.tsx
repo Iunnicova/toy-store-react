@@ -1,13 +1,20 @@
-import { useState } from 'react';
+// import { useState } from 'react';
+// import { useTranslation } from 'react-i18next';
+// import { useCart } from '../../../hooks/useCart';
+// import { Counter } from '../Counter';
+// import { CardsBasketProps } from './type';
+// import { BasketIcon } from '../../svg/BasketIcon';
+// import { Button } from '../Button';
+// import { HeartIcon } from '../../svg/HeartIcon';
+// import { useCartContext } from '../../../context/CartContex';
+import { BasketIcon } from '@/components/svg/BasketIcon';
+import { HeartIcon } from '@/components/svg/HeartIcon';
+import { useCartContext } from '@/context/CartContex';
 import { useTranslation } from 'react-i18next';
-import { useCart } from '../../../hooks/useCart';
+import { Button } from '../Button';
 import { Counter } from '../Counter';
 import styles from './CardsBasket.module.scss';
 import { CardsBasketProps } from './type';
-import { BasketIcon } from '../../svg/BasketIcon';
-import { Button } from '../Button';
-import { HeartIcon } from '../../svg/HeartIcon';
-import { useCartContext } from '../../../context/CartContex';
 
 export function CardsBasket({ toysInCart }: CardsBasketProps) {
   const { t } = useTranslation(); //хук перевода

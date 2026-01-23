@@ -1,4 +1,6 @@
-import { useState } from 'react';
+// import { useState } from 'react';
+// import { Button } from '../Button';
+// import { CounterProps } from './type';
 import { Button } from '../Button';
 import styles from './Counter.module.scss';
 import { CounterProps } from './type';

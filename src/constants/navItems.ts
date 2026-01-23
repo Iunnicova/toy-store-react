@@ -1,7 +1,12 @@
-import { BasketIcon } from '../components/svg/BasketIcon';
-import { HeartIcon } from '../components/svg/HeartIcon';
-import { ProfileIcon } from '../components/svg/ProfileIcon';
-import { HeaderNavItem } from '../components/ui/Header/type';
+// import { BasketIcon } from '../components/svg/BasketIcon';
+// import { HeartIcon } from '../components/svg/HeartIcon';
+// import { ProfileIcon } from '../components/svg/ProfileIcon';
+// import { HeaderNavItem } from '../components/ui/Header/type';
+
+import { BasketIcon } from '@/components/svg/BasketIcon';
+import { HeartIcon } from '@/components/svg/HeartIcon';
+import { ProfileIcon } from '@/components/svg/ProfileIcon';
+import { HeaderNavItem } from '@/components/ui/Header/type';
 
 export const getHeaderNavItems = (
   basketTotal: number,

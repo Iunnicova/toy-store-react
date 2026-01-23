@@ -5,6 +5,7 @@ npm run server
 ### Запуск проекта
 
 npm run build
+npm install
 
 npm run start
 

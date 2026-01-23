@@ -108,9 +108,24 @@ module.exports = {
     ],
   },
 
-  // Какие расширения файлов можно импортировать без указания
+  // Какие расширения файлов можно импортировать без указания // импорты папок
   resolve: {
-    extensions: ['.js', '.jsx', '.tsx', '.ts', '.json'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    alias: {
+      '@': path.resolve(__dirname, '../src'),
+      '@pages': path.resolve(__dirname, '../src/pages'),
+      '@components': path.resolve(__dirname, '../src/components'),
+      '@ui': path.resolve(__dirname, '../src/components/ui'),
+      '@styles': path.resolve(__dirname, '../src/styles'),
+      '@context': path.resolve(__dirname, '../src/context'),
+      '@hooks': path.resolve(__dirname, '../src/hooks'),
+      '@utils': path.resolve(__dirname, '../src/utils'),
+      '@constants': path.resolve(__dirname, '../src/constants'),
+      '@svg': path.resolve(__dirname, '../src/svg'),
+      '@images': path.resolve(__dirname, '../src/images'),
+      '@icon': path.resolve(__dirname, '../src/icon'),
+      '@fonts': path.resolve(__dirname, '../src/fonts'),
+    },
   },
 
   plugins: [

@@ -1,10 +1,15 @@
+// import { useState } from 'react';
+// import { useTranslation } from 'react-i18next';
+import favorites1 from '@images/favorites1.png';
+
+// import { Cards } from '../../ui/Cards/Cards';
+// import { TToy } from '../../../types/toysData';
+// import { Button } from '../../ui';
+// import { Link } from 'react-router-dom';
+import { Button, Cards } from '@/components/ui';
+import { TToy } from '@/types/toysData';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import favorites1 from '/images/favorites1.png';
-
-import { Cards } from '../../ui/Cards/Cards';
-import { TToy } from '../../../types/toysData';
-import { Button } from '../../ui';
 import { Link } from 'react-router-dom';
 import styles from './FavoritesPage.module.scss';
 

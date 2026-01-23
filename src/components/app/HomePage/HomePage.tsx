@@ -1,12 +1,22 @@
-import { useEffect, useState } from 'react';
-import { TToy } from '../../../types/toysData';
+// import { useEffect, useState } from 'react';
+// import { TToy } from '../../../types/toysData';
+// import {
+//   Banner,
+//   Search,
+//   Cards,
+//   ModalDescriptionToy,
+//   ControlPanel,
+// } from '../../ui';
+
 import {
+  ControlPanel,
   Banner,
   Search,
   Cards,
   ModalDescriptionToy,
-  ControlPanel,
-} from '../../ui';
+} from '@/components/ui';
+import { TToy } from '@/types/toysData';
+import { useState, useEffect } from 'react';
 
 import styles from './HomePage.module.scss';
 

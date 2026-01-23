@@ -1,9 +1,14 @@
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
+// import { Link } from 'react-router-dom';
+// import { Button } from '../Button';
+// import { SearchIcon } from '../../svg/SearchIcon';
+// import { InputToy } from '../InputToy/InputToy';
+import { SearchIcon } from '@/components/svg/SearchIcon';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Button } from '../Button';
-import { SearchIcon } from '../../svg/SearchIcon';
-import { InputToy } from '../InputToy/InputToy';
+import { InputToy } from '../InputToy';
 import styles from './Search.module.scss';
 
 export const Search = () => {

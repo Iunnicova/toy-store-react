@@ -1,11 +1,19 @@
-import { Outlet } from 'react-router-dom';
-import { Header, Footer, ContentToy } from '../ui';
+// import { Outlet } from 'react-router-dom';
+// import { Header, Footer, ContentToy } from '../ui';
 
 import {
   FOOTER_INFO,
-  handleSubscribe,
   SOCIAL_LINKS,
-} from '../../constants/footerData';
+  handleSubscribe,
+} from '@/constants/footerData';
+import { Outlet } from 'react-router-dom';
+import { ContentToy, Header, Footer } from '../ui';
+
+// import {
+//   FOOTER_INFO,
+//   handleSubscribe,
+//   SOCIAL_LINKS,
+// } from '../../constants/footerData';
 
 export const Layout = () => {
   return (

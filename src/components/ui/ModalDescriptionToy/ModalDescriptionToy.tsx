@@ -4,19 +4,30 @@ import { useCart } from '../../../hooks/useCart';
 import { memo, useEffect, useState } from 'react';
 import classNames from 'classnames';
 
-import { ModalOverlay } from '../ModalOverlay';
-import { Button } from '../Button';
-import { TModalDescriptionToyProps } from './type';
-import { getCharacteristics } from '../../../constants/сharacteristic';
-import { HeartIcon } from '../../svg/HeartIcon';
-import { BasketIcon } from '../../svg/BasketIcon';
-import { ImageZoom } from '../ImageZoom';
-import { ModalPortal } from '../ModalPortal';
-import jackdaw from '../../../../icon/jackdaw.svg';
+// import { ModalOverlay } from '../ModalOverlay';
+// import { Button } from '../Button';
+// import { TModalDescriptionToyProps } from './type';
+// import { getCharacteristics } from '../../../constants/сharacteristic';
+// import { HeartIcon } from '../../svg/HeartIcon';
+// import { BasketIcon } from '../../svg/BasketIcon';
+// import { ImageZoom } from '../ImageZoom';
+// import { ModalPortal } from '../ModalPortal';
+// import jackdaw from '../../../../icon/jackdaw.svg';
+// import { Counter } from '../Counter';
+// import { useCartContext } from '../../../context/CartContex';
+// import { CharacteristicsList } from '../CharacteristicsProduct/CharacteristicsProduct';
 import styles from './ModalDescriptionToy.module.scss';
+import { BasketIcon } from '@/components/svg/BasketIcon';
+import { HeartIcon } from '@/components/svg/HeartIcon';
+import { getCharacteristics } from '@/constants/сharacteristic';
+import { useCartContext } from '@/context/CartContex';
+import { Button } from '../Button';
+import { CharacteristicsList } from '../CharacteristicsProduct';
 import { Counter } from '../Counter';
-import { useCartContext } from '../../../context/CartContex';
-import { CharacteristicsList } from '../CharacteristicsProduct/CharacteristicsProduct';
+import { ImageZoom } from '../ImageZoom';
+import { ModalOverlay } from '../ModalOverlay';
+import { ModalPortal } from '../ModalPortal';
+import { TModalDescriptionToyProps } from './type';
 
 export const ModalDescriptionToy = memo(
   ({ title, onClose, toyImage, toy }: TModalDescriptionToyProps) => {

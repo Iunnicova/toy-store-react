@@ -182,16 +182,5 @@
     }
   ],
   "favorites": [],
-  "cart": [
-    {
-      "id": "a978",
-      "toyId": "2",
-      "quantity": 1
-    },
-    {
-      "id": "9c35",
-      "toyId": "1",
-      "quantity": 1
-    }
-  ]
+  "cart": []
 }

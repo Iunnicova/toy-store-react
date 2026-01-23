@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import styles from './CharacteristicsProduct.module.scss';
 
 import type { TCharacteristicsListProps } from './type';
+import styles from './CharacteristicsProduct.module.scss';
 
 export const CharacteristicsList = ({
   characteristics,

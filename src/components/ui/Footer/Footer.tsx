@@ -1,15 +1,22 @@
+// import { useState } from 'react';
+// import { useTranslation } from 'react-i18next';
+// import { TFooterProps } from './type';
+
+import { ReactComponent as InstagramIcon } from '@icon/instagram.svg';
+import { ReactComponent as Vk } from '@icon/vk.svg';
+import { ReactComponent as FacebookIcon } from '@icon/facebook.svg';
+// import { Button } from '../Button';
+// import { InputToy } from '../InputToy';
+// import { FOOTER_LINKS } from '../../../constants/footerLinks';
+// import { CURRENT_YEAR } from '../../../constants/footerData';
+import { CURRENT_YEAR } from '@/constants/footerData';
+import { FOOTER_LINKS } from '@/constants/footerLinks';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { TFooterProps } from './type';
-
-import { ReactComponent as InstagramIcon } from '../../../../icon/instagram.svg';
-import { ReactComponent as Vk } from '../../../../icon/vk.svg';
-import { ReactComponent as FacebookIcon } from '../../../../icon/facebook.svg';
 import { Button } from '../Button';
 import { InputToy } from '../InputToy';
-import { FOOTER_LINKS } from '../../../constants/footerLinks';
-import { CURRENT_YEAR } from '../../../constants/footerData';
 import styles from './Footer.module.scss';
+import { TFooterProps } from './type';
 
 const socialIconMap = {
   Instagram: InstagramIcon,
