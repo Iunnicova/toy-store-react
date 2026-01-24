@@ -1,7 +1,3 @@
-// import { memo, useEffect, useRef } from 'react';
-
-// import { ImageZoomProps } from './type';
-// import { Button } from '../Button';
 import { memo, useRef, useEffect } from 'react';
 import { Button } from '../Button';
 import styles from './ImageZoom.module.scss';

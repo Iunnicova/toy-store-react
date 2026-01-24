@@ -1,5 +1,3 @@
-// src/constants/footerData.ts
-
 // динамический год
 export const CURRENT_YEAR = new Date().getFullYear();
 

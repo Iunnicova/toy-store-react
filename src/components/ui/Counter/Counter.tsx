@@ -1,15 +1,6 @@
-// import { useState } from 'react';
-// import { Button } from '../Button';
-// import { CounterProps } from './type';
 import { Button } from '../Button';
 import styles from './Counter.module.scss';
 import { CounterProps } from './type';
-
-// export type CounterProps = {
-//   value: number;
-//   onIncrement: () => void;
-//   onDecrement: () => void;
-// }
 
 //значение этой переменной не должно меняться "UPPERCASE_WITH_UNDERSCORES "
 const MIN_VALUE = 1;

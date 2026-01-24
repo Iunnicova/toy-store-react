@@ -1,11 +1,3 @@
-// import { useTranslation } from 'react-i18next';
-// import { useCart } from '../../../hooks/useCart';
-// import { Button } from '../Button';
-// import { TCardProps } from './type';
-// import { HeartIcon } from '../../svg/HeartIcon';
-// import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
-// import { Counter } from '../Counter';
-// import { useCartContext } from '../../../context/CartContex';
 import { BasketIcon } from '@/components/svg/BasketIcon';
 import { HeartIcon } from '@/components/svg/HeartIcon';
 import { useCartContext } from '@/context/CartContex';

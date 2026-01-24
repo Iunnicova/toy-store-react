@@ -1,9 +1,6 @@
 import classNames from 'classnames';
-// import { useTheme } from '../../../context/ThemeContext/ThemeContext';
 import sunshine from '@images/sunshine.png';
 import moon from '@images/moon.png';
-// import { Button } from '../Button';
-// import { LanguageDropdown } from '..';
 import styles from './ControlPanel.module.scss';
 import { useTheme } from '@/context/ThemeContext/ThemeContext';
 import { Button } from '../Button';

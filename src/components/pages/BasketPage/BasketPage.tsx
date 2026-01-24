@@ -1,14 +1,4 @@
-// import { useEffect, useState } from 'react';
-// import { Trans, useTranslation } from 'react-i18next';
-// import { Link } from 'react-router-dom';
-
-// import { useCart } from '../../../hooks/useCart';
 import basket1 from '@images/basket1.png';
-// import { TToy } from '../../../types/toysData';
-// import { Button, Cards } from '../../ui';
-// import { BasketIcon } from '../../svg/BasketIcon/BasketIcon';
-// import { Counter } from '../../ui/Counter';
-// import { CardsBasket } from '../../ui/CardsBasket';
 import { BasketIcon } from '@/components/svg/BasketIcon';
 import { Button, CardsBasket } from '@/components/ui';
 import { useCart } from '@/hooks/useCart';

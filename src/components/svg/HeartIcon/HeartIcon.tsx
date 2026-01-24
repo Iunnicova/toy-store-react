@@ -1,4 +1,3 @@
-// import { useTheme } from '../../../context/ThemeContext/ThemeContext';
 import { useTheme } from '@/context/ThemeContext/ThemeContext';
 import { THeartIconProps } from './type';
 

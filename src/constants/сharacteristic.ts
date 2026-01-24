@@ -1,5 +1,3 @@
-// import { TCharacteristic, TCharacteristicRow } from '../types/toysData';
-
 import { TCharacteristic, TCharacteristicRow } from '@/types/toysData';
 
 export const getCharacteristics = (

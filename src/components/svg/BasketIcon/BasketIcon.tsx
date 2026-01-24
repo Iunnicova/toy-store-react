@@ -1,5 +1,3 @@
-// import { TBasketIcon } from './type';
-
 import { TBasketIcon } from './type';
 
 export const BasketIcon = ({ className }: TBasketIcon) => {
