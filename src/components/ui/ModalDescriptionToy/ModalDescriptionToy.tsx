@@ -1,17 +1,21 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { memo, useEffect, useState } from 'react';
 import classNames from 'classnames';
+import React from 'react';
+import { memo, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { BasketIcon } from '@/components/svg/BasketIcon';
 import { HeartIcon } from '@/components/svg/HeartIcon';
 import { getCharacteristics } from '@/constants/сharacteristic';
 import { useCartContext } from '@/context/CartContex';
-import { Button } from '../Button';
-import { CharacteristicsList } from '../CharacteristicsProduct';
-import { Counter } from '../Counter';
-import { ImageZoom } from '../ImageZoom';
-import { ModalOverlay } from '../ModalOverlay';
-import { ModalPortal } from '../ModalPortal';
+import {
+  Button,
+  CharacteristicsList,
+  Counter,
+  DescriptionProduct,
+  ImageZoom,
+  ModalOverlay,
+  ModalPortal,
+} from '../index';
+
 import { TModalDescriptionToyProps } from './type';
 import styles from './ModalDescriptionToy.module.scss';
 
@@ -92,33 +96,7 @@ export const ModalDescriptionToy = memo(
                   style={{ cursor: 'zoom-in' }}
                 />
                 <CharacteristicsList characteristics={characteristics} />
-                {/* ХАРАКТЕРИСТИКИ */}
-                {/* <dl className={styles.characteristics}>
-                  {characteristics.map(({ label, value }) => (
-                    <div key={label} className={styles.row}>
-                      <dt>{t(`toys.characteristics.${label}`)} :</dt>
-                      <div className={styles.line}></div>
-                      <dd className={styles.value}>
-                        {typeof value === 'string' && value.startsWith('toys.')
-                          ? t(value)
-                          : value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl> */}
-
-                {/* ОПИСАНИЕ */}
-                <div className={styles.description}>
-                  <p className={styles.textDescription}>
-                    <span className={styles.label}>
-                      {t('toys.common.description')}:
-                    </span>{' '}
-                    {toy.descriptionKey ? t(toy.descriptionKey) : ''}
-                  </p>
-                  <p className={styles.additionalDescription}>
-                    {t('toys.common.additionalDescription')}
-                  </p>
-                </div>
+                <DescriptionProduct toy={toy} />
               </div>
 
               {/* ЦЕНА + КОРЗИНА */}

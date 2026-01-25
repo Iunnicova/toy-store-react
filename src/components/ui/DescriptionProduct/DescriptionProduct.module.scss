@@ -1,0 +1,28 @@
+@use '../../../styles/helpers/' as *;
+
+.description {
+  grid-area: description;
+  line-height: 1.5;
+  border-bottom: 3px dashed var(--color-frame);
+  padding-bottom: rem(10);
+  margin-top: 10px;
+}
+
+.textDescription {
+  font-style: italic;
+  font-size: rem(20);
+}
+
+.label {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-likeCount);
+  letter-spacing: 1px;
+  padding-right: rem(5);
+}
+
+.additionalDescription {
+  font-style: italic;
+  font-size: rem(20);
+  padding-top: rem(10);
+}

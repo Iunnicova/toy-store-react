@@ -1,11 +1,11 @@
-import { BasketIcon } from '@/components/svg/BasketIcon';
-import { HeartIcon } from '@/components/svg/HeartIcon';
 import { useCartContext } from '@/context/CartContex';
 import { useTranslation } from 'react-i18next';
-import { Button } from '../Button';
-import { Counter } from '../Counter';
-import styles from './Cards.module.scss';
+
+import { HeartIcon } from '@/components/svg/HeartIcon';
+import { BasketIcon } from '@/components/svg/BasketIcon';
+import { Button, Counter } from '../index';
 import { TCardProps } from './type';
+import styles from './Cards.module.scss';
 
 export const Cards = ({ toy, onCardClick }: TCardProps) => {
   const { t } = useTranslation();

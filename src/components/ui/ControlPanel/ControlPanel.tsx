@@ -1,10 +1,9 @@
 import classNames from 'classnames';
 import sunshine from '@images/sunshine.png';
 import moon from '@images/moon.png';
-import styles from './ControlPanel.module.scss';
 import { useTheme } from '@/context/ThemeContext/ThemeContext';
-import { Button } from '../Button';
-import { LanguageDropdown } from '../LanguageDropdown';
+import { Button, LanguageDropdown } from '../index';
+import styles from './ControlPanel.module.scss';
 
 export const ControlPanel = () => {
   const { theme, setTheme } = useTheme(); // ✅подключаем ThemeContext переключение тем

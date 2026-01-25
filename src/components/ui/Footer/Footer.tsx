@@ -1,10 +1,10 @@
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { CURRENT_YEAR } from '@/constants/footerData';
+import { FOOTER_LINKS } from '@/constants/footerLinks';
 import { ReactComponent as InstagramIcon } from '@icon/instagram.svg';
 import { ReactComponent as Vk } from '@icon/vk.svg';
 import { ReactComponent as FacebookIcon } from '@icon/facebook.svg';
-import { CURRENT_YEAR } from '@/constants/footerData';
-import { FOOTER_LINKS } from '@/constants/footerLinks';
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Button } from '../Button';
 import { InputToy } from '../InputToy';
 import styles from './Footer.module.scss';

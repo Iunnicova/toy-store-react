@@ -6,6 +6,7 @@ export * from './CharacteristicsProduct';
 export * from './ContentToy';
 export * from './ControlPanel';
 export * from './Counter';
+export * from './DescriptionProduct';
 export * from './Footer';
 export * from './Header';
 export * from './ImageZoom';

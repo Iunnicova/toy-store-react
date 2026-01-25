@@ -2,10 +2,9 @@ import { BasketIcon } from '@/components/svg/BasketIcon';
 import { HeartIcon } from '@/components/svg/HeartIcon';
 import { useCartContext } from '@/context/CartContex';
 import { useTranslation } from 'react-i18next';
-import { Button } from '../Button';
-import { Counter } from '../Counter';
-import styles from './CardsBasket.module.scss';
+import { Button, Counter } from '../index';
 import { CardsBasketProps } from './type';
+import styles from './CardsBasket.module.scss';
 
 export function CardsBasket({ toysInCart }: CardsBasketProps) {
   const { t } = useTranslation(); //хук перевода
