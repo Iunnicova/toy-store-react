@@ -1,0 +1,41 @@
+@use '../../../styles/helpers/' as *;
+
+.button {
+  width: rem(150);
+  height: rem(40);
+
+  &.toggle {
+    padding: 0;
+    margin-left: auto;
+  }
+}
+
+.priceBasket {
+  display: flex;
+  justify-content: space-between;
+  padding-top: rem(20);
+
+  @include mobile {
+  }
+}
+
+.priceModal {
+  font-size: rem(30);
+  color: var(--color-likeCount);
+
+  @include mobile {
+    font-size: rem(25);
+  }
+}
+
+.price {
+  padding-left: rem(20);
+}
+
+.icon {
+  max-width: rem(30);
+
+  @include mobile {
+    max-width: rem(25);
+  }
+}

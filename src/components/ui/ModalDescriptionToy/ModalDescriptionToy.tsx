@@ -1,16 +1,13 @@
 import classNames from 'classnames';
-import React from 'react';
 import { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BasketIcon } from '@/components/svg/BasketIcon';
 import { HeartIcon } from '@/components/svg/HeartIcon';
 import { getCharacteristics } from '@/constants/сharacteristic';
-import { useCartContext } from '@/context/CartContex';
 import {
   Button,
   CharacteristicsList,
-  Counter,
   DescriptionProduct,
+  FooterModal,
   ImageZoom,
   ModalOverlay,
   ModalPortal,
@@ -25,22 +22,6 @@ export const ModalDescriptionToy = memo(
     const [isZoomed, setIsZoomed] = useState(false);
     const { t } = useTranslation(); //хук для перевода
 
-    //!для изменения значка корзины
-    const { cartItems, addToCart, removeFromCart } = useCartContext();
-    const cartItem = cartItems.find((item) => item.toyId === toy.id); //Проверка: есть ли текущая игрушка (toy.id) уже в корзине.
-    const quantity = cartItem?.quantity ?? 0;
-
-    const add = (e?: React.MouseEvent) => {
-      e?.stopPropagation();
-      addToCart(toy.id);
-    };
-
-    const remove = (e?: React.MouseEvent) => {
-      e?.stopPropagation();
-      removeFromCart(toy.id);
-    };
-
-    // Блокируем скролл, когда модалка на экране
     useEffect(() => {
       const originalStyle = window.getComputedStyle(document.body).overflow;
       document.body.style.overflow = 'hidden';
@@ -98,28 +79,7 @@ export const ModalDescriptionToy = memo(
                 <CharacteristicsList characteristics={characteristics} />
                 <DescriptionProduct toy={toy} />
               </div>
-
-              {/* ЦЕНА + КОРЗИНА */}
-              <div className={styles.priceBasket}>
-                <span className={styles.priceModal}>
-                  {t('toys.common.priceLabel')}:
-                  <strong className={styles.price}>
-                    {toy.price.toLocaleString('ru-RU')}
-                  </strong>
-                </span>
-                {quantity === 0 ? (
-                  <Button className={styles.button} onClick={add}>
-                    <BasketIcon className={styles.icon} />
-                  </Button>
-                ) : (
-                  <Counter
-                    className={styles.counter}
-                    value={quantity}
-                    onIncrement={add}
-                    onDecrement={remove}
-                  />
-                )}
-              </div>
+              <FooterModal toy={toy} />
             </div>
           </ModalOverlay>
 

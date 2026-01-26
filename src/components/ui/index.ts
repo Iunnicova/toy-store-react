@@ -8,6 +8,7 @@ export * from './ControlPanel';
 export * from './Counter';
 export * from './DescriptionProduct';
 export * from './Footer';
+export * from './FooterModal';
 export * from './Header';
 export * from './ImageZoom';
 export * from './InputToy';
