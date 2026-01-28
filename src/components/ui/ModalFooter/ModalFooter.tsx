@@ -2,10 +2,10 @@ import { useCartContext } from '@/context/CartContex';
 import { BasketIcon } from '@/components/svg/BasketIcon';
 import { t } from 'i18next';
 import { Button, Counter } from '../index';
-import { TFooterModalProps } from './type';
-import styles from './FooterModal.module.scss';
+import { TModalFooterProps } from './type';
+import styles from './ModalFooter.module.scss';
 
-export const FooterModal = ({ toy }: TFooterModalProps) => {
+export const ModalFooter = ({ toy }: TModalFooterProps) => {
   //!для изменения значка корзины
   const { cartItems, addToCart, removeFromCart } = useCartContext();
   const cartItem = cartItems.find((item) => item.toyId === toy.id); //Проверка: есть ли текущая игрушка (toy.id) уже в корзине.

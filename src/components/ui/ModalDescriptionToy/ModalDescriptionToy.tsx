@@ -7,8 +7,8 @@ import {
   Button,
   CharacteristicsList,
   DescriptionProduct,
-  FooterModal,
   ImageZoom,
+  ModalFooter,
   ModalOverlay,
   ModalPortal,
 } from '../index';
@@ -79,7 +79,7 @@ export const ModalDescriptionToy = memo(
                 <CharacteristicsList characteristics={characteristics} />
                 <DescriptionProduct toy={toy} />
               </div>
-              <FooterModal toy={toy} />
+              <ModalFooter toy={toy} />
             </div>
           </ModalOverlay>
 

@@ -12,7 +12,7 @@ export function CardsBasket({ toysInCart }: CardsBasketProps) {
   const { cartItems, addToCart, removeFromCart } = useCartContext();
 
   return (
-    <div className={styles.cardsGrid}>
+    <section className={styles.cardsGrid}>
       {toysInCart.map((toy) => {
         const cartItem = cartItems.find((item) => item.toyId === toy.id);
         const quantity = cartItem?.quantity ?? 0;
@@ -28,7 +28,8 @@ export function CardsBasket({ toysInCart }: CardsBasketProps) {
         };
 
         return (
-          <div key={toy.id} className={styles.card}>
+          <div key={toy.id} className={styles.listItem}>
+            <div>
             <img
               className={styles.toy}
               src={toy.toyImage}
@@ -36,6 +37,8 @@ export function CardsBasket({ toysInCart }: CardsBasketProps) {
             />
 
             <p className={styles.title}>{t(toy.titleKey)}</p>
+</div>
+
 
             <div className={styles.price}>
               <span>{t('toys.common.priceLabel')}:</span>
@@ -58,6 +61,6 @@ export function CardsBasket({ toysInCart }: CardsBasketProps) {
           </div>
         );
       })}
-    </div>
+    </section>
   );
 }

@@ -182,5 +182,66 @@
     }
   ],
   "favorites": [],
-  "cart": []
+  "cart": [
+    {
+      "id": "78ca",
+      "toyId": "2",
+      "quantity": 4
+    },
+    {
+      "id": "503f",
+      "toyId": "3",
+      "quantity": 1
+    },
+    {
+      "id": "44af",
+      "toyId": "1",
+      "quantity": 1
+    },
+    {
+      "id": "fd88",
+      "toyId": "0",
+      "quantity": 1
+    },
+    {
+      "id": "a327",
+      "toyId": "4",
+      "quantity": 1
+    },
+    {
+      "id": "d3e8",
+      "toyId": "5",
+      "quantity": 1
+    },
+    {
+      "id": "4003",
+      "toyId": "6",
+      "quantity": 1
+    },
+    {
+      "id": "c2b8",
+      "toyId": "7",
+      "quantity": 1
+    },
+    {
+      "id": "becb",
+      "toyId": "8",
+      "quantity": 1
+    },
+    {
+      "id": "10d7",
+      "toyId": "9",
+      "quantity": 1
+    },
+    {
+      "id": "2a72",
+      "toyId": "10",
+      "quantity": 1
+    },
+    {
+      "id": "424b",
+      "toyId": "11",
+      "quantity": 1
+    }
+  ]
 }

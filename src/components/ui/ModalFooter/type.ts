@@ -1,5 +1,5 @@
 import { TToy } from '@/types/toysData';
 
-export type TFooterModalProps = {
+export type TModalFooterProps = {
   toy: TToy;
 };
