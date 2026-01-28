@@ -6,11 +6,11 @@ import { Button, Counter } from '../index';
 import { CardsBasketProps } from './type';
 import styles from './CardsBasket.module.scss';
 
-export function CardsBasket({
-  toysInCart,
-  onAdd,
-  onRemove,
-  onToyClick,
+export function CardsBasket({ 
+  toysInCart, 
+    onAdd, 
+  onRemove, 
+  onToyClick 
 }: CardsBasketProps) {
   const { t } = useTranslation(); //хук перевода
 
@@ -36,20 +36,21 @@ export function CardsBasket({
         };
 
         return (
-          <div
-            className={styles.listItem}
-            key={toy.id}
-            onClick={() => onToyClick(toy)} // ← клик по карточке → модалка
+          <div 
+          className={styles.listItem}
+          key={toy.id} 
+            onClick={() => onToyClick(toy)}   // ← клик по карточке → модалка
           >
             <div>
-              <img
-                className={styles.toy}
-                src={toy.toyImage}
-                alt={t(toy.titleKey)}
-              />
+            <img
+              className={styles.toy}
+              src={toy.toyImage}
+              alt={t(toy.titleKey)}
+            />
 
-              <p className={styles.title}>{t(toy.titleKey)}</p>
-            </div>
+            <p className={styles.title}>{t(toy.titleKey)}</p>
+</div>
+
 
             <div className={styles.price}>
               <span>{t('toys.common.priceLabel')}:</span>

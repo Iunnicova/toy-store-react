@@ -72,6 +72,7 @@ export const Header = ({
                     aria-label={resolveAria(item.ariaLabel)}
                   >
                     <Icon className={styles.icon} aria-hidden="true" />
+                    {/* надписи в кнопке */}
                     <span className={styles.count}>{displayLabel}</span>
                   </Button>
                 </Link>

@@ -42,7 +42,10 @@ export const BasketPage = () => {
       }
 
       try {
-        const res = await fetch('http://localhost:3001/toys');
+        const res = await fetch('http://localhost:3001/toys', {
+          signal: AbortSignal.timeout(8000), // таймаут, если сервер молчит 8 секунд → ошибка
+        })
+
         if (!res.ok) {
           throw new Error(`HTTP ${res.status}: ${res.statusText}`);
         }
@@ -133,9 +136,9 @@ export const BasketPage = () => {
           </div>
 
           {/*  блок с итоговой суммой */}
-          {/* <div className={styles.total}>
+          <div className={styles.total}>
           {toysInCart.reduce((sum, item) => sum + item.price * item.quantity, 0)} ₽
-        </div> */}
+        </div>
         </>
       )}
 
