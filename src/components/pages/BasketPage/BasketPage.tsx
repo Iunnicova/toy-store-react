@@ -1,6 +1,6 @@
 import basket1 from '@images/basket1.png';
 import { BasketIcon } from '@/components/svg/BasketIcon';
-import { Button, CardsBasket } from '@/components/ui';
+import { Button, CardsBasket, ModalDescriptionToy } from '@/components/ui';
 import { useCart } from '@/hooks/useCart';
 import { useState, useEffect } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
@@ -10,10 +10,25 @@ import { TToy } from '@/types/toysData';
 import { CartItem, ToyInCart } from './type';
 
 export const BasketPage = () => {
-  const { cartItems, loading } = useCart();
+  const { cartItems, loading, addToCart, removeFromCart } = useCart();
   const { t } = useTranslation(); //хук перевода
+
   const [toysInCart, setToysInCart] = useState<ToyInCart[]>([]);
   const [error, setError] = useState<string | null>(null);
+
+  // ─── Добавляем состояние модального окна ───
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedToy, setSelectedToy] = useState<TToy | null>(null);
+
+  const handleOpenModal = (toy: TToy) => {
+    setSelectedToy(toy);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedToy(null);
+  };
 
   useEffect(() => {
     let isMounted = true;
@@ -109,7 +124,12 @@ export const BasketPage = () => {
         // ЕСТЬ ТОВАРЫ — показываем карточки
         <>
           <div className={styles.card}>
-            <CardsBasket toysInCart={toysInCart} />
+            <CardsBasket
+              toysInCart={toysInCart}
+              onAdd={addToCart}
+              onRemove={removeFromCart}
+              onToyClick={handleOpenModal}
+            />
           </div>
 
           {/*  блок с итоговой суммой */}
@@ -117,6 +137,16 @@ export const BasketPage = () => {
           {toysInCart.reduce((sum, item) => sum + item.price * item.quantity, 0)} ₽
         </div> */}
         </>
+      )}
+
+      {/* Модалка — рендерим здесь */}
+      {isModalOpen && selectedToy && (
+        <ModalDescriptionToy
+          title={selectedToy.titleKey}
+          toyImage={selectedToy.toyImage}
+          toy={selectedToy}
+          onClose={handleCloseModal}
+        />
       )}
     </section>
   );

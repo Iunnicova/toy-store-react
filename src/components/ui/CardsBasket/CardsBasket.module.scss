@@ -2,7 +2,7 @@
 
 .cardsGrid {
   display: flex;
-flex-direction: column;
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -12,6 +12,7 @@ flex-direction: column;
 
 .toy {
   max-width: rem(120);
+  cursor: zoom-in;
 }
 
 .price {
