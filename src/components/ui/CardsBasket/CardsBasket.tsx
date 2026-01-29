@@ -6,18 +6,33 @@ import { Button, Counter } from '../index';
 import { CardsBasketProps } from './type';
 import styles from './CardsBasket.module.scss';
 
-export function CardsBasket({ 
-  toysInCart, 
-    onAdd, 
-  onRemove, 
-  onToyClick 
+export function CardsBasket({
+  toysInCart,
+  onAdd,
+  onRemove,
+  onToyClick,
 }: CardsBasketProps) {
   const { t } = useTranslation(); //хук перевода
 
   const { cartItems, addToCart, removeFromCart } = useCartContext();
+  const totalCount = toysInCart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <section className={styles.cardsGrid}>
+    <section className={styles.cardsBasket}>
+      <header className={styles.headerBasket}>
+        <h1 className={styles.title}>
+          {t('basket.title')} ({totalCount})
+        </h1>
+        {/*  блок с итоговой суммой */}
+        <div className={styles.total}>
+          {toysInCart.reduce(
+            (sum, item) => sum + item.price * item.quantity,
+            0
+          )}{' '}
+          ₽
+        </div>
+      </header>
+
       {toysInCart.map((toy) => {
         const cartItem = cartItems.find((item) => item.toyId === toy.id);
         const quantity = cartItem?.quantity ?? 0;
@@ -36,21 +51,20 @@ export function CardsBasket({
         };
 
         return (
-          <div 
-          className={styles.listItem}
-          key={toy.id} 
-            onClick={() => onToyClick(toy)}   // ← клик по карточке → модалка
+          <div
+            className={styles.listItem}
+            key={toy.id}
+            onClick={() => onToyClick(toy)} // ← клик по карточке → модалка
           >
             <div>
-            <img
-              className={styles.toy}
-              src={toy.toyImage}
-              alt={t(toy.titleKey)}
-            />
+              <img
+                className={styles.toy}
+                src={toy.toyImage}
+                alt={t(toy.titleKey)}
+              />
 
-            <p className={styles.title}>{t(toy.titleKey)}</p>
-</div>
-
+              <p className={styles.title}>{t(toy.titleKey)}</p>
+            </div>
 
             <div className={styles.price}>
               <span>{t('toys.common.priceLabel')}:</span>

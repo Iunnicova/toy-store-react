@@ -44,7 +44,7 @@ export const BasketPage = () => {
       try {
         const res = await fetch('http://localhost:3001/toys', {
           signal: AbortSignal.timeout(8000), // таймаут, если сервер молчит 8 секунд → ошибка
-        })
+        });
 
         if (!res.ok) {
           throw new Error(`HTTP ${res.status}: ${res.statusText}`);
@@ -88,12 +88,13 @@ export const BasketPage = () => {
   }
 
   const isEmpty = toysInCart.length === 0;
-  const totalCount = toysInCart.reduce((sum, item) => sum + item.quantity, 0);
+  // const totalCount = toysInCart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
+    //********** */
     <section className={styles.basket}>
       {isEmpty ? (
-        <>
+        <div className={styles.emptyBasket}>
           <h1 className={styles.title}>{t('basket.notAdded')}</h1>
 
           <img
@@ -122,24 +123,26 @@ export const BasketPage = () => {
               <p className={styles.count}>{t('basket.homeButton')}</p>
             </Button>
           </Link>
-        </>
+        </div>
       ) : (
         // ЕСТЬ ТОВАРЫ — показываем карточки
-        <>
-          <div className={styles.card}>
-            <CardsBasket
-              toysInCart={toysInCart}
-              onAdd={addToCart}
-              onRemove={removeFromCart}
-              onToyClick={handleOpenModal}
-            />
-          </div>
+        <div className={styles.filledBasket}>
+          {/* <h1 className={styles.title}>
+            {t('basket.title')} ({totalCount})
+          </h1> */}
+
+          <CardsBasket
+            toysInCart={toysInCart}
+            onAdd={addToCart}
+            onRemove={removeFromCart}
+            onToyClick={handleOpenModal}
+          />
 
           {/*  блок с итоговой суммой */}
-          <div className={styles.total}>
+          {/* <div className={styles.total}>
           {toysInCart.reduce((sum, item) => sum + item.price * item.quantity, 0)} ₽
+        </div> */}
         </div>
-        </>
       )}
 
       {/* Модалка — рендерим здесь */}
