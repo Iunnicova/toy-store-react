@@ -6,9 +6,11 @@
   align-items: start;
   justify-self: center;
   gap: 20px;
+   border-radius: rem(32);
   background-color: rgb(192, 236, 13);
   color: rgb(61, 93, 236);
-  // border-bottom: var(--border);
+  border: var(--border);
+   min-width: 800px;
 }
 
 .headerBasket {

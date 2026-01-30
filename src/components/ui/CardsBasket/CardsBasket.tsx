@@ -31,6 +31,7 @@ export function CardsBasket({
           )}{' '}
           ₽
         </div>
+        
       </header>
 
       {toysInCart.map((toy) => {

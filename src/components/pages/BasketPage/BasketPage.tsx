@@ -126,6 +126,7 @@ export const BasketPage = () => {
         </div>
       ) : (
         // ЕСТЬ ТОВАРЫ — показываем карточки
+        <div className={styles.containerFilled}>
         <div className={styles.filledBasket}>
           {/* <h1 className={styles.title}>
             {t('basket.title')} ({totalCount})
@@ -142,6 +143,11 @@ export const BasketPage = () => {
           {/* <div className={styles.total}>
           {toysInCart.reduce((sum, item) => sum + item.price * item.quantity, 0)} ₽
         </div> */}
+        </div>
+
+        <div className={styles.paymentProduct}> 
+<p>Оплата</p>
+        </div>
         </div>
       )}
 
