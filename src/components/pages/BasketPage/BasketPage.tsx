@@ -127,27 +127,27 @@ export const BasketPage = () => {
       ) : (
         // ЕСТЬ ТОВАРЫ — показываем карточки
         <div className={styles.containerFilled}>
-        <div className={styles.filledBasket}>
-          {/* <h1 className={styles.title}>
+          <div className={styles.filledBasket}>
+            {/* <h1 className={styles.title}>
             {t('basket.title')} ({totalCount})
           </h1> */}
 
-          <CardsBasket
-            toysInCart={toysInCart}
-            onAdd={addToCart}
-            onRemove={removeFromCart}
-            onToyClick={handleOpenModal}
-          />
+            <CardsBasket
+              toysInCart={toysInCart}
+              onAdd={addToCart}
+              onRemove={removeFromCart}
+              onToyClick={handleOpenModal}
+            />
 
-          {/*  блок с итоговой суммой */}
-          {/* <div className={styles.total}>
+            {/*  блок с итоговой суммой */}
+            {/* <div className={styles.total}>
           {toysInCart.reduce((sum, item) => sum + item.price * item.quantity, 0)} ₽
         </div> */}
-        </div>
+          </div>
 
-        <div className={styles.paymentProduct}> 
-<p>Оплата</p>
-        </div>
+          <div className={styles.paymentProduct}>
+            <p>оформление</p>
+          </div>
         </div>
       )}
 

@@ -1,10 +1,10 @@
-import { useTheme } from '@/context/ThemeContext/ThemeContext';
+// import { useTheme } from '@/context/ThemeContext/ThemeContext';
 import { THeartIconProps } from './type';
 
 //useTheme()костомный хук для удобного использования для смены светлой темной темы
 
 export const HeartIcon = ({ className }: THeartIconProps) => {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
 
   return (
     <svg

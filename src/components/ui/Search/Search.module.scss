@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: rem(50) rem(60);
+  padding: rem(50) rem(60) rem(10);
 
   @include laptop {
     display: grid;

@@ -3,14 +3,16 @@
 .cardsBasket {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  // align-items: start;
   justify-self: center;
   gap: 20px;
-   border-radius: rem(32);
+  border-radius: rem(32);
   background-color: rgb(192, 236, 13);
-  color: rgb(61, 93, 236);
+  // color: rgb(61, 93, 236);
   border: var(--border);
-   min-width: 800px;
+  //  min-width: 800px;
+  border-radius: rem(32);
+  padding: rem(20);
 }
 
 .headerBasket {
@@ -21,14 +23,6 @@
   border-bottom: var(--border);
   width: 100%;
   height: 100%;
-  // padding: rem(14) rem(60);
-  // align-items: stretch;
-  // box-sizing: border-box;
-  // display: flex;
-  // flex: 1;
-  // flex-direction: column;
-  // width: rem(300);
-  // min-width: 0;
 }
 
 .title {
@@ -38,30 +32,44 @@
 
 // Итоговая сумма
 .total {
-  // margin-top: 2rem;
-  // text-align: right;
   font-size: 1.8rem;
   font-weight: bold;
-  //  text-align: center;
-  // padding: 1rem 2rem;
-  // background: rgba(255, 255, 255, 0.1);
-  // border-radius: 12px;
 }
 
 .listItem {
-  // background-color: royalblue;
+  background-color: rgb(183, 198, 241);
   display: grid;
   grid-template-areas: 'image . title . price . quantity';
-  grid-template-columns: min-content 116px auto 32px 80px 32px 131px;
-  // position: relative;
-  padding: rem(20);
+  grid-template-columns: min-content 216px auto 32px 80px 32px;
+  border: var(--border);
+  padding: rem(10);
 }
 
 .toy {
   max-width: rem(120);
   cursor: zoom-in;
+  grid-area: image; /* область в Grid */
 }
 
-.price {
+.title {
+  grid-area: title; /* область в Grid */
+  padding: 0 rem(20);
+}
+
+.singlePrice {
+  font-size: rem(12);
+  color: var(--color-dusty-purple);
+}
+
+.counter {
+  grid-area: quantity; /* область в Grid */
+}
+
+.priceContainer {
   display: flex;
+  flex-direction: column; /* Ставим одну цену под другую */
+  align-items: center;
+  grid-area: price; /* область в Grid */
+  color: var(--color-likeCount);
+  font-size: rem(18);
 }

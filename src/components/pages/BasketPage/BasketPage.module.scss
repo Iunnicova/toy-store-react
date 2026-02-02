@@ -72,8 +72,8 @@
 .containerFilled {
   display: flex;
   background-color: rgb(211, 177, 177);
+  height: 100%;
 }
-
 
 .filledBasket {
   display: flex;
@@ -82,15 +82,15 @@
   width: 100%;
   // max-width: 800px;
   // margin: 0 auto;
-  background-color: red;
+  // background-color: red;
   // border: var(--border);
   // border-radius: rem(12);
 }
 
 .paymentProduct {
   font-size: rem(60);
-   border: var(--border);
-   width: rem(600);
-  //  height: 100%;
-border-radius: rem(32);
+  border: var(--border);
+  width: rem(600);
+  height: 100%;
+  border-radius: rem(32);
 }

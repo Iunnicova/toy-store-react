@@ -1,9 +1,10 @@
-import { BasketIcon } from '@/components/svg/BasketIcon';
-import { HeartIcon } from '@/components/svg/HeartIcon';
 import { useCartContext } from '@/context/CartContex';
 import { useTranslation } from 'react-i18next';
 import { Button, Counter } from '../index';
 import { CardsBasketProps } from './type';
+import { BasketIcon } from '@/components/svg/BasketIcon';
+import { HeartIcon } from '@/components/svg/HeartIcon';
+// import { DeleteIcon } from '@/components/svg/DeleteIcon'
 import styles from './CardsBasket.module.scss';
 
 export function CardsBasket({
@@ -31,7 +32,6 @@ export function CardsBasket({
           )}{' '}
           ₽
         </div>
-        
       </header>
 
       {toysInCart.map((toy) => {
@@ -63,15 +63,24 @@ export function CardsBasket({
                 src={toy.toyImage}
                 alt={t(toy.titleKey)}
               />
-
+            </div>
+            <div>
               <p className={styles.title}>{t(toy.titleKey)}</p>
             </div>
 
-            <div className={styles.price}>
-              <span>{t('toys.common.priceLabel')}:</span>
-              <strong>{toy.price.toLocaleString('ru-RU')}</strong>
+            <div className={styles.priceContainer}>
+              {/* <span>{t('toys.common.priceLabel')}:</span> */}
+              <strong>
+                {(toy.price * quantity).toLocaleString('ru-RU')}
+                {/* {toy.price * toy.quantity} */}
+              </strong>
+              {/* Подсказка: цена за 1 штуку (всегда одинаковая) */}
+              {quantity > 1 && (
+                <span className={styles.singlePrice}>
+                  {toy.price.toLocaleString('ru-RU')} / ₽
+                </span>
+              )}
             </div>
-
             {quantity === 0 ? (
               <Button onClick={add} variant="like" className={styles.button}>
                 <HeartIcon className={styles.heartIconCards} />
@@ -85,6 +94,7 @@ export function CardsBasket({
                 onDecrement={remove}
               />
             )}
+
           </div>
         );
       })}
