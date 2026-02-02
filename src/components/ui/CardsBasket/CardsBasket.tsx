@@ -4,7 +4,7 @@ import { Button, Counter } from '../index';
 import { CardsBasketProps } from './type';
 import { BasketIcon } from '@/components/svg/BasketIcon';
 import { HeartIcon } from '@/components/svg/HeartIcon';
-// import { DeleteIcon } from '@/components/svg/DeleteIcon'
+import { DeleteIcon } from '@/components/svg/DeleteIcon';
 import styles from './CardsBasket.module.scss';
 
 export function CardsBasket({
@@ -84,7 +84,8 @@ export function CardsBasket({
             {quantity === 0 ? (
               <Button onClick={add} variant="like" className={styles.button}>
                 <HeartIcon className={styles.heartIconCards} />
-                <BasketIcon className={styles.basketIconCards} />
+                <DeleteIcon className={styles.deleteIconCards} />
+                {/* <BasketIcon className={styles.basketIconCards} /> */}
               </Button>
             ) : (
               <Counter
@@ -95,6 +96,7 @@ export function CardsBasket({
               />
             )}
 
+            {/* <DeleteIcon className={styles.deleteIconCards}/> */}
           </div>
         );
       })}
