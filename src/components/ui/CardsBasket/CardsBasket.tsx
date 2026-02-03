@@ -47,21 +47,18 @@ export function CardsBasket({
 
         const remove = (e?: React.MouseEvent) => {
           e?.stopPropagation();
-          removeFromCart(toy.id);
+          removeFromCart(toy.id); //?удаление карточки
           onRemove(toy.id);
         };
 
         return (
-          <div
-            className={styles.listItem}
-            key={toy.id}
-            onClick={() => onToyClick(toy)} // ← клик по карточке → модалка
-          >
+          <div className={styles.listItem} key={toy.id}>
             <div>
               <img
                 className={styles.toy}
                 src={toy.toyImage}
                 alt={t(toy.titleKey)}
+                onClick={() => onToyClick(toy)} // ← клик по карточке → модалка
               />
             </div>
             <div>
