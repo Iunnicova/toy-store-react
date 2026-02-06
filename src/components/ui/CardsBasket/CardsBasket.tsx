@@ -78,22 +78,29 @@ export function CardsBasket({
                 </span>
               )}
             </div>
-            {quantity === 0 ? (
-              <Button onClick={add} variant="like" className={styles.button}>
+            <Counter
+              className={styles.counter}
+              value={quantity}
+              onIncrement={add}
+              onDecrement={remove}
+            />
+            <div className={styles.actions}>
+              <Button
+                variant="like"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  alert('Добавлено в избранное');
+                }}
+              >
                 <HeartIcon className={styles.heartIconCards} />
-                <DeleteIcon className={styles.deleteIconCards} />
-                {/* <BasketIcon className={styles.basketIconCards} /> */}
               </Button>
-            ) : (
-              <Counter
-                className={styles.counter}
-                value={quantity}
-                onIncrement={add}
-                onDecrement={remove}
-              />
-            )}
-
-            {/* <DeleteIcon className={styles.deleteIconCards}/> */}
+              <Button onClick={remove} variant="like" className={styles.button}>
+                <DeleteIcon
+                  className={styles.deleteIconCards}
+                  onClick={remove}
+                />
+              </Button>
+            </div>
           </div>
         );
       })}

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export interface TButtonProps {
-  children: ReactNode;
+  children?: ReactNode;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   type?: 'button' | 'submit' | 'reset';
   className?: string;

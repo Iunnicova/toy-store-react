@@ -76,8 +76,12 @@
 }
 
 .heartIconCards {
-  width: rem(60);
-  color: var(--color-likeCount);
+  // width: rem(40);
+  color: var(--color-dusty-purple);
+
+  @include hover {
+    color: var(--color-likeCount);
+  }
 }
 
 .priceContainer {
@@ -91,4 +95,56 @@
 
 .deleteIconCards {
   color: var(--color-dusty-purple);
+  // width: rem(60);
+
+  @include hover {
+    color: var(--color-likeCount);
+  }
 }
+
+//  <Button
+//     variant="like"
+//     onClick={(e) => {
+//       e.stopPropagation();
+//       alert('Добавлено в избранное');
+//     }}
+//   >
+
+//  {quantity === 0 ? (
+//               <Button onClick={add} variant="like" className={styles.button}>
+//                 <HeartIcon className={styles.heartIconCards} />
+//                 <DeleteIcon className={styles.deleteIconCards} />
+//                 {/* <BasketIcon className={styles.basketIconCards} /> */}
+//               </Button>
+//             ) : (
+//               <Counter
+//                 className={styles.counter}
+//                 value={quantity}
+//                 onIncrement={add}
+//                 onDecrement={remove}
+//               />
+//             )}
+.actions {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 8px;
+  align-items: end;
+  justify-items: start;
+}
+
+// .likeBtn {
+//   position: absolute;
+//   top: -8px;
+//   right: -8px;
+// }
+
+// .basketBtn {
+//   position: absolute;
+//   bottom: -8px;
+//   right: -8px;
+// }
+
+// .counter {
+//   grid-column: 1 / -1;
+// }
