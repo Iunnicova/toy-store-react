@@ -6,8 +6,6 @@
   flex-direction: column;
   justify-content: space-between;
   cursor: zoom-in;
-  // background-color: var(--color-mint-cream);
-  // border: var(--border);
   border-radius: rem(20);
 
   transition:
@@ -96,12 +94,13 @@
     padding-bottom: 42px;
   }
 
-  @include line-clamp(2, 1.5); //2 сколько строк, 1.5 интервал межстрочный
+  @include line-clamp(2, 1.5); //...2 сколько строк, 1.5 интервал межстрочный
 }
 
 //! при наведении показываем весь текст
 // .title:hover {
 //   -webkit-line-clamp: unset;
+//line-clamp: unset; //для будущего, когда будет доступно везде
 //   overflow: visible;
 //   display: block;
 //   white-space: normal;

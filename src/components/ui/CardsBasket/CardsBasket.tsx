@@ -21,8 +21,8 @@ export function CardsBasket({
   return (
     <section className={styles.cardsBasket}>
       <header className={styles.headerBasket}>
-        <h1 className={styles.title}>
-          {t('basket.title')} ({totalCount})
+        <h1 className={styles.basketTitle}>
+          {t('toys.common.basket')}: {totalCount}
         </h1>
         {/*  блок с итоговой суммой */}
         <div className={styles.total}>
@@ -62,7 +62,7 @@ export function CardsBasket({
               />
             </div>
             <div>
-              <p className={styles.title}>{t(toy.titleKey)}</p>
+              <p className={styles.itemTitle}>{t(toy.titleKey)}</p>
             </div>
 
             <div className={styles.priceContainer}>
@@ -94,11 +94,13 @@ export function CardsBasket({
               >
                 <HeartIcon className={styles.heartIconCards} />
               </Button>
-              <Button onClick={remove} variant="like" className={styles.button}>
-                <DeleteIcon
-                  className={styles.deleteIconCards}
-                  onClick={remove}
-                />
+              <Button
+                onClick={remove}
+                variant="like"
+                className={styles.button}
+                disabled={quantity === 0}
+              >
+                <DeleteIcon className={styles.deleteIconCards} />
               </Button>
             </div>
           </div>

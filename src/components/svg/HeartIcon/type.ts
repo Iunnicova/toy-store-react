@@ -1,5 +1,5 @@
 export type THeartIconProps = {
   color?: string;
   className?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };

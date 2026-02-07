@@ -3,14 +3,10 @@
 .cardsBasket {
   display: flex;
   flex-direction: column;
-  // align-items: start;
   justify-self: center;
   gap: 20px;
   border-radius: rem(32);
-  // background-color: rgb(192, 236, 13);
-  // color: rgb(61, 93, 236);
   border: var(--border);
-  //  min-width: 800px;
   border-radius: rem(32);
   padding: rem(20);
 }
@@ -19,33 +15,33 @@
   display: flex;
   align-items: start;
   justify-content: space-between;
-  // background-color: magenta;
   border-bottom: var(--border);
   color: var(--color-dusty-purple);
   width: 100%;
   height: 100%;
 }
 
-.title {
+.basketTitle {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-// Итоговая сумма
 .total {
   font-size: 1.8rem;
   font-weight: bold;
 }
 
 .listItem {
-  // background-color: rgb(183, 198, 241);
-  background-color: var(--color-mint-cream);
+  position: relative;
   display: grid;
-  grid-template-areas: 'image . title . price . quantity';
-  grid-template-columns: min-content 216px auto 32px 80px 32px;
+  grid-template-columns: min-content auto auto auto;
+  grid-template-areas: 'image title counter price';
+  align-items: start;
+  column-gap: rem(20);
+  background-color: var(--color-mint-cream);
   border: var(--border);
   border-radius: rem(32);
-  padding: rem(10);
+  padding: rem(16);
 
   &:hover {
     box-shadow:
@@ -56,14 +52,26 @@
 }
 
 .toy {
+  grid-area: image; /* область в Grid */
   max-width: rem(120);
   cursor: zoom-in;
-  grid-area: image; /* область в Grid */
 }
 
-.title {
+.itemTitle {
   grid-area: title; /* область в Grid */
   padding: 0 rem(20);
+
+  @include line-clamp(2, 1.5); //...2 сколько строк, 1.5 интервал межстрочный
+}
+
+//! при наведении показываем весь текст
+.itemTitle:hover {
+  -webkit-line-clamp: unset; // ограничивает количество строк,экспериментальное свойство, доступное только в WebKit/Blink браузерах (Chrome, Safari, Edge).
+  line-clamp: unset; //для будущего, когда будет доступно везде
+  overflow: visible;
+  display: block;
+  white-space: normal;
+  cursor: pointer;
 }
 
 .singlePrice {
@@ -72,79 +80,38 @@
 }
 
 .counter {
-  grid-area: quantity; /* область в Grid */
-}
-
-.heartIconCards {
-  // width: rem(40);
-  color: var(--color-dusty-purple);
-
-  @include hover {
-    color: var(--color-likeCount);
-  }
+  grid-area: counter; /* область в Grid */
 }
 
 .priceContainer {
-  display: flex;
-  flex-direction: column; /* Ставим одну цену под другую */
-  align-items: center;
   grid-area: price; /* область в Grid */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--color-likeCount);
   font-size: rem(18);
 }
 
-.deleteIconCards {
+.actions {
+  position: absolute;
+  display: flex;
+  gap: 28px;
+  right: rem(16);
+  bottom: rem(16);
+}
+
+.heartIconCards {
   color: var(--color-dusty-purple);
-  // width: rem(60);
 
   @include hover {
     color: var(--color-likeCount);
   }
 }
 
-//  <Button
-//     variant="like"
-//     onClick={(e) => {
-//       e.stopPropagation();
-//       alert('Добавлено в избранное');
-//     }}
-//   >
+.deleteIconCards {
+  color: var(--color-dusty-purple);
 
-//  {quantity === 0 ? (
-//               <Button onClick={add} variant="like" className={styles.button}>
-//                 <HeartIcon className={styles.heartIconCards} />
-//                 <DeleteIcon className={styles.deleteIconCards} />
-//                 {/* <BasketIcon className={styles.basketIconCards} /> */}
-//               </Button>
-//             ) : (
-//               <Counter
-//                 className={styles.counter}
-//                 value={quantity}
-//                 onIncrement={add}
-//                 onDecrement={remove}
-//               />
-//             )}
-.actions {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 8px;
-  align-items: end;
-  justify-items: start;
+  @include hover {
+    color: var(--color-likeCount);
+  }
 }
-
-// .likeBtn {
-//   position: absolute;
-//   top: -8px;
-//   right: -8px;
-// }
-
-// .basketBtn {
-//   position: absolute;
-//   bottom: -8px;
-//   right: -8px;
-// }
-
-// .counter {
-//   grid-column: 1 / -1;
-// }

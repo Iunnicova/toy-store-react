@@ -1,4 +1,4 @@
 export type TDeleteIcon = {
   className?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };

@@ -91,6 +91,7 @@
   line-height: $line-height;
   max-height: calc(#{$line-height} * #{$lines} * 1.2em);
 }
+
 // @mixin line-clamp($lines: 2, $line-height: 1.35) {
 //   display: -webkit-box;
 //   // Специальный тип отображения для WebKit-браузеров,
