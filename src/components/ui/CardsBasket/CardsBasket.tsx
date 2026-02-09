@@ -16,6 +16,8 @@ export function CardsBasket({
   const { t } = useTranslation(); //хук перевода
 
   const { cartItems, addToCart, removeFromCart } = useCartContext();
+
+  //цена общее количество
   const totalCount = toysInCart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (

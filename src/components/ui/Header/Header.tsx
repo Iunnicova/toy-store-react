@@ -10,10 +10,14 @@ export const Header = ({
   userName,
   basketTotal = 0,
   favoritesCount = 0,
+  // toysInCart,
 }: THeaderProps) => {
   const { t } = useTranslation(); //хук для перевода
 
   const navItems = getHeaderNavItems(basketTotal, favoritesCount, userName);
+
+  //цена общее количество
+  // const totalCount = toysInCart.reduce((sum, item) => sum + item.quantity, 0)
 
   //для перевода
   const resolveLabel = (label: string) => {
@@ -54,26 +58,60 @@ export const Header = ({
       </div>
 
       <nav aria-label={t('header.mainNav')}>
+
+        
         <ul className={styles.menu} role="list">
           {navItems.map((item) => {
-            const Icon = item.icon;
-            const displayLabel =
+
+ const displayLabel =
               item.count !== undefined ? item.count : t(item.label);
+
+            // Динамически выбираем нужную иконку
+            let IconComponent = item.icon;
+
+            // Вычисляем, что показывать внутри кнопки
+            let buttonContent = null;
+
+            if (item.to === '/basket') {
+              // Корзина — показываем иконку + количество товаров
+              buttonContent = (
+                <>
+                  <IconComponent className={styles.icon} aria-hidden="true" />
+                  {item.label && (
+                    <span className={styles.count}>{displayLabel}</span>
+                  )}
+                </>
+              );
+            } else if (item.to === '/favorites') {
+              // Избранное — иконка + количество, если > 0
+              buttonContent = (
+                <>
+                  <IconComponent className={styles.icon} aria-hidden="true" />
+                  {item.count !== undefined && item.count > 0 && (
+                    <span className={styles.count}>{displayLabel}</span>
+                  )}
+                </>
+              );
+            } else if (item.to === '/profile') {
+              // Профиль — имя или просто текст
+              buttonContent = (
+                <>
+                  <IconComponent className={styles.icon} aria-hidden="true" />
+                  <span className={styles.count}>{displayLabel}</span>
+                </>
+              );
+            }
+
+            
             return (
               <li key={item.to} className={styles.list} role="listitem">
                 <Link
                   to={item.to}
                   className={styles.navigation}
-                  // aria-label={resolveAria(item.ariaLabel)}
+                  aria-label={resolveAria(item.ariaLabel)}
                 >
-                  <Button
-                    variant="headerButton"
-                    className={styles.button}
-                    aria-label={resolveAria(item.ariaLabel)}
-                  >
-                    <Icon className={styles.icon} aria-hidden="true" />
-                    {/* надписи в кнопке */}
-                    <span className={styles.count}>{displayLabel}</span>
+                  <Button variant="headerButton" className={styles.button}>
+                    {buttonContent}
                   </Button>
                 </Link>
               </li>
