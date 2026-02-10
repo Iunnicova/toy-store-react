@@ -1,3 +1,3 @@
-export type TSearchIcon = {
-  className: string;
-};
+// export type TSearchIcon = {
+//   className: string;
+// };

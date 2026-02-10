@@ -1,14 +1,7 @@
-// import { useTheme } from '@/context/ThemeContext/ThemeContext';
-import { THeartIconProps } from './type';
-
-//useTheme()костомный хук для удобного использования для смены светлой темной темы
-
-export const HeartIcon = ({ className }: THeartIconProps) => {
-  // const { theme } = useTheme();
-
+export const HeartIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      className={className}
+      {...props}
       fill="currentColor"
       viewBox="0 0 18 17"
       xmlns="http://www.w3.org/2000/svg"

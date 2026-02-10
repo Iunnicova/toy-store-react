@@ -58,12 +58,9 @@ export const Header = ({
       </div>
 
       <nav aria-label={t('header.mainNav')}>
-
-        
         <ul className={styles.menu} role="list">
           {navItems.map((item) => {
-
- const displayLabel =
+            const displayLabel =
               item.count !== undefined ? item.count : t(item.label);
 
             // Динамически выбираем нужную иконку
@@ -102,7 +99,6 @@ export const Header = ({
               );
             }
 
-            
             return (
               <li key={item.to} className={styles.list} role="listitem">
                 <Link

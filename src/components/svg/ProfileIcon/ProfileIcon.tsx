@@ -1,9 +1,7 @@
-import { TProfileIcon } from './type';
-
-export const ProfileIcon = ({ className }: TProfileIcon) => {
+export const ProfileIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      className={className}
+      {...props}
       fill="currentColor"
       viewBox="0 0 18 17"
       xmlns="http://www.w3.org/2000/svg"

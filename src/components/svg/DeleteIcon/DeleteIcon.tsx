@@ -1,9 +1,7 @@
-import { TDeleteIcon } from './type';
-
-export const DeleteIcon = ({ className }: TDeleteIcon) => {
+export const DeleteIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      className={className}
+      {...props}
       fill="currentColor"
       viewBox="0 0 24 26"
       xmlns="http://www.w3.org/2000/svg"
