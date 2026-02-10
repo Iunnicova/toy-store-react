@@ -1,4 +1,6 @@
-export const HeartIcon = (props: React.SVGProps<SVGSVGElement>) => {
+import { IconComponent } from "@/types/navItems";
+
+export const HeartIcon: IconComponent = (props) => {
   return (
     <svg
       {...props}

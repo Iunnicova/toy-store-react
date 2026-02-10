@@ -1,4 +1,6 @@
-export const BasketIcon = (props: React.SVGProps<SVGSVGElement>) => {
+import { IconComponent } from "@/types/navItems";
+
+export const BasketIcon: IconComponent = (props) => {
   return (
     <svg
       {...props}

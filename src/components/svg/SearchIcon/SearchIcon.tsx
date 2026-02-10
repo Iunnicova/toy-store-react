@@ -1,4 +1,6 @@
-export const SearchIcon = (props: React.SVGProps<SVGSVGElement>) => {
+import { IconComponent } from "@/types/navItems";
+
+export const SearchIcon: IconComponent = (props) => {
   return (
     <svg
       {...props}

@@ -1,4 +1,6 @@
-export const DeleteIcon = (props: React.SVGProps<SVGSVGElement>) => {
+import { IconComponent } from "@/types/navItems";
+
+export const DeleteIcon: IconComponent = (props) => {
   return (
     <svg
       {...props}
