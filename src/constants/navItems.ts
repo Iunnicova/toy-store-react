@@ -1,7 +1,7 @@
 import { BasketIcon } from '@/components/svg/BasketIcon';
 import { HeartIcon } from '@/components/svg/HeartIcon';
 import { ProfileIcon } from '@/components/svg/ProfileIcon';
-import { HeaderNavItem } from '@/components/ui/Header/type';
+import { HeaderNavItem } from '@/types/HeaderNavItem';
 
 export const getHeaderNavItems = (
   basketTotal: number,
@@ -13,6 +13,7 @@ export const getHeaderNavItems = (
     label: `${basketTotal}`,
     icon: BasketIcon,
     ariaLabel: `header.nav.basket_aria|${basketTotal}`,
+    variant: 'basket',
   },
   {
     to: '/favorites',
@@ -20,6 +21,7 @@ export const getHeaderNavItems = (
     count: favoritesCount > 0 ? favoritesCount : undefined,
     icon: HeartIcon,
     ariaLabel: `header.nav.favorites_aria|${favoritesCount}`,
+    variant: 'favorites',
   },
   {
     to: '/profile',
@@ -28,5 +30,6 @@ export const getHeaderNavItems = (
     ariaLabel: userName
       ? `header.nav.profile_with_name|${userName}`
       : 'header.nav.profile_aria',
+    variant: 'profile',
   },
 ];

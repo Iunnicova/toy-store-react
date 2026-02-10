@@ -1,4 +1,4 @@
-import { IconComponent } from "@/types/navItems";
+import { IconComponent } from '@/types/navItems';
 
 export const BasketIcon: IconComponent = (props) => {
   return (
