@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HeartIcon } from '@/components/svg/HeartIcon';
-import { getCharacteristics } from '@/constants/сharacteristic';
+import { getCharacteristics } from '@/constants/kharacteristic';
 import {
   Button,
   CharacteristicsList,
