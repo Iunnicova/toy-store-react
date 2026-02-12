@@ -6,7 +6,8 @@ import { Button } from '../Button';
 import { getHeaderNavItems } from '@constants/navItems';
 
 import styles from './Header.module.scss';
-import { HeaderNavItem } from '@/types/beaderNavItem';
+import { THeaderNavItem } from '@/types/headerNavItem';
+
 
 
 export const Header = ({
@@ -40,7 +41,7 @@ export const Header = ({
   };
 
   //разделяем кнопки
-  const getButtonText = (item: HeaderNavItem) => {
+  const getButtonText = (item: THeaderNavItem) => {
     switch (item.variant) {
       case 'basket':
         return item.label;

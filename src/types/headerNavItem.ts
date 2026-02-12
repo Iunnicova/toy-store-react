@@ -1,12 +1,12 @@
 import { IconComponent } from './navItems';
 
-export type HeaderNavVariant = 'basket' | 'favorites' | 'profile';
+export type THeaderNavVariant = 'basket' | 'favorites' | 'profile';
 
-export interface HeaderNavItem {
+export interface THeaderNavItem {
   to: string;
   label: string;
   icon: IconComponent;
   count?: number;
   ariaLabel: string;
-  variant: HeaderNavVariant;
+  variant: THeaderNavVariant;
 }
