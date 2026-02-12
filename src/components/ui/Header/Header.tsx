@@ -6,7 +6,7 @@ import { Button } from '../Button';
 import { getHeaderNavItems } from '@constants/navItems';
 
 import styles from './Header.module.scss';
-import { HeaderNavItem } from '@/types/headerNavItem';
+import { HeaderNavItem } from '@/types/beaderNavItem';
 
 
 export const Header = ({

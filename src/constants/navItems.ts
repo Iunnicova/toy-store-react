@@ -1,7 +1,7 @@
 import { BasketIcon } from '@/components/svg/BasketIcon';
 import { HeartIcon } from '@/components/svg/HeartIcon';
 import { ProfileIcon } from '@/components/svg/ProfileIcon';
-import { HeaderNavItem } from '@/types/HeaderNavItem';
+import { HeaderNavItem } from '@/types/beaderNavItem';
 
 export const getHeaderNavItems = (
   basketTotal: number,
