@@ -11,7 +11,10 @@ export const getHeaderNavItems = (
 ): THeaderNavItem[] => [
   {
     to: '/basket',
-    label: `${basketTotal}`,
+    // label: `${basketTotal}`,
+    label: basketTotal > 0
+    ? String(basketTotal)
+    :'header.nav.basket',
     icon: BasketIcon,
     ariaLabel: `header.nav.basket_aria|${basketTotal}`,
     variant: 'basket',

@@ -5,6 +5,7 @@
     "nav": {
       "favorites": "Избранное",
       "profile": "Профиль",
+       "basket": "Корзина",
       "basket_aria": "Корзина: {{value}} ₽",
       "favorites_aria": "Избранное: {{value}} товар(ов)",
       "profile_aria": "Войти в профиль",
