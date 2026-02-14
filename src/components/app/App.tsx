@@ -7,24 +7,27 @@ import { ProfilePage } from '../pages/ProfilePage/ProfilePage';
 import { ThemeProvider } from '@context/ThemeContext';
 import { HomePage } from './HomePage/HomePage';
 import { Layout } from './Layout';
+import { FavoritesProvider } from '@/context/FavoritesContext';
 
 const App = () => {
   return (
     <CartProvider>
-      <LanguageProvider>
-        <ThemeProvider>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Layout />}>
-                <Route index element={<HomePage />} />
-                <Route path="basket" element={<BasketPage />} />
-                <Route path="profile" element={<ProfilePage />} />
-                <Route path="favorites" element={<FavoritesPage />} />
-              </Route>
-            </Routes>
-          </BrowserRouter>
-        </ThemeProvider>
-      </LanguageProvider>
+      <FavoritesProvider>
+        <LanguageProvider>
+          <ThemeProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Layout />}>
+                  <Route index element={<HomePage />} />
+                  <Route path="basket" element={<BasketPage />} />
+                  <Route path="profile" element={<ProfilePage />} />
+                  <Route path="favorites" element={<FavoritesPage />} />
+                </Route>
+              </Routes>
+            </BrowserRouter>
+          </ThemeProvider>
+        </LanguageProvider>
+      </FavoritesProvider>
     </CartProvider>
   );
 };

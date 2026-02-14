@@ -8,8 +8,6 @@ import { getHeaderNavItems } from '@constants/navItems';
 import styles from './Header.module.scss';
 import { THeaderNavItem } from '@/types/headerNavItem';
 
-
-
 export const Header = ({
   userName,
   basketTotal = 0,
@@ -45,14 +43,13 @@ export const Header = ({
     switch (item.variant) {
       case 'basket':
         // return item.label;
-return item.count !== undefined
-          ? item.count            //либо перевод ключа header.nav.favorites, либо счётчик, если он есть.
+        return item.count !== undefined
+          ? item.count //либо перевод ключа header.nav.favorites, либо счётчик, если он есть.
           : resolveLabel(item.label);
-
 
       case 'favorites':
         return item.count !== undefined
-          ? item.count            //либо перевод ключа header.nav.favorites, либо счётчик, если он есть.
+          ? item.count //либо перевод ключа header.nav.favorites, либо счётчик, если он есть.
           : resolveLabel(item.label);
 
       case 'profile':

@@ -1,8 +1,5 @@
 import { useCart } from '@/hooks/useCart';
 import { createContext, useContext } from 'react';
-// interface CartProviderProps {
-//   children: React.ReactNode;
-// }
 
 //Создаём "ящик" (контекст), в который будем класть данные корзины
 const CartContext = createContext<ReturnType<typeof useCart> | null>(null);

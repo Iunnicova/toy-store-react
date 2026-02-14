@@ -12,22 +12,20 @@ export const Layout = () => {
   const { cartItems } = useCartContext();
 
   //считаем общее количество игрушек в корзине
-const basketTotal = cartItems.reduce(
-  (sum: number, item: TCartItem) => sum + item.quantity, 0
-);
+  const basketTotal = cartItems.reduce(
+    (sum: number, item: TCartItem) => sum + item.quantity,
+    0
+  );
 
-//считаем общее количество игрушек в избранном
-const favoritesCount = cartItems.reduce(
-  (sum: number, item: TCartItem) => sum + item.quantity, 0
-)
+  //считаем общее количество игрушек в избранном
+  const favoritesCount = cartItems.reduce(
+    (sum: number, item: TCartItem) => sum + item.quantity,
+    0
+  );
 
   return (
     <ContentToy>
-      <Header userName="" 
-      basketTotal={basketTotal}
-        favoritesCount={0}
-      />
-      
+      <Header userName="" basketTotal={basketTotal} favoritesCount={0} />
 
       <main>
         <Outlet /> {/*HomePage, FavoritesPage, Basket и т.д. */}

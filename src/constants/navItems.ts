@@ -3,7 +3,6 @@ import { HeartIcon } from '@/components/svg/HeartIcon';
 import { ProfileIcon } from '@/components/svg/ProfileIcon';
 import { THeaderNavItem } from '@/types/headerNavItem';
 
-
 export const getHeaderNavItems = (
   basketTotal: number,
   favoritesCount: number,
@@ -12,9 +11,7 @@ export const getHeaderNavItems = (
   {
     to: '/basket',
     // label: `${basketTotal}`,
-    label: basketTotal > 0
-    ? String(basketTotal)
-    :'header.nav.basket',
+    label: basketTotal > 0 ? String(basketTotal) : 'header.nav.basket',
     icon: BasketIcon,
     ariaLabel: `header.nav.basket_aria|${basketTotal}`,
     variant: 'basket',

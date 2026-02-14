@@ -1,15 +1,21 @@
 import { useCartContext } from '@/context/CartContex';
 import { useTranslation } from 'react-i18next';
 
+import heart2 from '@icon/heart2.svg';
 import { HeartIcon } from '@/components/svg/HeartIcon';
 import { BasketIcon } from '@/components/svg/BasketIcon';
 import { Button, Counter } from '../index';
 import { TCardProps } from './type';
 import styles from './Cards.module.scss';
+import { useFavoritesContext } from '@/context/FavoritesContext';
 
 export const Cards = ({ toy, onCardClick }: TCardProps) => {
   const { t } = useTranslation();
-  // const { cartItems, addToCart, removeFromCart } = useCart();
+  //!добавление удаление из избранное
+  const { favorites, addToFavorites, removeFromFavorites } =
+    useFavoritesContext();
+
+  const isFavorite = favorites.some((f) => f.toyId === toy.id);
 
   //!добавление удаление из корзины
   const { cartItems, addToCart, removeFromCart } = useCartContext();
@@ -29,16 +35,31 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
   return (
     <div className={styles.cards} onClick={() => onCardClick?.(toy)}>
       <div className={styles.imgCards}>
-        <Button
-          variant="like"
-          onClick={(e) => {
-            e.stopPropagation();
-            alert('Добавлено в избранное');
-          }}
-        >
-          <HeartIcon className={styles.heartIconCards} />
-        </Button>
-
+        {!isFavorite ? (
+          <Button
+            variant="like"
+            onClick={(e) => {
+              e.stopPropagation(); //что бы при нажатии на сердечко не открывалась модалка
+              addToFavorites(toy.id);
+            }}
+          >
+            <HeartIcon className={styles.heartIconCards} />
+          </Button>
+        ) : (
+          <Button
+            variant="like"
+            onClick={(e) => {
+              e.stopPropagation(); //что бы при нажатии на сердечко не открывалась модалка
+              removeFromFavorites(toy.id);
+            }}
+          >
+            <img
+              className={styles.iconHeart}
+              src={heart2}
+              alt="красное сердце"
+            />
+          </Button>
+        )}
         <img className={styles.toy} src={toy.toyImage} alt={t(toy.titleKey)} />
       </div>
 
