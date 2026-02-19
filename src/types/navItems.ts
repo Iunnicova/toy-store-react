@@ -1,8 +1,6 @@
-import { JSX } from 'react';
+import { ReactNode } from 'react';
 
-export type IconComponent = (
-  props: React.SVGProps<SVGSVGElement>
-) => JSX.Element;
+export type IconComponent = React.FC<React.SVGProps<SVGSVGElement>>;
 
 // SVGSVGElement —
 // Это DOM-тип для тега <svg>, такой же как:

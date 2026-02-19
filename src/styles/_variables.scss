@@ -37,11 +37,19 @@
   --color-mint-mint: #9da8a5;
   --color-frame: #648a7e;
   --color-dark: #3f4643;
+
+  //******
+  --heart-liked: #ff3366;
+  --heart-empty: #e0e0e0;
+  --heart-sparks: #ffd700;
+  --heart-active: #ff6699;
+  --heart-hover: pink;
 }
 
 [data-theme='dark'] {
   --color-dusty-purple: #fd7f40;
   --color-likeCount: #f3bca0;
+  --heart-hover: pink;
   --color-bottom: #533728;
   --color-mint-cream: #265243;
   --color-mint-mint: #253531;

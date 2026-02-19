@@ -1,0 +1,24 @@
+@use '../../../styles/helpers/' as *;
+
+// .heartIconCards {
+//   height: 36px;
+//   width: 39px;
+//   cursor: pointer;
+//   transition: transform 0.2s ease;
+// }
+// /* Оборачиваем внутренние пути, чтобы стили до них дотянулись */
+// .heartIconCards :global(.contour) {
+//   fill: var(--color-dark, #333);
+// }
+
+// .heartIconCards :global(.main-body) {
+//   fill: transparent;
+//   transition: fill 0.3s;
+// }
+
+// /* И так далее для всех внутренних классов: :global(.core), :global(.sparks) */
+
+// /* Обработка лайка */
+// .heartIconCards:global(.is-liked) :global(.main-body) {
+//   fill: var(--heart-liked, red); /* Твой цвет лайка */
+// }

@@ -35,31 +35,15 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
   return (
     <div className={styles.cards} onClick={() => onCardClick?.(toy)}>
       <div className={styles.imgCards}>
-        {!isFavorite ? (
-          <Button
-            variant="like"
-            onClick={(e) => {
-              e.stopPropagation(); //что бы при нажатии на сердечко не открывалась модалка
-              addToFavorites(toy.id);
-            }}
-          >
-            <HeartIcon className={styles.heartIconCards} />
-          </Button>
-        ) : (
-          <Button
-            variant="like"
-            onClick={(e) => {
-              e.stopPropagation(); //что бы при нажатии на сердечко не открывалась модалка
-              removeFromFavorites(toy.id);
-            }}
-          >
-            <img
-              className={styles.iconHeart}
-              src={heart2}
-              alt="красное сердце"
-            />
-          </Button>
-        )}
+        <Button
+          variant="like"
+          onClick={(e) => {
+            e.stopPropagation();
+            isFavorite ? removeFromFavorites(toy.id) : addToFavorites(toy.id);
+          }}
+        >
+          <HeartIcon isLiked={isFavorite} className={styles.heartIconCards} />
+        </Button>
         <img className={styles.toy} src={toy.toyImage} alt={t(toy.titleKey)} />
       </div>
 
