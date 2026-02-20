@@ -159,6 +159,32 @@
   cursor: pointer;
   transition: transform 0.2s ease;
   display: block; /* чтобы размеры применялись корректно */
+
+  position: absolute;
+  top: rem(12);
+  left: rem(12);
+  z-index: 2;
+  color: var(--color-dusty-purple);
+  // height: fluid(60, 30);
+  // width: fluid(60, 30);
+  height: rem(140);
+  width: rem(140);
+
+  /*  скругления: */
+  // filter: url('#round'); /* Если хочешь сложный фильтр */
+  /*2*/
+  stroke: currentColor; /* Добавляем обводку того же цвета, что и заливка */
+  stroke-width: -1px;
+  paint-order: stroke; /* Рисуем обводку под заливкой, чтобы чуть смягчить край */
+}
+
+.heartIconCards :global(.contour),
+.heartIconCards :global(.main-body) {
+  /* Закругляет концы линий и углы соединений */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /* Толщина линии сделает углы менее заметными */
+  stroke-width: 2px;
 }
 
 .heartIconCards:hover {
@@ -204,7 +230,7 @@
 /* Используем :global для класса состояния, так как он добавляется как обычная строка */
 .heartIconCards:global(.is-liked) :global(.contour) {
   // fill: var(--heart-liked);
-  fill: rgb(28, 14, 226);
+  // fill: rgb(28, 14, 226);
 }
 
 .heartIconCards:global(.is-liked) :global(.main-body),
@@ -219,7 +245,7 @@
   fill: var(--color-likeCount);
   fill: color rgb(3, 82, 13);
   animation: sparks 0.8s ease-out forwards;
-  background-color: rgb(238, 13, 200);
+  // background-color: rgb(238, 13, 200);
 }
 
 /* Анимации оставляем без изменений, они работают глобально по имени */
