@@ -1,0 +1,81 @@
+@use '../../../styles/helpers/' as *;
+
+//Закругляет концы линий сердечка и углы соединений
+.heart .contour {
+  stroke-linejoin: bevel;
+  stroke: currentColor; /* Добавляем обводку того же цвета, что и заливка */
+  stroke-width: 2;
+}
+
+//увеличения сердечка при наведении
+.heart:hover {
+  transform: scale(1.1);
+}
+
+/* квадратики в контуре */
+.heart .contour {
+  fill: var(--heart-heart);
+}
+
+//анимация при закрашивании сердечка hover
+.heart .mainBody {
+  fill: transparent; //управляет заливкой сердечка прозрачная
+  transition: fill 0.3s linear;
+}
+
+.heart .sparks {
+  opacity: 0;
+}
+
+//!СОСТОЯНИЕ ЛАЙКНУТО (is-liked)
+.liked .mainBody,
+.liked .core {
+  fill: var(--heart-heart); /* Здесь ставим яркий цвет */
+  animation: beat 0.6s ease-in-out;
+}
+
+//свечение при нажатии
+ .liked .sparks {
+  opacity: 1;
+  fill: var(--heart-heart);
+  animation: sparks 0.8s ease-out forwards;
+  stroke: currentColor; /* Добавляем обводку того же цвета, что и ободок */
+  stroke-width: 1;
+}
+
+//Анимации искорки Используется с animation: beat 0.8s ease-in-out infinite;
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.35);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes sparks {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) translateY(-10px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-20px);
+  }
+}
+
+//! При нажатии вокруг сердечка появляются «искры»:
+// opacity: 1 делает их видимыми,
+// fill: var(--heart-hover) задаёт цвет,
+// animation: sparks 0.8s ease-out forwards; запускает анимацию вспышки и исчезновения,
+// stroke: currentColor; stroke-width: 1; добавляет обводку того же цвета, что и контур сердечка.

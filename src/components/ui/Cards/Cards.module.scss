@@ -39,20 +39,6 @@
   }
 }
 
-// .heartIconCards {
-//   position: absolute;
-//   top: rem(12);
-//   left: rem(12);
-//   z-index: 2;
-//   color: var(--color-dusty-purple);
-//   height: fluid(40, 20);
-//   width: fluid(40, 20);
-
-//   @include hover {
-//     color: var(--color-likeCount);
-//   }
-// }
-
 .imgCards {
   position: relative;
   display: flex;
@@ -65,6 +51,19 @@
   border-radius: rem(20);
   aspect-ratio: 6 / 7; //ширина / высота.
   width: 100%;
+}
+
+.heartIconCards {
+  position: absolute;
+  display: block; /* чтобы размеры применялись корректно */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  top: rem(12);
+  left: rem(12);
+  z-index: 2;
+  color: var(--color-dusty-purple);
+  height: fluid(50, 30);
+  width: fluid(50, 30);
 }
 
 .toy {
@@ -152,96 +151,3 @@
     height: rem(20);
   }
 }
-//***
-.heartIconCards {
-  position: absolute;
-  display: block; /* чтобы размеры применялись корректно */
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  top: rem(12);
-  left: rem(12);
-  z-index: 2;
-  color: var(--color-dusty-purple);
-  height: fluid(60, 30);
-  width: fluid(60, 30);
-}
-
-//Закругляет концы линий сердечка и углы соединений
-.heartIconCards :global(.contour) {
-  stroke-linejoin: bevel;
-  stroke: currentColor; /* Добавляем обводку того же цвета, что и заливка */
-  stroke-width: 2;
-}
-
-//увеличения сердечка при наведении
-.heartIconCards:hover {
-  transform: scale(1.1);
-}
-
-/* квадратики в контуре */
-.heartIconCards :global(.contour) {
-  fill: var(--heart-heart);
-}
-
-//анимация при закрашивании сердечка hover
-.heartIconCards :global(.main-body) {
-  fill: transparent; //управляет заливкой сердечка прозрачная
-  transition: fill 0.3s linear;
-}
-
-.heartIconCards :global(.sparks) {
-  opacity: 0;
-}
-
-//!СОСТОЯНИЕ ЛАЙКНУТО (is-liked)
-.heartIconCards:global(.is-liked) :global(.main-body),
-.heartIconCards:global(.is-liked) :global(.core) {
-  fill: var(--heart-heart); /* Здесь ставим яркий цвет */
-  animation: beat 0.6s ease-in-out;
-}
-
-//свечение при нажатии
-.heartIconCards:global(.is-liked) :global(.sparks) {
-  opacity: 1;
-  fill: var(--heart-heart);
-  animation: sparks 0.8s ease-out forwards;
-  stroke: currentColor; /* Добавляем обводку того же цвета, что и ободок */
-  stroke-width: 1;
-}
-
-//Анимации искорки Используется с animation: beat 0.8s ease-in-out infinite;
-@keyframes beat {
-  0% {
-    transform: scale(1);
-  }
-  40% {
-    transform: scale(1.35);
-  }
-  60% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes sparks {
-  0% {
-    opacity: 0;
-    transform: scale(0.5) translateY(0);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.2) translateY(-10px);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.5) translateY(-20px);
-  }
-}
-
-//! При нажатии вокруг сердечка появляются «искры»:
-// opacity: 1 делает их видимыми,
-// fill: var(--heart-hover) задаёт цвет,
-// animation: sparks 0.8s ease-out forwards; запускает анимацию вспышки и исчезновения,
-// stroke: currentColor; stroke-width: 1; добавляет обводку того же цвета, что и контур сердечка.
