@@ -154,101 +154,62 @@
 }
 //***
 .heartIconCards {
-  height: 36px;
-  width: 39px;
+  position: absolute;
+  display: block; /* чтобы размеры применялись корректно */
   cursor: pointer;
   transition: transform 0.2s ease;
-  display: block; /* чтобы размеры применялись корректно */
-
-  position: absolute;
   top: rem(12);
   left: rem(12);
   z-index: 2;
   color: var(--color-dusty-purple);
-  // height: fluid(60, 30);
-  // width: fluid(60, 30);
-  height: rem(140);
-  width: rem(140);
-
-  /*  скругления: */
-  // filter: url('#round'); /* Если хочешь сложный фильтр */
-  /*2*/
-  stroke: currentColor; /* Добавляем обводку того же цвета, что и заливка */
-  stroke-width: -1px;
-  paint-order: stroke; /* Рисуем обводку под заливкой, чтобы чуть смягчить край */
+  height: fluid(60, 30);
+  width: fluid(60, 30);
 }
 
-.heartIconCards :global(.contour),
-.heartIconCards :global(.main-body) {
-  /* Закругляет концы линий и углы соединений */
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  /* Толщина линии сделает углы менее заметными */
-  stroke-width: 2px;
-}
-
-.heartIconCards:hover {
-  transform: scale(1.15);
-}
-
-/* Пустое состояние через глобальные селекторы внутренних частей */
+//Закругляет концы линий сердечка и углы соединений
 .heartIconCards :global(.contour) {
-  fill: var(--color-dusty-purple);
+  stroke-linejoin: bevel;
+  stroke: currentColor; /* Добавляем обводку того же цвета, что и заливка */
+  stroke-width: 2;
 }
 
+//увеличения сердечка при наведении
+.heartIconCards:hover {
+  transform: scale(1.1);
+}
+
+/* квадратики в контуре */
+.heartIconCards :global(.contour) {
+  fill: var(--heart-heart);
+}
+
+//анимация при закрашивании сердечка hover
 .heartIconCards :global(.main-body) {
-  fill: transparent;
+  fill: transparent; //управляет заливкой сердечка прозрачная
   transition: fill 0.3s linear;
-}
-
-.heartIconCards :global(.core) {
-  fill: transparent;
-  transition: fill 0.3s linear 0.03s;
 }
 
 .heartIconCards :global(.sparks) {
   opacity: 0;
-  fill: transparent;
 }
 
-/* Hover — лёгкое заполнение */
-.heartIconCards:hover :global(.main-body),
-.heartIconCards:hover :global(.core) {
-  // fill: var(--color-bottom);
-  fill: red;
-}
-
-/* Активное нажатие */
-.heartIconCards:active :global(.main-body),
-.heartIconCards:active :global(.core) {
-  // fill: var(--heart-liked);
-  fill: rgb(255, 115, 0);
-}
-
-/* --- СОСТОЯНИЕ ЛАЙКНУТО (is-liked) --- */
-
-/* Используем :global для класса состояния, так как он добавляется как обычная строка */
-.heartIconCards:global(.is-liked) :global(.contour) {
-  // fill: var(--heart-liked);
-  // fill: rgb(28, 14, 226);
-}
-
+//!СОСТОЯНИЕ ЛАЙКНУТО (is-liked)
 .heartIconCards:global(.is-liked) :global(.main-body),
 .heartIconCards:global(.is-liked) :global(.core) {
-  // fill: var(--color-likeCount); /* Здесь ставим яркий цвет */
-  fill: rgb(246, 250, 3);
+  fill: var(--heart-heart); /* Здесь ставим яркий цвет */
   animation: beat 0.6s ease-in-out;
 }
 
+//свечение при нажатии
 .heartIconCards:global(.is-liked) :global(.sparks) {
   opacity: 1;
-  fill: var(--color-likeCount);
-  fill: color rgb(3, 82, 13);
+  fill: var(--heart-heart);
   animation: sparks 0.8s ease-out forwards;
-  // background-color: rgb(238, 13, 200);
+  stroke: currentColor; /* Добавляем обводку того же цвета, что и ободок */
+  stroke-width: 1;
 }
 
-/* Анимации оставляем без изменений, они работают глобально по имени */
+//Анимации искорки Используется с animation: beat 0.8s ease-in-out infinite;
 @keyframes beat {
   0% {
     transform: scale(1);
@@ -279,37 +240,8 @@
   }
 }
 
-// .heartIconCards {
-//   width: 40px;
-//   height: 40px;
-//   cursor: pointer;
-//   transition: transform 0.2s ease;
-// }
-
-// .heartIconCards:hover {
-//   transform: scale(1.15);  // hover-эффект (увеличение)
-// }
-
-// .heartIconCards.liked {
-//   .main-body {
-//     fill: #ff3366 !important;  // красный/розовый при лайке
-//     animation: beat 0.6s ease-in-out;  // биение сердца
-//   }
-
-//   .sparks {
-//     animation: sparks 0.8s ease-out forwards;  // разлёт искр
-//   }
-// }
-
-// @keyframes beat {
-//   0%   { transform: scale(1); }
-//   40%  { transform: scale(1.35); }
-//   60%  { transform: scale(0.95); }
-//   100% { transform: scale(1); }
-// }
-
-// @keyframes sparks {
-//   0%   { opacity: 0; transform: scale(0.5) translateY(0); }
-//   50%  { opacity: 1; transform: scale(1.2) translateY(-10px); }
-//   100% { opacity: 0; transform: scale(1.5) translateY(-20px); }
-// }
+//! При нажатии вокруг сердечка появляются «искры»:
+// opacity: 1 делает их видимыми,
+// fill: var(--heart-hover) задаёт цвет,
+// animation: sparks 0.8s ease-out forwards; запускает анимацию вспышки и исчезновения,
+// stroke: currentColor; stroke-width: 1; добавляет обводку того же цвета, что и контур сердечка.
