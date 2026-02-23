@@ -35,7 +35,7 @@
 }
 
 //свечение при нажатии
- .liked .sparks {
+.liked .sparks {
   opacity: 1;
   fill: var(--heart-heart);
   animation: sparks 0.8s ease-out forwards;

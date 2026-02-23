@@ -1,19 +1,24 @@
 import { useTranslation } from 'react-i18next';
+import { useFavoritesContext } from '@/context/FavoritesContext';
+import { useCartContext } from '@/context/CartContex';
 import { Link } from 'react-router-dom';
 import { LogoSvg } from '@/components/svg/LogoSvg';
 import { THeaderProps } from './type';
+import { THeaderNavItem } from '@/types/headerNavItem';
 import { Button } from '../Button';
 import { getHeaderNavItems } from '@constants/navItems';
 
 import styles from './Header.module.scss';
-import { THeaderNavItem } from '@/types/headerNavItem';
 
-export const Header = ({
-  userName,
-  basketTotal = 0,
-  favoritesCount = 0,
-}: THeaderProps) => {
+export const Header = ({ userName }: THeaderProps) => {
   const { t } = useTranslation(); //хук для перевода
+
+  //число добавленных единиц в избранное и корзины в кнопки шапки
+  const { favorites } = useFavoritesContext();
+  const { cartItems } = useCartContext();
+
+  const favoritesCount = favorites.length;
+  const basketTotal = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const navItems = getHeaderNavItems(basketTotal, favoritesCount, userName);
 
