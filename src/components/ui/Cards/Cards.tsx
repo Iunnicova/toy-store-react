@@ -8,12 +8,12 @@ import { Button, Counter } from '../index';
 import { TCardProps } from './type';
 import styles from './Cards.module.scss';
 import { useFavoritesContext } from '@/context/FavoritesContext';
+import { useFavorites } from '@/hooks/useFavorites';
 
 export const Cards = ({ toy, onCardClick }: TCardProps) => {
   const { t } = useTranslation();
   //!добавление удаление из избранное
-  const { favorites, addToFavorites, removeFromFavorites } =
-    useFavoritesContext();
+  const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
 
   const isFavorite = favorites.some((f) => f.toyId === toy.id);
 
@@ -52,7 +52,10 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
       <div className={styles.actions}>
         <div className={styles.price}>
           <span>{t('toys.common.priceLabel')}:</span>
-          <strong>{toy.price.toLocaleString('ru-RU')}</strong>
+          <strong>
+            {' '}
+            {toy.price ? toy.price.toLocaleString('ru-RU') : 'price'}
+          </strong>
         </div>
 
         {quantity === 0 ? (

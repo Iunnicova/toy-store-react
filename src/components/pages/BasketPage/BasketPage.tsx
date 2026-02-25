@@ -79,7 +79,7 @@ export const BasketPage = () => {
     return () => {
       isMounted = false;
     };
-  }, [cartItems, t]);
+  }, [cartItems]);
   if (loading) {
     return <div className={styles.loading}>Загрузка корзины...</div>;
   }
