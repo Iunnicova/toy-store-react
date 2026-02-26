@@ -183,55 +183,13 @@
   ],
   "favorites": [
     {
-      "id": "aa42",
-      "toyId": "2"
-    },
-    {
-      "id": "ee6c",
+      "id": "9daf",
       "toyId": "1"
     },
     {
-      "id": "4a4b",
-      "toyId": "0"
-    },
-    {
-      "id": "2b40",
-      "toyId": "4a4b"
-    },
-    {
-      "id": "e23e",
-      "toyId": "4a4b"
-    },
-    {
-      "id": "b3a2",
-      "toyId": "ee6c"
-    },
-    {
-      "id": "2361",
-      "toyId": "aa42"
-    },
-    {
-      "id": "4d89",
-      "toyId": "4a4b"
-    },
-    {
-      "id": "b98c",
-      "toyId": "4a4b"
-    },
-    {
-      "id": "9fe0",
-      "toyId": "4a4b"
-    },
-    {
-      "id": "3b1b",
-      "toyId": "4a4b"
+      "id": "499a",
+      "toyId": "1"
     }
   ],
-  "cart": [
-    {
-      "id": "bb9d",
-      "toyId": "1",
-      "quantity": 2
-    }
-  ]
+  "cart": []
 }

@@ -76,7 +76,7 @@ export const Header = ({ userName }: THeaderProps) => {
           <LogoSvg className={styles.logo} aria-hidden="true" />
 
           <div className={styles.brand}>
-            <h1 className={styles.title}>Baby's Smile</h1>
+            <h1 className={styles.title}>{t('header.shop_name')}</h1>
             <p className={styles.slogan}>{t('header.slogan')}</p>
           </div>
         </Link>
