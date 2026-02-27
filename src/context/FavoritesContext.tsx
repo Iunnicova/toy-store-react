@@ -7,13 +7,14 @@ const FavoritesContext = createContext<ReturnType<typeof useFavorites> | null>(
 );
 
 // Создаём компонент-обёртку, который будет "раздавать" данные всем детям
-export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({
+export const FavoritesProvider = ({
   children,
+}: {
+  children: React.ReactNode;
 }) => {
-  const value = useFavorites();
-
+  const favoritesData = useFavorites();
   return (
-    <FavoritesContext.Provider value={value}>
+    <FavoritesContext.Provider value={favoritesData}>
       {children}
     </FavoritesContext.Provider>
   );
@@ -21,20 +22,26 @@ export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({
 
 // Создаём функцию, чтобы дети могли легко взять данные
 export const useFavoritesContext = () => {
-  const ctx = useContext(FavoritesContext); // спрашиваем: "что лежит в ящике?"
+  const context = useContext(FavoritesContext); // спрашиваем: "что лежит в ящике?"
 
-  if (!ctx) {
+  if (!context) {
     throw new Error(
       'useFavoritesContext must be used inside FavoritesProvider'
     );
   }
 
-  return ctx;
+  return context;
 };
 
-// const FavoritesContext = createContext(...);
+// //Создаём "ящик" (контекст), в который будем класть данные корзины
+// const FavoritesContext = createContext<ReturnType<typeof useFavorites> | null>(
+//   null
+// );
 
-// export const FavoritesProvider = ({ children }) => {
+// // Создаём компонент-обёртку, который будет "раздавать" данные всем детям
+// export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({
+//   children,
+// }) => {
 //   const value = useFavorites();
 
 //   return (
@@ -44,6 +51,15 @@ export const useFavoritesContext = () => {
 //   );
 // };
 
+// // Создаём функцию, чтобы дети могли легко взять данные
 // export const useFavoritesContext = () => {
-//   return useContext(FavoritesContext);
+//   const ctx = useContext(FavoritesContext); // спрашиваем: "что лежит в ящике?"
+
+//   if (!ctx) {
+//     throw new Error(
+//       'useFavoritesContext must be used inside FavoritesProvider'
+//     );
+//   }
+
+//   return ctx;
 // };

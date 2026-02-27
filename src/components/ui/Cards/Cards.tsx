@@ -13,7 +13,8 @@ import { useFavorites } from '@/hooks/useFavorites';
 export const Cards = ({ toy, onCardClick }: TCardProps) => {
   const { t } = useTranslation();
   //!добавление удаление из избранное
-  const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
+  const { favorites, addToFavorites, removeFromFavorites } =
+    useFavoritesContext();
 
   const isFavorite = favorites.some((f) => f.toyId === toy.id);
 
@@ -40,6 +41,11 @@ export const Cards = ({ toy, onCardClick }: TCardProps) => {
           onClick={(e) => {
             e.stopPropagation();
             isFavorite ? removeFromFavorites(toy.id) : addToFavorites(toy.id);
+            //          if (isFavorite) {
+            //   removeFromFavorites(toy.id);
+            // } else {
+            //   addToFavorites(toy.id);
+            // }
           }}
         >
           <HeartIcon isLiked={isFavorite} className={styles.heartIconCards} />
