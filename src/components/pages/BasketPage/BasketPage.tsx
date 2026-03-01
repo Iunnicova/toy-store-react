@@ -1,7 +1,7 @@
 import basket1 from '@images/basket1.png';
 import { BasketIcon } from '@/components/svg/BasketIcon';
 import { Button, CardsBasket, ModalDescriptionToy } from '@/components/ui';
-import { useCart } from '@/hooks/useCart';
+import { useCartBasket } from '@/hooks/useCartBasket';
 import { useState, useEffect } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -10,7 +10,7 @@ import { TToy } from '@/types/toysData';
 import { CartItem, ToyInCart } from './type';
 
 export const BasketPage = () => {
-  const { cartItems, loading, addToCart, removeFromCart } = useCart();
+  const { cartItems, loading, addToCart, removeFromCart } = useCartBasket();
   const { t } = useTranslation(); //хук перевода
 
   const [toysInCart, setToysInCart] = useState<ToyInCart[]>([]);
@@ -42,7 +42,7 @@ export const BasketPage = () => {
       }
 
       try {
-        const res = await fetch('http://localhost:3001/toys', {
+        const res = await fetch('http://localhost:30011/toys', {
           signal: AbortSignal.timeout(8000), // таймаут, если сервер молчит 8 секунд → ошибка
         });
 

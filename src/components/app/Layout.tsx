@@ -6,7 +6,7 @@ import {
 import { Outlet } from 'react-router-dom';
 import { ContentToy, Header, Footer } from '../ui';
 import { useCartContext } from '@/context/CartContex';
-import { TCartItem } from '@/hooks/useCart';
+import { TCartItem } from '@/hooks/useCartBasket';
 
 export const Layout = () => {
   const { cartItems } = useCartContext();

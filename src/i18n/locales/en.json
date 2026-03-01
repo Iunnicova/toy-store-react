@@ -184,6 +184,7 @@
   "basket": {
     "notAdded": "You haven't added the items to your cart yet",
     "justClick": "Just click <icon /> on the product card — and it will appear here!",
-    "homeButton": "Main page"
+    "homeButton": "Main page",
+    "loadError": "Couldn't load shopping cart items"
   }
 }

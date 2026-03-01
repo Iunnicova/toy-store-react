@@ -184,6 +184,7 @@
   "basket": {
     "notAdded": "Još niste dodali stavke u korpu",
     "justClick": "Samo kliknite <icon /> na kartici artikla — i on će se pojaviti ovde!",
-    "homeButton": "Naslovna strana"
+    "homeButton": "Naslovna strana",
+    "loadError": "Nije moguće učitati proizvode za korpe"
   }
 }

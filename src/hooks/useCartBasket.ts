@@ -13,9 +13,9 @@ export type TCartItem = {
 //loading = true → корзина ещё загружается
 //loading = false → корзина готова
 //finally — «сделай в любом случае»
-export const useCart = () => {
+export const useCartBasket = () => {
   const [cartItems, setCartItems] = useState<TCartItem[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);  //загрузка установить загрузку
 
   const loadCart = async () => {
     try {
