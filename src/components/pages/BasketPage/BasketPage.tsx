@@ -1,7 +1,7 @@
 import basket1 from '@images/basket1.png';
 import { BasketIcon } from '@/components/svg/BasketIcon';
 import { Button, CardsBasket, ModalDescriptionToy } from '@/components/ui';
-import { useCartBasket } from '@/hooks/useCartBasket';
+import { useCartBasket } from '@/hooks/useCartBasket/useCartBasket';
 import { useState, useEffect } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -10,15 +10,18 @@ import { TToy } from '@/types/toysData';
 import { CartItem, ToyInCart } from './type';
 
 export const BasketPage = () => {
-  const { cartItems, loading, addToCart, removeFromCart } = useCartBasket();
-  const { t } = useTranslation(); //хук перевода
+  //берем с useCartBasket
+  const { toysInCart, loading, error, addToCart, removeFromCart } =
+    useCartBasket();
 
-  const [toysInCart, setToysInCart] = useState<ToyInCart[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  // const [toysInCart, setToysInCart] = useState<ToyInCart[]>([]);
+  // const [error, setError] = useState<string | null>(null);
 
   // ─── Добавляем состояние модального окна ───
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedToy, setSelectedToy] = useState<TToy | null>(null);
+
+  const { t } = useTranslation(); //хук перевода
 
   const handleOpenModal = (toy: TToy) => {
     setSelectedToy(toy);
@@ -30,65 +33,35 @@ export const BasketPage = () => {
     setSelectedToy(null);
   };
 
-  useEffect(() => {
-    let isMounted = true;
-    const fetchToys = async () => {
-      if (cartItems.length === 0) {
-        if (isMounted) {
-          setToysInCart([]);
-          setError(null);
-        }
-        return;
-      }
+  // всегда error ПЕРВАЯ ПРОВЕРКА: Если есть ошибка, показываем её сразу
 
-      try {
-        const res = await fetch('http://localhost:30011/toys', {
-          signal: AbortSignal.timeout(8000), // таймаут, если сервер молчит 8 секунд → ошибка
-        });
+  //проверяем ошибки
+  // if (error) {
+  //   return <div className={styles.error}>{error}</div>;
+  // }
 
-        if (!res.ok) {
-          throw new Error(`HTTP ${res.status}: ${res.statusText}`);
-        }
-        const allToys: TToy[] = await res.json();
-
-        // Соединяем: для каждого элемента корзины находим игрушку
-        const merged = cartItems
-          .map((cartItem: CartItem) => {
-            const toy = allToys.find(
-              (toyItem) => toyItem.id === cartItem.toyId
-            );
-            return toy ? { ...toy, quantity: cartItem.quantity } : null;
-          })
-          .filter((item): item is ToyInCart => item !== null);
-
-        if (isMounted) {
-          setToysInCart(merged);
-          setError(null);
-        }
-      } catch (err) {
-        console.error('Ошибка загрузки игрушек для корзины:', err);
-        if (isMounted) {
-          setError(
-            t('basket.loadError') || 'Не удалось загрузить товары корзины'
-          );
-        }
-      }
-    };
-    fetchToys();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [cartItems]);
-  if (loading) {
-    return <div className={styles.loading}>Загрузка корзины...</div>;
-  }
   if (error) {
-    return <div className={styles.error}>{error}</div>;
+    return (
+      <div className={styles.errorContainer}>
+        <p className={styles.errorText}>{error}</p>
+        <button
+          className={styles.errorButton}
+          onClick={() => window.location.reload()}
+        >
+          {/* {t('common.retry') || 'Попробовать снова'} */}
+          'Попробовать снова'
+        </button>
+      </div>
+    );
+  }
+
+  // ВТОРАЯ ПРОВЕРКА: Если еще грузимся
+  if (loading) {
+    // return <div className={styles.loading}>{t('basket.loading') || 'Загрузка корзины...'}</div>;
+    return <div className={styles.loading}>Загрузка корзины...</div>;
   }
 
   const isEmpty = toysInCart.length === 0;
-  // const totalCount = toysInCart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     //********** */

@@ -185,6 +185,7 @@
     "notAdded": "You haven't added the items to your cart yet",
     "justClick": "Just click <icon /> on the product card — and it will appear here!",
     "homeButton": "Main page",
+    "loading": "Loading the shopping cart...",
     "loadError": "Couldn't load shopping cart items"
   }
 }

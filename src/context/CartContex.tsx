@@ -1,8 +1,10 @@
-import { useCartBasket } from '@/hooks/useCartBasket';
+import { useCartBasket } from '@/hooks/useCartBasket/useCartBasket';
 import { createContext, useContext } from 'react';
 
 //Создаём "ящик" (контекст), в который будем класть данные корзины
-const CartContext = createContext<ReturnType<typeof useCartBasket> | null>(null);
+const CartContext = createContext<ReturnType<typeof useCartBasket> | null>(
+  null
+);
 
 // Создаём компонент-обёртку, который будет "раздавать" данные всем детям
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({

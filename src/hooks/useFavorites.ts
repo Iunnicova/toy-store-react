@@ -1,8 +1,6 @@
 import { TToy } from '@/types/toysData';
 import { useCallback, useEffect, useState } from 'react';
 
-
-
 export type TFavoriteItem = TToy & {
   id: number;
   toyId: number;
@@ -11,15 +9,13 @@ export type TFavoriteItem = TToy & {
 
 export const useFavorites = () => {
   const [favorites, setFavorites] = useState<TFavoriteItem[]>([]);
- const [loading, setLoading] = useState(true);  //загрузка установить загрузку
-
+  const [loading, setLoading] = useState(true); //загрузка установить загрузку
 
   const loadFavorites = async () => {
     const res = await fetch('http://localhost:3001/favorites');
     const data = await res.json();
     setFavorites(data);
   };
-
 
   useEffect(() => {
     loadFavorites();

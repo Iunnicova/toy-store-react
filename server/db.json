@@ -183,37 +183,25 @@
   ],
   "favorites": [
     {
-      "id": "2453",
+      "id": "776c",
       "toyId": "0"
-    },
-    {
-      "id": "4ea8",
-      "toyId": "1"
-    },
-    {
-      "id": "0463",
-      "toyId": "2"
-    },
-    {
-      "id": "8f51",
-      "toyId": "3"
     }
   ],
   "cart": [
     {
-      "id": "f3a4",
+      "id": "ea85",
       "toyId": "1",
-      "quantity": 1
+      "quantity": 28
     },
     {
-      "id": "c939",
-      "toyId": "2",
-      "quantity": 1
+      "id": "2dca",
+      "toyId": "0",
+      "quantity": 10
     },
     {
-      "id": "7bae",
-      "toyId": "2453",
-      "quantity": 2
+      "id": "a9af",
+      "toyId": "4",
+      "quantity": 1
     }
   ]
 }

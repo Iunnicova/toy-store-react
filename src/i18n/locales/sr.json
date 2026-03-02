@@ -185,6 +185,7 @@
     "notAdded": "Još niste dodali stavke u korpu",
     "justClick": "Samo kliknite <icon /> na kartici artikla — i on će se pojaviti ovde!",
     "homeButton": "Naslovna strana",
+    "loading": "Preuzimanje korpe za otpatke...",
     "loadError": "Nije moguće učitati proizvode za korpe"
   }
 }
