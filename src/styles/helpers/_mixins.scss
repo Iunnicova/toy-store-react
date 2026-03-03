@@ -3,6 +3,35 @@
 @use 'sass:math';
 @use 'functions' as *; //используем ряд функций из папки "_functions.scss"
 
+//миксин для Button
+@mixin buttonBase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: var(--color-dusty-purple);
+  border-radius: rem(12);
+
+  background: transparent;
+  border: none;
+  width: 100%;
+
+  //градиент кнопки
+  background: linear-gradient(45deg, var(--color-bottom), var(--color-frame));
+  background-clip: padding-box;
+  border: rem(2) solid var(--color-frame);
+  border-radius: rem(12);
+  box-shadow:
+    2px 2px 0 var(--color-mint-mint),
+    -2px -2px 5px var(--color-frame);
+
+  &:hover {
+    background: linear-gradient(45deg, var(--color-frame), var(--color-bottom));
+    border-color: var(--color-likeCount);
+    box-shadow: 0 5px 15px var(--color-dark);
+  }
+}
+
 //аргументы максимального и минимального размера шрифта в пикселях
 
 @mixin fluid-text($max: 32, $min: 14) {

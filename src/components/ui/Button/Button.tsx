@@ -19,3 +19,26 @@ export const Button = ({
     </button>
   );
 };
+
+// export interface ButtonProps {
+//   children: ReactNode;    //* Текст или иконка внутри кнопки
+//   onClick?: () => void;   //* Обработчик клика (опционально)
+//   type?: 'button' | 'submit' | 'reset';  //* "button": Кнопка по умолчанию, не имеет специального поведения.
+//* "submit": Кнопка формы.
+//*"reset": Форма кнопки сброса.
+
+//  className?: string; //* Дополнительные стили
+// }
+//  variant?: 'primary' | 'toggle';  чтобы можно менять кнопки в других файлах
+
+//! что бы работала в других местах сердечко тема и язык прописываем
+//  <Button
+//   variant="toggle"
+//   className={classNames(styles.close, styles.button)}
+//   </Button>
+//! в стилях
+// .button {
+//   .toggle {
+//   что нужно
+//   }
+// }

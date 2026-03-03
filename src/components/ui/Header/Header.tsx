@@ -22,6 +22,8 @@ export const Header = ({ userName }: THeaderProps) => {
 
   const navItems = getHeaderNavItems(basketTotal, favoritesCount, userName);
 
+  const { error, setError } = useCartContext();
+
   //для перевода Работает с простыми текстовыми метками (label).
   const resolveLabel = (label: string) => {
     // если строка выглядит как ключ (начинается с "header.")

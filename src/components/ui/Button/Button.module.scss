@@ -1,34 +1,18 @@
 @use '../../../styles/helpers/' as *;
 
 .button {
-  display: flex;
-  // display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: rem(12);
   background: transparent;
   border: none;
-  width: 100%;
 
   //кнопки шапка
   &.headerButton {
-    display: flex;
+    @include buttonBase;
+
     min-height: rem(44);
     gap: rem(8);
-    text-transform: uppercase;
     font-size: fluid(15, 13);
     font-weight: 600;
-    color: var(--color-dusty-purple);
-    width: 100%;
     padding: rem(10) rem(12);
-
-    background: linear-gradient(45deg, var(--color-bottom), var(--color-frame));
-    background-clip: padding-box;
-    border: rem(2) solid var(--color-frame);
-    border-radius: rem(12);
-    box-shadow:
-      2px 2px 0 var(--color-mint-mint),
-      -2px -2px 5px var(--color-frame);
 
     @include mobile {
       gap: rem(6);
@@ -47,50 +31,19 @@
         display: none;
       }
     }
-
-    &:hover {
-      background: linear-gradient(
-        45deg,
-        var(--color-frame),
-        var(--color-bottom)
-      );
-      border-color: var(--color-likeCount);
-      box-shadow: 0 5px 15px var(--color-dark);
-    }
   }
 
   //****
   //кнопка корзина карточка
   &.primary {
-    display: flex;
+    @include buttonBase;
     gap: rem(20);
-    color: var(--color-dusty-purple);
-    text-transform: uppercase;
     border: var(--border);
     white-space: nowrap;
     min-width: rem(70);
     height: rem(40);
     padding: rem(12) rem(24);
 
-    //градиент кнопки
-    background: var(--gradient) border-box;
-    border: rem(2) solid transparent;
-    border-radius: rem(12);
-    background: linear-gradient(45deg, var(--color-bottom), var(--color-frame));
-    border-color: var(--color-frame);
-    box-shadow:
-      2px 2px 0px var(--color-mint-mint),
-      -2px -2px 5px var(--color-frame);
-
-    &:hover {
-      background: linear-gradient(
-        45deg,
-        var(--color-frame),
-        var(--color-bottom)
-      ); // меняем порядок
-      border-color: var(--color-likeCount);
-      box-shadow: 0px 5px 20px var(--color-dark);
-    }
     @include mobile {
       width: rem(65);
       height: rem(30);

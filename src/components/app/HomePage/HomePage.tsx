@@ -4,11 +4,13 @@ import {
   Search,
   Cards,
   ModalDescriptionToy,
+  Button,
 } from '@/components/ui';
 import { TToy } from '@/types/toysData';
 import { useState, useEffect } from 'react';
 
 import styles from './HomePage.module.scss';
+import { useCartContext } from '@/context/CartContex';
 
 export const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,6 +19,8 @@ export const HomePage = () => {
   ///добавляем карточки через db.jso
   const [toys, setToys] = useState<TToy[]>([]); // состояние игрушек
   const [loading, setLoading] = useState(true); // loading — текущее значение (true/false) setLoading — функция, которая меняет это значение
+
+  const { error, setError } = useCartContext();
 
   useEffect(() => {
     const controller = new AbortController(); // Контроллер для отмены запроса(убираем утечку памяти)
@@ -58,7 +62,8 @@ export const HomePage = () => {
       <ControlPanel />
       <Banner />
       <Search />
-      <div className={styles.cardsGrid}>
+
+      <div className={styles.cardsHome}>
         {toys.map((toy) => (
           <Cards
             key={toy.id}

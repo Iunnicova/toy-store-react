@@ -6,7 +6,7 @@ export interface TButtonProps {
   type?: 'button' | 'submit' | 'reset';
   className?: string;
   disabled?: boolean;
-  variant?: 'primary' | 'toggle' | 'like' | 'headerButton';
+  variant?: 'primary' | 'toggle' | 'like' | 'headerButton' | 'error';
 }
 
 //! props → это то, что передаётся в компонент (как настройки).

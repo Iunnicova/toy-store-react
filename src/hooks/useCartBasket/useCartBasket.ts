@@ -18,6 +18,7 @@ export type TCartItem = {
 //loading = true → корзина ещё загружается
 //loading = false → корзина готова
 //finally — «сделай в любом случае»
+
 export const useCartBasket = () => {
   const [toysInCart, setToysInCart] = useState<ToyInCart[]>([]);
   const [loading, setLoading] = useState(true); //загрузка установить загрузку
@@ -43,6 +44,17 @@ export const useCartBasket = () => {
       if (isInitialLoad) setLoading(false);
     }
   };
+
+  //!для автоматического удаления ошибки через 3 секунды
+  //   useEffect(() => {
+  //   if (error) {
+  //     const timer = setTimeout(() => {
+  //       setError(null);
+  //     }, 3000); // Ошибка исчезнет сама через 3 секунды
+
+  //     return () => clearTimeout(timer); //чистим таймер если ошибка изменилась
+  //   }
+  // }, [error]);
 
   //! 2.ПЕРВАЯ загрузки (срабатывает 1 раз при входе)
   useEffect(() => {
@@ -97,31 +109,32 @@ export const useCartBasket = () => {
 
   //! 4. добавления  (без прыжков лоадера)
   const addToCart = async (toyId: number) => {
+    setError(null);
     const existingItem = cartItems.find((item) => item.toyId === toyId);
-    if (!existingItem) return;
+
     try {
-      if (existingItem) {
-        // Если есть — увеличиваем quantity (PATCH)
-        await fetch(`http://localhost:3001/cart/${existingItem.id}`, {
-          method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            quantity: existingItem.quantity + 1,
-          }),
-        });
-      } else {
-        //Если нет — добавляем новый (POST)
-        await fetch('http://localhost:30016/cart', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ toyId, quantity: 1 }),
-        });
-      }
+      setError(null);
+      const url = existingItem
+        ? `http://localhost:3001g/cart/${existingItem.id}`
+        : `http://localhost:3001/cart`;
+
+      const res = await fetch(url, {
+        method: existingItem ? 'PATCH' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(
+          existingItem
+            ? { quantity: existingItem.quantity + 1 }
+            : { toyId, quantity: 1 }
+        ),
+      });
+
+      if (!res.ok) throw new Error('Ошибка сервера');
+
       await loadCart(false); // Обновляем данные БЕЗ setLoading(true)
     } catch (err) {
       console.error('Ошибка с сервером:', err);
       setError('Ошибка при добавлении в корзину');
-      alert('ВНИМАНИЕ: Ошибка случилась! Текст: ');
+      // alert("Ошибка на экране: Ошибка при добавлении в корзину");
     }
   };
 
@@ -149,6 +162,7 @@ export const useCartBasket = () => {
     } catch (err) {
       setError('Ошибка при удалении');
       console.error('Ошибка с сервером:', err);
+      // alert('Ошибка на экране: Ошибка при удалении из корзины');
     }
   };
 
@@ -159,148 +173,8 @@ export const useCartBasket = () => {
     removeFromCart,
     toysInCart,
     error,
+    setError,
   };
 };
 
 //************* */
-// export const useCartBasket = () => {
-//   const [toysInCart, setToysInCart] = useState<ToyInCart[]>([]);
-//   const [loading, setLoading] = useState(true); //загрузка установить загрузку
-//   const [error, setError] = useState<string | null>(null);
-//   const [cartItems, setCartItems] = useState<TCartItem[]>([]);
-//   const { t } = useTranslation(); //хук перевода
-
-//   //! 1. Функция загрузки только списка ID из корзины
-//   const loadCart = async (isInitialLoad = false) => {
-//     if (isInitialLoad) setLoading(true); // Включаем лоадер ТОЛЬКО при первой загрузке
-//     setError(null); // сбрасываем старые ошибки
-
-//     try {
-//       const res = await fetch('http://localhost:3001/cart');
-
-//       const data = await res.json();
-//       setCartItems(data);
-//     } catch (err) {
-//       setError('Не удалось связаться с сервером. Проверьте, запущен ли он.');
-//       console.error('Критическая ошибка:');
-//     } finally {
-//       if (isInitialLoad) setLoading(false);
-//     }
-//   };
-
-//   //срабатывает один раз при загрузке страницы
-//   useEffect(() => {
-//     loadCart(true);
-//   }, []);
-
-//   //следит за изменениями в корзине при изменении cartItems
-//  useEffect(() => {
-//  let isMounted = true;
-
-//     const fetchToys = async () => {
-//       if (cartItems.length === 0) {
-//         if (isMounted)setToysInCart([]);
-//           // setError(null);
-//         return;
-//       }
-
-//       //сервер
-//       try {
-//         const res = await fetch('http://localhost:3001/toys', {
-//           signal: AbortSignal.timeout(3000), // таймаут, если сервер молчит 3 секунд → ошибка
-//         });
-
-//         if (!res.ok) {
-//           throw new Error(`HTTP ${res.status}: ${res.statusText}`);
-//         }
-//         const allToys: TToy[] = await res.json();
-
-//         // Соединяем: для каждого элемента корзины находим игрушку
-//         const merged = cartItems
-//           .map((cartItem: CartItem) => {
-//             const toy = allToys.find(
-//               (toyItem) => toyItem.id === cartItem.toyId
-//             );
-//             return toy ? { ...toy, quantity: cartItem.quantity } : null;
-//           })
-//           .filter((item): item is ToyInCart => item !== null);
-
-//         if (isMounted) {
-//           setToysInCart(merged);
-//           setError(null);
-//         }
-//       } catch (err) {
-//         console.error('Ошибка загрузки игрушек для корзины:', err);
-//         if (isMounted) {
-//           // setError(
-//           //   t('basket.loadError') || 'Не удалось загрузить товары корзины'
-//           // );
-//           setError('Не удалось загрузить товары корзины');
-//         }
-//       }
-//     };
-//     fetchToys();
-
-//     return () => {
-//       isMounted = false;
-//     };
-//   }, [cartItems]);
-
-//   const isEmpty = toysInCart.length === 0;
-//   // const totalCount = toysInCart.reduce((sum, item) => sum + item.quantity, 0);
-
-//   const addToCart = async (toyId: number) => {
-//     const existingItem = cartItems.find((item) => item.toyId === toyId);
-
-//     if (existingItem) {
-//       // Если есть — увеличиваем quantity (PATCH)
-//       await fetch(`http://localhost:3001/cart/${existingItem.id}`, {
-//         method: 'PATCH',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({
-//           quantity: existingItem.quantity + 1,
-//         }),
-//       });
-//     } else {
-//       //Если нет — добавляем новый (POST)
-//       await fetch('http://localhost:3001/cart', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({ toyId, quantity: 1 }),
-//       });
-//     }
-
-//     await loadCart(); // 🔥 refetch
-//   };
-
-//   //добавляем удаляем карточки корзина
-//   const removeFromCart = async (toyId: number) => {
-//     const existingItem = cartItems.find((item) => item.toyId === toyId);
-//     if (!existingItem) return;
-
-//     if (existingItem.quantity > 1) {
-//       await fetch(`http://localhost:3001/cart/${existingItem.id}`, {
-//         method: 'PATCH',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({
-//           quantity: existingItem.quantity - 1,
-//         }),
-//       });
-//     } else {
-//       await fetch(`http://localhost:3001/cart/${existingItem.id}`, {
-//         method: 'DELETE',
-//       });
-//     }
-
-//     await loadCart(); // 🔥 всегда синхронизируемся с сервером
-//   };
-
-//   return {
-//     cartItems,
-//     loading,
-//     addToCart,
-//     removeFromCart,
-//     toysInCart,
-//     error,
-//   };
-// };

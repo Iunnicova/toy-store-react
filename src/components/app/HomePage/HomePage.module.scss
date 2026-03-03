@@ -1,6 +1,6 @@
 @use '../../../styles/helpers/' as *;
 
-.cardsGrid {
+.cardsHome {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
@@ -18,5 +18,39 @@
 
   @include mobile {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.error {
+  padding: auto;
+  position: sticky; //что бы ошибка не выходила за пределы видимости
+  z-index: 100;
+  top: 0;
+}
+
+.errorHome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--heart-heart);
+  color: var(--color-dark);
+  border: var(--border);
+  margin: auto;
+  padding: rem(47);
+
+  max-width: fluid(1920, 390);
+
+  @include laptop {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    padding: rem(20);
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    padding: rem(20);
   }
 }
