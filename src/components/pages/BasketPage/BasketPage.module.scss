@@ -1,4 +1,49 @@
 @use '../../../styles/helpers/' as *;
+.errorContainer {
+  // position: sticky; //что бы ошибка не выходила за пределы видимости
+  // z-index: 100;
+  // top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--heart-heart);
+  color: var(--color-dark);
+  border: var(--border);
+  margin: auto;
+  padding: rem(47);
+
+  max-width: fluid(1920, 390);
+
+  @include laptop {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    padding: rem(20);
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(20);
+    padding: rem(20);
+  }
+}
+
+.errorText {
+  font-size: 30px;
+
+  @include mobile {
+    text-align: center;
+    font-size: rem(20);
+    padding: rem(1);
+  }
+}
+
+// .errorButton {
+//   cursor: pointer;
+//   border: var(--border);
+// }
 
 .basket {
   display: flex;
@@ -97,37 +142,37 @@
 }
 
 ///ошибка
-.errorContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-  text-align: center;
-  background: red;
-  border-radius: 20px;
-}
+// .errorContainer {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   padding: 60px 20px;
+//   text-align: center;
+//   background: red;
+//   border-radius: 20px;
+// }
 
-.errorText {
-  font-size: 50px;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 0 10px rgba(255, 75, 75, 0.2));
-  color: rgb(243, 5, 124);
-}
+// .errorText {
+//   font-size: 50px;
+//   margin-bottom: 20px;
+//   filter: drop-shadow(0 0 10px rgba(255, 75, 75, 0.2));
+//   color: rgb(243, 5, 124);
+// }
 
-// // .errorContainer h2 {
-// //   color: var(--color-dark);
-// //   margin-bottom: 10px;
-// // }
+// // // .errorContainer h2 {
+// // //   color: var(--color-dark);
+// // //   margin-bottom: 10px;
+// // // }
 
-.errorContainer p {
-  color: rgb(10, 209, 27);
-  max-width: 300px;
-  margin-bottom: 24px;
-}
+// .errorContainer p {
+//   color: rgb(10, 209, 27);
+//   max-width: 300px;
+//   margin-bottom: 24px;
+// }
 
-.errorButton {
-  width: 50px;
-  height: 100px;
-  background-color: rgb(231, 217, 10);
-}
+// .errorButton {
+//   width: 50px;
+//   height: 100px;
+//   background-color: rgb(231, 217, 10);
+// }

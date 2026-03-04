@@ -1,6 +1,6 @@
 {
   "header": {
-    "shop_name": "Baby's Smile",
+    "shop_name": "My love",
     "slogan": "Toys that make you smile!",
     "mainNav": "Main navigation",
 
@@ -187,5 +187,11 @@
     "homeButton": "Main page",
     "loading": "Loading the shopping cart...",
     "loadError": "Couldn't load shopping cart items"
+  },
+
+  "error": {
+    "loading": "Loading the shopping cart...",
+    "loadError": "Couldn't load shopping cart items",
+    "retry": "Try again"
   }
 }

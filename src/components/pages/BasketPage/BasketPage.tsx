@@ -11,11 +11,8 @@ import { CartItem, ToyInCart } from './type';
 
 export const BasketPage = () => {
   //берем с useCartBasket
-  const { toysInCart, loading, error, addToCart, removeFromCart } =
+  const { toysInCart, loading, error, setError, addToCart, removeFromCart } =
     useCartBasket();
-
-  // const [toysInCart, setToysInCart] = useState<ToyInCart[]>([]);
-  // const [error, setError] = useState<string | null>(null);
 
   // ─── Добавляем состояние модального окна ───
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,30 +32,28 @@ export const BasketPage = () => {
 
   // всегда error ПЕРВАЯ ПРОВЕРКА: Если есть ошибка, показываем её сразу
 
-  //проверяем ошибки
-  // if (error) {
-  //   return <div className={styles.error}>{error}</div>;
-  // }
-
   if (error) {
     return (
       <div className={styles.errorContainer}>
-        <p className={styles.errorText}>{error}</p>
-        <button
+        <p className={styles.errorText}>⚠️ {error}</p>
+        <Button
+          variant="error"
           className={styles.errorButton}
-          onClick={() => window.location.reload()}
+          onClick={() => setError(null)}
         >
-          {/* {t('common.retry') || 'Попробовать снова'} */}
-          'Попробовать снова'
-        </button>
+          {t('error.retry') ?? 'Попробовать снова'}
+        </Button>
       </div>
     );
   }
 
   // ВТОРАЯ ПРОВЕРКА: Если еще грузимся
   if (loading) {
-    // return <div className={styles.loading}>{t('basket.loading') || 'Загрузка корзины...'}</div>;
-    return <div className={styles.loading}>Загрузка корзины...</div>;
+    return (
+      <div className={styles.loading}>
+        {t('error.loading') ?? 'Загрузка корзины...'}
+      </div>
+    );
   }
 
   const isEmpty = toysInCart.length === 0;

@@ -1,6 +1,6 @@
 {
   "header": {
-    "shop_name": "Osmeh bebe",
+    "shop_name": "Moja ljubav",
     "slogan": "Igračke koje daju osmeh!",
     "mainNav": "Osnovna navigacija",
 
@@ -187,5 +187,11 @@
     "homeButton": "Naslovna strana",
     "loading": "Preuzimanje korpe za otpatke...",
     "loadError": "Nije moguće učitati proizvode za korpe"
+  },
+
+  "error": {
+    "loading": "Preuzimanje korpe...",
+    "loadError": "Nije moguće učitati proizvode za korpe",
+    "retry": "Pokušajte ponovo"
   }
 }

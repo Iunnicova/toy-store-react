@@ -93,10 +93,10 @@ export const useCartBasket = () => {
       } catch (err) {
         console.error('Ошибка загрузки игрушек для корзины:', err);
         if (isMounted) {
-          // setError(
-          //   t('basket.loadError') || 'Не удалось загрузить товары корзины'
-          // );
-          setError('Не удалось загрузить товары корзины');
+          setError(
+            t('error.loadError') || 'Не удалось загрузить товары корзины'
+          );
+          // setError('Не удалось загрузить товары корзины');
         }
       }
     };

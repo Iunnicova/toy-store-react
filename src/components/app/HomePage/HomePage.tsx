@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react';
 
 import styles from './HomePage.module.scss';
 import { useCartContext } from '@/context/CartContex';
+import { t } from 'i18next';
 
 export const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -70,7 +71,7 @@ export const HomePage = () => {
               variant="error"
               onClick={() => setError(null)} // Очищаем ошибку по клику
             >
-              <strong>Попробовать снова</strong>
+              {t('error.retry') ?? 'Попробовать снова'}
             </Button>
           </div>
         )}
