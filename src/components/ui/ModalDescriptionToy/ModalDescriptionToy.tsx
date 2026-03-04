@@ -54,17 +54,23 @@ export const ModalDescriptionToy = memo(
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
               {/* HEADER */}
               <div className={styles.header}>
-                <Button variant="like" onClick={(e) => e.stopPropagation()}>
-                  <HeartIcon className={styles.heartIconCards} />
-                </Button>
+                <>
+                  <Button variant="like" onClick={(e) => e.stopPropagation()}>
+                    <HeartIcon className={styles.heartIconCards} />
+                  </Button>
+                </>
+
                 <h2 className={styles.titleModal}>{t(toy.titleKey)}</h2>
-                <Button
-                  variant="toggle"
-                  className={classNames(styles.close, styles.button)}
-                  onClick={onClose}
-                >
-                  X
-                </Button>
+
+                <>
+                  <Button
+                    variant="toggle"
+                    className={classNames(styles.close, styles.button)}
+                    onClick={onClose}
+                  >
+                    X
+                  </Button>
+                </>
               </div>
 
               <div className={styles.modalContent}>

@@ -115,7 +115,7 @@ export const useCartBasket = () => {
     try {
       setError(null);
       const url = existingItem
-        ? `http://localhost:3001g/cart/${existingItem.id}`
+        ? `http://localhost:3001/cart/${existingItem.id}`
         : `http://localhost:3001/cart`;
 
       const res = await fetch(url, {

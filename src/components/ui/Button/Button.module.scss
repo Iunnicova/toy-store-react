@@ -33,6 +33,22 @@
     }
   }
 
+  //кнопка ошибка
+  &.error {
+    @include buttonBase;
+    max-width: rem(390);
+    height: rem(70);
+    //  padding: rem(112) rem(124);
+
+    @include mobile {
+      width: 200px;
+      // width: 100%;
+      height: rem(40);
+      //  padding-top: rem(120);
+      //    padding-left: 300px;
+    }
+  }
+
   //****
   //кнопка корзина карточка
   &.primary {

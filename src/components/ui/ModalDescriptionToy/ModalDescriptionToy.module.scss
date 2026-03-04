@@ -30,6 +30,7 @@
 
   @include mobile-s {
     width: rem(320);
+    padding: 10px;
   }
 }
 
@@ -39,6 +40,10 @@
   justify-content: space-between;
   min-height: 64px;
   padding-bottom: rem(30);
+
+  @include mobile-s {
+    padding-bottom: rem(30);
+  }
 }
 
 .heartIconCards {
@@ -47,6 +52,10 @@
 
   @include hover {
     color: var(--color-likeCount);
+  }
+
+  @include mobile-s {
+    font-size: rem(20);
   }
 }
 
@@ -57,18 +66,9 @@
 
   @include mobile-s {
     font-size: rem(20);
+    padding-top: rem(110);
   }
 }
-
-// .button {
-//   width: rem(150);
-//   height: rem(40);
-
-//   &.toggle {
-//     padding: 0;
-//     margin-left: auto;
-//   }
-// }
 
 //крестик
 .close {
@@ -78,7 +78,8 @@
   color: var(--color-dusty-purple);
 
   @include mobile-s {
-    font-size: rem(30);
+    // font-size: rem(30);
+    width: rem(30);
   }
 
   &:hover {

@@ -59,6 +59,23 @@ export const HomePage = () => {
 
   return (
     <>
+      <div className={styles.error}>
+        {/* ВЫВОДИМ ОШИБКУ КОРЗИНЫ ТУТ */}
+        {error && (
+          <div className={styles.errorHome}>
+            <strong className={styles.errorText}>⚠️ {error}</strong>
+
+            <Button
+              className={styles.errorButton}
+              variant="error"
+              onClick={() => setError(null)} // Очищаем ошибку по клику
+            >
+              <strong>Попробовать снова</strong>
+            </Button>
+          </div>
+        )}
+      </div>
+
       <ControlPanel />
       <Banner />
       <Search />
