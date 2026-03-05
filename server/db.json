@@ -189,9 +189,19 @@
   ],
   "cart": [
     {
-      "id": "664b",
-      "toyId": "6",
-      "quantity": 2
+      "id": "71de",
+      "toyId": "0",
+      "quantity": 10
+    },
+    {
+      "id": "8701",
+      "toyId": "1",
+      "quantity": 1
+    },
+    {
+      "id": "4c24",
+      "toyId": "2",
+      "quantity": 1
     }
   ]
 }

@@ -30,10 +30,7 @@ export const ModalFooter = ({ toy }: TModalFooterProps) => {
         </strong>
       </span>
       {quantity === 0 ? (
-        <Button 
-        variant='primary'
-        className={styles.button} 
-        onClick={add}>
+        <Button variant="primary" className={styles.button} onClick={add}>
           <BasketIcon className={styles.icon} />
         </Button>
       ) : (
