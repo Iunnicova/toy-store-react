@@ -1,9 +1,9 @@
-import { ToyInCart, CartItem } from '@/components/pages/BasketPage/type';
+import { ToyInCart} from '@/components/pages/BasketPage/type';
 import { TToy } from '@/types/toysData';
 import { t } from 'i18next';
 import { useEffect, useState } from 'react';
-import styles from './useCartBasket.module.scss';
 import { useTranslation } from 'react-i18next';
+import { addToCartApi, getCartApi, removeFromCartApi } from '@/components/utils/toyCardsApi';
 
 export type TCartItem = {
   id: number;
@@ -11,13 +11,6 @@ export type TCartItem = {
   price: number;
   quantity: number;
 };
-
-//cartItems — массив товаров в корзине
-//TCartItem[] — тип (TypeScript)
-//[] — изначально корзина пустая
-//loading = true → корзина ещё загружается
-//loading = false → корзина готова
-//finally — «сделай в любом случае»
 
 export const useCartBasket = () => {
   const [toysInCart, setToysInCart] = useState<ToyInCart[]>([]);
@@ -31,13 +24,10 @@ export const useCartBasket = () => {
     if (isInitialLoad) setLoading(true); // Включаем лоадер ТОЛЬКО при первой загрузке
 
     try {
-      const res = await fetch('http://localhost:3001/cart');
-      if (!res.ok) throw new Error();
-
-      const data = await res.json();
+      const data = await getCartApi();
       setCartItems(data);
       setError(null); // сбрасываем старые ошибки
-    } catch (err) {
+    } catch {
       setError('Не удалось связаться с сервером. Проверьте, запущен ли он.');
       console.error('Критическая ошибка:');
     } finally {
@@ -96,7 +86,6 @@ export const useCartBasket = () => {
           setError(
             t('error.loadError') || 'Не удалось загрузить товары корзины'
           );
-          // setError('Не удалось загрузить товары корзины');
         }
       }
     };
@@ -109,32 +98,14 @@ export const useCartBasket = () => {
 
   //! 4. добавления  (без прыжков лоадера)
   const addToCart = async (toyId: number) => {
-    setError(null);
     const existingItem = cartItems.find((item) => item.toyId === toyId);
 
     try {
-      setError(null);
-      const url = existingItem
-        ? `http://localhost:3001/cart/${existingItem.id}`
-        : `http://localhost:3001/cart`;
-
-      const res = await fetch(url, {
-        method: existingItem ? 'PATCH' : 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(
-          existingItem
-            ? { quantity: existingItem.quantity + 1 }
-            : { toyId, quantity: 1 }
-        ),
-      });
-
-      if (!res.ok) throw new Error('Ошибка сервера');
-
-      await loadCart(false); // Обновляем данные БЕЗ setLoading(true)
-    } catch (err) {
-      console.error('Ошибка с сервером:', err);
+      await addToCartApi(existingItem ?? null, toyId)
+      await loadCart(); // Обновляем данные БЕЗ setLoading(true)
+    } catch {
+      console.error('Ошибка с сервером:');
       setError('Ошибка при добавлении в корзину');
-      // alert("Ошибка на экране: Ошибка при добавлении в корзину");
     }
   };
 
@@ -143,26 +114,11 @@ export const useCartBasket = () => {
     const existingItem = cartItems.find((item) => item.toyId === toyId);
     if (!existingItem) return;
     try {
-      //ошибка при удалении одной единицы в карточке
-      if (existingItem.quantity > 1) {
-        await fetch(`http://localhost:3001/cart/${existingItem.id}`, {
-          method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            quantity: existingItem.quantity - 1,
-          }),
-        });
-        //ошибка при удалении всей карточки
-      } else {
-        await fetch(`http://localhost:3001/cart/${existingItem.id}`, {
-          method: 'DELETE',
-        });
-      }
-      await loadCart(false);
-    } catch (err) {
+      await removeFromCartApi(existingItem);
+      await loadCart();
+    } catch {
       setError('Ошибка при удалении');
-      console.error('Ошибка с сервером:', err);
-      // alert('Ошибка на экране: Ошибка при удалении из корзины');
+      console.error('Ошибка с сервером:');
     }
   };
 
