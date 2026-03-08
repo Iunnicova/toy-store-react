@@ -11,15 +11,18 @@ export const useFavorites = () => {
   const [favorites, setFavorites] = useState<TFavoriteItem[]>([]);
   const [loading, setLoading] = useState(true); //загрузка установить загрузку
 
-  const loadFavorites = async () => {
+  const loadFavorites = async (isInitialLoad  = false) => {
+     if (isInitialLoad ) setLoading(true); // Включаем лоадер ТОЛЬКО при первой загрузке
     const res = await fetch('http://localhost:3001/favorites');
     const data = await res.json();
     setFavorites(data);
+
+    if (isInitialLoad) setLoading(false);
   };
 
   useEffect(() => {
-    loadFavorites();
-  }, [loadFavorites]);
+    loadFavorites(true);
+  }, []);
 
   const addToFavorites = async (toyId: number) => {
     await fetch('http://localhost:3001/favorites', {

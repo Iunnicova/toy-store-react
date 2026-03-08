@@ -35,7 +35,7 @@
       "translationKey": "cutie_luna_antistress",
       "titleKey": "toys.cutie_luna_antistress.title",
       "price": 5900,
-      "toyImage": "/image/toyBee.png",
+      "toyImage": "/image/toyBee1.webp",
       "characteristic": {
         "size": 55,
         "materialKey": "toys.cutie_luna_antistress.material",
@@ -185,18 +185,33 @@
     {
       "id": "2ee4",
       "toyId": "0"
+    },
+    {
+      "id": "f6f3",
+      "toyId": "9fa3"
+    },
+    {
+      "id": "68f5",
+      "toyId": "2ee4"
+    },
+    {
+      "id": "dd31",
+      "toyId": "2"
+    },
+    {
+      "id": "da30",
+      "toyId": "0"
+    },
+    {
+      "id": "811b",
+      "toyId": "1"
     }
   ],
   "cart": [
     {
-      "id": "71de",
-      "toyId": "0",
-      "quantity": 10
-    },
-    {
       "id": "8701",
       "toyId": "1",
-      "quantity": 1
+      "quantity": 3
     },
     {
       "id": "4c24",
