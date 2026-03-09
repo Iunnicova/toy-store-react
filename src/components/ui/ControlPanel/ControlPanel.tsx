@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import sunshine from '@images/sunshine.png';
-import moon from '@images/moon.png';
+import sunshine from '@images/sunshine.webp';
+import moon from '@images/moon.webp';
 import { useTheme } from '@/context/ThemeContext/ThemeContext';
 import { Button, LanguageDropdown } from '../index';
 import styles from './ControlPanel.module.scss';

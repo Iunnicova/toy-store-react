@@ -1,6 +1,6 @@
-import landRu from '@images/landRu.png';
-import landSr from '@images/landSr.png';
-import landEn from '@images/landEn.png';
+import landRu from '@images/landRu.webp';
+import landSr from '@images/landSr.webp';
+import landEn from '@images/landEn.webp';
 import styles from './LanguageDropdown.module.scss';
 import { useLanguage, Language } from '@/context/LanguageContext';
 import i18n from '@/i18n';

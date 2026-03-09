@@ -1,4 +1,4 @@
-import favorites1 from '@images/favorites1.png';
+import favorites1 from '@images/favorites1.webp';
 import { Button, Cards } from '@/components/ui';
 import { TToy } from '@/types/toysData';
 import { useState } from 'react';

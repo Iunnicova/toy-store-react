@@ -1,4 +1,4 @@
-import basket1 from '@images/basket1.png';
+import basket1 from '@images/basket1.webp';
 import { BasketIcon } from '@/components/svg/BasketIcon';
 import { Button, CardsBasket, ModalDescriptionToy } from '@/components/ui';
 import { useCartBasket } from '@/hooks/useCartBasket/useCartBasket';
