@@ -18,7 +18,22 @@ const socialIconMap = {
 
 export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
   const { t } = useTranslation(); //хук перевода
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(''); // Создаем "хранилище" для текста подписки
+
+  //! сообщение 'спасибо за подписку'
+  const [isSubscribe, setIsSubscribe] = useState(false);
+
+  const handleSubscribe = () => {
+    if (email.includes('@')) {
+      onSubscribe(email); // Вызываем функцию отправки
+      setIsSubscribe(true); // Показываем  сообщение
+      setEmail(''); // Очищаем поле ввода (правило хорошего тона)
+
+      // Через 3 секунды убираем сообщение, чтобы форма вернулась в начало
+      setTimeout(() => setIsSubscribe(false), 3000);
+    }
+  };
+
   return (
     <footer className={styles.footer}>
       <ul className={styles.footerNavigation}>
@@ -60,14 +75,30 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
           })}
         </ul>
         <div className={styles.subscribe}>
-          <InputToy
-            className={styles.input}
-            type="text"
-            placeholder={t('footer.emailPlaceholder')}
-          />
-          <Button variant="headerButton" onClick={() => onSubscribe(email)}>
-            <p className={styles.count}>{t('footer.subscribeButton')}</p>
-          </Button>
+          {/* Если подписан — показываем текст, если нет — форму */}
+          {isSubscribe ? (
+            <p className={styles.successMessage}></p>
+          ) : (
+            <>
+              <InputToy
+                className={styles.input}
+                type="email" //чтобы браузер сам проверял формат
+                value={email} //Привязываем значение к стейту
+                onChange={(e) => setEmail(e.target.value)} // Обновляем стейт при каждом нажатии клавиши
+                placeholder={t('footer.successMessage')} //перевод внутренностей
+              />
+              <Button
+                variant="headerButton"
+                // onClick={() => onSubscribe(email)}
+                onClick={handleSubscribe}
+                disabled={!email.includes('@')} //кнопка не нажмется без собачки
+              >
+                <span className={styles.count}>
+                  {t('footer.subscribeButton')}
+                </span>
+              </Button>
+            </>
+          )}
         </div>
       </section>
     </footer>

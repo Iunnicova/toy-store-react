@@ -1,9 +1,13 @@
-import { ToyInCart} from '@/components/pages/BasketPage/type';
+import { ToyInCart } from '@/components/pages/BasketPage/type';
 import { TToy } from '@/types/toysData';
 import { t } from 'i18next';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { addToCartApi, getCartApi, removeFromCartApi } from '@/components/utils/toyCardsApi';
+import {
+  addToCartApi,
+  getCartApi,
+  removeFromCartApi,
+} from '@/components/utils/toyCardsApi';
 
 export type TCartItem = {
   id: number;
@@ -101,7 +105,7 @@ export const useCartBasket = () => {
     const existingItem = cartItems.find((item) => item.toyId === toyId);
 
     try {
-      await addToCartApi(existingItem ?? null, toyId)
+      await addToCartApi(existingItem ?? null, toyId);
       await loadCart(); // Обновляем данные БЕЗ setLoading(true)
     } catch {
       console.error('Ошибка с сервером:');

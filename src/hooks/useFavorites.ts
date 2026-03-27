@@ -11,8 +11,8 @@ export const useFavorites = () => {
   const [favorites, setFavorites] = useState<TFavoriteItem[]>([]);
   const [loading, setLoading] = useState(true); //загрузка установить загрузку
 
-  const loadFavorites = async (isInitialLoad  = false) => {
-     if (isInitialLoad ) setLoading(true); // Включаем лоадер ТОЛЬКО при первой загрузке
+  const loadFavorites = async (isInitialLoad = false) => {
+    if (isInitialLoad) setLoading(true); // Включаем лоадер ТОЛЬКО при первой загрузке
     const res = await fetch('http://localhost:3001/favorites');
     const data = await res.json();
     setFavorites(data);
