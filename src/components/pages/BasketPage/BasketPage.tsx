@@ -1,13 +1,12 @@
-import basket1 from '@images/basket1.webp';
-import { BasketIcon } from '@/components/svg/BasketIcon';
-import { Button, CardsBasket, ModalDescriptionToy } from '@/components/ui';
 import { useCartBasket } from '@/hooks/useCartBasket/useCartBasket';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import styles from './BasketPage.module.scss';
 import { TToy } from '@/types/toysData';
-import { CartItem, ToyInCart } from './type';
+import { Button, CardsBasket, ModalDescriptionToy } from '@/components/ui';
+import { BasketIcon } from '@/components/svg/BasketIcon';
+import basket1 from '@images/basket1.webp';
+import styles from './BasketPage.module.scss';
 
 export const BasketPage = () => {
   //берем с useCartBasket

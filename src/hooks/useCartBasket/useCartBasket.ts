@@ -1,7 +1,7 @@
-import { ToyInCart } from '@/components/pages/BasketPage/type';
+// import { ToyInCart } from '@/components/pages/BasketPage/type';
 import { TToy } from '@/types/toysData';
 import { t } from 'i18next';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   addToCartApi,
@@ -16,28 +16,36 @@ export type TCartItem = {
   quantity: number;
 };
 
+export type ToyInCart = TToy & {
+  quantity: number;
+};
+
 export const useCartBasket = () => {
+  const { t } = useTranslation(); //хук перевода
+
   const [toysInCart, setToysInCart] = useState<ToyInCart[]>([]);
   const [loading, setLoading] = useState(true); //загрузка установить загрузку
   const [error, setError] = useState<string | null>(null);
   const [cartItems, setCartItems] = useState<TCartItem[]>([]);
-  const { t } = useTranslation(); //хук перевода
 
-  //! 1. Функция загрузки только списка ID из корзины
-  const loadCart = async (isInitialLoad = false) => {
+  //! 1. Загрузка списка корзины (только ID)
+  const loadCart = useCallback(async (isInitialLoad = false) => {
     if (isInitialLoad) setLoading(true); // Включаем лоадер ТОЛЬКО при первой загрузке
 
     try {
-      const data = await getCartApi();
+      const res = await fetch('http://localhost:3001/cart');
+      if (!res.ok) throw new Error('Не удалось загрузить корзину');
+
+      const data: TCartItem[] = await res.json();
       setCartItems(data);
       setError(null); // сбрасываем старые ошибки
-    } catch {
+    } catch (err) {
       setError('Не удалось связаться с сервером. Проверьте, запущен ли он.');
-      console.error('Критическая ошибка:');
+      console.error('Критическая ошибка:', err);
     } finally {
       if (isInitialLoad) setLoading(false);
     }
-  };
+  }, []);
 
   //!для автоматического удаления ошибки через 3 секунды
   //   useEffect(() => {
@@ -53,7 +61,7 @@ export const useCartBasket = () => {
   //! 2.ПЕРВАЯ загрузки (срабатывает 1 раз при входе)
   useEffect(() => {
     loadCart(true);
-  }, []);
+  }, [loadCart]);
 
   //! 3. загрузка данных об игрушках (срабатывает при изменении cartItems)
   useEffect(() => {
@@ -82,7 +90,7 @@ export const useCartBasket = () => {
 
         if (isMounted) {
           setToysInCart(merged);
-          setError(null);
+          // setError(null);
         }
       } catch (err) {
         console.error('Ошибка загрузки игрушек для корзины:', err);
@@ -100,31 +108,66 @@ export const useCartBasket = () => {
     };
   }, [cartItems]); // Следим за изменениями в корзине
 
-  //! 4. добавления  (без прыжков лоадера)
-  const addToCart = async (toyId: number) => {
-    const existingItem = cartItems.find((item) => item.toyId === toyId);
+  //! 3. Добавление в корзину
+  const addToCart = useCallback(
+    async (toyId: number) => {
+      try {
+        const existingItem = cartItems.find((item) => item.toyId === toyId);
 
-    try {
-      await addToCartApi(existingItem ?? null, toyId);
-      await loadCart(); // Обновляем данные БЕЗ setLoading(true)
-    } catch {
-      console.error('Ошибка с сервером:');
-      setError('Ошибка при добавлении в корзину');
-    }
-  };
+        if (existingItem) {
+          // Увеличиваем количество
+          await fetch(`http://localhost:3001/cart/${existingItem.id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ quantity: existingItem.quantity + 1 }),
+          });
+        } else {
+          // Добавляем новый товар
+          await fetch('http://localhost:3001/cart', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ toyId, quantity: 1 }),
+          });
+        }
 
-  //!5.удаляем карточки корзина
-  const removeFromCart = async (toyId: number) => {
-    const existingItem = cartItems.find((item) => item.toyId === toyId);
-    if (!existingItem) return;
-    try {
-      await removeFromCartApi(existingItem);
-      await loadCart();
-    } catch {
-      setError('Ошибка при удалении');
-      console.error('Ошибка с сервером:');
-    }
-  };
+        await loadCart(); // обновляем список корзины
+      } catch (err) {
+        console.error('Ошибка при добавлении в корзину:', err);
+        setError('Не удалось добавить товар в корзину');
+      }
+    },
+    [cartItems, loadCart]
+  );
+
+  // ! 4. Удаление из корзины
+  const removeFromCart = useCallback(
+    async (toyId: number) => {
+      try {
+        const existingItem = cartItems.find((item) => item.toyId === toyId);
+        if (!existingItem) return;
+
+        if (existingItem.quantity > 1) {
+          // Уменьшаем количество
+          await fetch(`http://localhost:3001/cart/${existingItem.id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ quantity: existingItem.quantity - 1 }),
+          });
+        } else {
+          // Удаляем полностью
+          await fetch(`http://localhost:3001/cart/${existingItem.id}`, {
+            method: 'DELETE',
+          });
+        }
+
+        await loadCart();
+      } catch (err) {
+        console.error('Ошибка при удалении из корзины:', err);
+        setError('Не удалось удалить товар из корзины');
+      }
+    },
+    [cartItems, loadCart]
+  );
 
   return {
     cartItems,

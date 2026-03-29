@@ -203,21 +203,5 @@
       "toyId": "1"
     }
   ],
-  "cart": [
-    {
-      "id": "8701",
-      "toyId": "1",
-      "quantity": 3
-    },
-    {
-      "id": "4c24",
-      "toyId": "2",
-      "quantity": 1
-    },
-    {
-      "id": "c1d3",
-      "toyId": "1",
-      "quantity": 1
-    }
-  ]
+  "cart": []
 }

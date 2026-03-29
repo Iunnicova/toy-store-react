@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CURRENT_YEAR } from '@/constants/footerData';
 import { FOOTER_LINKS } from '@/constants/footerLinks';
+import { TFooterProps } from './type';
+import { Button } from '../Button';
+import { InputToy } from '../InputToy';
+import ok from '@images/ok.webp';
 import { ReactComponent as InstagramIcon } from '@icon/instagram.svg';
 import { ReactComponent as Vk } from '@icon/vk.svg';
 import { ReactComponent as FacebookIcon } from '@icon/facebook.svg';
-import { Button } from '../Button';
-import { InputToy } from '../InputToy';
 import styles from './Footer.module.scss';
-import { TFooterProps } from './type';
 
 const socialIconMap = {
   Instagram: InstagramIcon,
@@ -77,7 +78,8 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
         <div className={styles.subscribe}>
           {/* Если подписан — показываем текст, если нет — форму */}
           {isSubscribe ? (
-            <p className={styles.successMessage}></p>
+            // <p className={styles.successMessage}>🎉</p>
+            <img className={styles.imgOk} src="{ok}" alt="ура" loading="lazy" />
           ) : (
             <>
               <InputToy
