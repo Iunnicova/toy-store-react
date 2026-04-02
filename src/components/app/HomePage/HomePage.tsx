@@ -23,6 +23,12 @@ export const HomePage = () => {
 
   const { error, setError } = useCartContext();
 
+const filterProduct = (query: string) => {
+  console.log(`Поиск: ${query}`)
+}
+
+
+
   useEffect(() => {
     const controller = new AbortController(); // Контроллер для отмены запроса(убираем утечку памяти)
 
@@ -79,7 +85,9 @@ export const HomePage = () => {
 
       <ControlPanel />
       <Banner />
-      <Search />
+      <Search 
+      onSearchInput={filterProduct}
+      />
 
       <div className={styles.cardsHome}>
         {toys.map((toy) => (

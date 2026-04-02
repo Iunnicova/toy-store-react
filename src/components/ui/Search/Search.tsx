@@ -5,14 +5,27 @@ import { Button } from '../Button';
 import { InputToy } from '../InputToy';
 import styles from './Search.module.scss';
 
-export const Search = () => {
+
+type TSearchProps = {
+  onSearchInput: (value: string) => void; // Говорим, что это функция, принимающая строку
+};
+
+export const Search = (props: TSearchProps) => {
+  const {
+onSearchInput,
+  } = props
+  
   const { t } = useTranslation();
   return (
     <section className={styles.search}>
       <h2 className={styles.searchTitle}>{t('search.title')}</h2>
       <div className={styles.searchBox}>
-        <InputToy type="text" placeholder={t('search.placeholder')} />
-        <Link to="/">
+        <InputToy 
+        type="text" 
+        placeholder={t('search.placeholder')} 
+        onInput={(event) => onSearchInput(event.currentTarget.value)}
+        />
+        {/* <Link to="/"> */}
           <Button
             variant="headerButton"
             onClick={() => alert('Поиск')}
@@ -21,7 +34,7 @@ export const Search = () => {
             <SearchIcon className={styles.icon} />
             <span className={styles.count}>{t('search.button')}</span>
           </Button>
-        </Link>
+        {/* </Link> */}
       </div>
     </section>
   );
