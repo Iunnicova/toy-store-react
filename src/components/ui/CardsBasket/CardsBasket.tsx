@@ -102,7 +102,8 @@ export function CardsBasket({
                 className={styles.button}
                 disabled={quantity === 0}
               >
-                <DeleteIcon className={styles.deleteIconCards} />
+                <DeleteIcon 
+                className={styles.deleteIconCards} />
               </Button>
             </div>
           </div>

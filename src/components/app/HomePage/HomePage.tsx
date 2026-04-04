@@ -5,6 +5,7 @@ import {
   Cards,
   ModalDescriptionToy,
   Button,
+  InputToy,
 } from '@/components/ui';
 import { TToy } from '@/types/toysData';
 import { useState, useEffect } from 'react';
@@ -23,8 +24,14 @@ export const HomePage = () => {
 
   const { error, setError } = useCartContext();
 
+  //кнопка поиска
 const filterProduct = (query: string) => {
   console.log(`Поиск: ${query}`)
+}
+
+// удаление в инпуте подписка
+const deleteTitle = () => {
+  console.log('удалить')
 }
 
 
@@ -76,6 +83,7 @@ const filterProduct = (query: string) => {
               className={styles.errorButton}
               variant="error"
               onClick={() => setError(null)} // Очищаем ошибку по клику
+              // onDeleteTitle = {deleteTitle}
             >
               {t('error.retry') ?? 'Попробовать снова'}
             </Button>

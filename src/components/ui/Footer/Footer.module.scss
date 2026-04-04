@@ -97,6 +97,10 @@
   }
 }
 
+.imgOk {
+  max-height: rem(170);
+}
+
 .copyrightNotice {
   color: var(--color-dusty-purple);
   font-family: var(--font-family-bottom);
@@ -134,6 +138,9 @@
 }
 
 .subscribe {
+position: relative; /* Контейнер для всего блока */
+
+
   display: flex;
   justify-self: end;
   gap: rem(20);
@@ -149,13 +156,41 @@
   }
 }
 
+.inputContainer {
+  position: relative; /* Относительно этого блока будем позиционировать крестик */
+  display: flex;
+  align-items: center;
+}
+
 .input {
   width: rem(350);
+
+  //  width: 100%;
+  padding-right: 40px; /* Чтобы текст не прятался под крестик */
 
   @include mobile-s {
     width: rem(270);
   }
 }
+
+.clearButton {
+  position: absolute;
+  display: flex; /* Чтобы svg центрировался */
+  background: none;
+  border: none;
+  right: 10px;
+  cursor: pointer;
+
+  @include hover {
+    box-shadow: var(--shadow);
+    border-color: var(--color-likeCount);
+    transition: box-shadow var(--transition-duration) ease;
+  }
+}
+
+// .svgButton {
+ 
+// }
 
 .count {
   @include mobile-s {

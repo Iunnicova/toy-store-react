@@ -27,7 +27,7 @@ onSearchInput,
         />
         {/* <Link to="/"> */}
           <Button
-            variant="headerButton"
+            variant="primary"
             onClick={() => alert('Поиск')}
             className={styles.button}
           >

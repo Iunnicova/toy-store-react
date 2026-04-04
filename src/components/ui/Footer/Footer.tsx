@@ -28,10 +28,10 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
     if (email.includes('@')) {
       onSubscribe(email); // Вызываем функцию отправки
       setIsSubscribe(true); // Показываем  сообщение
-      setEmail(''); // Очищаем поле ввода (правило хорошего тона)
+      setEmail(''); // Очищаем поле ввода 
 
       // Через 3 секунды убираем сообщение, чтобы форма вернулась в начало
-      setTimeout(() => setIsSubscribe(false), 3000);
+      setTimeout(() => setIsSubscribe(false), 5000);
     }
   };
 
@@ -79,9 +79,10 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
           {/* Если подписан — показываем текст, если нет — форму */}
           {isSubscribe ? (
             // <p className={styles.successMessage}>🎉</p>
-            <img className={styles.imgOk} src="{ok}" alt="ура" loading="lazy" />
+            <img className={styles.imgOk} src={ok} alt="ура" loading="lazy" />
           ) : (
             <>
+         <div className={styles.inputContainer}> 
               <InputToy
                 className={styles.input}
                 type="email" //чтобы браузер сам проверял формат
@@ -89,6 +90,33 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
                 onChange={(e) => setEmail(e.target.value)} // Обновляем стейт при каждом нажатии клавиши
                 placeholder={t('footer.successMessage')} //перевод внутренностей
               />
+
+              <button
+              // variant='like'
+              // onClick={handleSubscribe}
+              className={styles.clearButton} 
+              onClick={() => setEmail('')}
+              
+              >
+                  <svg
+                className={styles.svgButton}   
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15 5L5 15M5 5L15 15"
+            stroke="#757575"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+              </button>
+
+</div>  
               <Button
                 variant="headerButton"
                 // onClick={() => onSubscribe(email)}
@@ -98,6 +126,7 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
                 <span className={styles.count}>
                   {t('footer.subscribeButton')}
                 </span>
+
               </Button>
             </>
           )}
