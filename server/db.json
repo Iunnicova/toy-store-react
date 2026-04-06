@@ -181,33 +181,6 @@
       "descriptionKey": "toys.kitty_cat.description"
     }
   ],
-  "favorites": [
-    {
-      "id": "2ee4",
-      "toyId": "0"
-    },
-    {
-      "id": "f6f3",
-      "toyId": "9fa3"
-    },
-    {
-      "id": "dd31",
-      "toyId": "2"
-    },
-    {
-      "id": "da30",
-      "toyId": "0"
-    },
-    {
-      "id": "811b",
-      "toyId": "1"
-    }
-  ],
-  "cart": [
-    {
-      "id": "b677",
-      "toyId": "0",
-      "quantity": 3
-    }
-  ]
+  "favorites": [],
+  "cart": []
 }

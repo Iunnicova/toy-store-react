@@ -3,11 +3,7 @@ import { TInputToyProps } from './type';
 import styles from './InputToy.module.scss';
 
 export const InputToy = ({ className, ...rest }: TInputToyProps) => {
-  return <input 
-  className={`${styles.input} ${className || ''}`}
-   {...rest} 
-  
-  />;
+  return <input className={`${styles.input} ${className || ''}`} {...rest} />;
 };
 
 // Рендерим HTML-элемент <input>

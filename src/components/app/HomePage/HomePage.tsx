@@ -25,16 +25,14 @@ export const HomePage = () => {
   const { error, setError } = useCartContext();
 
   //кнопка поиска
-const filterProduct = (query: string) => {
-  console.log(`Поиск: ${query}`)
-}
+  const filterProduct = (query: string) => {
+    console.log(`Поиск: ${query}`);
+  };
 
-// удаление в инпуте подписка
-const deleteTitle = () => {
-  console.log('удалить')
-}
-
-
+  // удаление в инпуте подписка
+  const deleteTitle = () => {
+    console.log('удалить');
+  };
 
   useEffect(() => {
     const controller = new AbortController(); // Контроллер для отмены запроса(убираем утечку памяти)
@@ -93,9 +91,7 @@ const deleteTitle = () => {
 
       <ControlPanel />
       <Banner />
-      <Search 
-      onSearchInput={filterProduct}
-      />
+      <Search onSearchInput={filterProduct} />
 
       <div className={styles.cardsHome}>
         {toys.map((toy) => (
