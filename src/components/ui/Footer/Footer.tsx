@@ -17,27 +17,45 @@ const socialIconMap = {
   Facebook: FacebookIcon,
 };
 
+type Status = 'ready' | 'processing' | 'success' | 'error';
+
 export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
   const { t } = useTranslation(); //хук перевода
   const [email, setEmail] = useState(''); // Создаем "хранилище" для текста подписки
 
   //! сообщение 'спасибо за подписку'
-  const [status, setStatus] = useState<'idle' | 'frog' | 'success'>('idle');
+  // const [status, setStatus] = useState<'idle' | 'frog' | 'success'>('idle');
+  const [status, setStatus] = useState<Status>('ready');
 
-  const handleSubscribe = () => {
-    if (email.includes('@')) {
-      onSubscribe(email);
-      setEmail('');
-      setStatus('frog');
+  const handleSubscribe = async () => {
+    // if (email.includes('@')) {
+    //   onSubscribe(email);
+    //   setEmail('');
+    //   setStatus('processing');
+    if (!email.trim() || !email.includes('@')) {
+      setStatus('error');
+      return;
+    }
+    setStatus('processing');
 
+    try {
+      await onSubscribe(email); // предполагаем, что onSubscribe асинхронный
+
+      setEmail(''); //очищаем поле только после успеха
+      setStatus('processing');
+
+      //Автоматически возвращаемся в "спасибо за подписку" через 3 секунды
       setTimeout(() => {
         setStatus('success');
       }, 3000);
+    } catch (error) {
+      console.error('Ошибка подписки', error);
+      setStatus('error');
     }
   };
 
   const handleReset = () => {
-    setStatus('idle'); //крестик
+    setStatus('ready'); //крестик
   };
 
   return (
@@ -83,7 +101,7 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
 
         <div className={styles.subscribe}>
           {/* Если подписан — показываем текст, если нет — форму */}
-          {status === 'frog' && (
+          {status === 'processing' && (
             <img className={styles.imgOk} src={ok} alt="ура" loading="lazy" />
           )}
 
@@ -113,7 +131,7 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
             </div>
           )}
 
-          {status === 'idle' && (
+          {status === 'ready' && (
             <>
               <div className={styles.inputContainer}>
                 <InputToy
