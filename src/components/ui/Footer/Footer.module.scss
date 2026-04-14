@@ -178,7 +178,9 @@
   background: none;
   border: none;
   right: 10px;
+  // left: 180px;
   cursor: pointer;
+  background-color: rgb(187, 80, 17);
 
   @include hover {
     box-shadow: var(--shadow);
