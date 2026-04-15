@@ -58,7 +58,6 @@ export const BasketPage = () => {
   const isEmpty = toysInCart.length === 0;
 
   return (
-    //********** */
     <section className={styles.basket}>
       {isEmpty ? (
         <div className={styles.emptyBasket}>

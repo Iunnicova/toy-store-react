@@ -11,6 +11,7 @@ import { ReactComponent as Vk } from '@icon/vk.svg';
 import { ReactComponent as FacebookIcon } from '@icon/facebook.svg';
 import styles from './Footer.module.scss';
 import { useSubscriptionStatus } from '@/hooks/useCartBasket/useSubscriptionStatus';
+import { addSubscriberApi } from '@/api/subscribersApi';
 
 const socialIconMap = {
   Instagram: InstagramIcon,
@@ -18,25 +19,23 @@ const socialIconMap = {
   Facebook: FacebookIcon,
 };
 
-// type Status = 'ready' | 'processing' | 'success' | 'error';
-
-export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
+export const Footer = ({ socialLinks, onSubscribe }: TFooterProps) => {
   const { t } = useTranslation(); //хук перевода
   const [email, setEmail] = useState(''); // Создаем "хранилище" для текста подписки
 
   //! сообщение 'спасибо за подписку'
   const { status, setStatus, closeSuccessMessage } = useSubscriptionStatus();
 
-  //******** */
-  const handleSubscribe = async () => {
+  const handleSubscribe = async (email: string) => {
     if (!email.trim() || !email.includes('@')) {
       setStatus('error');
       return;
     }
-    
     try {
-      await onSubscribe(email); // отправка на сервер
+      // await onSubscribe(email); // отправка на сервер
+      await addSubscriberApi(email); // отправка на сервер
 
+      localStorage.setItem('subscribedEmail', email); // сохраняем
       setEmail(''); //очищаем поле только после успеха
       setStatus('processing'); // показываем "Спасибо за подписку"
 
@@ -49,6 +48,8 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
       setStatus('error');
     }
   };
+
+  //**** */
 
   return (
     <footer className={styles.footer}>
@@ -164,8 +165,7 @@ export const Footer = ({ info, socialLinks, onSubscribe }: TFooterProps) => {
 
               <Button
                 variant="headerButton"
-                // onClick={() => onSubscribe(email)}
-                onClick={handleSubscribe}
+                onClick={() => handleSubscribe(email)}
                 disabled={!email.includes('@')} //кнопка не нажмется без собачки
               >
                 <span className={styles.count}>
