@@ -25,7 +25,7 @@ export const HomePage = () => {
   const { error, setError } = useCartContext();
 
   //кнопка поиска
-  const filterProduct = (query: string) => {
+  const filterProduct = (query: string | number) => {
     console.log(`Поиск: ${query}`);
   };
 
