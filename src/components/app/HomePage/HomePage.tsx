@@ -24,15 +24,20 @@ export const HomePage = () => {
 
   const { error, setError } = useCartContext();
 
-  //кнопка поиска
+  //!кнопка поиска
   const filterProduct = (query: string | number) => {
     console.log(`Поиск: ${query}`);
   };
 
-  // удаление в инпуте подписка
-  const deleteTitle = () => {
-    console.log('удалить');
+  //!отправка электронной почты при нажатии на enter
+  const addEmailEnter = () => {
+    console.log('Добавление электронной почты по enter');
   };
+
+  // удаление в инпуте подписка
+  // const deleteTitle = () => {
+  //   console.log('удалить');
+  // };
 
   useEffect(() => {
     const controller = new AbortController(); // Контроллер для отмены запроса(убираем утечку памяти)

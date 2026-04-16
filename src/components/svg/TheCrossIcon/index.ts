@@ -1,0 +1,1 @@
+export { TheCrossIcon } from './TheCrossIcon';
