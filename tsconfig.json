@@ -14,6 +14,7 @@
     "resolveJsonModule": true /* Импорт JSON как модулей */,
     "allowJs": true /* «Разрешить компиляцию JavaScript-файлов. Полезно при миграции с JS на TS». */,
     "baseUrl": "src" /*Теперь TypeScript считает src корнем проекта*/,
+    "ignoreDeprecations": "6.0" /*"игнор ошибок"  устарели "moduleResolution": "node"  и "baseUrl": "src"*/,
 
     "paths": {
       "@/*": ["*"],
