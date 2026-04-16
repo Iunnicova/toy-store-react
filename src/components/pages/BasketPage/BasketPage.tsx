@@ -7,11 +7,18 @@ import { Button, CardsBasket, ModalDescriptionToy } from '@/components/ui';
 import { BasketIcon } from '@/components/svg/BasketIcon';
 import basket1 from '@images/basket1.webp';
 import styles from './BasketPage.module.scss';
+import { useCartContext } from '@/context/CartContex';
 
 export const BasketPage = () => {
-  //берем с useCartBasket
-  const { toysInCart, loading, error, setError, addToCart, removeFromCart } =
-    useCartBasket();
+  const {
+    toysInCart,
+    loading,
+    error,
+    setError,
+    addToCart,
+    removeFromCart,
+    deleteCartItem,
+  } = useCartContext();
 
   // ─── Добавляем состояние модального окна ───
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -94,15 +101,12 @@ export const BasketPage = () => {
         // ЕСТЬ ТОВАРЫ — показываем карточки
         <div className={styles.containerFilled}>
           <div className={styles.filledBasket}>
-            {/* <h1 className={styles.title}>
-            {t('basket.title')} ({totalCount})
-          </h1> */}
-
             <CardsBasket
               toysInCart={toysInCart}
               onAdd={addToCart}
               onRemove={removeFromCart}
               onToyClick={handleOpenModal}
+              onDeleteCards={(toy) => deleteCartItem(toy.id)}
             />
 
             {/*  блок с итоговой суммой */}

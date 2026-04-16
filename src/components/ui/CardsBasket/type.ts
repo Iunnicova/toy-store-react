@@ -6,4 +6,5 @@ export type CardsBasketProps = {
   onAdd: (toyId: number) => void;
   onRemove: (toyId: number) => void;
   onToyClick: (toy: TToy) => void;
+  onDeleteCards: (toy: TToy) => void;
 };

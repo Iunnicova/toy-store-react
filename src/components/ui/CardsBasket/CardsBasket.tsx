@@ -1,17 +1,17 @@
-import { useCartContext } from '@/context/CartContex';
 import { useTranslation } from 'react-i18next';
 import { Button, Counter } from '../index';
-import { CardsBasketProps } from './type';
-import { BasketIcon } from '@/components/svg/BasketIcon';
 import { HeartIcon } from '@/components/svg/HeartIcon';
 import { DeleteIcon } from '@/components/svg/DeleteIcon';
 import styles from './CardsBasket.module.scss';
+import type { CardsBasketProps } from './type';
+import { useCartContext } from '@/context/CartContex';
 
 export function CardsBasket({
   toysInCart,
   onAdd,
   onRemove,
   onToyClick,
+  onDeleteCards,
 }: CardsBasketProps) {
   const { t } = useTranslation(); //хук перевода
 
@@ -68,11 +68,7 @@ export function CardsBasket({
             </div>
 
             <div className={styles.priceContainer}>
-              {/* <span>{t('toys.common.priceLabel')}:</span> */}
-              <strong>
-                {(toy.price * quantity).toLocaleString('ru-RU')}
-                {/* {toy.price * toy.quantity} */}
-              </strong>
+              <strong>{(toy.price * quantity).toLocaleString('ru-RU')}</strong>
               {/* Подсказка: цена за 1 штуку (всегда одинаковая) */}
               {quantity > 1 && (
                 <span className={styles.singlePrice}>
@@ -97,7 +93,10 @@ export function CardsBasket({
                 <HeartIcon className={styles.heartIconCards} />
               </Button>
               <Button
-                onClick={remove}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onDeleteCards(toy);
+                }}
                 variant="like"
                 className={styles.button}
                 disabled={quantity === 0}

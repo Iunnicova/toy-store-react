@@ -139,7 +139,7 @@ export const useCartBasket = () => {
     [cartItems, loadCart]
   );
 
-  // ! 4. Удаление из корзины
+  // ! 4. Удаление из корзины по одной карточке
   const removeFromCart = useCallback(
     async (toyId: number) => {
       try {
@@ -169,6 +169,22 @@ export const useCartBasket = () => {
     [cartItems, loadCart]
   );
 
+  //!удаляем всю карточку целиком
+  const deleteCartItem = async (toyId: number) => {
+    try {
+      const existingItem = cartItems.find((item) => item.toyId === toyId);
+      if (!existingItem) return;
+
+      await fetch(`http://localhost:3001/cart/${existingItem.id}`, {
+        method: 'DELETE',
+      });
+
+      await loadCart();
+    } catch {
+      setError('Ошибка удаления');
+    }
+  };
+
   return {
     cartItems,
     loading,
@@ -177,5 +193,6 @@ export const useCartBasket = () => {
     toysInCart,
     error,
     setError,
+    deleteCartItem,
   };
 };
