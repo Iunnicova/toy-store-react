@@ -17,3 +17,4 @@ export * from './ModalFooter';
 export * from './ModalOverlay';
 export * from './ModalPortal';
 export * from './Search';
+export * from './EmailSubscription';

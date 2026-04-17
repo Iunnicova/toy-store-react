@@ -6,9 +6,7 @@ import { StrictMode } from 'react'; // StrictMode — специальный р�
 
 import App from './components/app/App'; // Главный компонент приложения
 
-// import './styles/main.scss'; // Глобальные стили (Sass/SCSS)
 import './styles/main.scss';
-
 import './i18n'; //библиотека языков
 import { LanguageProvider } from './context/LanguageContext';
 

@@ -1,6 +1,5 @@
 import { SearchIcon } from '@/components/svg/SearchIcon';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { Button } from '../Button';
 import { InputToy } from '../InputToy';
 import styles from './Search.module.scss';
@@ -22,7 +21,6 @@ export const Search = (props: TSearchProps) => {
           placeholder={t('search.placeholder')}
           onInput={(event) => onSearchInput(event.currentTarget.value)}
         />
-        {/* <Link to="/"> */}
         <Button
           variant="primary"
           onClick={() => alert('Поиск')}
@@ -31,7 +29,6 @@ export const Search = (props: TSearchProps) => {
           <SearchIcon className={styles.icon} />
           <span className={styles.count}>{t('search.button')}</span>
         </Button>
-        {/* </Link> */}
       </div>
     </section>
   );

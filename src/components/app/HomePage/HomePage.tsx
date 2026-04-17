@@ -1,3 +1,6 @@
+import { useState, useEffect } from 'react';
+import { useCartContext } from '@/context/CartContex';
+import { t } from 'i18next';
 import {
   ControlPanel,
   Banner,
@@ -5,14 +8,10 @@ import {
   Cards,
   ModalDescriptionToy,
   Button,
-  InputToy,
 } from '@/components/ui';
 import { TToy } from '@/types/toysData';
-import { useState, useEffect } from 'react';
 
 import styles from './HomePage.module.scss';
-import { useCartContext } from '@/context/CartContex';
-import { t } from 'i18next';
 
 export const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,11 +32,6 @@ export const HomePage = () => {
   const addEmailEnter = () => {
     console.log('Добавление электронной почты по enter');
   };
-
-  // удаление в инпуте подписка
-  // const deleteTitle = () => {
-  //   console.log('удалить');
-  // };
 
   useEffect(() => {
     const controller = new AbortController(); // Контроллер для отмены запроса(убираем утечку памяти)
@@ -77,7 +71,7 @@ export const HomePage = () => {
   return (
     <>
       <div className={styles.error}>
-        {/* ВЫВОДИМ ОШИБКУ КОРЗИНЫ ТУТ */}
+        {/* ВЫВОДИМ ОШИБКУ КОРЗИНЫ */}
         {error && (
           <div className={styles.errorHome}>
             <strong className={styles.errorText}>⚠️ {error}</strong>
@@ -86,7 +80,6 @@ export const HomePage = () => {
               className={styles.errorButton}
               variant="error"
               onClick={() => setError(null)} // Очищаем ошибку по клику
-              // onDeleteTitle = {deleteTitle}
             >
               {t('error.retry') ?? 'Попробовать снова'}
             </Button>

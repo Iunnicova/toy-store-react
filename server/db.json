@@ -194,26 +194,5 @@
       "quantity": 1
     }
   ],
-  "subscribers": [
-    {
-      "id": "e805",
-      "email": "qqq@"
-    },
-    {
-      "id": "aefa",
-      "email": "@"
-    },
-    {
-      "id": "5a08",
-      "email": "@123"
-    },
-    {
-      "id": "930d",
-      "email": "@89"
-    },
-    {
-      "id": "fc9d",
-      "email": "@j"
-    }
-  ]
+  "subscribers": []
 }

@@ -1,1 +1,63 @@
 @use '../../../styles/helpers/' as *;
+
+.subscribe {
+  position: relative; /* Контейнер для всего блока */
+
+  display: flex;
+  justify-self: end;
+  gap: rem(20);
+  // grid-area: subscribe;
+  @include laptop {
+    justify-self: center;
+  }
+
+  @include mobile {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.imgOk {
+  max-height: rem(170);
+}
+
+.inputContainer {
+  position: relative; /* Относительно этого блока будем позиционировать крестик */
+  display: flex;
+  align-items: center;
+}
+
+.clearButton {
+  position: absolute;
+  display: flex; /* Чтобы svg центрировался */
+  background: none;
+  border: none;
+  right: 10px;
+  // left: 180px;
+  cursor: pointer;
+  background-color: rgb(187, 80, 17);
+
+  @include hover {
+    box-shadow: var(--shadow);
+    border-color: var(--color-likeCount);
+    transition: box-shadow var(--transition-duration) ease;
+  }
+}
+
+.input {
+  width: rem(350);
+
+  //  width: 100%;
+  padding-right: 40px; /* Чтобы текст не прятался под крестик */
+
+  @include mobile-s {
+    width: rem(270);
+  }
+}
+
+.count {
+  @include mobile-s {
+    font-size: rem(10);
+  }
+}

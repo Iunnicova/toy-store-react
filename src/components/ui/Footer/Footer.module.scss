@@ -71,8 +71,6 @@
   }
 }
 
-//*******
-
 .socialAndSubscribe {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -87,18 +85,10 @@
       'subscribe'
       'social';
 
-    .subscribe {
-      grid-area: subscribe;
-    }
-
     .socialLinks {
       grid-area: social;
     }
   }
-}
-
-.imgOk {
-  max-height: rem(170);
 }
 
 .copyrightNotice {
@@ -134,67 +124,5 @@
 
   @include hover {
     color: var(--color-likeCount);
-  }
-}
-
-.subscribe {
-  position: relative; /* Контейнер для всего блока */
-
-  display: flex;
-  justify-self: end;
-  gap: rem(20);
-
-  @include laptop {
-    justify-self: center;
-  }
-
-  @include mobile {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-.inputContainer {
-  position: relative; /* Относительно этого блока будем позиционировать крестик */
-  display: flex;
-  align-items: center;
-}
-
-.input {
-  width: rem(350);
-
-  //  width: 100%;
-  padding-right: 40px; /* Чтобы текст не прятался под крестик */
-
-  @include mobile-s {
-    width: rem(270);
-  }
-}
-
-.clearButton {
-  position: absolute;
-  display: flex; /* Чтобы svg центрировался */
-  background: none;
-  border: none;
-  right: 10px;
-  // left: 180px;
-  cursor: pointer;
-  background-color: rgb(187, 80, 17);
-
-  @include hover {
-    box-shadow: var(--shadow);
-    border-color: var(--color-likeCount);
-    transition: box-shadow var(--transition-duration) ease;
-  }
-}
-
-// .svgButton {
-
-// }
-
-.count {
-  @include mobile-s {
-    font-size: rem(10);
   }
 }
