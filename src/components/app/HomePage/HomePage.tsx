@@ -56,8 +56,6 @@ export const HomePage = () => {
     };
   }, []);
 
-  //******* */
-
   const handleOpenModal = (toy: TToy) => {
     setSelectedToy(toy);
     setIsModalOpen(true);

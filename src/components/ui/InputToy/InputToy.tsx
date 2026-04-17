@@ -2,14 +2,8 @@ import React from 'react';
 import { TInputToyProps } from './type';
 import styles from './InputToy.module.scss';
 
-export const InputToy = ({ className, onInput, ...rest }: TInputToyProps) => {
-  return (
-    <input
-      className={`${styles.input} ${className || ''}`}
-      {...rest}
-      onInput={onInput}
-    />
-  );
+export const InputToy = ({ className, ...rest }: TInputToyProps) => {
+  return <input className={`${styles.input} ${className || ''}`} {...rest} />;
 };
 
 // Рендерим HTML-элемент <input>

@@ -1,6 +1,5 @@
 export type TInputToyProps = React.InputHTMLAttributes<HTMLInputElement> & {
   className?: string;
-  onInput?: (e: React.FormEvent<HTMLInputElement>) => void;
 };
 
 //! Определяем тип пропсов для компонента Input

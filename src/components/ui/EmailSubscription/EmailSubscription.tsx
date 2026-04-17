@@ -1,13 +1,13 @@
 import { useSubscriptionStatus } from '@/hooks/useCartBasket/useSubscriptionStatus';
-import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
-import type { t } from 'i18next';
-import type { TEmailSubscriptionProps } from './type';
-import { InputToy } from '../InputToy';
-import { TheCrossIcon } from '@/components/svg/TheCrossIcon';
-import { Button } from '../Button';
+
 import ok from '@images/ok.webp';
 import styles from './EmailSubscription.module.scss';
+import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
+import { TheCrossIcon } from '@/components/svg/TheCrossIcon';
+import { InputToy } from '../InputToy';
+import { Button } from '../Button';
+import type { TEmailSubscriptionProps } from './type';
 
 export function EmailSubscription({ onSubscribe }: TEmailSubscriptionProps) {
   const { t } = useTranslation(); //хук перевода
@@ -16,31 +16,33 @@ export function EmailSubscription({ onSubscribe }: TEmailSubscriptionProps) {
   //! сообщение 'спасибо за подписку'
   const { status, setStatus, closeSuccessMessage } = useSubscriptionStatus();
 
-  const handleSubscribe = async (email: string) => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
     if (!email.trim() || !email.includes('@')) {
       setStatus('error');
       return;
     }
+
     try {
-      // await onSubscribe(email); // отправка на сервер
-      await onSubscribe(email); // отправка на сервер
+      setStatus('processing');
 
-      localStorage.setItem('subscribedEmail', email); // сохраняем
-      setEmail(''); //очищаем поле только после успеха
-      setStatus('processing'); // показываем "Спасибо за подписку"
+      await onSubscribe(email);
 
-      //Автоматически возвращаемся в "спасибо за подписку" через 3 секунды
+      localStorage.setItem('subscribedEmail', email);
+
+      setEmail('');
+
       setTimeout(() => {
         setStatus('success');
       }, 3000);
-    } catch (error) {
-      console.error('Ошибка подписки', error);
+    } catch (e) {
       setStatus('error');
     }
   };
 
   return (
-    <div className={styles.subscribe}>
+    <form className={styles.subscribe} onSubmit={onSubmit}>
       {/* Если подписан — показываем текст, если нет — форму */}
       {status === 'processing' && (
         <img className={styles.imgOk} src={ok} alt="ура" loading="lazy" />
@@ -51,7 +53,11 @@ export function EmailSubscription({ onSubscribe }: TEmailSubscriptionProps) {
         <div className={styles.inputContainer}>
           <span>{t('footer.successMessage')}</span>
 
-          <button className={styles.clearButton} onClick={closeSuccessMessage}>
+          <button
+            className={styles.clearButton}
+            onClick={closeSuccessMessage}
+            type="button"
+          >
             <TheCrossIcon />
           </button>
         </div>
@@ -71,6 +77,7 @@ export function EmailSubscription({ onSubscribe }: TEmailSubscriptionProps) {
             {email && (
               <button
                 className={styles.clearButton}
+                type="button"
                 onClick={() => setEmail('')}
               >
                 <TheCrossIcon />
@@ -80,13 +87,14 @@ export function EmailSubscription({ onSubscribe }: TEmailSubscriptionProps) {
 
           <Button
             variant="headerButton"
-            onClick={() => handleSubscribe(email)}
+            type="submit"
+            // onClick={() => handleSubscribe(email)}
             disabled={!email.includes('@')} //кнопка не нажмется без собачки
           >
             <span className={styles.count}>{t('footer.subscribeButton')}</span>
           </Button>
         </>
       )}
-    </div>
+    </form>
   );
 }
