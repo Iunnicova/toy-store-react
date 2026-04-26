@@ -194,5 +194,34 @@
       "quantity": 1
     }
   ],
-  "subscribers": []
+  "subscribers": [
+    {
+      "id": "505d",
+      "email": "w@e"
+    },
+    {
+      "id": "c451",
+      "email": "r@r"
+    },
+    {
+      "id": "e2cf",
+      "email": "W2e@r"
+    },
+    {
+      "id": "4941",
+      "email": "d@f"
+    },
+    {
+      "id": "15ad",
+      "email": "d@df"
+    },
+    {
+      "id": "e7be",
+      "email": "w@d"
+    },
+    {
+      "id": "72a8",
+      "email": "s@r"
+    }
+  ]
 }

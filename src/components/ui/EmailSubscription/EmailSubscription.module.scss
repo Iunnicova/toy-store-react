@@ -1,12 +1,10 @@
 @use '../../../styles/helpers/' as *;
 
 .subscribe {
-  position: relative; /* Контейнер для всего блока */
-
   display: flex;
   justify-self: end;
   gap: rem(20);
-  // grid-area: subscribe;
+
   @include laptop {
     justify-self: center;
   }
@@ -23,32 +21,29 @@
 }
 
 .inputContainer {
-  position: relative; /* Относительно этого блока будем позиционировать крестик */
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: var(--border);
+  border-radius: rem(12);
+  color: var(--color-likeCount);
 }
 
 .clearButton {
-  position: absolute;
-  display: flex; /* Чтобы svg центрировался */
+  display: flex;
   background: none;
   border: none;
-  right: 10px;
-  // left: 180px;
   cursor: pointer;
-  background-color: rgb(187, 80, 17);
+  color: var(--color-dusty-purple);
 
   @include hover {
-    box-shadow: var(--shadow);
-    border-color: var(--color-likeCount);
-    transition: box-shadow var(--transition-duration) ease;
+    color: var(--color-likeCount);
   }
 }
 
 .input {
   width: rem(350);
-
-  //  width: 100%;
   padding-right: 40px; /* Чтобы текст не прятался под крестик */
 
   @include mobile-s {

@@ -42,9 +42,10 @@ export const Footer = ({ socialLinks, onSubscribe }: TFooterProps) => {
           </li>
         ))}
       </ul>
-      <section className={styles.socialAndSubscribe}>
+      <div className={styles.containerEmail}>
         <EmailSubscription onSubscribe={addSubscriberApi} />
-
+      </div>
+      <section className={styles.socialAndSubscribe}>
         <p className={styles.copyrightNotice}>
           © {CURRENT_YEAR} UnnToyStore. {t('footer.rights')}
         </p>

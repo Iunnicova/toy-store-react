@@ -71,6 +71,12 @@
   }
 }
 
+.containerEmail {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
 .socialAndSubscribe {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

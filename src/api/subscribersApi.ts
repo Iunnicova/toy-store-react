@@ -1,5 +1,5 @@
 export type TSubscriber = {
-  id: number;
+  id?: number;
   email: string;
 };
 
