@@ -1,5 +1,3 @@
-import { useSubscriptionStatus } from '@/hooks/useCartBasket/useSubscriptionStatus';
-
 import ok from '@images/ok.webp';
 import styles from './EmailSubscription.module.scss';
 import { useTranslation } from 'react-i18next';
@@ -8,39 +6,25 @@ import { TheCrossIcon } from '@/components/svg/TheCrossIcon';
 import { InputToy } from '../InputToy';
 import { Button } from '../Button';
 import type { TEmailSubscriptionProps } from './type';
+import { useSubscriptionStatus } from '@/hooks/useSubscriptionStatus';
 
 export function EmailSubscription({ onSubscribe }: TEmailSubscriptionProps) {
   const { t } = useTranslation(); //хук перевода
   const [email, setEmail] = useState(''); // Создаем "хранилище" для текста подписки
 
   //! сообщение 'спасибо за подписку'
-  const { status, setStatus, closeSuccessMessage } = useSubscriptionStatus();
+  // const { status, setStatus, closeSuccessMessage } = useSubscriptionStatus();
+  const { status, error, handleSubscription, closeSuccessMessage } =
+    useSubscriptionStatus();
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (!email.trim() || !email.includes('@')) {
-      setStatus('error');
-      return;
-    }
+    // Вызываем подписку из хука
+    await handleSubscription(email, onSubscribe);
 
-    try {
-      setStatus('processing');
-
-      await onSubscribe(email);
-
-      localStorage.setItem('subscribedEmail', email);
-
-      setEmail('');
-
-      setTimeout(() => {
-        setStatus('success');
-      }, 3000);
-    } catch (e) {
-      setStatus('error');
-    }
+    setEmail(''); // Очищаем поле только при успехе
   };
-
   return (
     <form className={styles.subscribe} onSubmit={onSubmit}>
       {/* Если подписан — показываем текст, если нет — форму */}
@@ -94,6 +78,18 @@ export function EmailSubscription({ onSubscribe }: TEmailSubscriptionProps) {
             <span className={styles.count}>{t('footer.subscribeButton')}</span>
           </Button>
         </>
+      )}
+      {status === 'error' && (
+        <div className={styles.inputContainer}>
+          <span>{t('footer.youAreSubscribed')}</span>
+          <button
+            className={styles.clearButton}
+            onClick={closeSuccessMessage}
+            type="button"
+          >
+            <TheCrossIcon />
+          </button>
+        </div>
       )}
     </form>
   );

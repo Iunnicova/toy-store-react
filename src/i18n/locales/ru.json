@@ -173,7 +173,8 @@
     },
     "emailPlaceholder": "Электронная почта",
     "successMessage": "Спасибо за подписку!",
-    "subscribeButton": "Подписаться"
+    "subscribeButton": "Подписаться",
+    "youAreSubscribed": "Вы уже подписаны"
   },
 
   "favorites": {
