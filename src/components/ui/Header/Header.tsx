@@ -79,7 +79,7 @@ export const Header = ({ userName }: THeaderProps) => {
 
           <div className={styles.brand}>
             <h1 className={styles.title}>{t('header.shop_name')}</h1>
-            <p className={styles.slogan}>{t('header.slogan')}</p>
+            <h2 className={styles.slogan}>{t('header.slogan')}</h2>
           </div>
         </Link>
       </div>
