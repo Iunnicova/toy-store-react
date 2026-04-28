@@ -41,7 +41,7 @@
     },
 
     "tiger_dream_keeper": {
-      "title": "Tigrusha Zgodni je čuvar snova",
+      "title": "Tigrusha plišana igračka Tigar",
       "description": "Tigrusha Zgodni je moderan i ljubazan plišani tigar u elegantnim kombinezonima sa mašnom. On nije samo igračka, on je čuvar dečijih snova i tajni. Njegovo meko telo, ljubazne oči i prijatna tekstura čine ga savršenim pratiocem za spavanje, igranje i maženje.",
       "material": "eko-krzno",
       "filler": "sintepuh",
@@ -50,7 +50,7 @@
     },
 
     "bunny_hopping": {
-      "title": "Zeka Poprigajka je pripovjedačica",
+      "title": "Zeka punjena igračka zeka",
       "description": "Zeka Poprigajka je meka igračka sa kosicama i knjigom u nogama. Ona obožava da priča bajke i dele ljubazne priče pre spavanja. Njene ljubazne oči, udobna odeća i nežna tekstura čine je savršenim pratiocem za malu decu.",
       "material": "eko-krzno",
       "filler": "sintepuh",
@@ -59,7 +59,7 @@
     },
 
     "cutie_luna_antistress": {
-      "title": "Slatki Luna daje med",
+      "title": "Igračka antistres pčela Luna",
       "description": "Preslatka pčela Luna sa teglom čarobnog meda je plišana antistres igračka koju želite da zagrlite. Upečatljiv dizajn, krila, lukovi i ljubazne oči čine je omiljenom decom.",
       "material": "biflex",
       "filler": "Male kuglice",
@@ -68,7 +68,7 @@
     },
 
     "bella_the_squirrel": {
-      "title": "Belčonok Bella voli orasi",
+      "title": "Bela meka igračka za veverice",
       "description": "Bella je preslatka veverica sa pletenicama i slatkom odećom. U njenim nogama je omiljeni orah, a na licu je dobar osmeh. Mekana, udobna i elegantna, Bella će biti najbolja prijateljica za igru, spavanje i dekoraciju dečije sobe.",
       "material": "flis",
       "filler": "sintepuh",
@@ -77,7 +77,7 @@
     },
 
     "fairy_butterfly": {
-      "title": "Leptir vila će dati slatke snove",
+      "title": "Mekana igračka leptir Leptir",
       "description": "Leptir vila je nežna i magična prijateljica za spavanje. Njena mekana krila, blistav osmeh i fenomenalna slika pomažu mališanima da se opuste i zarone u svet dobrih snova. Kao da je doletela iz bajke da se zagrli i smiri.",
       "material": "hipoalergenski pliš",
       "filler": "holofajber",
@@ -86,7 +86,7 @@
     },
 
     "peter_the_hedgehog": {
-      "title": "Jež Petja je ljubitelj gljiva",
+      "title": "Plišana igračka jež Petja",
       "description": "Petia je simpatični plišani jež sa dobrim osmehom. On obožava šumske šetnje i sakuplja svoje omiljene gljive. Mekan , udoban i siguran, Petia će postati odan prijatelj detetu kod kuće i na putu.",
       "material": "velsoft",
       "filler": "mikrogranule",
@@ -95,7 +95,7 @@
     },
 
     "little_fox_sister": {
-      "title": "Lisica sestra  voli avanturu",
+      "title": "Plišana igračka Lisičarka sestra",
       "description": "Lisica sestra je nestašna i dobra putnica. U svojoj elegantnoj haljini i sa korpom u nogama, spremna je za nova otkrića i šumske šetnje. Mekana, živahna i prijatna, inspiriše mališane da se igraju i zamišljaju.",
       "material": "velsoft",
       "filler": "mikrogranule",
@@ -104,7 +104,7 @@
     },
 
     "birthday_mouse": {
-      "title": "Mišula ide za tvoj rođendan",
+      "title": "Meka igračka miš Mišula",
       "description": "Mišula je preslatki plišani miš sa nežnim osmehom i ljubaznim srcem. Njene okrugle uši, nestašni luk i mekana haljina čine je savršenim pratiocem za igre, bajke i ugodne zagrljaje. Mišula voli cveće, prijateljstvo i sa sobom uvek donosi toplinu i radost.",
       "material": "eko-krzno",
       "filler": "sintepuh",
@@ -113,7 +113,7 @@
     },
 
     "gena_is_a_football_player": {
-      "title": "Gena je fudbaler koji daje raspoloženje",
+      "title": "Meka igračka dečak Gena",
       "description": "Gena je aktivan, ljubazan i uvek spreman za igru. Gena inspiriše kretanje, prijateljstvo i zabavne avanture. Mekan, sportski i šarmantan, savršen je za igru, maženje i ukrašavanje dečije sobe.",
       "material": "hipoalergenski pliš",
       "filler": "holofajber",
@@ -122,7 +122,7 @@
     },
 
     "the_croaking_frog": {
-      "title": "Žaba Kvakuška voli odeću",
+      "title": "Žaba Kvakuška meka igračka",
       "description": "Kvakuška je fashionista među plišanim prijateljima. Njena odeća sa leptirima i stilski luk čine je pravom zvezdom dečije kolekcije. Meka, svetla i šarmantna, inspiriše mališane da se igraju i stvaraju.",
       "material": "Šenil / softvelur",
       "filler": "holofajber",
@@ -131,7 +131,7 @@
     },
 
     "sharik_champ": {
-      "title": "Šarik je šampion zabavnih igara sa loptom",
+      "title": "Meka igračka pas Šarik",
       "description": "Šarik je energičan i ljubazan plišani pas koji obožava da igra loptu. Njegov sportski duh, živahna odeća i prijateljsko lice nadahnjuju mališane za kretanje i zabavne igre.",
       "material": "hipoalergenski pliš",
       "filler": "holofajber",
@@ -140,8 +140,8 @@
     },
 
     "kitty_cat": {
-      "title": "Kisula Kitti je lepotica u haljini",
-      "description": "Kisula Kitti je prava fashionista! Njena elegantna haljina, izražajne oči i nežan osmeh čine je omiljenom devojčicom. Mekana, elegantna i prijatna ona je savršena za igru, maženje i ukrašavanje dečije sobe.",
+      "title": "Kisula Kotti meka igračka mačka",
+      "description": "Kisula Kotti je prava fashionista! Njena elegantna haljina, izražajne oči i nežan osmeh čine je omiljenom devojčicom. Mekana, elegantna i prijatna ona je savršena za igru, maženje i ukrašavanje dečije sobe.",
       "material": "hipoalergenski pliš",
       "filler": "holofajber",
       "age": "od 1 godine",
