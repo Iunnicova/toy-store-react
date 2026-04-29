@@ -79,7 +79,7 @@ export function EmailSubscription({ onSubscribe }: TEmailSubscriptionProps) {
           </Button>
         </>
       )}
-      {status === 'error' && (
+      {status === 'signed' && (
         <div className={styles.inputContainer}>
           <span>{t('footer.youAreSubscribed')}</span>
           <button

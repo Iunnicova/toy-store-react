@@ -1,7 +1,7 @@
 import { addSubscriberApi } from '@/api/subscribersApi';
 import { useEffect, useState } from 'react';
 
-type Status = 'ready' | 'processing' | 'success' | 'error';
+type Status = 'ready' | 'processing' | 'success' | 'signed';
 
 export const useSubscriptionStatus = () => {
   const [status, setStatus] = useState<Status>('ready');
@@ -44,7 +44,7 @@ export const useSubscriptionStatus = () => {
       return true;
     } catch (e: any) {
       setError(e.message || 'Ошибка подписки');
-      setStatus('error');
+      setStatus('signed');
       return false;
     }
   };
