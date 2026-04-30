@@ -12,8 +12,10 @@ import {
 import { TToy } from '@/types/toysData';
 
 import styles from './HomePage.module.scss';
+import { useTranslation } from 'react-i18next';
 
 export const HomePage = () => {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedToy, setSelectedToy] = useState<TToy | null>(null);
 
@@ -24,14 +26,12 @@ export const HomePage = () => {
   const { error, setError } = useCartContext();
 
   //!кнопка поиска
-  const filterProduct = (query: string | number) => {
-    console.log(`Поиск: ${query}`);
-  };
+  const [searchQuery, setSearchQuery] = useState('');
 
   //!отправка электронной почты при нажатии на enter
-  const addEmailEnter = () => {
-    console.log('Добавление электронной почты по enter');
-  };
+  // const addEmailEnter = () => {
+  //   console.log('Добавление электронной почты по enter');
+  // };
 
   useEffect(() => {
     const controller = new AbortController(); // Контроллер для отмены запроса(убираем утечку памяти)
@@ -66,6 +66,17 @@ export const HomePage = () => {
     setSelectedToy(null);
   };
 
+  //!фильтруем поиск
+  const filteredToys = toys.filter((toy) => {
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return true;
+    const title = t(toy.titleKey).toLowerCase();
+    // const material = t(toy.characteristic.materialKey).toLowerCase();
+
+    // return title.includes(query) || material.includes(query);
+    return title.includes(query);
+  });
+
   return (
     <>
       <div className={styles.error}>
@@ -87,10 +98,14 @@ export const HomePage = () => {
 
       <ControlPanel />
       <Banner />
-      <Search onSearchInput={filterProduct} />
+      <Search
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        // onSearchInput={filterProduct}
+      />
 
       <div className={styles.cardsHome}>
-        {toys.map((toy) => (
+        {filteredToys.map((toy) => (
           <Cards
             key={toy.id}
             toy={toy} // ← передаём игрушку

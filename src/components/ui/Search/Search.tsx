@@ -5,11 +5,17 @@ import { InputToy } from '../InputToy';
 import styles from './Search.module.scss';
 
 type TSearchProps = {
-  onSearchInput: (value: string) => void; // Говорим, что это функция, принимающая строку
+  searchQuery: string;
+  setSearchQuery: (value: string) => void;
 };
 
 export const Search = (props: TSearchProps) => {
-  const { onSearchInput } = props;
+  //поиск
+  const {
+    // onSearchInput
+    searchQuery,
+    setSearchQuery,
+  } = props;
 
   const { t } = useTranslation();
   return (
@@ -19,7 +25,9 @@ export const Search = (props: TSearchProps) => {
         <InputToy
           type="text"
           placeholder={t('search.placeholder')}
-          onInput={(event) => onSearchInput(event.currentTarget.value)}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          // onInput={(event) => onSearchInput(event.currentTarget.value)}
         />
         <Button
           variant="primary"
