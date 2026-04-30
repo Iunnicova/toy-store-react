@@ -23,7 +23,6 @@ export const checkSubscriberExistsApi = async (email: string) => {
   return data.length > 0;
 };
 
-
 // добавить подписчика
 export const addSubscriberApi = async (email: string) => {
   //сначала проверяем

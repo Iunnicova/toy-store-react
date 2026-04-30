@@ -9,6 +9,8 @@ import App from './components/app/App'; // Главный компонент п�
 import './styles/main.scss';
 import './i18n'; //библиотека языков
 import { LanguageProvider } from './context/LanguageContext';
+import { Provider } from 'react-redux';
+// import { store } from './store/slices/store';
 
 const domNode = document.getElementById('root') as HTMLDivElement; // Находим div с id="root" в index.html,сюда React будет рендерить всё приложение
 
@@ -16,8 +18,10 @@ const root = createRoot(domNode); // Создаём "корень" для при
 
 root.render(
   <StrictMode>
+    {/* <Provider store={store}> */}
     <LanguageProvider>
       <App />
     </LanguageProvider>
+    {/* </Provider> */}
   </StrictMode>
 );
