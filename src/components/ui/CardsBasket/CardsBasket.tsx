@@ -4,7 +4,7 @@ import { HeartIcon } from '@/components/svg/HeartIcon';
 import { DeleteIcon } from '@/components/svg/DeleteIcon';
 import styles from './CardsBasket.module.scss';
 import type { CardsBasketProps } from './type';
-import { useCartContext } from '@/context/CartContex';
+import { useCartContext } from '@/context/BasketContext';
 
 export function CardsBasket({
   toysInCart,

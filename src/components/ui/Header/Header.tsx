@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useFavoritesContext } from '@/context/FavoritesContext';
-import { useCartContext } from '@/context/CartContex';
+import { useCartContext } from '@/context/BasketContext';
 import { Link } from 'react-router-dom';
 import { LogoSvg } from '@/components/svg/LogoSvg';
 import { THeaderProps } from './type';

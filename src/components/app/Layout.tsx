@@ -5,7 +5,7 @@ import {
 } from '@/constants/footerData';
 import { Outlet } from 'react-router-dom';
 import { ContentToy, Header, Footer } from '../ui';
-import { useCartContext } from '@/context/CartContex';
+import { useCartContext } from '@/context/BasketContext';
 import { TCartItem } from '@/hooks/useCartBasket/useCartBasket';
 
 export const Layout = () => {

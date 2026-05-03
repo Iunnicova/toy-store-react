@@ -7,7 +7,7 @@ import { Button, CardsBasket, ModalDescriptionToy } from '@/components/ui';
 import { BasketIcon } from '@/components/svg/BasketIcon';
 import basket1 from '@images/basket1.webp';
 import styles from './BasketPage.module.scss';
-import { useCartContext } from '@/context/CartContex';
+import { useCartContext } from '@/context/BasketContext';
 
 export const BasketPage = () => {
   const {

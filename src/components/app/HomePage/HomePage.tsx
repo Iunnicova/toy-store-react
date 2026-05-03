@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useCartContext } from '@/context/CartContex';
+import { useCartContext } from '@/context/BasketContext';
 import { t } from 'i18next';
 import {
   ControlPanel,

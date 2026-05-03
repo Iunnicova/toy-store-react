@@ -1,4 +1,4 @@
-import { useCartContext } from '@/context/CartContex';
+import { useCartContext } from '@/context/BasketContext';
 import { BasketIcon } from '@/components/svg/BasketIcon';
 import { t } from 'i18next';
 import { Button, Counter } from '../index';

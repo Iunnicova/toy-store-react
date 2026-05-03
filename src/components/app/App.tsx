@@ -1,4 +1,3 @@
-import { CartProvider } from '@/context/CartContex';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { BasketPage } from '../pages/BasketPage';
@@ -8,10 +7,11 @@ import { ThemeProvider } from '@context/ThemeContext';
 import { HomePage } from './HomePage/HomePage';
 import { Layout } from './Layout';
 import { FavoritesProvider } from '@/context/FavoritesContext';
+import { BasketProvider } from '@/context/BasketContext';
 
 const App = () => {
   return (
-    <CartProvider>
+    <BasketProvider>
       <FavoritesProvider>
         <LanguageProvider>
           <ThemeProvider>
@@ -28,7 +28,7 @@ const App = () => {
           </ThemeProvider>
         </LanguageProvider>
       </FavoritesProvider>
-    </CartProvider>
+    </BasketProvider>
   );
 };
 

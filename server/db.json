@@ -181,7 +181,12 @@
       "descriptionKey": "toys.kitty_cat.description"
     }
   ],
-  "favorites": [],
+  "favorites": [
+    {
+      "id": "6eaf",
+      "toyId": "1"
+    }
+  ],
   "cart": [
     {
       "id": "7b58",

@@ -1,4 +1,4 @@
-import { useCartContext } from '@/context/CartContex';
+import { useCartContext } from '@/context/BasketContext';
 import { useTranslation } from 'react-i18next';
 
 import heart2 from '@icon/heart2.svg';

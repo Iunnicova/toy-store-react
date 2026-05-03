@@ -3,11 +3,7 @@ import { TToy } from '@/types/toysData';
 import { t } from 'i18next';
 import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  addToCartApi,
-  getCartApi,
-  removeFromCartApi,
-} from '@/components/utils/toyCardsApi';
+import { addToCartApi, getCartApi, removeFromCartApi } from '@/api/toyCardsApi';
 
 export type TCartItem = {
   id: number;
